@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 61: expected statement.
+    f"hello{frame_ySize = grid_size * icon_size}"
+                                                 ^
+
+Ren'Py Version: Ren'Py 8.3.6.25022803
+Tue Mar 11 22:59:08 2025

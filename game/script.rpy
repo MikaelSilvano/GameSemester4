@@ -1,4 +1,4 @@
-﻿
+﻿#test
 init python:
     def update_icon(st):
         pass

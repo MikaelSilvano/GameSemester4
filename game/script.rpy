@@ -1,4 +1,4 @@
-﻿init python:
+﻿Sinit python:
     def update_icon(st):
         pass
 

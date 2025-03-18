@@ -84,7 +84,7 @@
                     icons_list[i].index = i
                 
         #Shifting Left and right
-        # Only check icons that are not in the bottom row
+        # Only check icons that are not in the bottom row.
         for i in range(grid_size - icons_per_row):
             if icons_list[i] is not None:
                 col = i % icons_per_row

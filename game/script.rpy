@@ -3,6 +3,7 @@
         pass
 
     def events_icon(event, x, y, st):
+        shift_icons(mouse_event=False)
         if event.type == 1025:
             if event.button == 1:
                 for icon in icons_list:
@@ -45,16 +46,29 @@
 
     #Delete objects in matches
     def deleteMatch(matches):
+        global score
+        multiplier = len(matches) / 8
         for icon in matches:
             icons_list[icon.index] = None
             icon.destroy()
+            score += round(base_points * (len(matches) + multiplier))
+            print(score)
 
         renpy.restart_interaction()
         icons.redraw(0)
-        shift_icons()
+        shift_icons(mouse_event=True)
+        check_target_score()
 
-    def shift_icons():
+    def check_target_score():
+        global score
+        if moves <= 0 or score >= target_score:
+            print(round((moves/score + 1)))
+            score += round(score * (moves/score + 1))
+            renpy.show_screen("result")
+        else:
+            pass
 
+    def shift_icons(mouse_event):
         #Shifting Down
         # Iterate from the bottom cell (grid_size - 1) upward to the first row that can have a cell above it.
         for i in range(grid_size - 1, icons_per_row - 1, -1):
@@ -82,6 +96,9 @@
                     # so increase y by (icon_size + icon_padding) * row_mult.
                     icons_list[i].y += (icon_size + icon_padding) * row_mult
                     icons_list[i].index = i
+                    # target_y = icons_list[i].y + (icon_size + icon_padding) * row_mult
+                    # icons_list[i].target_y = target_y
+                    # icons_list[i].index = i
                 
         #Shifting Left and right
         # Only check icons that are not in the bottom row.
@@ -133,20 +150,47 @@
                         icons_list[bottom_right_index].y += (icon_size + icon_padding)
                         icons_list[bottom_right_index].index = bottom_right_index
 
+        #For Hidden Grid to continuously add to the visible grid
+        for i in range(icons_per_row):
+            if icons_list[i] is None:
+                # Choose a random icon type
+                rand_image = icon_images[renpy.random.randint(0, 4)]
+                idle_path = "Icons/{}.png".format(rand_image)
+                idle_image = Image(idle_path)
+                new_icon = icons.create(Transform(child=idle_image, zoom=0.08))
+                new_icon.index = i
+                new_icon.icon_type = rand_image
+                new_icon.idle_image = idle_image
 
-        global moves
-        moves -= 1
+                # Calculate the x coordinate for the column
+                col = i % icons_per_row
+                xp = (icon_size * col) + (icon_padding * col)
+                new_icon.x = xp
+
+                # Set its initial y position above the grid (simulate hidden grid)
+                new_icon.y = - (icon_size + icon_padding)
+                
+                # Then move it to its proper grid position (row 0, y = 0)
+                new_icon.y = 0
+
+                icons_list[i] = new_icon
+
+        if(mouse_event == True):
+            global moves
+            moves -= 1
         icons.redraw(0)
         renpy.show_screen("Score_UI")
         renpy.retain_after_load()
     
     def clear_icons():
         global moves
+        global score
         for icon in icons_list:
             if icon is not None:
                 icon.destroy()
         icons_list.clear()
         moves = 10
+        score = 0
 
 #Setup Icons
 label setup_icons:
@@ -164,7 +208,22 @@ label setup_icons:
     call screen Match_Three
             
 screen Score_UI:
-    text "{}".format(moves) color "#000000"
+    frame:
+        align (0.05, 0.05)
+        background "#2d467a"
+        xysize (450, 100)
+        padding (4, 4)
+        frame:
+            background "#9a90f3"
+            xfill True
+            yfill True
+            grid 2 2:
+                xfill True
+                spacing 0
+                text "[score]/" align (1.0, 0.5) color "#000000"
+                text "[target_score]" align (0.0, 0.5) color "#000000"
+                text "Moves Left:"align (1.0, 0.5) color "#000000"
+                text "{}".format(moves) align (0.0, 0.5) color "#000000"
 
 screen reset_grids:
     textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons), Jump("setup_icons")])
@@ -200,16 +259,29 @@ screen Match_Three:
 
         add icons
 
+screen result:
+    frame:
+        background Solid("#00000067")
+        align (0.5, 0.5)
+        xsize 1300
+        ysize 1080
+        text "Total Score:[score]" align(0.5, 0.5) color "#FFFFFF"
+
+        
 label start:
 
-    $grid_size = 49
-    $icon_size = 100
-    $icon_padding = 10
-    $icons_per_row = 7
-    $icons = SpriteManager(update= update_icon, event= events_icon)
-    $icon_images = ["brick", "glass", "rocks", "steel", "wood"]
-    $icons_list = []
-    $moves = 10
+    $ grid_size = 49
+    $ icon_size = 100
+    $ icon_padding = 10
+    $ icons_per_row = 7
+    $ icons = SpriteManager(update= update_icon, event= events_icon)
+    $ icon_images = ["brick", "glass", "rocks", "steel", "wood"]
+    $ icons_list = []
+    $ moves = 10
+    $ base_points = 5
+    $ score = 0
+    $ target_score = 5000
+    $ scoreboard = {"low": [0, 100], "medium": [101, 200], "high": [201, 300]}
 
     scene background
     show screen Score_UI

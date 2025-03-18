@@ -1,18 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 76, in script
+  File "game/script.rpy", line 108, in script
     call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 10, in events_icon
-    if icon.x <= x <= (icon.x + icon_size) and icon.y <= y <= (icon.y + icon_size):
-AttributeError: 'NoneType' object has no attribute 'x'
+  File "game/script.rpy", line 12, in events_icon
+    find_Match(icon)
+  File "game/script.rpy", line 46, in find_Match
+    deleteMatch(matches)
+  File "game/script.rpy", line 55, in deleteMatch
+    shift_icons()
+  File "game/script.rpy", line 82, in shift_icons
+    for icon in range(grid_size/icons_per_row):
+TypeError: 'float' object cannot be interpreted as an integer
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 76, in script
+  File "game/script.rpy", line 108, in script
     call screen Match_Three
   File "D:\renpy-8.3.6-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
@@ -48,11 +54,19 @@ Full traceback:
     rv = i.event(ev, x - xo, y - yo, cst)
   File "D:\renpy-8.3.6-sdk\renpy\display\particle.py", line 333, in event
     return self.event_function(ev, x, y, st)
-  File "game/script.rpy", line 10, in events_icon
-    if icon.x <= x <= (icon.x + icon_size) and icon.y <= y <= (icon.y + icon_size):
-AttributeError: 'NoneType' object has no attribute 'x'
+  File "game/script.rpy", line 12, in events_icon
+    find_Match(icon)
+  File "game/script.rpy", line 46, in find_Match
+    deleteMatch(matches)
+  File "game/script.rpy", line 55, in deleteMatch
+    shift_icons()
+  File "game/script.rpy", line 82, in shift_icons
+    for icon in range(grid_size/icons_per_row):
+  File "D:\renpy-8.3.6-sdk\renpy\revertable.py", line 266, in revertable_range
+    return RevertableList(range(*args))
+TypeError: 'float' object cannot be interpreted as an integer
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.6.25022803
 Match 3 Prototype 1.0
-Sun Mar 16 17:02:13 2025
+Tue Mar 18 00:39:19 2025

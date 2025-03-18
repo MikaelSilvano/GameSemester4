@@ -1,4 +1,4 @@
-﻿Sinit python:
+﻿init python:
     def update_icon(st):
         pass
 
@@ -39,8 +39,8 @@
                     if icon.icon_type == icons_list[top_index].icon_type and icons_list[top_index] not in matches:
                         matches.append(icons_list[top_index])
             
-        print(len(matches))
-        if len(matches) >= 2:
+        if len(matches) >= 3:
+            print("Matched:",len(matches))
             deleteMatch(matches)
 
     #Delete objects in matches
@@ -56,42 +56,97 @@
     def shift_icons():
 
         #Shifting Down
-        for i, icon in enumerate(reversed(icons_list)):
-            r_index = (grid_size - 1) - i
-            if icon is None and r_index >= icons_per_row:
-                row_mult = 0
-                while icons_list[r_index - (icons_per_row * row_mult)] is None and r_index - (icons_per_row * row_mult) >= icons_per_row:
-                    row_mult += 1
-                if icons_list[r_index - (icons_per_row * row_mult)] is not None:
-                    icons_list[r_index - (icons_per_row * row_mult)].y += (icon_size * row_mult) + (icon_padding * row_mult)
-                    icons_list[r_index] = icons_list[r_index - (icons_per_row * row_mult)]
-                    icons_list[r_index - (icons_per_row * row_mult)] = None
-                    icons_list[r_index].index = r_index
-        #Shifting Left if 1 coluuumn is cleared
-        #To-Do: Shifting Right & randomness shift      
-        for i in range(grid_size - icons_per_row, grid_size - 1):
+        # Iterate from the bottom cell (grid_size - 1) upward to the first row that can have a cell above it.
+        for i in range(grid_size - 1, icons_per_row - 1, -1):
+            # Only process if the current cell is empty.
             if icons_list[i] is None:
-                col_mult = 0
-                while icons_list[i + col_mult] is None and i + col_mult < grid_size - 1:
-                    col_mult += 1
-                if icons_list[i + col_mult] is not None:
-                    icons_list[i + col_mult].x -= (icon_size * col_mult) + (icon_padding * col_mult)
-                    icons_list[i] = icons_list[i + col_mult]
-                    icons_list[i + col_mult] = None
+                # Determine the row and column for the current cell.
+                row = i // icons_per_row
+                col = i % icons_per_row
+
+                # Search upward in the same column to find an icon that can fall down.
+                row_mult = 1  # How many rows above we need to look.
+                source_index = i - (icons_per_row * row_mult)
+                # Continue while source_index is within bounds and that cell is empty.
+                while source_index >= 0 and icons_list[source_index] is None:
+                    row_mult += 1
+                    source_index = i - (icons_per_row * row_mult)
+                
+                # If we found a non-None icon above, shift it down.
+                if source_index >= 0 and icons_list[source_index] is not None:
+                    # Move the icon from the source cell to the current (empty) cell.
+                    icons_list[i] = icons_list[source_index]
+                    icons_list[source_index] = None
+
+                    # Update the icon's y position: it falls row_mult rows,
+                    # so increase y by (icon_size + icon_padding) * row_mult.
+                    icons_list[i].y += (icon_size + icon_padding) * row_mult
                     icons_list[i].index = i
-                    for icon in range(grid_size//icons_per_row):
-                        print(grid_size/icons_per_row)
-                        if icons_list[(i + col_mult) - (icons_per_row * icon)] is not None:
-                            icons_list[(i + col_mult) - (icons_per_row * icon)].x -= (icon_size * col_mult) + (icon_padding * col_mult)
-                            icons_list[i - (icons_per_row)] = icons_list[(i + col_mult) - (icons_per_row * icon)]
-                            icons_list[(i + col_mult) - (icons_per_row * icon)] = None
-                            icons_list[i - (icons_per_row)].index -= col_mult
+                
+        #Shifting Left and right
+        # Only check icons that are not in the bottom row
+        for i in range(grid_size - icons_per_row):
+            if icons_list[i] is not None:
+                col = i % icons_per_row
+                row = i // icons_per_row
+                
+                # Determine bottom left and bottom right indices, if within bounds.
+                bottom_left_index = None
+                bottom_right_index = None
+                
+                # Bottom left: valid if not in the first column.
+                if col > 0:
+                    bottom_left_index = i + icons_per_row - 1
+                # Bottom right: valid if not in the last column.
+                if col < icons_per_row - 1:
+                    bottom_right_index = i + icons_per_row + 1
+                
+                # Check which of the diagonal cells is empty.
+                can_shift_left = bottom_left_index is not None and icons_list[bottom_left_index] is None
+                can_shift_right = bottom_right_index is not None and icons_list[bottom_right_index] is None
+
+                # If at least one diagonal spot is available, choose where to move the icon.
+                if can_shift_left or can_shift_right:
+                    # If both are available, pick one randomly; otherwise, choose the available one.
+                    if can_shift_left and can_shift_right:
+                        direction = renpy.random.randint(0, 1)
+                    elif can_shift_left:
+                        direction = 0
+                    else:
+                        direction = 1
+
+                    # Move the icon and update its position.
+                    if direction == 0:
+                        # Shift to bottom left.
+                        icons_list[bottom_left_index] = icons_list[i]   
+                        icons_list[i] = None
+                        # Adjust x position left and y position down.
+                        icons_list[bottom_left_index].x -= (icon_size + icon_padding)
+                        icons_list[bottom_left_index].y += (icon_size + icon_padding)
+                        icons_list[bottom_left_index].index = bottom_left_index
+                    else:
+                        # Shift to bottom right.
+                        icons_list[bottom_right_index] = icons_list[i]
+                        icons_list[i] = None
+                        # Adjust x position right and y position down.
+                        icons_list[bottom_right_index].x += (icon_size + icon_padding)
+                        icons_list[bottom_right_index].y += (icon_size + icon_padding)
+                        icons_list[bottom_right_index].index = bottom_right_index
+
 
         global moves
         moves -= 1
         icons.redraw(0)
         renpy.show_screen("Score_UI")
         renpy.retain_after_load()
+    
+    def clear_icons():
+        global moves
+        for icon in icons_list:
+            if icon is not None:
+                icon.destroy()
+        icons_list.clear()
+        moves = 10
 
 #Setup Icons
 label setup_icons:
@@ -111,8 +166,11 @@ label setup_icons:
 screen Score_UI:
     text "{}".format(moves) color "#000000"
 
+screen reset_grids:
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons), Jump("setup_icons")])
+        
 screen Match_Three:
-    $frame_xSize = (icons_per_row * icon_size) + (icons_per_row * icon_padding) + 6
+    $ frame_xSize = (icons_per_row * icon_size) + (icons_per_row * icon_padding) + 6
     frame:
         background "#FFFFFF50"
 
@@ -121,17 +179,17 @@ screen Match_Three:
         xsize frame_xSize
         ysize frame_xSize
 
-        $cur_row = 0
-        $cur_col = 0
+        $ cur_row = 0
+        $ cur_col = 0
 
         for icon in icons_list:
-            $xp = (icon_size * cur_col) + (icon_padding * cur_col) 
-            $yp = (icon_size * cur_row) + (icon_padding * cur_row)
+            $ xp = (icon_size * cur_col) + (icon_padding * cur_col) 
+            $ yp = (icon_size * cur_row) + (icon_padding * cur_row)
 
             image "Icons/grid-cell.png" xpos xp ypos yp zoom 1.0
             if icon is not None:
-                $icon.x = xp
-                $icon.y = yp
+                $ icon.x = xp
+                $ icon.y = yp
 
             python:
                 if cur_col % (icons_per_row -1) != 0 or cur_col == 0:
@@ -144,10 +202,10 @@ screen Match_Three:
 
 label start:
 
-    $grid_size = 25
+    $grid_size = 49
     $icon_size = 100
     $icon_padding = 10
-    $icons_per_row = 5
+    $icons_per_row = 7
     $icons = SpriteManager(update= update_icon, event= events_icon)
     $icon_images = ["brick", "glass", "rocks", "steel", "wood"]
     $icons_list = []
@@ -155,6 +213,7 @@ label start:
 
     scene background
     show screen Score_UI
+    show screen reset_grids
     jump setup_icons
 
     return

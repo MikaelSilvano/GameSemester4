@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 113: 'color' is not a keyword argument or valid child of the screen statement.
-    color "#FFFFFF" 
-         ^
+File "game/script.rpy", line 144: invalid syntax
+        global moves = 10
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Tue Mar 18 00:25:42 2025
+Tue Mar 18 14:02:33 2025

@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 108, in script
+  File "game/script.rpy", line 164, in script
     call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 12, in events_icon
-    find_Match(icon)
-  File "game/script.rpy", line 46, in find_Match
-    deleteMatch(matches)
-  File "game/script.rpy", line 55, in deleteMatch
-    shift_icons()
-  File "game/script.rpy", line 82, in shift_icons
-    for icon in range(grid_size/icons_per_row):
-TypeError: 'float' object cannot be interpreted as an integer
+  File "game/script.rpy", line 169, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 169, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 170, in execute
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 170, in keywords
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 170, in <module>
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 149, in clear_icons
+    renpy.restart_interaction(1)
+TypeError: restart_interaction() takes 0 positional arguments but 1 was given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 108, in script
+  File "game/script.rpy", line 164, in script
     call screen Match_Three
   File "D:\renpy-8.3.6-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
@@ -34,39 +38,37 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\particle.py", line 333, in event
-    return self.event_function(ev, x, y, st)
-  File "game/script.rpy", line 12, in events_icon
-    find_Match(icon)
-  File "game/script.rpy", line 46, in find_Match
-    deleteMatch(matches)
-  File "game/script.rpy", line 55, in deleteMatch
-    shift_icons()
-  File "game/script.rpy", line 82, in shift_icons
-    for icon in range(grid_size/icons_per_row):
-  File "D:\renpy-8.3.6-sdk\renpy\revertable.py", line 266, in revertable_range
-    return RevertableList(range(*args))
-TypeError: 'float' object cannot be interpreted as an integer
+  File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\renpy-8.3.6-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\renpy-8.3.6-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\renpy-8.3.6-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 169, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 169, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 170, in execute
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 170, in keywords
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 170, in <module>
+    textbutton "Reset" align(0.2, 0.5) action If(len(icons_list) != 0, [Function(clear_icons()), Jump("setup_icons")])
+  File "game/script.rpy", line 149, in clear_icons
+    renpy.restart_interaction(1)
+TypeError: restart_interaction() takes 0 positional arguments but 1 was given
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.6.25022803
 Match 3 Prototype 1.0
-Tue Mar 18 00:39:19 2025
+Tue Mar 18 14:00:12 2025

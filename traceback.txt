@@ -1,0 +1,66 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 176, in script
+    call screen Match_Three
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/script.rpy", line 12, in events_icon
+    find_Match(icon)
+  File "game/script.rpy", line 45, in find_Match
+    deleteMatch(matches)
+  File "game/script.rpy", line 51, in deleteMatch
+    if material in inventory:
+NameError: name 'inventory' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 176, in script
+    call screen Match_Three
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 3289, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\screen.py", line 794, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1526, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\display\particle.py", line 333, in event
+    return self.event_function(ev, x, y, st)
+  File "game/script.rpy", line 12, in events_icon
+    find_Match(icon)
+  File "game/script.rpy", line 45, in find_Match
+    deleteMatch(matches)
+  File "game/script.rpy", line 51, in deleteMatch
+    if material in inventory:
+NameError: name 'inventory' is not defined
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.6.25022803
+Match 3 Prototype 1.0
+Mon Mar 24 10:45:28 2025

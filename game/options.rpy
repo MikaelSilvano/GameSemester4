@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Match 3 Prototype")
+define config.name = _("template")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Match3Prototype"
+define build.name = "template"
 
 
 ## Sounds and music ############################################################
@@ -70,7 +70,6 @@ define config.has_voice = True
 ## These variables set transitions that are used when certain events occur.
 ## Each variable should be set to a transition, or None to indicate that no
 ## transition should be used.
-
 
 ## Entering or exiting the game menu.
 
@@ -144,7 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "Match3Prototype-1741702447"
+define config.save_directory = "template-1742474521"
 
 
 ## Icon ########################################################################

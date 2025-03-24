@@ -1,0 +1,9 @@
+.DS_Store
+game/cache/bytecode-39.rpyb
+game/cache/py3analysis.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt
+game/options.rpyc
+game/saves/persistent
+game/script.rpyc
+log.txt

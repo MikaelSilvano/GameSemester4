@@ -180,7 +180,7 @@ screen Score_UI:
     text "{}".format(moves) color "#000000"
 
 screen reset_grids:
-    textbutton "Reset" align(0.1, 0.5) action If(len(icons_list) != 0, [Function(clear_icons), Jump("setup_icons")])
+    textbutton "Reset" align(0.375, 0.07) action If(len(icons_list) != 0, [Function(clear_icons), Jump("setup_icons")])
         
 screen Match_Three:
     $ frame_xSize = (icons_per_row * icon_size) + (icons_per_row * icon_padding) + 6
@@ -228,7 +228,7 @@ screen Inventory_UI:
                     text "{}: {}".format(material.capitalize(), count) size 25 color "#000000" yalign 0.5
 
 screen Building_Screen:
-        add "Buildings/hut.png" xpos 0.48 ypos 200 zoom 0.5 # Need to be integrated
+        add "Buildings/hut.png" xpos 0.58 ypos 375 zoom 0.4 # Need to be integrated
 
 label start:
     # Do nothing here so Ren’Py shows your custom main menu.
@@ -388,8 +388,6 @@ label apartment_sublevel1:
     hide screen apartment_sublevel2_screen
     call screen apartment_sublevel1_screen
     return
-
-
 
 label puzzle_start:
 

@@ -22,7 +22,7 @@ init python:
         
         def handle_event(self, event, x, y, st):
             self.shift_icons(mouse_event=False)
-            game.find_match()
+            game.find_match(mouse_event=False)
             
             if event.type == 1024:
                 for icon in self.icons:
@@ -37,7 +37,7 @@ init python:
 
             if event.type == 1026 and event.button == 1:
                 for icon in self.icons:
-                    if icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
+                    if icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size) and icon.is_dragging:
                         icon.stop_drag()
                         break
         
@@ -87,8 +87,15 @@ init python:
                         self.icons[i].y += (self.icon_size + self.icon_padding) * row_mult
                         self.icons[i].index = i
 
-
-            # Refill grid
+            if mouse_event:
+                pass
+                # game.decrement_moves()
+            
+            self.sprite_manager.redraw(0)
+            renpy.show_screen("Score_UI")
+            renpy.retain_after_load()
+        
+        def refill_grid(self):
             for i in range(self.icons_per_row):
                 if self.icons[i] is None:
                     rand_image = self.icon_images[renpy.random.randint(0, 4)]
@@ -108,15 +115,8 @@ init python:
                         icon_type=rand_image,
                         sprite=new_sprite
                     )
+            pass
 
-            if mouse_event:
-                pass
-                # game.decrement_moves()
-            
-            self.sprite_manager.redraw(0)
-            renpy.show_screen("Score_UI")
-            renpy.retain_after_load()
-                        
         def clear_grid(self):
             renpy.hide_screen("result", immediately=True)
             game.score = 0

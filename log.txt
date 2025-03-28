@@ -1,37 +1,36 @@
-2025-03-24 03:04:39 UTC
+2025-03-28 14:13:11 UTC
 Windows-10-10.0.22631
 Ren'Py 8.3.6.25022803
 
-Early init took 0.05s
-Loading error handling took 0.03s
-Loading script took 0.13s
-Loading save slot metadata took 0.04s
+Early init took 0.08s
+Loading error handling took 0.05s
+Loading script took 0.35s
+Loading save slot metadata took 0.16s
 Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.01s
+Running init code took 0.10s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
+Reloading save slot metadata took 0.13s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\undap\\AppData\\Roaming/RenPy/backups\\GameSemester4':
 Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.04s
+Initial gc took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.26s
+Creating interface object took 0.24s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.06s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.30s
+Interface start took 0.59s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -41,84 +40,264 @@ Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 572.83'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(921, 518) drawable=(921, 518)
+Screen sizes: virtual=(1920, 1080) physical=(1109, 624) drawable=(1109, 624)
 Maximum texture size: 4096x4096
-Matched: 10
-Matched: 9
-Matched: 4
-Matched: 4
-Matched: 10
-Matched: 12
-Matched: 5
-Matched: 5
-Matched: 4
-Matched: 9
-Matched: 8
-Matched: 4
-Matched: 5
-Matched: 4
-Matched: 4
-Matched: 5
-Matched: 12
-Matched: 4
-Matched: 4
-Matched: 5
-Matched: 4
-Matched: 5
-Matched: 5
-Matched: 4
-Matched: 4
-Matched: 8
-Matched: 8
-
-Full traceback:
-  File "game/script.rpy", line 31, in script
-    call screen Match_Three
-  File "D:\renpy-8.3.6-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\renpy-8.3.6-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\renpy-8.3.6-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\renpy-8.3.6-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\renpy-8.3.6-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\renpy-8.3.6-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\renpy-8.3.6-sdk\renpy\display\transform.py", line 1083, in event
-    rv = d.event(ev, cx, cy, st)
-  File "D:\renpy-8.3.6-sdk\renpy\display\particle.py", line 333, in event
-    return self.event_function(ev, x, y, st)
-  File "game/classScripts/GridManager.rpy", line 43, in handle_event
-    if event.type == 768 and event.button == 1:
-AttributeError: 'EventType' object has no attribute 'button'
-
-While running game code:
-  File "game/script.rpy", line 31, in script
-    call screen Match_Three
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/classScripts/GridManager.rpy", line 43, in handle_event
-    if event.type == 768 and event.button == 1:
-AttributeError: 'EventType' object has no attribute 'button'
+Matched: 3 rocks
+Matched: 3 brick
+Matched: 3 steel
+Matched: 4 glass
+Top: True
+Matched: 4 wood
+Matched: 3 steel
+Matched: 3 brick
+Matched: 4 rocks
+Matched: 5 wood
+Top: True
+Matched: 8 brick
+Matched: 3 steel
+Bot: True
+Top: True
+Matched: 6 wood
+Matched: 7 glass
+Matched: 3 steel
+Right: True
+Matched: 3 steel
+Matched: 3 brick
+Left: True
+Matched: 5 glass
+Matched: 3 wood
+Top: True
+Matched: 4 wood
+Matched: 4 rocks
+Matched: 4 steel
+Matched: 5 brick
+Matched: 4 rocks
+Matched: 3 glass
+Matched: 3 wood
+Matched: 3 rocks
+Matched: 4 steel
+Matched: 3 brick
+Matched: 6 rocks
+Matched: 3 wood
+Matched: 3 steel
+Matched: 3 rocks
+Matched: 4 steel
+Right: True
+Left: True
+Matched: 7 wood
+Matched: 3 steel
+Matched: 3 brick
+Matched: 3 rocks
+Matched: 3 steel
+Matched: 3 glass
+Right: True
+Left: True
+Matched: 3 rocks
+Matched: 3 wood
+Top: True
+Matched: 5 brick
+Matched: 5 steel
+Matched: 4 brick
+Top: True
+Matched: 3 steel
+Left: True
+Matched: 7 brick
+Matched: 3 brick
+Matched: 3 glass
+Matched: 3 steel
+Top: True
+Matched: 4 glass
+Top: True
+Matched: 5 wood
+Matched: 4 rocks
+Matched: 3 glass
+Matched: 6 glass
+Top: True
+Matched: 5 steel
+Left: True
+Matched: 3 steel
+Right: True
+Left: True
+Matched: 7 glass
+Matched: 6 rocks
+Matched: 3 wood
+Matched: 3 brick
+1503
+Matched: 3 rocks
+1522
+Matched: 3 steel
+1541
+Matched: 6 steel
+1579
+Matched: 4 brick
+1604
+Matched: 4 wood
+1629
+Matched: 6 rocks
+1667
+Matched: 3 rocks
+1686
+Matched: 4 glass
+1711
+Matched: 4 wood
+1736
+Matched: 3 rocks
+1755
+Matched: 3 wood
+1774
+Matched: 4 glass
+1799
+Matched: 3 rocks
+1818
+Matched: 4 brick
+1843
+Matched: 3 steel
+1862
+Matched: 3 brick
+1881
+Matched: 3 wood
+1900
+Matched: 3 steel
+1919
+Matched: 3 glass
+1938
+Matched: 3 brick
+1957
+Matched: 5 wood
+1988
+Matched: 7 glass
+2032
+Matched: 7 steel
+2076
+Matched: 3 brick
+2095
+Matched: 3 steel
+2114
+Matched: 6 glass
+2152
+Matched: 3 steel
+2171
+Matched: 14 wood
+Matched: 11 rocks
+Matched: 3 steel
+Matched: 3 glass
+Matched: 5 brick
+Matched: 7 steel
+Matched: 5 steel
+Matched: 8 glass
+Matched: 3 glass
+Matched: 10 steel
+Matched: 8 rocks
+Matched: 5 brick
+Matched: 4 rocks
+Matched: 3 wood
+Matched: 6 steel
+Matched: 5 brick
+Matched: 3 steel
+Matched: 3 brick
+Matched: 6 brick
+Matched: 3 rocks
+Matched: 3 wood
+Matched: 6 rocks
+Matched: 3 glass
+Matched: 7 brick
+Matched: 4 brick
+Matched: 4 steel
+Matched: 6 glass
+Matched: 3 brick
+Matched: 4 rocks
+Matched: 6 brick
+Matched: 9 brick
+Matched: 3 brick
+Right: True
+Matched: 3 steel
+Right: True
+Left: True
+Matched: 3 glass
+Top: True
+Matched: 3 brick
+Matched: 4 rocks
+Matched: 3 wood
+Top: True
+Matched: 3 brick
+Matched: 3 wood
+Bot: True
+Top: True
+Matched: 4 steel
+Matched: 3 glass
+Matched: 4 rocks
+Matched: 4 brick
+Matched: 3 wood
+Matched: 3 rocks
+Matched: 3 glass
+Matched: 3 steel
+Matched: 4 steel
+Top: True
+Matched: 3 wood
+Matched: 7 glass
+Matched: 3 brick
+Matched: 6 wood
+Matched: 12 glass
+Matched: 4 steel
+Matched: 3 glass
+Matched: 7 rocks
+Matched: 3 brick
+Matched: 3 rocks
+Matched: 3 steel
+Matched: 3 wood
+Matched: 3 rocks
+Matched: 3 wood
+Matched: 4 brick
+Top: True
+Matched: 4 steel
+Bot: True
+Top: True
+Matched: 3 wood
+Left: True
+Matched: 3 brick
+Matched: 6 rocks
+Matched: 6 steel
+Matched: 3 steel
+Right: True
+Left: True
+Left: True
+Matched: 3 glass
+Matched: 3 rocks
+Matched: 3 brick
+Matched: 4 brick
+Top: True
+Matched: 7 glass
+Matched: 3 glass
+Matched: 4 glass
+Left: True
+Matched: 3 brick
+Matched: 3 rocks
+Matched: 6 wood
+Matched: 3 steel
+Matched: 4 rocks
+Matched: 3 steel
+Matched: 3 rocks
+Bot: True
+Top: True
+Matched: 3 glass
+Left: True
+Matched: 7 glass
+Matched: 4 steel
+Bot: True
+Matched: 3 steel
+Matched: 4 brick
+Matched: 6 wood
+Matched: 8 glass
+1537
+Matched: 3 rocks
+1556
+Matched: 6 steel
+1594
+Matched: 3 steel
+1613
+Matched: 6 steel
+1651
+Matched: 3 wood
+1670
+Matched: 3 brick
+1689

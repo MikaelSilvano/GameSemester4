@@ -289,24 +289,22 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
-
+            align (0.5, 0.75)
+            imagebutton auto "images/UI/PlayButton_%s.png" action Start() 
+            imagebutton auto "images/UI/tutorial_%s.png" action NullAction()
         else:
-
+            xpos gui.navigation_xpos
+            yalign 0.5
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        # textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        # textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -316,19 +314,18 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        # textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            # textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
-
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -402,6 +399,226 @@ style main_menu_title:
 style main_menu_version:
     properties gui.text_properties("version")
 
+
+## Level Selection screen ###########################################################
+##
+## 
+##
+##########################################################################
+
+
+screen level_selection_screen():
+    tag menu
+    modal True
+    # Display the level selection background image.
+    add "images/Screens/Level_Selection.png"
+
+    fixed:
+        # Level 1 button
+        imagebutton:
+            idle "gui/button/Level1Button.png"  # Provide your Level 1 button image or use a transparent image.
+            action Jump("level_1")
+            xpos 1
+            ypos 30
+            focus_mask True
+
+        # Level 2 button
+        imagebutton:
+            idle "gui/button/Level2Button.png"
+            action Jump("level_2")
+            xpos 1
+            ypos 32
+            focus_mask True
+
+        # Level 3 button
+        imagebutton:
+            idle "gui/button/Level3Button.png"
+            action Jump("level_3")
+            xpos 4
+            ypos 30
+            focus_mask True
+
+        # Level 4 button
+        imagebutton:
+            idle "gui/button/Level4Button.png"
+            action Jump("level_4")
+            xpos 4
+            ypos 32
+            focus_mask True
+
+        # Back button to return to main menu
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Return()  
+            xpos 1
+            ypos 1
+            focus_mask True
+
+
+screen level_1_preview():
+    tag menu
+    modal True
+    # Use the level preview background for Level 1 (Hut)
+    add "images/Screens/HutLevel.png"
+    
+    fixed:
+        # Play button: leads to Level 1 sublevel page
+        imagebutton:
+            idle "gui/button/PlayButton.png"
+            action Jump("sublevel_level1")
+            xpos 555        
+            ypos -95
+            focus_mask True
+
+        # Home button: returns to level selection
+        imagebutton:
+            idle "gui/button/HomeButton.png"
+            action Jump("level_selection")
+            xpos 575        
+            ypos 1
+            focus_mask True
+
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Return()  
+            xpos 1
+            ypos 1
+            focus_mask True
+
+
+screen level_2_preview():
+    tag menu
+    modal True
+    # Background for Level 2 (House)
+    add "images/Screens/HouseLevel.png"
+    
+    fixed:
+        imagebutton:
+            idle "gui/button/PlayButton.png"
+            action Jump("sublevel_level2")
+            xpos 555        
+            ypos -95
+            focus_mask True
+
+        imagebutton:
+            idle "gui/button/HomeButton.png"
+            action Jump("level_selection")
+            xpos 575        
+            ypos 1
+            focus_mask True
+
+        # Back button to return to main menu
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Return()  
+            xpos 1
+            ypos 1
+            focus_mask True
+
+screen level_3_preview():
+    tag menu
+    modal True
+    # Background for Level 3 (Mansion)
+    add "images/Screens/MansionLevel.png"
+    
+    fixed:
+        imagebutton:
+            idle "gui/button/PlayButton.png"
+            action Jump("sublevel_level3")
+            xpos 555        
+            ypos -95
+            focus_mask True
+
+        imagebutton:
+            idle "gui/button/HomeButton.png"
+            action Jump("level_selection")
+            xpos 575        
+            ypos 1
+            focus_mask True
+
+        # Back button to return to main menu
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Return()  
+            xpos 1
+            ypos 1
+            focus_mask True
+
+
+screen level_4_preview():
+    tag menu
+    modal True
+    # Background for Level 4 (Apartment)
+    add "images/Screens/ApartmentLevel.png"
+    
+    fixed:
+        imagebutton:
+            idle "gui/button/PlayButton.png"
+            action Jump("sublevel_level4")
+            xpos 555        
+            ypos -95
+            focus_mask True
+
+        imagebutton:
+            idle "gui/button/HomeButton.png"
+            action Jump("level_selection")
+            xpos 575        
+            ypos 1
+            focus_mask True
+
+        # Back button to return to main menu
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Return()  
+            xpos 1
+            ypos 1
+            focus_mask True
+        
+screen sublevel_hut_screen():
+    tag menu
+    modal True
+    add "images/Screens/SublevelHut.png"  # Background for Hut sublevels
+
+    fixed:
+        # Sublevel 1 button
+        imagebutton:
+            idle "gui/button/Sublevel1Button.png"
+            action Jump("hut_sublevel_1")
+            xpos -656
+            ypos -45
+            focus_mask True
+
+        # Sublevel 2 button
+        imagebutton:
+            idle "gui/button/Sublevel2Button.png"
+            action Jump("hut_sublevel_2")
+            xpos -168
+            ypos -275
+            focus_mask True
+
+        # Sublevel 3 button
+        imagebutton:
+            idle "gui/button/Sublevel3Button.png"
+            action Jump("hut_sublevel_3")
+            xpos 45
+            ypos 100
+            focus_mask True
+
+        # Sublevel 4 button
+        imagebutton:
+            idle "gui/button/Sublevel4Button.png"
+            action Jump("hut_sublevel_4")
+            xpos 483
+            ypos -68
+            focus_mask True
+
+        # Home button to return to level 1 preview
+        imagebutton:
+            idle "gui/button/BackButton.png"
+            action Jump("level_1")
+            xpos 1
+            ypos 1
+            focus_mask True
 
 ## Game Menu screen ############################################################
 ##

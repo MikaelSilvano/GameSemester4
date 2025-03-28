@@ -6,7 +6,7 @@ init python:
             self.base_points = 5
             self.target_score = target_score
         
-        def find_match(self):
+        def find_match(self, mouse_event):
             processed = set()
             all_matches = []
 
@@ -46,7 +46,11 @@ init python:
                     idx += 1
 
                 # If the cluster is large enough, add it to the overall matches.
-                if len(matches) >= 4:
+                if len(matches) >= 10:
+                    self.delete_matches(all_matches, check=False)
+                    grid.shift_icons(mouse_event=False)
+
+                if len(matches) >= 3:
                     all_matches.extend(matches)
 
                 # Mark all icons in this cluster as processed.
@@ -55,22 +59,25 @@ init python:
 
             # If any matches were found, process them.
             if all_matches:
-                print("Matched:", len(all_matches))
-                self.delete_matches(all_matches)
+                print("Matched:", len(all_matches), all_matches[0].icon_type)
+                self.delete_matches(all_matches, True)
                 grid.shift_icons(mouse_event=True)
                 renpy.restart_interaction()
+            else:
+                grid.refill_grid()
 
         
-        def delete_matches(self, matches):
+        def delete_matches(self, matches, check):
             multiplier = len(matches) / 4
-            for icon in matches:
-                grid.icons[icon.index] = None
-                icon.destroy()
+            if check:
+                for icon in matches:
+                    grid.icons[icon.index] = None
+                    icon.destroy()
             
-            self.score += round(self.base_points * (len(matches) + multiplier))
+                self.score += round(self.base_points * (len(matches) + multiplier))
 
-            renpy.restart_interaction()
             grid.sprite_manager.redraw(0)
+            renpy.restart_interaction()
             self.check_target_score()
         
         def check_target_score(self):

@@ -1,9 +1,6 @@
 ﻿init python:
     config.rollback_enabled = False
 
-default grid = GridManager(5, 30)
-default game = GameManager(10, 2000)
-
 label setup_icons:
     python:
         sprite_manager = grid.create_sprite_manager()  # Create new sprite manager
@@ -53,11 +50,15 @@ style tx_button:
     size 50
     hover_color "#578f91"
 
+style alpha_color:
+    color "#00000000"
+    size 80
+
 screen reset_grids:
     frame:
         xysize (200, 100)
         background "#fff6c0"
-        align(0.2, 0.5)
+        align(0.05, 0.95)
         textbutton "Reset":
             align (0.5,0.5)
             text_style "tx_button"
@@ -98,6 +99,18 @@ screen Match_Three:
             xpos 0
             ypos 0
 
+label start_game:
+    $ game = GameManager(moves, t_score)
+    $ grid = GridManager(icpr, grid_size)
+
+    hide screen menu_screen
+    scene background
+
+    show screen Score_UI
+    show screen reset_grids
+
+    call setup_icons()
+        
 screen result:
     frame:
         background Solid("#00000067")
@@ -107,9 +120,6 @@ screen result:
         text "Total Score:[game.score]" align(0.5, 0.5) color "#FFFFFF"
 
 label start:
-    scene background
-    show screen Score_UI
-    show screen reset_grids
-    jump setup_icons
+    jump level_selection
 
     return

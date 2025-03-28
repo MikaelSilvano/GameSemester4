@@ -1,18 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 31, in script
+  File "game/script.rpy", line 112, in script call
+    call setup_icons()
+  File "game/script.rpy", line 28, in script
     call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/classScripts/GridManager.rpy", line 43, in handle_event
-    if event.type == 768 and event.button == 1:
-AttributeError: 'EventType' object has no attribute 'button'
+  File "game/classScripts/GridManager.rpy", line 30, in handle_event
+    icon.update_drag(x, y)
+  File "game/classScripts/Icon.rpy", line 54, in update_drag
+    swap_index = self.get_swap_index()
+  File "game/classScripts/Icon.rpy", line 79, in get_swap_index
+    self.check_corners()
+  File "game/classScripts/Icon.rpy", line 131, in check_corners
+    return True if matched_corner else False
+NameError: name 'matched_corner' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script
+  File "game/script.rpy", line 112, in script call
+    call setup_icons()
+  File "game/script.rpy", line 28, in script
     call screen Match_Three
   File "D:\renpy-8.3.6-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
@@ -50,11 +60,17 @@ Full traceback:
     rv = d.event(ev, cx, cy, st)
   File "D:\renpy-8.3.6-sdk\renpy\display\particle.py", line 333, in event
     return self.event_function(ev, x, y, st)
-  File "game/classScripts/GridManager.rpy", line 43, in handle_event
-    if event.type == 768 and event.button == 1:
-AttributeError: 'EventType' object has no attribute 'button'
+  File "game/classScripts/GridManager.rpy", line 30, in handle_event
+    icon.update_drag(x, y)
+  File "game/classScripts/Icon.rpy", line 54, in update_drag
+    swap_index = self.get_swap_index()
+  File "game/classScripts/Icon.rpy", line 79, in get_swap_index
+    self.check_corners()
+  File "game/classScripts/Icon.rpy", line 131, in check_corners
+    return True if matched_corner else False
+NameError: name 'matched_corner' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.6.25022803
-Match 3 Prototype 1.0
-Mon Mar 24 10:04:46 2025
+Match 3 Prototype 0.1
+Thu Mar 27 10:05:53 2025

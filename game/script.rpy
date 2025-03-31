@@ -1,30 +1,20 @@
-﻿init python:
+﻿transform move_anim(new_x, new_y):
+    linear 0.3 xpos new_x ypos new_y
+
+transform fade_out:
+    linear 0.5 alpha 0.0
+
+init python:
     config.rollback_enabled = False
 
 label setup_icons:
     python:
-        sprite_manager = grid.create_sprite_manager()  # Create new sprite manager
-        
-        # Create new icons for all grid positions
-        for i in range(grid.grid_size):
-            rand_image = grid.icon_images[renpy.random.randint(0, 4)]
-            idle_image = Image("Icons/{}.png".format(rand_image))
-            
-            # Calculate initial position
-            col = i % grid.icons_per_row
-            row = i // grid.icons_per_row
-            xpos = (grid.icon_size * col) + (grid.icon_padding * col)
-            ypos = (grid.icon_size * row) + (grid.icon_padding * row)
-            
-            # Create and add new Icon object
-            grid.icons.append(Icon(
-                index=i,
-                x=xpos,
-                y=ypos,
-                icon_type=rand_image,
-                sprite=sprite_manager.create(Transform(child=idle_image, zoom=0.08))
-            ))
-
+        sprite_manager = grid.create_sprite_manager()
+        for icon in grid.icons:
+            idle_image = Image("Icons/{}.png".format(icon.icon_type))
+            icon.sprite = sprite_manager.create(Transform(child=idle_image, zoom=0.08))
+            icon.sprite.x = icon.x
+            icon.sprite.y = icon.y
     call screen Match_Three
 
 screen Score_UI:
@@ -62,7 +52,8 @@ screen reset_grids:
         textbutton "Reset":
             align (0.5,0.5)
             text_style "tx_button"
-            action If(len(grid.icons) != 0, [Function(grid.clear_grid), Jump("setup_icons")])
+            action If(len(grid.icons) != 0, [Function(grid.clear_grid), Function(grid.initialize_grid), Jump("setup_icons")])
+
 
 screen Match_Three:
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
@@ -102,6 +93,7 @@ screen Match_Three:
 label start_game:
     $ game = GameManager(moves, t_score)
     $ grid = GridManager(icpr, grid_size)
+    $ grid.initialize_grid()
 
     hide screen menu_screen
     scene background
@@ -110,6 +102,7 @@ label start_game:
     show screen reset_grids
 
     call setup_icons()
+    return
         
 screen result:
     frame:
@@ -122,4 +115,8 @@ screen result:
 label start:
     jump level_selection
 
+    return
+
+label delete_matches_callback(game_manager, matches, check):
+    $ game_manager._delete_matches_callback(matches, check)
     return

@@ -5,8 +5,12 @@ init python:
             self.moves = moves
             self.base_points = 5
             self.target_score = target_score
+            self.initializing = True  # <-- New flag to indicate startup state
         
         def find_match(self, mouse_event):
+            # Do nothing if we are still in the initial state.
+            if self.initializing:
+                return
             processed = set()
             all_matches = []
 
@@ -68,18 +72,26 @@ init python:
 
         
         def delete_matches(self, matches, check):
+            # Schedule the fade-out transition in a new context.
+            renpy.call_in_new_context("delete_matches_callback", self, matches, check)
+
+
+        def _delete_matches_callback(self, matches, check):
+            # Fade out the matched tiles using a transition.
+            renpy.transition(Dissolve(0.5))
             multiplier = len(matches) / 4
             if check:
                 for icon in matches:
                     grid.icons[icon.index] = None
                     icon.destroy()
-            
                 self.score += round(self.base_points * (len(matches) + multiplier))
-
+            
             grid.sprite_manager.redraw(0)
             renpy.restart_interaction()
+            grid.shift_icons(mouse_event=True)
             self.check_target_score()
-        
+
+
         def check_target_score(self):
             if self.moves <= 0 or self.score >= self.target_score:
                 print(self.score)

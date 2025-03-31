@@ -1,3 +1,5 @@
+default grid_manager = None
+
 ##########################################################################
 ## Level Selection
 ##########################################################################
@@ -32,6 +34,10 @@ label level_4:
 
 # For Level 1 (Hut)
 label hut_sublevel_1:
+#   if not grid_manager:
+#       $ grid_manager = GridManager(icons_per_row=8, grid_size=64)
+#  $ grid = grid_manager  # Assign grid_manager to the global variable 'grid'
+#  $ grid_manager.initialize_grid()
     $ moves = 5
     $ t_score = 1000
     $ icpr = 5

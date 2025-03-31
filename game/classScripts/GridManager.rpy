@@ -8,6 +8,79 @@ init python:
             self.icons_per_row = icons_per_row
             self.grid_size = grid_size
             self.icon_images = ["brick", "glass", "rocks", "steel", "wood"]
+
+        def has_initial_match(self):
+            # For every icon in the grid, use the flood-fill method to get the connected group.
+            for index, icon in enumerate(self.icons):
+                if icon is not None:
+                    if len(self.get_cluster(index)) >= 3:
+                        return True
+            return False
+
+        def initialize_grid(self):
+            valid_grid = False
+            # Keep regenerating until no match is found.
+            while not valid_grid:
+                self.icons = [None] * self.grid_size
+                for index in range(self.grid_size):
+                    # Calculate grid position.
+                    col = index % self.icons_per_row
+                    row = index // self.icons_per_row
+                    x = col * (self.icon_size + self.icon_padding)
+                    y = row * (self.icon_size + self.icon_padding)
+                    
+                    allowed_types = self.icon_images[:]  # Start with all types allowed.
+                    valid = False
+                    # Try candidates until one does not cause a local cluster.
+                    while not valid and allowed_types:
+                        tile_type = renpy.random.choice(allowed_types)
+                        temp_icon = Icon(index=index, x=x, y=y, icon_type=tile_type, sprite=None)
+                        self.icons[index] = temp_icon
+                        # Use your flood-fill helper to check the connected group.
+                        cluster = self.get_cluster(index)
+                        if len(cluster) < 3:
+                            valid = True
+                        else:
+                            allowed_types.remove(tile_type)
+                    if not valid:
+                        # Fallback (should rarely happen with several types available).
+                        tile_type = renpy.random.choice(self.icon_images)
+                        self.icons[index] = Icon(index=index, x=x, y=y, icon_type=tile_type, sprite=None)
+                # After the full grid is built, check for any horizontal or vertical matches.
+                if not self.has_initial_match():
+                    valid_grid = True
+
+        def get_cluster(self, index):
+            # Flood fill to collect all connected cells with the same icon_type.
+            start_icon = self.icons[index]
+            if start_icon is None:
+                return []
+            cluster = set()
+            to_check = [index]
+            while to_check:
+                cur = to_check.pop()
+                if cur in cluster:
+                    continue
+                cluster.add(cur)
+                col = cur % self.icons_per_row
+                row = cur // self.icons_per_row
+                neighbors = []
+                # Left neighbor.
+                if col > 0:
+                    neighbors.append(cur - 1)
+                # Right neighbor.
+                if col < self.icons_per_row - 1:
+                    neighbors.append(cur + 1)
+                # Top neighbor.
+                if row > 0:
+                    neighbors.append(cur - self.icons_per_row)
+                # Bottom neighbor.
+                if row < (self.grid_size // self.icons_per_row) - 1:
+                    neighbors.append(cur + self.icons_per_row)
+                for n in neighbors:
+                    if self.icons[n] is not None and self.icons[n].icon_type == start_icon.icon_type and n not in cluster:
+                        to_check.append(n)
+            return list(cluster)
         
         def create_sprite_manager(self):
             self.sprite_manager = SpriteManager(update=self.update_icon, event=self.handle_event)
@@ -96,33 +169,84 @@ init python:
             renpy.retain_after_load()
         
         def refill_grid(self):
-            for i in range(self.icons_per_row):
+            # Iterate over every cell in reading order.
+            for i in range(self.grid_size):
                 if self.icons[i] is None:
-                    rand_image = self.icon_images[renpy.random.randint(0, 4)]
-                    idle_image = Image("Icons/{}.png".format(rand_image))
-                    new_sprite = self.sprite_manager.create(Transform(child=idle_image, zoom=0.08))
-                    
+                    # Determine the cell's row and column.
                     col = i % self.icons_per_row
-                    xp = (self.icon_size * col) + (self.icon_padding * col)
-
-                    new_sprite.x = xp
+                    row = i // self.icons_per_row
+                    x = col * (self.icon_size + self.icon_padding)
+                    y = row * (self.icon_size + self.icon_padding)
+                    
+                    # Start with all available tile types.
+                    allowed = self.icon_images[:]  
+                    
+                    # Check horizontally: if there are two filled cells to the left.
+                    if col >= 2:
+                        left1 = self.icons[i - 1]
+                        left2 = self.icons[i - 2]
+                        if left1 is not None and left2 is not None:
+                            if left1.icon_type == left2.icon_type:
+                                forbidden = left1.icon_type
+                                if forbidden in allowed:
+                                    allowed.remove(forbidden)
+                    
+                    # Check vertically: if there are two filled cells above.
+                    if row >= 2:
+                        above1 = self.icons[i - self.icons_per_row]
+                        above2 = self.icons[i - 2 * self.icons_per_row]
+                        if above1 is not None and above2 is not None:
+                            if above1.icon_type == above2.icon_type:
+                                forbidden = above1.icon_type
+                                if forbidden in allowed:
+                                    allowed.remove(forbidden)
+                    
+                    # Choose a candidate tile type from allowed types.
+                    if not allowed:
+                        candidate = renpy.random.choice(self.icon_images)
+                    else:
+                        candidate = renpy.random.choice(allowed)
+                    
+                    # Create the new sprite for this tile.
+                    idle_image = Image("Icons/{}.png".format(candidate))
+                    new_sprite = self.sprite_manager.create(Transform(child=idle_image, zoom=0.08))
+                    # For refill, spawn the new tile above the visible grid so it drops in.
+                    new_sprite.x = x
                     new_sprite.y = - (self.icon_size + self.icon_padding)
+                    
+                    # Finally, assign the new Icon to the grid.
+                    self.icons[i] = Icon(index=i, x=x, y=y, icon_type=candidate, sprite=new_sprite)
 
-                    self.icons[i] = Icon(
-                        index=i,
-                        x=xp,
-                        y=0,
-                        icon_type=rand_image,
-                        sprite=new_sprite
-                    )
-            pass
 
         def clear_grid(self):
             renpy.hide_screen("result", immediately=True)
             game.score = 0
-            game.moves = 10
             for icon in self.icons:
                 if icon:
                     icon.destroy()
             self.icons.clear()
             self.sprite_manager.redraw(0)
+
+        def check_for_match(self):
+            # Determine the number of rows.
+            rows = self.grid_size // self.icons_per_row
+            # Check for horizontal matches.
+            for row in range(rows):
+                for col in range(self.icons_per_row - 2):  # need at least 3 in a row
+                    index = row * self.icons_per_row + col
+                    if self.icons[index] is not None:
+                        icon_type = self.icons[index].icon_type
+                        if (self.icons[index + 1] is not None and self.icons[index + 1].icon_type == icon_type and
+                            self.icons[index + 2] is not None and self.icons[index + 2].icon_type == icon_type):
+                            return True
+            # Check for vertical matches.
+            for col in range(self.icons_per_row):
+                for row in range(rows - 2):  # need at least 3 in a column
+                    index = row * self.icons_per_row + col
+                    if self.icons[index] is not None:
+                        icon_type = self.icons[index].icon_type
+                        if (self.icons[index + self.icons_per_row] is not None and self.icons[index + self.icons_per_row].icon_type == icon_type and
+                            self.icons[index + 2 * self.icons_per_row] is not None and self.icons[index + 2 * self.icons_per_row].icon_type == icon_type):
+                            return True
+            return False
+

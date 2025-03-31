@@ -416,7 +416,7 @@ screen level_selection_screen():
     fixed:
         # Level 1 button
         imagebutton:
-            idle "gui/button/Level1Button.png"  # Provide your Level 1 button image or use a transparent image.
+            auto "gui/button/Level1Button_%s.png"  # Provide your Level 1 button image or use a transparent image.
             action Jump("level_1")
             xpos 1
             ypos 30
@@ -424,7 +424,7 @@ screen level_selection_screen():
 
         # Level 2 button
         imagebutton:
-            idle "gui/button/Level2Button.png"
+            auto "gui/button/Level2Button_%s.png"
             action Jump("level_2")
             xpos 1
             ypos 32
@@ -432,7 +432,7 @@ screen level_selection_screen():
 
         # Level 3 button
         imagebutton:
-            idle "gui/button/Level3Button.png"
+            auto "gui/button/Level3Button_%s.png"
             action Jump("level_3")
             xpos 4
             ypos 30
@@ -440,7 +440,7 @@ screen level_selection_screen():
 
         # Level 4 button
         imagebutton:
-            idle "gui/button/Level4Button.png"
+            auto "gui/button/Level4Button_%s.png"
             action Jump("level_4")
             xpos 4
             ypos 32
@@ -448,7 +448,7 @@ screen level_selection_screen():
 
         # Back button to return to main menu
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Return()  
             xpos 1
             ypos 1
@@ -464,22 +464,22 @@ screen level_1_preview():
     fixed:
         # Play button: leads to Level 1 sublevel page
         imagebutton:
-            idle "gui/button/PlayButton.png"
+            auto "gui/button/PlayButton_%s.png"
             action Jump("sublevel_level1")
-            xpos 555        
+            xpos 555         
             ypos -95
             focus_mask True
 
         # Home button: returns to level selection
         imagebutton:
-            idle "gui/button/HomeButton.png"
+            auto "gui/button/HomeButton_%s.png"
             action Jump("level_selection")
             xpos 575        
             ypos 1
             focus_mask True
 
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Return()  
             xpos 1
             ypos 1
@@ -494,14 +494,14 @@ screen level_2_preview():
     
     fixed:
         imagebutton:
-            idle "gui/button/PlayButton.png"
+            auto "gui/button/PlayButton_%s.png"
             action Jump("sublevel_level2")
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
-            idle "gui/button/HomeButton.png"
+            auto "gui/button/HomeButton_%s.png"
             action Jump("level_selection")
             xpos 575        
             ypos 1
@@ -509,7 +509,7 @@ screen level_2_preview():
 
         # Back button to return to main menu
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Return()  
             xpos 1
             ypos 1
@@ -523,14 +523,14 @@ screen level_3_preview():
     
     fixed:
         imagebutton:
-            idle "gui/button/PlayButton.png"
+            auto "gui/button/PlayButton_%s.png"
             action Jump("sublevel_level3")
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
-            idle "gui/button/HomeButton.png"
+            auto "gui/button/HomeButton_%s.png"
             action Jump("level_selection")
             xpos 575        
             ypos 1
@@ -538,7 +538,7 @@ screen level_3_preview():
 
         # Back button to return to main menu
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Return()  
             xpos 1
             ypos 1
@@ -553,14 +553,14 @@ screen level_4_preview():
     
     fixed:
         imagebutton:
-            idle "gui/button/PlayButton.png"
+            auto "gui/button/PlayButton_%s.png"
             action Jump("sublevel_level4")
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
-            idle "gui/button/HomeButton.png"
+            auto "gui/button/HomeButton_%s.png"
             action Jump("level_selection")
             xpos 575        
             ypos 1
@@ -568,7 +568,7 @@ screen level_4_preview():
 
         # Back button to return to main menu
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Return()  
             xpos 1
             ypos 1
@@ -582,7 +582,7 @@ screen sublevel_hut_screen():
     fixed:
         # Sublevel 1 button
         imagebutton:
-            idle "gui/button/Sublevel1Button.png"
+            auto "gui/button/Sublevel1Button_%s.png"
             action Jump("hut_sublevel_1")
             xpos -656
             ypos -45
@@ -590,7 +590,7 @@ screen sublevel_hut_screen():
 
         # Sublevel 2 button
         imagebutton:
-            idle "gui/button/Sublevel2Button.png"
+            auto "gui/button/Sublevel2Button_%s.png"
             action Jump("hut_sublevel_2")
             xpos -168
             ypos -275
@@ -598,7 +598,7 @@ screen sublevel_hut_screen():
 
         # Sublevel 3 button
         imagebutton:
-            idle "gui/button/Sublevel3Button.png"
+            auto "gui/button/Sublevel3Button_%s.png"
             action Jump("hut_sublevel_3")
             xpos 45
             ypos 100
@@ -606,7 +606,7 @@ screen sublevel_hut_screen():
 
         # Sublevel 4 button
         imagebutton:
-            idle "gui/button/Sublevel4Button.png"
+            auto "gui/button/Sublevel4Button_%s.png"
             action Jump("hut_sublevel_4")
             xpos 483
             ypos -68
@@ -614,7 +614,7 @@ screen sublevel_hut_screen():
 
         # Home button to return to level 1 preview
         imagebutton:
-            idle "gui/button/BackButton.png"
+            auto "gui/button/BackButton_%s.png"
             action Jump("level_1")
             xpos 1
             ypos 1

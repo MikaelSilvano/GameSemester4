@@ -120,3 +120,6 @@ label start:
 label delete_matches_callback(game_manager, matches, check):
     $ game_manager._delete_matches_callback(matches, check)
     return
+
+transform move_anim(new_x, new_y):
+    linear 0.3 xpos new_x ypos new_y

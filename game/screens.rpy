@@ -612,12 +612,348 @@ screen sublevel_hut_screen():
             ypos -68
             focus_mask True
 
+        # Next button to jump to level selection
+        imagebutton:
+            auto "gui/button/NextButton1_%s.png"
+            action Jump("level_selection")
+            xpos 765
+            ypos -10
+            focus_mask True
+
         # Home button to return to level 1 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
             action Jump("level_1")
             xpos 1
             ypos 1
+            focus_mask True
+
+screen sublevel_house_screen():
+    tag menu
+    modal True
+    add "images/Screens/SublevelHouse.png"  # Background for House sublevels
+
+    fixed:
+        # Five sublevel buttons
+        imagebutton:
+            auto "gui/button/Sublevel1Button_%s.png"
+            action Jump("house_sublevel_1")
+            xpos -742
+            ypos 0
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel2Button_%s.png"
+            action Jump("house_sublevel_2")
+            xpos -328
+            ypos -257
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel3Button_%s.png"
+            action Jump("house_sublevel_3")
+            xpos -139
+            ypos 145
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel4Button_%s.png"
+            action Jump("house_sublevel_4")
+            xpos 139
+            ypos -250
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel5Button_%s.png"
+            action Jump("house_sublevel_5")
+            xpos 412
+            ypos 90
+            focus_mask True
+
+        # Next button to jump to level selection
+        imagebutton:
+            auto "gui/button/NextButton2_%s.png"
+            action Jump("level_selection")
+            xpos 675
+            ypos -1
+            focus_mask True
+
+        # Home button to return to level 2 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_2")
+            xpos 1
+            ypos 1
+            focus_mask True
+
+screen mansion_sublevel1_screen():
+    tag menu
+    modal True
+    add "images/Screens/MansionSublevel1.png"  # UI for first page (sublevels 1-5)
+
+    fixed:
+        # Five sublevel buttons for sublevels 1 to 5
+        imagebutton:
+            auto "gui/button/Sublevel1Button_%s.png"
+            action Jump("mansion_sublevel_1")
+            xpos -742
+            ypos 0
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel2Button_%s.png"
+            action Jump("mansion_sublevel_2")
+            xpos -328
+            ypos -257
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel3Button_%s.png"
+            action Jump("mansion_sublevel_3")
+            xpos -139
+            ypos 145
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel4Button_%s.png"
+            action Jump("mansion_sublevel_4")
+            xpos 139
+            ypos -250
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel5Button_%s.png"
+            action Jump("mansion_sublevel_5")
+            xpos 412
+            ypos 90
+            focus_mask True
+
+        # Next button to jump to page 2
+        imagebutton:
+            auto "gui/button/NextButton2_%s.png"
+            action Jump("level_3_page2")
+            xpos 675
+            ypos 1
+            focus_mask True
+
+        # Home button to return to level 3 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_3")
+            xpos 1
+            ypos 1
+            focus_mask True
+
+
+screen mansion_sublevel2_screen():
+    tag menu
+    modal True
+    add "images/Screens/MansionSublevel2.png"  # UI for second page (sublevels 6-8)
+
+    fixed:
+        # Three sublevel buttons for sublevels 6 to 8
+        imagebutton:
+            auto "gui/button/Sublevel6Button_%s.png"
+            action Jump("mansion_sublevel_6")
+            xpos -633
+            ypos 5
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel7Button_%s.png"
+            action Jump("mansion_sublevel_7")
+            xpos -115
+            ypos -251
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel8Button_%s.png"
+            action Jump("mansion_sublevel_8")
+            xpos 210
+            ypos 131
+            focus_mask True
+
+        # Previous button to return to page 1
+        imagebutton:
+            auto "gui/button/PreviousButton_%s.png"
+            action Jump("mansion_sublevel1")
+            xpos -650
+            ypos 0
+            focus_mask True
+
+        # Next button to jump to level selection
+        imagebutton:
+            auto "gui/button/NextButton2_%s.png"
+            action Jump("level_selection")
+            xpos 675
+            ypos 1
+            focus_mask True
+
+        # Home button to return to level 3 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_3")
+            xpos 1
+            ypos 1
+            focus_mask True
+
+screen apartment_sublevel1_screen():
+    tag menu
+    modal True
+    add "images/Screens/ApartmentSublevel1.png"  # UI for first page (sublevels 1-5)
+
+    fixed:
+        # Five sublevel buttons for sublevels 1 to 5
+        imagebutton:
+            auto "gui/button/Sublevel1Button_%s.png"
+            action Jump("apartment_sublevel_1")
+            xpos 100
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel2Button_%s.png"
+            action Jump("apartment_sublevel_2")
+            xpos 250
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel3Button_%s.png"
+            action Jump("apartment_sublevel_3")
+            xpos 400
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel4Button_%s.png"
+            action Jump("apartment_sublevel_4")
+            xpos 550
+            ypos 300
+            focus_mask True
+
+        # Next button to jump to page 2
+        imagebutton:
+            auto "gui/button/NextButton_%s.png"
+            action Jump("level_4_page2")
+            xpos 700
+            ypos 500
+            focus_mask True
+
+        # Home button to return to level 4 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_4")
+            xpos 1
+            ypos 1
+            focus_mask True
+
+screen apartment_sublevel2_screen():
+    tag menu
+    modal True
+    add "images/Screens/ApartmentSublevel2.png"  # UI for second page (sublevels 5-8)
+
+    fixed:
+        imagebutton:
+            auto "gui/button/Sublevel5Button_%s.png"
+            action Jump("apartment_sublevel_5")
+            xpos 700
+            ypos 300
+            focus_mask True
+        
+        imagebutton:
+            auto "gui/button/Sublevel6Button_%s.png"
+            action Jump("apartment_sublevel_6")
+            xpos 200
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel7Button_%s.png"
+            action Jump("apartment_sublevel_7")
+            xpos 400
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel8Button_%s.png"
+            action Jump("apartment_sublevel_8")
+            xpos 600
+            ypos 300
+            focus_mask True
+
+        # Previous button to return to page 1
+        imagebutton:
+            auto "gui/button/PreviousButton_%s.png"
+            action Jump("apartment_sublevel1")
+            xpos 50
+            ypos 500
+            focus_mask True
+
+        # Next button to jump to page 2
+        imagebutton:
+            auto "gui/button/NextButton_%s.png"
+            action Jump("level_4_page2")
+            xpos 700
+            ypos 500
+            focus_mask True
+
+        # Home button to return to level 4 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_4")
+            xpos 10
+            ypos 10
+            focus_mask True
+
+screen apartment_sublevel3_screen():
+    tag menu
+    modal True
+    add "images/Screens/ApartmentSublevel3.png"  # UI for third page (sublevels 9-12)
+
+    fixed:
+        imagebutton:
+            auto "gui/button/Sublevel9Button_%s.png"
+            action Jump("apartment_sublevel_9")
+            xpos 700
+            ypos 300
+            focus_mask True
+        
+        imagebutton:
+            auto "gui/button/Sublevel10Button_%s.png"
+            action Jump("apartment_sublevel_10")
+            xpos 200
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel11Button_%s.png"
+            action Jump("apartment_sublevel_11")
+            xpos 400
+            ypos 300
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel12Button_%s.png"
+            action Jump("apartment_sublevel_12")
+            xpos 600
+            ypos 300
+            focus_mask True
+
+        # Previous button to return to page 1
+        imagebutton:
+            auto "gui/button/PreviousButton_%s.png"
+            action Jump("apartment_sublevel2")
+            xpos 50
+            ypos 500
+            focus_mask True
+
+        # Home button to return to level 4 preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_4")
+            xpos 10
+            ypos 10
             focus_mask True
 
 ## Game Menu screen ############################################################

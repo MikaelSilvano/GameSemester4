@@ -1,23 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 104, in script call
-    call setup_icons()
-  File "game/script.rpy", line 18, in script
-    call screen Match_Three
+  File "game/classScripts/LevelManaeger.rpy", line 174, in script
+    call screen mansion_sublevel1_screen
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/classScripts/GridManager.rpy", line 103, in handle_event
-    icon.update_hover_state(mouse_x, mouse_y)
-AttributeError: 'Icon' object has no attribute 'update_hover_state'
+  File "game/screens.rpy", line 689, in execute
+    screen mansion_sublevel1_screen():
+  File "game/screens.rpy", line 689, in execute
+    screen mansion_sublevel1_screen():
+  File "game/screens.rpy", line 694, in execute
+    fixed:
+  File "game/screens.rpy", line 732, in execute
+    imagebutton:
+Exception: Imagebutton does not have a idle image. (auto='gui/button/NextButton_%s.png').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 104, in script call
-    call setup_icons()
-  File "game/script.rpy", line 18, in script
-    call screen Match_Three
+  File "game/classScripts/LevelManaeger.rpy", line 174, in script
+    call screen mansion_sublevel1_screen
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
     self.call("execute")
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
@@ -32,33 +34,37 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 3286, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 791, in event
-    rv = self.child.event(ev, x, y, st)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/transform.py", line 1083, in event
-    rv = d.event(ev, cx, cy, st)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/particle.py", line 333, in event
-    return self.event_function(ev, x, y, st)
-  File "game/classScripts/GridManager.rpy", line 103, in handle_event
-    icon.update_hover_state(mouse_x, mouse_y)
-AttributeError: 'Icon' object has no attribute 'update_hover_state'
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 480, in visit_all
+    callback(self)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 491, in per_interact
+    self.update()
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 689, in execute
+    screen mansion_sublevel1_screen():
+  File "game/screens.rpy", line 689, in execute
+    screen mansion_sublevel1_screen():
+  File "game/screens.rpy", line 694, in execute
+    fixed:
+  File "game/screens.rpy", line 732, in execute
+    imagebutton:
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 975, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 969, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='gui/button/NextButton_%s.png').
 
 macOS-15.3.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Match 3 Prototype 0.1
-Tue Apr  1 11:49:56 2025
+Tue Apr  1 12:21:25 2025

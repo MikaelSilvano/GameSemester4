@@ -28,33 +28,19 @@ init python:
             return new_x, new_y
 
         def snap_to_grid(self):
-            """Force the tile to its correct grid cell position (with an optional animation)."""
+            """Force the tile's position to its proper grid cell based on its index."""
             new_x, new_y = self.compute_grid_position()
             self.x = new_x
             self.y = new_y
             if self.sprite:
+                # Animate to the correct position.
                 self.sprite.child = move_anim(new_x, new_y)
 
         def update_sprite(self):
-            """Update the sprite image to reflect the current tile type."""
+            """Reassign the sprite's image so that it reflects the tile's current type."""
             idle_image = Image("Icons/{}.png".format(self.icon_type))
             if self.sprite:
                 self.sprite.child = Transform(child=idle_image, zoom=0.08)
-
-        def update_hover_state(self, mouse_x, mouse_y):
-            """
-            Check if the mouse is within this tile's bounds.
-            If yes, apply a hover effect by increasing the sprite's zoom.
-            Otherwise, reset the zoom.
-            """
-            # Use the computed grid position so that the tile is anchored.
-            tile_x, tile_y = self.compute_grid_position()
-            if tile_x <= mouse_x <= tile_x + grid.icon_size and tile_y <= mouse_y <= tile_y + grid.icon_size:
-                if self.sprite:
-                    self.sprite.zoom = 1.2  # enlarge on hover (adjust as needed)
-            else:
-                if self.sprite:
-                    self.sprite.zoom = 1.0  # normal size
 
         def start_drag(self, mouse_x, mouse_y):
             """Called when the tile is picked up. Record its original grid position and index."""
@@ -62,13 +48,14 @@ init python:
             self.is_dragging = True
             self.drag_offset_x = mouse_x
             self.drag_offset_y = mouse_y
+            # Record the original grid position and index.
             self.orig_position = self.compute_grid_position()
             self.orig_index = self.index
             self.locked_axis = None
             self.swap_attempted = False
 
         def update_drag(self, mouse_x, mouse_y):
-            """Update the tile's position during dragging and attempt a swap if possible."""
+            """Called while dragging. Updates the tile's position and attempts a swap if possible."""
             if not self.is_dragging:
                 return
 
@@ -77,11 +64,12 @@ init python:
             lock_threshold = 15
             snap_threshold = 120
 
+            # Determine drag axis.
             if self.locked_axis is None:
                 if abs(dx) >= lock_threshold or abs(dy) >= lock_threshold:
                     self.locked_axis = "x" if abs(dx) >= abs(dy) else "y"
 
-            # Base movement on the original grid cell.
+            # Base the movement on the original grid cell.
             orig_x, orig_y = self.orig_position
             if self.locked_axis == "x":
                 self.x = orig_x + dx
@@ -92,6 +80,7 @@ init python:
                 if abs(dy) >= snap_threshold:
                     self.stop_drag(animate=True)
 
+            # Attempt a swap only once.
             if not self.swap_attempted:
                 swap_index = self.get_swap_index()
                 if swap_index is not None:
@@ -102,7 +91,8 @@ init python:
         def try_swap(self, neighbor_index):
             """
             Attempt to swap this tile with the neighbor at neighbor_index.
-            If no valid match is created, revert the swap and snap back.
+            Record the current (grid-computed) positions and indices, perform the swap,
+            check for a valid match, and if invalid, revert the swap.
             """
             neighbor = grid.icons[neighbor_index]
             # Record original grid positions.
@@ -111,37 +101,41 @@ init python:
             orig_self_index = self.orig_index
             orig_neighbor_index = neighbor.index
 
-            # Perform the swap.
+            # Perform the swap (update grid and positions, animate).
             self.swap_with_neighbor(neighbor_index, animate=True)
 
-            # Check for a match.
+            # Check for a valid match.
             if not grid.check_for_match():
-                # Invalid swap: revert.
+                # Invalid swap: revert it.
                 self.swap_with_neighbor(neighbor_index, animate=False)
+                # Restore original grid indices.
                 self.index = orig_self_index
                 neighbor.index = orig_neighbor_index
                 grid.icons[self.index] = self
                 grid.icons[neighbor.index] = neighbor
+                # Snap both tiles back to their original grid positions.
                 self.x, self.y = orig_self_pos
                 neighbor.x, neighbor.y = orig_neighbor_pos
                 self.snap_to_grid()
                 neighbor.snap_to_grid()
+                # Update sprites so the visuals match.
                 self.update_sprite()
                 neighbor.update_sprite()
                 self.is_dragging = False
                 neighbor.is_dragging = False
                 return False
             else:
-                # Valid swap: update the original state.
+                # Valid swap: update the original state to the new grid cell.
                 self.orig_position = self.compute_grid_position()
                 self.orig_index = self.index
                 neighbor.orig_position = neighbor.compute_grid_position()
+                # Disable dragging.
                 self.is_dragging = False
                 neighbor.is_dragging = False
                 return True
 
         def stop_drag(self, animate=False):
-            """End the drag operation; if animate is True, snap back to grid."""
+            """Ends the drag operation. If animate is True, snap back to grid cell."""
             if animate:
                 self.snap_to_grid()
             self.is_dragging = False
@@ -150,29 +144,33 @@ init python:
             return self.get_swap_index()
 
         def get_swap_index(self):
-            """Return the index of a neighboring tile eligible for swapping, or None."""
+            """Return the index of an adjacent neighbor eligible for swapping, or None."""
             right_index = self.index + 1
             bot_index = self.index + grid.icons_per_row
             left_index = self.index - 1
             top_index = self.index - grid.icons_per_row
 
             valid_swaps = []
+            # Right neighbor (if not at far right)
             if self.index % grid.icons_per_row < grid.icons_per_row - 1:
                 if right_index < grid.grid_size and grid.icons[right_index] is not None and self.is_inside(grid.icons[right_index]):
                     valid_swaps.append(right_index)
+            # Bottom neighbor.
             if bot_index < grid.grid_size and grid.icons[bot_index] is not None and self.is_inside(grid.icons[bot_index]):
                 valid_swaps.append(bot_index)
+            # Left neighbor (if not at far left)
             if self.index % grid.icons_per_row > 0:
                 if left_index >= 0 and grid.icons[left_index] is not None and self.is_inside(grid.icons[left_index]):
                     valid_swaps.append(left_index)
+            # Top neighbor.
             if top_index >= 0 and grid.icons[top_index] is not None and self.is_inside(grid.icons[top_index]):
                 valid_swaps.append(top_index)
             return valid_swaps[0] if valid_swaps else None
 
         def is_inside(self, neighbor):
             """
-            Check if the center of the neighbor tile is within this tile's grid bounds.
-            This helps decide whether a swap is allowed.
+            Check if the neighbor tile's center is within this tile's bounds.
+            This is used to determine if a swap is allowed.
             """
             center_x = neighbor.x + grid.icon_size / 2
             center_y = neighbor.y + grid.icon_size / 2
@@ -180,7 +178,7 @@ init python:
                     self.y <= center_y <= self.y + grid.icon_size)
 
         def check_corners(self):
-            """(Optional) Debug method to print diagonal swap possibilities."""
+            # (Optional) Debug method to print diagonal swap possibilities.
             top_left_index = self.index - grid.icons_per_row - 1
             top_right_index = self.index - grid.icons_per_row + 1
             bottom_left_index = self.index + grid.icons_per_row - 1
@@ -213,7 +211,7 @@ init python:
         def swap_with_neighbor(self, neighbor_index, animate=False):
             """
             Swap this tile with the neighbor at neighbor_index.
-            Update grid data, positions, and optionally animate the swap.
+            This method updates the grid data, the tile positions, and optionally animates the swap.
             """
             neighbor = grid.icons[neighbor_index]
             # Swap in the grid list.

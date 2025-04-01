@@ -1,19 +1,19 @@
-2025-04-01 04:53:41 UTC
+2025-04-01 05:36:21 UTC
 macOS-15.3.2-arm64-arm-64bit
 Ren'Py 8.3.4.24120703
 
 Early init took 0.03s
 Loading error handling took 0.02s
-Loading script took 0.08s
+Loading script took 0.09s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.02s
+Running init code took 0.03s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.01s
 Index archives took 0.00s
 Backing up script files to '/Users/vano/Library/RenPy/backups/GameSemester4':
-Dump and make backups took 0.02s
+Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.02s
@@ -29,7 +29,7 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.22s
+Interface start took 0.20s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1512, 982)
@@ -41,43 +41,85 @@ Version: b'2.1 Metal - 89.3'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1006, 566) drawable=(2012, 1132)
 Maximum texture size: 4096x4096
-Matched: 4 rocks
-Matched: 7 steel
-Matched: 3 wood
+Matched: 6 wood
 Matched: 3 brick
-Matched: 3 wood
-Matched: 3 steel
-Matched: 5 glass
-Matched: 3 rocks
-Matched: 3 wood
-Matched: 3 rocks
-Matched: 11 rocks
-Matched: 4 wood
-Matched: 5 brick
+Matched: 5 rocks
 Matched: 4 steel
-Matched: 4 rocks
+Matched: 6 brick
+Matched: 3 wood
+Matched: 7 brick
+Matched: 5 rocks
+Matched: 6 steel
 Matched: 3 brick
-Matched: 6 glass
-Matched: 4 wood
+Matched: 3 brick
+Matched: 3 rocks
+Matched: 11 wood
+Matched: 7 wood
+Matched: 3 steel
+Matched: 3 wood
+Matched: 4 steel
 Matched: 3 brick
 Matched: 3 steel
-Matched: 3 glass
 Matched: 3 brick
 Matched: 3 wood
-Matched: 3 rocks
-Matched: 3 glass
-Matched: 7 steel
 Matched: 7 rocks
 Matched: 6 rocks
-Matched: 6 brick
-Matched: 6 rocks
-Matched: 6 wood
-Matched: 6 rocks
-Matched: 10 brick
-Matched: 9 steel
-Matched: 6 wood
 Matched: 3 glass
-Matched: 6 wood
-1026
+Matched: 3 steel
+Matched: 3 glass
 Matched: 3 brick
-1045
+Matched: 3 rocks
+Matched: 3 steel
+Matched: 4 glass
+Matched: 4 wood
+Matched: 3 brick
+Matched: 3 brick
+Matched: 4 glass
+Matched: 3 wood
+Matched: 3 rocks
+Matched: 3 steel
+Matched: 4 brick
+Matched: 3 glass
+1002
+Matched: 3 steel
+1021
+Matched: 3 rocks
+1040
+Matched: 3 glass
+1059
+Matched: 3 steel
+1078
+Matched: 3 brick
+1097
+Matched: 3 wood
+1116
+Matched: 4 wood
+1141
+Matched: 3 glass
+1160
+Matched: 3 rocks
+1179
+Matched: 3 steel
+1198
+Matched: 4 brick
+1223
+Matched: 3 glass
+1242
+Matched: 4 brick
+1267
+Matched: 3 rocks
+1286
+Matched: 6 rocks
+1324
+Matched: 6 brick
+1362
+Matched: 3 rocks
+1381
+Matched: 4 glass
+1406
+Matched: 3 steel
+1425
+Matched: 3 wood
+1444
+Matched: 4 steel
+1469

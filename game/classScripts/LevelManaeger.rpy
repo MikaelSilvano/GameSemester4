@@ -151,6 +151,18 @@ label apartment_sublevel_7:
 label apartment_sublevel_8:
     "Apartment Sublevel 8 chosen."
     return
+label apartment_sublevel_9:
+    "Apartment Sublevel 9 chosen."
+    return
+label apartment_sublevel_10:
+    "Apartment Sublevel 10 chosen."
+    return
+label apartment_sublevel_11:
+    "Apartment Sublevel 11 chosen."
+    return
+label apartment_sublevel_12:
+    "Apartment Sublevel 12 chosen."
+    return
 
 ##########################################################################
 ## Level Selection
@@ -188,6 +200,11 @@ label mansion_sublevel1:
 label sublevel_level4:
     hide screen level_4_preview
     call screen apartment_sublevel1_screen
+    return
+
+label level_4_page3:
+    hide screen apartment_sublevel2_screen
+    call screen apartment_sublevel3_screen
     return
 
 label level_4_page2:

@@ -1,25 +1,29 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/classScripts/LevelManaeger.rpy", line 174, in script
-    call screen mansion_sublevel1_screen
+  File "game/script.rpy", line 105, in script call
+    call setup_icons()
+  File "game/script.rpy", line 18, in script
+    call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 689, in execute
-    screen mansion_sublevel1_screen():
-  File "game/screens.rpy", line 689, in execute
-    screen mansion_sublevel1_screen():
-  File "game/screens.rpy", line 694, in execute
-    fixed:
-  File "game/screens.rpy", line 732, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto='gui/button/NextButton_%s.png').
+  File "game/screens.rpy", line 988, in execute
+    screen timer_screen():
+  File "game/screens.rpy", line 988, in execute
+    screen timer_screen():
+  File "game/screens.rpy", line 995, in execute
+    if time_left <= 0:
+  File "game/screens.rpy", line 996, in execute
+    timer 0.0 action [ Hide("timer_screen"), Jump("win_screen") ] repeat False
+Exception: A timer's delay must be > 0.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/classScripts/LevelManaeger.rpy", line 174, in script
-    call screen mansion_sublevel1_screen
+  File "game/script.rpy", line 105, in script call
+    call setup_icons()
+  File "game/script.rpy", line 18, in script
+    call screen Match_Three
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
     self.call("execute")
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
@@ -50,21 +54,19 @@ Full traceback:
     self.update()
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 697, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 689, in execute
-    screen mansion_sublevel1_screen():
-  File "game/screens.rpy", line 689, in execute
-    screen mansion_sublevel1_screen():
-  File "game/screens.rpy", line 694, in execute
-    fixed:
-  File "game/screens.rpy", line 732, in execute
-    imagebutton:
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 969, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='gui/button/NextButton_%s.png').
+  File "game/screens.rpy", line 988, in execute
+    screen timer_screen():
+  File "game/screens.rpy", line 988, in execute
+    screen timer_screen():
+  File "game/screens.rpy", line 995, in execute
+    if time_left <= 0:
+  File "game/screens.rpy", line 996, in execute
+    timer 0.0 action [ Hide("timer_screen"), Jump("win_screen") ] repeat False
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/behavior.py", line 2668, in __init__
+    raise Exception("A timer's delay must be > 0.")
+Exception: A timer's delay must be > 0.
 
 macOS-15.3.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Match 3 Prototype 0.1
-Tue Apr  1 12:21:25 2025
+Wed Apr  2 19:50:24 2025

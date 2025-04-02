@@ -1,6 +1,13 @@
 ﻿################################################################################
 ## Initialization
 ################################################################################
+init python:
+    import time
+
+    def format_time(seconds):
+        minutes = seconds // 60
+        secs = seconds % 60
+        return "{:02d}:{:02d}".format(minutes, secs)
 
 init offset = -1
 
@@ -412,6 +419,7 @@ screen level_selection_screen():
     modal True
     # Display the level selection background image.
     add "images/Screens/Level_Selection.png"
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         # Level 1 button
@@ -460,6 +468,7 @@ screen level_1_preview():
     modal True
     # Use the level preview background for Level 1 (Hut)
     add "images/Screens/HutLevel.png"
+    key "K_ESCAPE" action NullAction()
     
     fixed:
         # Play button: leads to Level 1 sublevel page
@@ -491,6 +500,7 @@ screen level_2_preview():
     modal True
     # Background for Level 2 (House)
     add "images/Screens/HouseLevel.png"
+    key "K_ESCAPE" action NullAction()
     
     fixed:
         imagebutton:
@@ -520,6 +530,7 @@ screen level_3_preview():
     modal True
     # Background for Level 3 (Mansion)
     add "images/Screens/MansionLevel.png"
+    key "K_ESCAPE" action NullAction()
     
     fixed:
         imagebutton:
@@ -550,7 +561,8 @@ screen level_4_preview():
     modal True
     # Background for Level 4 (Apartment)
     add "images/Screens/ApartmentLevel.png"
-    
+    key "K_ESCAPE" action NullAction()
+
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
@@ -578,6 +590,7 @@ screen sublevel_hut_screen():
     tag menu
     modal True
     add "images/Screens/SublevelHut.png"  # Background for Hut sublevels
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         # Sublevel 1 button
@@ -632,6 +645,7 @@ screen sublevel_house_screen():
     tag menu
     modal True
     add "images/Screens/SublevelHouse.png"  # Background for House sublevels
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         # Five sublevel buttons
@@ -690,6 +704,7 @@ screen mansion_sublevel1_screen():
     tag menu
     modal True
     add "images/Screens/MansionSublevel1.png"  # UI for first page (sublevels 1-5)
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         # Five sublevel buttons for sublevels 1 to 5
@@ -749,6 +764,7 @@ screen mansion_sublevel2_screen():
     tag menu
     modal True
     add "images/Screens/MansionSublevel2.png"  # UI for second page (sublevels 6-8)
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         # Three sublevel buttons for sublevels 6 to 8
@@ -801,41 +817,104 @@ screen apartment_sublevel1_screen():
     tag menu
     modal True
     add "images/Screens/ApartmentSublevel1.png"  # UI for first page (sublevels 1-5)
+    key "K_ESCAPE" action NullAction()
 
     fixed:
-        # Five sublevel buttons for sublevels 1 to 5
+        # Sublevel 1 button
         imagebutton:
             auto "gui/button/Sublevel1Button_%s.png"
             action Jump("apartment_sublevel_1")
-            xpos 100
-            ypos 300
+            xpos -656
+            ypos -45
             focus_mask True
 
+        # Sublevel 2 button
         imagebutton:
             auto "gui/button/Sublevel2Button_%s.png"
             action Jump("apartment_sublevel_2")
-            xpos 250
-            ypos 300
+            xpos -168
+            ypos -275
             focus_mask True
 
+        # Sublevel 3 button
         imagebutton:
             auto "gui/button/Sublevel3Button_%s.png"
             action Jump("apartment_sublevel_3")
-            xpos 400
-            ypos 300
+            xpos 45
+            ypos 100
             focus_mask True
 
+        # Sublevel 4 button
         imagebutton:
             auto "gui/button/Sublevel4Button_%s.png"
             action Jump("apartment_sublevel_4")
-            xpos 550
-            ypos 300
+            xpos 483
+            ypos -68
             focus_mask True
 
         # Next button to jump to page 2
         imagebutton:
-            auto "gui/button/NextButton_%s.png"
+            auto "gui/button/NextButton1_%s.png"
             action Jump("level_4_page2")
+            xpos 765
+            ypos -10
+            focus_mask True
+
+        # Home button to return to level preview
+        imagebutton:
+            auto "gui/button/BackButton_%s.png"
+            action Jump("level_4")
+            xpos 1
+            ypos 1
+            focus_mask True
+
+screen apartment_sublevel2_screen():
+    tag menu
+    modal True
+    add "images/Screens/ApartmentSublevel2.png"  # UI for second page (sublevels 5-8)
+    key "K_ESCAPE" action NullAction()
+
+    fixed:
+        imagebutton:
+            auto "gui/button/Sublevel5Button_%s.png"
+            action Jump("apartment_sublevel_5")
+            xpos -478
+            ypos 45
+            focus_mask True
+        
+        imagebutton:
+            auto "gui/button/Sublevel6Button_%s.png"
+            action Jump("apartment_sublevel_6")
+            xpos -113
+            ypos -196
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel7Button_%s.png"
+            action Jump("apartment_sublevel_7")
+            xpos 158
+            ypos 100
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/Sublevel8Button_%s.png"
+            action Jump("apartment_sublevel_8")
+            xpos 532
+            ypos -68
+            focus_mask True
+
+        # Previous button to return to page 1
+        imagebutton:
+            auto "gui/button/PreviousButton_%s.png"
+            action Jump("apartment_sublevel1")
+            xpos 50
+            ypos 500
+            focus_mask True
+
+        # Next button to jump to page 3
+        imagebutton:
+            auto "gui/button/NextButton1_%s.png"
+            action Jump("level_4_page3")
             xpos 700
             ypos 500
             focus_mask True
@@ -848,103 +927,54 @@ screen apartment_sublevel1_screen():
             ypos 1
             focus_mask True
 
-screen apartment_sublevel2_screen():
-    tag menu
-    modal True
-    add "images/Screens/ApartmentSublevel2.png"  # UI for second page (sublevels 5-8)
-
-    fixed:
-        imagebutton:
-            auto "gui/button/Sublevel5Button_%s.png"
-            action Jump("apartment_sublevel_5")
-            xpos 700
-            ypos 300
-            focus_mask True
-        
-        imagebutton:
-            auto "gui/button/Sublevel6Button_%s.png"
-            action Jump("apartment_sublevel_6")
-            xpos 200
-            ypos 300
-            focus_mask True
-
-        imagebutton:
-            auto "gui/button/Sublevel7Button_%s.png"
-            action Jump("apartment_sublevel_7")
-            xpos 400
-            ypos 300
-            focus_mask True
-
-        imagebutton:
-            auto "gui/button/Sublevel8Button_%s.png"
-            action Jump("apartment_sublevel_8")
-            xpos 600
-            ypos 300
-            focus_mask True
-
-        # Previous button to return to page 1
-        imagebutton:
-            auto "gui/button/PreviousButton_%s.png"
-            action Jump("apartment_sublevel1")
-            xpos 50
-            ypos 500
-            focus_mask True
-
-        # Next button to jump to page 2
-        imagebutton:
-            auto "gui/button/NextButton_%s.png"
-            action Jump("level_4_page2")
-            xpos 700
-            ypos 500
-            focus_mask True
-
-        # Home button to return to level 4 preview
-        imagebutton:
-            auto "gui/button/BackButton_%s.png"
-            action Jump("level_4")
-            xpos 10
-            ypos 10
-            focus_mask True
-
 screen apartment_sublevel3_screen():
     tag menu
     modal True
     add "images/Screens/ApartmentSublevel3.png"  # UI for third page (sublevels 9-12)
+    key "K_ESCAPE" action NullAction()
 
     fixed:
         imagebutton:
             auto "gui/button/Sublevel9Button_%s.png"
             action Jump("apartment_sublevel_9")
-            xpos 700
-            ypos 300
+            xpos -478
+            ypos 59
             focus_mask True
         
         imagebutton:
             auto "gui/button/Sublevel10Button_%s.png"
             action Jump("apartment_sublevel_10")
-            xpos 200
-            ypos 300
+            xpos -113
+            ypos -188
             focus_mask True
 
         imagebutton:
             auto "gui/button/Sublevel11Button_%s.png"
             action Jump("apartment_sublevel_11")
-            xpos 400
-            ypos 300
+            xpos 156
+            ypos 115
             focus_mask True
 
         imagebutton:
             auto "gui/button/Sublevel12Button_%s.png"
             action Jump("apartment_sublevel_12")
-            xpos 600
-            ypos 300
+            xpos 532
+            ypos -52
             focus_mask True
 
-        # Previous button to return to page 1
+        # Previous button to return to page 2
         imagebutton:
             auto "gui/button/PreviousButton_%s.png"
-            action Jump("apartment_sublevel2")
+            action Jump("level_4_page2")
             xpos 50
+            ypos 500
+            focus_mask True
+
+        # Next button to jump to level selection
+        imagebutton:
+            auto "gui/button/NextButton1_%s.png"
+            action Jump("level_selection")
+            xpos 700
             ypos 500
             focus_mask True
 
@@ -952,9 +982,52 @@ screen apartment_sublevel3_screen():
         imagebutton:
             auto "gui/button/BackButton_%s.png"
             action Jump("level_4")
-            xpos 10
-            ypos 10
+            xpos 1
+            ypos 1
             focus_mask True
+
+# Define our global timer variables.
+default timer_start = 0
+default time_left = 300
+
+screen timer_screen():
+    tag timer
+
+    on "show" action [SetVariable("timer_start", time.time()), SetVariable("time_left", 300)]
+
+    timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
+
+    if time_left <= 0:
+        timer 0.1 action [Hide("timer_screen"), Jump("win_screen")] repeat False
+
+    add Transform("gui/timer/TimerFrame.png", zoom=0.6) xpos 0.2 ypos 0.01
+
+    text "[format_time(time_left)]" xpos 0.499 ypos 0.16 anchor (0.5, 0.5) color "#FFFFFF"
+
+screen level_complete_screen():
+    tag menu
+    modal True
+
+    frame:
+        xfill True
+        yfill True
+        background Solid("#00000080")
+
+    add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+
+    imagebutton:
+        auto "gui/button/NextLevelButton_%s.png"
+        action Jump("hut_sublevel_2")  # Or whichever label is your next level.
+        xpos 0
+        ypos -35
+        focus_mask True
+
+    imagebutton:
+        auto "gui/button/HomeButton_%s.png"
+        action Jump("level_selection")
+        xpos 0
+        ypos 40
+        focus_mask True
 
 ## Game Menu screen ############################################################
 ##
@@ -966,75 +1039,36 @@ screen apartment_sublevel3_screen():
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-
-    style_prefix "game_menu"
-
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
-
+    tag menu
+    modal True
+    
     frame:
-        style "game_menu_outer_frame"
+        xfill True
+        yfill True
+        background Solid("#00000080")
 
-        hbox:
+    add "gui/pause/PauseFrame.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
-            frame:
-                style "game_menu_content_frame"
-
-                if scroll == "viewport":
-
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
-                        vbox:
-                            spacing spacing
-
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
-                        spacing spacing
-
-                        transclude
-
-                else:
-
-                    transclude
-
-    use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
+    imagebutton:
+        auto "gui/pause/ContinueButton_%s.png"
         action Return()
+        xalign 100
+        yalign 500
+        focus_mask True
 
-    label title
+    imagebutton:
+        auto "gui/pause/ExitButton_%s.png"
+        action MainMenu(confirm=True)
+        xalign 100
+        yalign 500
+        focus_mask True
 
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
-
+    imagebutton:
+        auto "gui/pause/PauseX_%s.png"
+        action Return()
+        xalign 100
+        yalign 100
+        focus_mask True
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty

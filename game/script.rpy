@@ -100,6 +100,7 @@ label start_game:
 
     show screen Score_UI
     show screen reset_grids
+    show screen timer_screen
 
     call setup_icons()
     return
@@ -114,11 +115,15 @@ screen result:
 
 label start:
     jump level_selection
-
     return
 
 label delete_matches_callback(game_manager, matches, check):
     $ game_manager._delete_matches_callback(matches, check)
+    return
+
+label win_screen:
+    call screen level_complete_screen
+    hide screen timer_screen
     return
 
 transform move_anim(new_x, new_y):

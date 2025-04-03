@@ -1,4 +1,7 @@
-﻿transform move_anim(new_x, new_y):
+﻿init python:
+    current_objectives = None
+
+transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
 
 transform fade_out:
@@ -89,8 +92,28 @@ screen Match_Three:
         add grid.sprite_manager:
             xpos 0
             ypos 0
+    
+    frame:
+        align (0.02, 0.25)
+        background None
+        has vbox
+        spacing 100
+
+        if current_objectives:
+            for name in current_objectives.order:
+                if name in current_objectives.Aims:
+                    $ target = current_objectives.Aims[name]
+                    $ raw = current_objectives.total_collected.get(name, 0)
+                    $ collected = min(raw, target)
+                    use objective_meter(icon_name=name, current=collected, target=target)
+
+                elif name in current_objectives.CompletedAims:
+                    $ target = current_objectives.CompletedAims[name]
+                    $ collected = target  # ✅ Display full completion
+                    use objective_meter(icon_name=name, current=collected, target=target)
 
 label start_game:
+    $ my_objectives = current_objectives  # Pull the passed-in objectives
     $ game = GameManager(moves, t_score)
     $ grid = GridManager(icpr, grid_size)
     $ grid.initialize_grid()

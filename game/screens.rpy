@@ -1058,6 +1058,9 @@ screen level_complete_screen():
         ypos 40
         focus_mask True
 
+    python:
+        current_objectives = None
+
 ## Game Menu screen ############################################################
 ##
 ## This lays out the basic common structure of a game menu screen. It's called
@@ -2016,6 +2019,27 @@ screen nvl_dialogue(dialogue):
                 text d.what:
                     id d.what_id
 
+screen objective_meter(icon_name, current, target):
+    fixed:
+        xysize (260, 64)
+
+        # 1. Meter Frame — shifted LEFT so the blue cap overlaps icon
+        frame:
+            background "UI/TargetObjectiveFrame.png"
+            xpos 20 ypos 0  # ⬅️ slide frame LEFT to wrap under icon
+            xsize 200
+            ysize 64
+            padding (0, 0, 10, 0)
+
+            # 3. Text inside bar — aligned closer to center
+            text "[current]/[target]":
+                size 32
+                color "#000000"
+                xpos 250
+                ypos 60
+        
+        # 2. Icon — LEFT SIDE
+        add Image("Icons/{}.png".format(icon_name)) xpos 30 ypos 15 xsize 148 ysize 148
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.

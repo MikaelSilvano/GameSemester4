@@ -38,6 +38,11 @@ label hut_sublevel_1:
 #       $ grid_manager = GridManager(icons_per_row=8, grid_size=64)
 #  $ grid = grid_manager  # Assign grid_manager to the global variable 'grid'
 #  $ grid_manager.initialize_grid()
+    $ current_objectives = Objectives({
+        "rocks": 3,
+        "wood": 3,
+        "glass": 3
+    })
     $ moves = 5
     $ t_score = 1000
     $ icpr = 5
@@ -47,6 +52,11 @@ label hut_sublevel_1:
     return
 
 label hut_sublevel_2:
+    $ current_objectives = Objectives({
+        "rocks": 10,
+        "wood": 10,
+        "glass": 10
+    })
     $ moves = 10
     $ t_score = 1500
     $ icpr = 6

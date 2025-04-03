@@ -1,4 +1,6 @@
 init python:
+    from collections import Counter
+    
     class GameManager:
         def __init__(self, moves, target_score):
             self.score = 0
@@ -72,7 +74,22 @@ init python:
 
         
         def delete_matches(self, matches, check):
-            # Schedule the fade-out transition in a new context.
+            # Update objectives first (before clearing icons)
+            if current_objectives:
+                icon_counts = {}
+
+                for icon in matches:
+                    icon_type = icon.icon_type
+                    icon_counts[icon_type] = icon_counts.get(icon_type, 0) + 1
+
+                for icon_type, count in icon_counts.items():
+                    decrement_amount = count // 3
+                    if decrement_amount > 0:
+                        print(f"AimsMet: {icon_type} x{decrement_amount}")
+                        current_objectives.AimsMet(icon_type, decrement_amount)
+
+                renpy.restart_interaction()
+            # Schedule the fade-out transition in a new context.if current_objectives:
             renpy.call_in_new_context("delete_matches_callback", self, matches, check)
 
 

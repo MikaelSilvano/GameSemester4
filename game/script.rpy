@@ -128,3 +128,50 @@ label win_screen:
 
 transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
+
+image backgroundnew = "images/Backgrounds/backgroundnew.png"
+image CharacterLevel1 = "images/Characters/CharacterLevel1.png"
+image SideCharacterLevel1 = "images/Characters/SideCharacterLevel1.png"
+
+transform left_side:
+    xpos 0.2       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+transform right_side:
+    xpos 0.8       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+define mainchar = Character("Ko Khrisna", color="#c8f2ff")
+define sidechar = Character("Jordan", color="#ffc8c8")
+
+label level1_intro:
+    scene backgroundnew with fade
+
+    # Show side character first
+    show SideCharacterLevel1 at right_side:
+        zoom 0.5
+        linear 0.2 zoom 1.0
+    pause 0.3
+
+    # Then main character
+    show CharacterLevel1 at left_side:
+        zoom 0.5
+        linear 0.2 zoom 1.0
+
+    sidechar "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
+    mainchar "Oh this is exciting! Where do I even start Jordan?"
+    sidechar "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
+    mainchar "Okay! I’ll show you I’ve got what it takes."
+
+    window hide
+
+    show CharacterLevel1 at left_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+    show SideCharacterLevel1 at right_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+
+    $ renpy.pause(0.2, hard=True)
+    scene black with None
+    jump sublevel_level1

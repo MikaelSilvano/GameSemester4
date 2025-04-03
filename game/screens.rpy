@@ -474,7 +474,7 @@ screen level_1_preview():
         # Play button: leads to Level 1 sublevel page
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("sublevel_level1")
+            action Jump("level1_intro")
             xpos 555         
             ypos -95
             focus_mask True

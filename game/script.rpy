@@ -129,6 +129,10 @@ label win_screen:
 transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
 
+##########################################################################
+## Level 1 Lore
+##########################################################################
+
 image backgroundnew = "images/Backgrounds/backgroundnew.png"
 image CharacterLevel1 = "images/Characters/CharacterLevel1.png"
 image SideCharacterLevel1 = "images/Characters/SideCharacterLevel1.png"
@@ -175,3 +179,56 @@ label level1_intro:
     $ renpy.pause(0.2, hard=True)
     scene black with None
     jump sublevel_level1
+
+##########################################################################
+## Level 2 Lore
+##########################################################################
+
+image hutbackground = "images/Backgrounds/backgroundnew.png" # nanti diubah
+image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
+image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
+
+transform left_side:
+    xpos 0.2       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+transform right_side:
+    xpos 0.8       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+define mainchar = Character("Ko Khrisna",color="#c8f2ff")
+define sidechar = Character("Jordan", color="#ffc8c8")
+
+label level2_intro:
+    scene hutbackground with fade
+
+    # Show side character first
+    show SideCharacterLevel2 at right_side:
+        zoom 0.5
+        linear 0.2 zoom 0.7
+    pause 0.3
+
+    # Then main character
+    show CharacterLevel2 at left_side:
+        zoom 0.2
+        linear 0.2 zoom 0.3
+
+    sidechar "Great job Ko Khrisna. You did well, look where you are now!"
+    mainchar "They all want homes. Safe ones. Beautiful ones. And… green ones."
+    sidechar "That’s why you’re here, Architect Ko Khrisna. These aren’t just houses—they’re a chance to build resilience and community."
+    mainchar "I’ve only built huts before… but I’ll try. No shortcuts, no waste right Jordan?"
+    sidechar "Exactly. Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
+    mainchar "Okay Miss Jordan, I won't let you down!"
+
+    window hide
+
+    show CharacterLevel2 at left_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+    show SideCharacterLevel2 at right_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+
+    $ renpy.pause(0.2, hard=True)
+    scene black with None
+    jump sublevel_level2

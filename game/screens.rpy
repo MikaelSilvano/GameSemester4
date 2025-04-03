@@ -505,7 +505,7 @@ screen level_2_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("sublevel_level2")
+            action Jump("level2_intro")
             xpos 555        
             ypos -95
             focus_mask True

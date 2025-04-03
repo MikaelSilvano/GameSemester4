@@ -114,8 +114,8 @@ screen result:
         text "Total Score:[game.score]" align(0.5, 0.5) color "#FFFFFF"
 
 label start:
+    play music "audio/audioEcoCity.ogg" fadein 1.0 loop
     jump level_selection
-    return
 
 label delete_matches_callback(game_manager, matches, check):
     $ game_manager._delete_matches_callback(matches, check)
@@ -125,9 +125,6 @@ label win_screen:
     call screen level_complete_screen
     hide screen timer_screen
     return
-
-transform move_anim(new_x, new_y):
-    linear 0.3 xpos new_x ypos new_y
 
 ##########################################################################
 ## Level 1 Lore
@@ -221,6 +218,94 @@ label level2_intro:
     mainchar "I’ve only built huts before… but I’ll try. No shortcuts, no waste right Jordan?"
     sidechar "Exactly. Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
     mainchar "Okay Miss Jordan, I won't let you down!"
+
+    window hide
+
+    show CharacterLevel2 at left_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+    show SideCharacterLevel2 at right_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+
+    $ renpy.pause(0.2, hard=True)
+    scene black with None
+    jump sublevel_level2
+
+##########################################################################
+## Level 3 Lore
+##########################################################################
+
+image hutbackground = "images/Backgrounds/backgroundnew.png" # nanti diubah
+image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
+image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
+
+transform left_side:
+    xpos 0.2       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+transform right_side:
+    xpos 0.8       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+define mainchar = Character("Ko Khrisna",color="#c8f2ff")
+define sidechar = Character("Jordan", color="#ffc8c8")
+
+label level3_intro:
+    scene hutbackground with fade
+
+    # Show side character first
+    show SideCharacterLevel2 at right_side:
+        zoom 0.5
+        linear 0.2 zoom 0.7
+    pause 0.3
+
+    # Then main character
+    show CharacterLevel2 at left_side:
+        zoom 0.2
+        linear 0.2 zoom 0.3
+
+    sidechar "You are making a very good progress, Ko Khrisna! Let's step up our game and build a mansion!"
+    mainchar "A mansion? Isn’t that… the opposite of sustainability?"
+    sidechar "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
+    mainchar "Alright then, let's bring up this building by using cement, metal, glass, and solar panels!"
+    sidechar "Great! No waste, no excess. Just purpose, comfort, and clean energy. This mansion will hold more people inside which will make it sustainable for living."
+    mainchar "True! And remember—what you build now influences how the world builds tomorrow."
+    sidechar "Who knew sustainability could be this stunning?"
+    mainchar "Let's get straight into it!"
+
+    window hide
+
+    show CharacterLevel2 at left_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+    show SideCharacterLevel2 at right_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+
+    $ renpy.pause(0.2, hard=True)
+    scene black with None
+    jump sublevel_level2
+
+label level4_intro:
+    scene hutbackground with fade
+
+    # Show side character first
+    show SideCharacterLevel2 at right_side:
+        zoom 0.5
+        linear 0.2 zoom 0.7
+    pause 0.3
+
+    # Then main character
+    show CharacterLevel2 at left_side:
+        zoom 0.2
+        linear 0.2 zoom 0.3
+
+    sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. Cities across the globe are asking for your designs."
+    mainchar "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
+    sidechar "You are wrong! Let’s build a smart skyscrapper where vertical gardens and solar glass is the dominance of this building. This apartment will be the model of eco-urban living."
+    mainchar "Soo... this is the future?!"
+    sidechar "No. This is the present, because you made it happen. You didn’t just build structures—you built a legacy of sustainability."
+    mainchar "What a great insight that you gave to me, let's get started then!"
+    sidechar "Yes, I am excited to see this sustainable apartment to be built ASAP!"
 
     window hide
 

@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/GridManager.rpy", line 111: is not terminated with a newline. (Check strings and parenthesis.)
-                        self.icons[i] = Icon(
+File "game/script.rpy", line 106: play requires a channel
+    play "audio/audioEcoCity.m4a" fadein 1.0 loop
+         ^
 
-Ren'Py Version: Ren'Py 8.3.6.25022803
-Thu Mar 27 10:14:17 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Thu Apr  3 14:26:23 2025

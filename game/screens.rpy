@@ -9,8 +9,29 @@ init python:
         secs = seconds % 60
         return "{:02d}:{:02d}".format(minutes, secs)
 
-init offset = -1
+    def get_sound_switch_idle(on):
+        return "gui/settingPage/SwitchOn_idle.png" if on else "gui/settingPage/SwitchOff_idle.png"
 
+    def get_sound_switch_hover(on):
+        return "gui/settingPage/SwitchOn_hover.png" if on else "gui/settingPage/SwitchOff_hover.png"
+
+    def toggle_sound_effect():
+        global sound_effect_on
+        sound_effect_on = not sound_effect_on
+
+    def toggle_bgm():
+        global bgm_on
+        bgm_on = not bgm_on
+
+        if bgm_on:
+            renpy.music.play("audio/audioEcoCity.ogg", loop=True)
+        else:
+            renpy.music.stop()
+
+default sound_effect_on = True
+default bgm_on = True
+
+init offset = -1
 
 ################################################################################
 ## Styles
@@ -263,6 +284,14 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+
+    fixed:
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action ShowMenu("settings_page")
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -535,7 +564,7 @@ screen level_3_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("sublevel_level3")
+            action Jump("level3_intro")
             xpos 555        
             ypos -95
             focus_mask True
@@ -566,7 +595,7 @@ screen level_4_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("sublevel_level4")
+            action Jump("level4_intro")
             xpos 555        
             ypos -95
             focus_mask True
@@ -1121,6 +1150,56 @@ style return_button:
     yalign 1.0
     yoffset -45
 
+style close_button_style is default:
+    size 30
+
+screen settings_page():
+    tag menu
+    modal True
+    zorder 200
+    add "images/Backgrounds/backgroundnew.png"
+
+    frame:
+        background "gui/settingPage/SettingsFrame.png"
+
+        vbox:
+            spacing 30
+            xalign 0.5
+            yalign 0.5
+
+            # Sound Effects Section
+            hbox:
+                spacing 20
+                xalign 0.5
+                text "Sound Effects:" size 30 color "#FFFFFF"
+                imagebutton:
+                    idle get_sound_switch_idle(sound_effect_on)
+                    hover get_sound_switch_hover(sound_effect_on)
+                    action Function(toggle_sound_effect)
+
+            # Background Music Section
+            hbox:
+                spacing 20
+                xalign 0.5
+                text "Background Music:" size 30 color "#FFFFFF"
+                imagebutton:
+                    idle get_sound_switch_idle(bgm_on)
+                    hover get_sound_switch_hover(bgm_on)
+                    action Function(toggle_bgm)
+
+        imagebutton:
+            auto "gui/pause/ExitButton_%s.png"
+            action Return()
+            xalign 100
+            yalign 500
+            focus_mask True
+
+        imagebutton:
+            auto "gui/pause/PauseX_%s.png"
+            action Return()
+            xpos -250
+            yalign 100
+            focus_mask True
 
 ## About screen ################################################################
 ##
@@ -2115,7 +2194,6 @@ screen quick_menu():
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
-
 
 style window:
     variant "small"

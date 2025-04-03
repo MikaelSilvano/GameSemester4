@@ -114,7 +114,7 @@ screen result:
         text "Total Score:[game.score]" align(0.5, 0.5) color "#FFFFFF"
 
 label start:
-    play music "audio/audioEcoCity.ogg" fadein 1.0 loop
+    #play music "audio/audioEcoCity.ogg" fadein 1.0 loop
     jump level_selection
 
 label delete_matches_callback(game_manager, matches, check):
@@ -283,7 +283,7 @@ label level3_intro:
 
     $ renpy.pause(0.2, hard=True)
     scene black with None
-    jump sublevel_level2
+    jump sublevel_level3
 
 label level4_intro:
     scene hutbackground with fade
@@ -316,4 +316,4 @@ label level4_intro:
 
     $ renpy.pause(0.2, hard=True)
     scene black with None
-    jump sublevel_level2
+    jump sublevel_level4

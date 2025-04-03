@@ -1,23 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing the padding property of anonymous style:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-TypeError: 'int' object is not subscriptable
+While running game code:
+  File "game/classScripts/LevelManaeger.rpy", line 212, in script
+    call screen apartment_sublevel2_screen
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens.rpy", line 900, in execute
+    screen apartment_sublevel2_screen():
+  File "game/screens.rpy", line 900, in execute
+    screen apartment_sublevel2_screen():
+  File "game/screens.rpy", line 906, in execute
+    fixed:
+  File "game/screens.rpy", line 952, in execute
+    imagebutton:
+Exception: Imagebutton does not have a idle image. (auto='gui/button/BackButton2_%s.png').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
+  File "game/classScripts/LevelManaeger.rpy", line 212, in script
+    call screen apartment_sublevel2_screen
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
+    self.call("execute")
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/exports/statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
@@ -30,25 +42,29 @@ Full traceback:
     d.visit_all(callback, seen)
   File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
     d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 485, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 424, in visit_all
-    for d in self.visit():
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/layout.py", line 1376, in visit
-    self.style._visit_window(rv.append)
-  File "style.pyx", line 541, in renpy.style.StyleCore._visit_window
-  File "style.pyx", line 528, in renpy.style.StyleCore._get_unoffset
-  File "style.pyx", line 493, in renpy.style.StyleCore._get
-  File "style.pyx", line 717, in renpy.style.build_style
-  File "style.pyx", line 714, in renpy.style.build_style
-  File "gen3-static/style_functions.pyx", line 1573, in style_functions.padding_property
-  File "include/style_common.pxi", line 30, in style_functions.index_0
-TypeError: 'int' object is not subscriptable
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 480, in visit_all
+    callback(self)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 491, in per_interact
+    self.update()
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 900, in execute
+    screen apartment_sublevel2_screen():
+  File "game/screens.rpy", line 900, in execute
+    screen apartment_sublevel2_screen():
+  File "game/screens.rpy", line 906, in execute
+    fixed:
+  File "game/screens.rpy", line 952, in execute
+    imagebutton:
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 975, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 969, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='gui/button/BackButton2_%s.png').
 
 macOS-15.3.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 EcoCity Match 0.1
-Thu Apr  3 14:06:22 2025
+Thu Apr  3 18:17:16 2025

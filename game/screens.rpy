@@ -800,38 +800,38 @@ screen mansion_sublevel2_screen():
         imagebutton:
             auto "gui/button/Sublevel6Button_%s.png"
             action Jump("mansion_sublevel_6")
-            xpos -633
-            ypos 5
+            xpos -307
+            ypos -1
             focus_mask True
 
         imagebutton:
             auto "gui/button/Sublevel7Button_%s.png"
             action Jump("mansion_sublevel_7")
-            xpos -115
-            ypos -251
+            xpos 210
+            ypos -257
             focus_mask True
 
         imagebutton:
             auto "gui/button/Sublevel8Button_%s.png"
             action Jump("mansion_sublevel_8")
-            xpos 210
-            ypos 131
+            xpos 538
+            ypos 125
             focus_mask True
 
         # Previous button to return to page 1
         imagebutton:
-            auto "gui/button/PreviousButton_%s.png"
+            auto "gui/button/PreviousButton1_%s.png"
             action Jump("mansion_sublevel1")
-            xpos -650
-            ypos 0
+            xpos -622
+            ypos -20
             focus_mask True
 
         # Next button to jump to level selection
         imagebutton:
-            auto "gui/button/NextButton2_%s.png"
+            auto "gui/button/NextButton3_%s.png"
             action Jump("level_selection")
-            xpos 675
-            ypos 1
+            xpos 787
+            ypos -2
             focus_mask True
 
         # Home button to return to level 3 preview
@@ -934,18 +934,18 @@ screen apartment_sublevel2_screen():
 
         # Previous button to return to page 1
         imagebutton:
-            auto "gui/button/PreviousButton_%s.png"
+            auto "gui/button/PreviousButton2_%s.png"
             action Jump("apartment_sublevel1")
-            xpos 50
-            ypos 500
+            xpos -753
+            ypos -6
             focus_mask True
 
         # Next button to jump to page 3
         imagebutton:
-            auto "gui/button/NextButton1_%s.png"
+            auto "gui/button/NextButton4_%s.png"
             action Jump("level_4_page3")
-            xpos 700
-            ypos 500
+            xpos 786
+            ypos 0
             focus_mask True
 
         # Home button to return to level 4 preview
@@ -993,18 +993,18 @@ screen apartment_sublevel3_screen():
 
         # Previous button to return to page 2
         imagebutton:
-            auto "gui/button/PreviousButton_%s.png"
+            auto "gui/button/PreviousButton2_%s.png"
             action Jump("level_4_page2")
-            xpos 50
-            ypos 500
+            xpos -753
+            ypos -6
             focus_mask True
 
         # Next button to jump to level selection
         imagebutton:
-            auto "gui/button/NextButton1_%s.png"
+            auto "gui/button/NextButton4_%s.png"
             action Jump("level_selection")
-            xpos 700
-            ypos 500
+            xpos 786
+            ypos 0
             focus_mask True
 
         # Home button to return to level 4 preview

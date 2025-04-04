@@ -95,6 +95,7 @@ init python:
             check for a valid match, and if invalid, revert the swap.
             """
             neighbor = grid.icons[neighbor_index]
+
             # Record original grid positions.
             orig_self_pos = self.orig_position
             orig_neighbor_pos = neighbor.compute_grid_position()
@@ -108,27 +109,33 @@ init python:
             if not grid.check_for_match():
                 # Invalid swap: revert it.
                 self.swap_with_neighbor(neighbor_index, animate=False)
+
                 # Restore original grid indices.
                 self.index = orig_self_index
                 neighbor.index = orig_neighbor_index
                 grid.icons[self.index] = self
                 grid.icons[neighbor.index] = neighbor
+
                 # Snap both tiles back to their original grid positions.
                 self.x, self.y = orig_self_pos
                 neighbor.x, neighbor.y = orig_neighbor_pos
                 self.snap_to_grid()
                 neighbor.snap_to_grid()
+
                 # Update sprites so the visuals match.
                 self.update_sprite()
                 neighbor.update_sprite()
                 self.is_dragging = False
                 neighbor.is_dragging = False
+
                 return False
             else:
+
                 # Valid swap: update the original state to the new grid cell.
                 self.orig_position = self.compute_grid_position()
                 self.orig_index = self.index
                 neighbor.orig_position = neighbor.compute_grid_position()
+
                 # Disable dragging.
                 self.is_dragging = False
                 neighbor.is_dragging = False
@@ -221,6 +228,9 @@ init python:
             self.y, neighbor.y = neighbor.y, self.y
             # Swap grid indices.
             self.index, neighbor.index = neighbor.index, self.index
+
+            # game.decrement_moves()
+
             if animate:
                 self.sprite.child = move_anim(self.x, self.y)
                 neighbor.sprite.child = move_anim(neighbor.x, neighbor.y)

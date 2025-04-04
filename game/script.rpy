@@ -127,14 +127,9 @@ label start_game:
 
     call setup_icons()
     return
-        
+
 screen result:
-    frame:
-        background Solid("#00000067")
-        align (0.5, 0.5)
-        xsize 1300
-        ysize 1080
-        text "Total Score:[game.score]" align(0.5, 0.5) color "#FFFFFF"
+    text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
     #play music "audio/audioEcoCity.ogg" fadein 1.0 loop

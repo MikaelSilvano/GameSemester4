@@ -12,7 +12,8 @@ init python:
 
                 if self.total_collected[icon_type] >= self.Aims[icon_type]:
                     self.CompletedAims[icon_type] = self.Aims[icon_type]
+                    game.score += 200
                     del self.Aims[icon_type]
 
             if not self.Aims:
-                renpy.call_in_new_context("win_screen")
+                game.check_target_score()

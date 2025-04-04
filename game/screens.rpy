@@ -1042,21 +1042,27 @@ screen level_complete_screen():
         yfill True
         background Solid("#00000080")
 
-    add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+        add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
-    imagebutton:
-        auto "gui/button/NextLevelButton_%s.png"
-        action Jump("hut_sublevel_2")  # Or whichever label is your next level.
-        xpos 0
-        ypos -35
-        focus_mask True
 
-    imagebutton:
-        auto "gui/button/HomeButton_%s.png"
-        action Jump("level_selection")
-        xpos 0
-        ypos 40
-        focus_mask True
+        frame:
+            use result
+            xalign 0.5
+            ypos 400
+            background Solid("#00000000")
+            
+
+        imagebutton:
+            auto "gui/button/NextLevelButton_%s.png"
+            action Jump("hut_sublevel_2")  # Or whichever label is your next level.
+            ypos 25
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/HomeButton_%s.png"
+            action Jump("level_selection")
+            ypos 80
+            focus_mask True
 
     python:
         current_objectives = None

@@ -168,7 +168,8 @@ label mansion_sublevel_1:
     $ moves = 10
     $ t_score = 3000
     $ icpr = 8
-    $ grid_size = 16
+    $ grid_size = 24
+    jump start_game
     return
 label mansion_sublevel_2:
     $ current_objectives = Objectives({
@@ -181,6 +182,7 @@ label mansion_sublevel_2:
     $ t_score = 4500
     $ icpr = 6
     $ grid_size = 30
+    jump start_game
     return
 label mansion_sublevel_3:
     $ current_objectives = Objectives({
@@ -193,6 +195,7 @@ label mansion_sublevel_3:
     $ t_score = 2500
     $ icpr = 5
     $ grid_size = 15
+    jump start_game
     return
 label mansion_sublevel_4:
     $ current_objectives = Objectives({
@@ -205,6 +208,7 @@ label mansion_sublevel_4:
     $ t_score = 3500
     $ icpr = 4
     $ grid_size = 20
+    jump start_game
     return
 label mansion_sublevel_5:
     $ current_objectives = Objectives({
@@ -217,6 +221,7 @@ label mansion_sublevel_5:
     $ t_score = 4000
     $ icpr = 3
     $ grid_size = 15
+    jump start_game
     return
 label mansion_sublevel_6:
     $ current_objectives = Objectives({
@@ -229,6 +234,7 @@ label mansion_sublevel_6:
     $ t_score = 5000
     $ icpr = 7
     $ grid_size = 21
+    jump start_game
     return
 label mansion_sublevel_7:
     $ current_objectives = Objectives({
@@ -241,6 +247,7 @@ label mansion_sublevel_7:
     $ t_score = 3000
     $ icpr = 5
     $ grid_size = 25
+    jump start_game
     return
 label mansion_sublevel_8:
     $ current_objectives = Objectives({
@@ -253,6 +260,7 @@ label mansion_sublevel_8:
     $ t_score = 5000
     $ icpr = 4
     $ grid_size = 28
+    jump start_game
     return
 
 ##########################################################################
@@ -272,6 +280,7 @@ label apartment_sublevel_1:
     $ t_score = 7500
     $ icpr = 5
     $ grid_size = 20
+    jump start_game
     return
 label apartment_sublevel_2:
     $ current_objectives = Objectives({
@@ -285,6 +294,7 @@ label apartment_sublevel_2:
     $ t_score = 4500
     $ icpr = 4
     $ grid_size = 24
+    jump start_game
     return
 label apartment_sublevel_3:
     $ current_objectives = Objectives({
@@ -298,6 +308,7 @@ label apartment_sublevel_3:
     $ t_score = 4000
     $ icpr = 6
     $ grid_size = 36
+    jump start_game
     return
 label apartment_sublevel_4:
     $ current_objectives = Objectives({
@@ -311,6 +322,7 @@ label apartment_sublevel_4:
     $ t_score = 5000
     $ icpr = 5
     $ grid_size = 15
+    jump start_game
     return
 label apartment_sublevel_5:
     $ current_objectives = Objectives({
@@ -324,6 +336,7 @@ label apartment_sublevel_5:
     $ t_score = 3500
     $ icpr = 7
     $ grid_size = 21
+    jump start_game
     return
 
 label apartment_sublevel_6:
@@ -338,6 +351,7 @@ label apartment_sublevel_6:
     $ t_score = 5500
     $ icpr = 3
     $ grid_size = 15
+    jump start_game
     return
 
 label apartment_sublevel_7:
@@ -352,6 +366,7 @@ label apartment_sublevel_7:
     $ t_score = 4000
     $ icpr = 5
     $ grid_size = 20
+    jump start_game
     return
 
 label apartment_sublevel_8:
@@ -366,6 +381,7 @@ label apartment_sublevel_8:
     $ t_score = 4600
     $ icpr = 4
     $ grid_size = 12
+    jump start_game
     return
 
 label apartment_sublevel_9:
@@ -380,6 +396,7 @@ label apartment_sublevel_9:
     $ t_score = 5300
     $ icpr = 6
     $ grid_size = 30
+    jump start_game
     return
 
 label apartment_sublevel_10:
@@ -394,6 +411,7 @@ label apartment_sublevel_10:
     $ t_score = 3000
     $ icpr = 3
     $ grid_size = 18
+    jump start_game
     return
 
 label apartment_sublevel_11:
@@ -408,6 +426,7 @@ label apartment_sublevel_11:
     $ t_score = 3300
     $ icpr = 5
     $ grid_size = 25
+    jump start_game
     return
 
 label apartment_sublevel_12:
@@ -422,6 +441,7 @@ label apartment_sublevel_12:
     $ t_score = 5100
     $ icpr = 4
     $ grid_size = 12
+    jump start_game
     return
 
 ##########################################################################

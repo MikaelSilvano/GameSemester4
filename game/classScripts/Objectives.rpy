@@ -1,10 +1,12 @@
 init python:
+
     class Objectives:
         def __init__(self, Aims):
             self.Aims = Aims.copy()
             self.total_collected = {}
             self.CompletedAims = {}
             self.order = list(Aims.keys())  # 🔥 Track order like ['rocks', 'woods', 'glass']
+            self.all_aims = False
 
         def AimsMet(self, icon_type, amount=1):
             if icon_type in self.Aims:
@@ -16,4 +18,5 @@ init python:
                     del self.Aims[icon_type]
 
             if not self.Aims:
-                game.check_target_score()
+                self.all_aims = True
+                game.check_target_score(self.all_aims)

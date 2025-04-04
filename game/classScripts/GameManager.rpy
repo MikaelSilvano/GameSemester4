@@ -1,6 +1,6 @@
 init python:
     from collections import Counter
-    
+    import time
     class GameManager:
         def __init__(self, moves, target_score):
             self.score = 0
@@ -110,14 +110,16 @@ init python:
             grid.sprite_manager.redraw(0)
             renpy.restart_interaction()
             grid.shift_icons(mouse_event=True)
-            self.check_target_score()
+            self.check_target_score(conditions=False)
 
 
-        def check_target_score(self):
-            if (self.moves <= 0):
+        def check_target_score(self, conditions):
+
+            if (self.moves <= 0 or conditions):
                 print(self.score)
                 self.score *= round((self.moves/self.score + 1))
                 renpy.call_in_new_context("win_screen")
+                time.sleep(2)
         
         def decrement_moves(self):
             self.moves -= 1

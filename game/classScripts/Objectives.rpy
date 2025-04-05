@@ -5,7 +5,7 @@ init python:
             self.Aims = Aims.copy()
             self.total_collected = {}
             self.CompletedAims = {}
-            self.order = list(Aims.keys())  # 🔥 Track order like ['rocks', 'woods', 'glass']
+            self.order = list(Aims.keys())
             self.all_aims = False
 
         def AimsMet(self, icon_type, amount=1):
@@ -17,6 +17,7 @@ init python:
                     game.score += 200
                     del self.Aims[icon_type]
 
-            if not self.Aims:
+            if not self.Aims and not self.all_aims:
                 self.all_aims = True
                 game.check_target_score(self.all_aims)
+                renpy.call_in_new_context("win_screen")

@@ -1,70 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/classScripts/LevelManaeger.rpy", line 212, in script
-    call screen apartment_sublevel2_screen
+  File "game/script.rpy", line 140, in script call
+    call setup_icons()
+  File "game/script.rpy", line 27, in script
+    call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 900, in execute
-    screen apartment_sublevel2_screen():
-  File "game/screens.rpy", line 900, in execute
-    screen apartment_sublevel2_screen():
-  File "game/screens.rpy", line 906, in execute
-    fixed:
-  File "game/screens.rpy", line 952, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto='gui/button/BackButton2_%s.png').
+  File "game/classScripts/GridManager.rpy", line 98, in handle_event
+    game.find_match(mouse_event=False)
+  File "game/classScripts/GameManager.rpy", line 70, in find_match
+    self.delete_matches(all_matches, True)
+  File "game/classScripts/GameManager.rpy", line 93, in delete_matches
+    current_objectives.AimsMet(icon_type, decrement_amount)
+  File "game/classScripts/Objectives.rpy", line 25, in AimsMet
+    renpy.stop(channel="building", fadeout=2.0)
+AttributeError: module 'renpy.exports' has no attribute 'stop'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/classScripts/LevelManaeger.rpy", line 212, in script
-    call screen apartment_sublevel2_screen
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
+  File "game/script.rpy", line 140, in script call
+    call setup_icons()
+  File "game/script.rpy", line 27, in script
+    call screen Match_Three
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
     self.call("execute")
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/statements.py", line 374, in call
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/exports/statementexports.py", line 345, in call_screen
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 301, in interact
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 480, in visit_all
-    callback(self)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 491, in per_interact
-    self.update()
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 900, in execute
-    screen apartment_sublevel2_screen():
-  File "game/screens.rpy", line 900, in execute
-    screen apartment_sublevel2_screen():
-  File "game/screens.rpy", line 906, in execute
-    fixed:
-  File "game/screens.rpy", line 952, in execute
-    imagebutton:
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 969, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='gui/button/BackButton2_%s.png').
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 3286, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 791, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1526, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 285, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\transform.py", line 1083, in event
+    rv = d.event(ev, cx, cy, st)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\particle.py", line 333, in event
+    return self.event_function(ev, x, y, st)
+  File "game/classScripts/GridManager.rpy", line 98, in handle_event
+    game.find_match(mouse_event=False)
+  File "game/classScripts/GameManager.rpy", line 70, in find_match
+    self.delete_matches(all_matches, True)
+  File "game/classScripts/GameManager.rpy", line 93, in delete_matches
+    current_objectives.AimsMet(icon_type, decrement_amount)
+  File "game/classScripts/Objectives.rpy", line 25, in AimsMet
+    renpy.stop(channel="building", fadeout=2.0)
+AttributeError: module 'renpy.exports' has no attribute 'stop'
 
-macOS-15.3.2-arm64-arm-64bit arm64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 EcoCity Match 0.1
-Thu Apr  3 18:17:16 2025
+Sat Apr  5 14:47:26 2025

@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/Objectives.rpy", line 1: python block expects a non-empty block.
-    init python:
-                ^
-
-File "game/classScripts/Objectives.rpy", line 2: expected statement.
-    class Objectives:
-                    ^
+File "game/classScripts/LevelManager.rpy", line 54: invalid syntax
+    print("Debug: building_list =" building_list)
+                                    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Apr  3 18:15:19 2025
+Sat Apr  5 15:43:06 2025

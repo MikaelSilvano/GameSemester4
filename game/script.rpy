@@ -1,8 +1,15 @@
 ﻿init python:
     current_objectives = None
 
+default screen_modal = False
+
 transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
+
+transform building_resized:
+    xpos 0.62
+    ypos 450
+    zoom 0.4
 
 transform fade_out:
     linear 0.5 alpha 0.0
@@ -59,6 +66,8 @@ screen reset_grids:
 
 
 screen Match_Three:
+    modal screen_modal
+    
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
     $ frame_ySize = ((grid.grid_size // grid.icons_per_row) * grid.icon_size) + ((grid.grid_size // grid.icons_per_row) * grid.icon_padding) + 6
     frame:
@@ -111,6 +120,15 @@ screen Match_Three:
                     $ target = current_objectives.CompletedAims[name]
                     $ collected = target  # ✅ Display full completion
                     use objective_meter(icon_name=name, current=collected, target=target)
+    # ✅ Show the building image with transform
+    if current_objectives.all_aims:
+        frame:
+            background None  # clear default
+            fixed:
+                for img in building_list[:desired_images]:
+                    add img at building_resized
+
+
 
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
@@ -140,8 +158,19 @@ label delete_matches_callback(game_manager, matches, check):
     return
 
 label win_screen:
-    call screen level_complete_screen
+    show screen Score_UI
+    show screen reset_grids
+    show screen timer_screen
+    show screen Match_Three
+    play sound "audio/building_start.ogg"
+    pause 3.0
+    play sound "audio/building_finish.ogg"  # 🔊 Second sound
+    pause 0.5
+    hide screen Score_UI
+    hide screen reset_grids
+    hide screen Match_Three
     hide screen timer_screen
+    call screen level_complete_screen
     return
 
 ##########################################################################

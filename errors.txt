@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/LevelManager.rpy", line 54: invalid syntax
-    print("Debug: building_list =" building_list)
-                                    ^
+File "game/classScripts/LevelManager.rpy", line 16: expected statement.
+    build_xpos = 0.62
+               ^
+
+File "game/classScripts/LevelManager.rpy", line 17: expected statement.
+    build_ypos = 450
+               ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Apr  5 15:43:06 2025
+Sat Apr  5 17:20:30 2025

@@ -1,28 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 140, in script call
+  File "game/script.rpy", line 150, in script call
     call setup_icons()
-  File "game/script.rpy", line 27, in script
+  File "game/script.rpy", line 28, in script
     call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/classScripts/GridManager.rpy", line 98, in handle_event
-    game.find_match(mouse_event=False)
-  File "game/classScripts/GameManager.rpy", line 70, in find_match
-    self.delete_matches(all_matches, True)
-  File "game/classScripts/GameManager.rpy", line 93, in delete_matches
-    current_objectives.AimsMet(icon_type, decrement_amount)
-  File "game/classScripts/Objectives.rpy", line 25, in AimsMet
-    renpy.stop(channel="building", fadeout=2.0)
-AttributeError: module 'renpy.exports' has no attribute 'stop'
+  File "game/script.rpy", line 68, in execute
+    screen Match_Three:
+  File "game/script.rpy", line 68, in execute
+    screen Match_Three:
+  File "game/script.rpy", line 129, in execute
+    if current_objectives.all_aims:
+  File "game/script.rpy", line 130, in execute
+    frame:
+  File "game/script.rpy", line 132, in execute
+    fixed:
+  File "game/script.rpy", line 133, in execute
+    add building_list[desired_images] at building_resized
+  File "game/script.rpy", line 133, in <module>
+    add building_list[desired_images] at building_resized
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 140, in script call
+  File "game/script.rpy", line 150, in script call
     call setup_icons()
-  File "game/script.rpy", line 27, in script
+  File "game/script.rpy", line 28, in script
     call screen Match_Three
   File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
     self.call("execute")
@@ -38,39 +44,41 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 3286, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 791, in event
-    rv = self.child.event(ev, x, y, st)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1526, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 285, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\transform.py", line 1083, in event
-    rv = d.event(ev, cx, cy, st)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\particle.py", line 333, in event
-    return self.event_function(ev, x, y, st)
-  File "game/classScripts/GridManager.rpy", line 98, in handle_event
-    game.find_match(mouse_event=False)
-  File "game/classScripts/GameManager.rpy", line 70, in find_match
-    self.delete_matches(all_matches, True)
-  File "game/classScripts/GameManager.rpy", line 93, in delete_matches
-    current_objectives.AimsMet(icon_type, decrement_amount)
-  File "game/classScripts/Objectives.rpy", line 25, in AimsMet
-    renpy.stop(channel="building", fadeout=2.0)
-AttributeError: module 'renpy.exports' has no attribute 'stop'
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 68, in execute
+    screen Match_Three:
+  File "game/script.rpy", line 68, in execute
+    screen Match_Three:
+  File "game/script.rpy", line 129, in execute
+    if current_objectives.all_aims:
+  File "game/script.rpy", line 130, in execute
+    frame:
+  File "game/script.rpy", line 132, in execute
+    fixed:
+  File "game/script.rpy", line 133, in execute
+    add building_list[desired_images] at building_resized
+  File "game/script.rpy", line 133, in <module>
+    add building_list[desired_images] at building_resized
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\revertable.py", line 214, in __getitem__
+    rv = list.__getitem__(self, index)
+IndexError: list index out of range
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 EcoCity Match 0.1
-Sat Apr  5 14:47:26 2025
+Sat Apr  5 17:06:27 2025

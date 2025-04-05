@@ -7,8 +7,8 @@ transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
 
 transform building_resized:
-    xpos 0.62
-    ypos 450
+    xpos build_xpos
+    ypos build_ypos 
     zoom 0.4
 
 transform fade_out:
@@ -101,6 +101,11 @@ screen Match_Three:
         add grid.sprite_manager:
             xpos 0
             ypos 0
+    frame:
+        background None  # clear default
+        fixed:
+            for img in building_list[:desired_images-1]:
+                add img at building_resized
     
     frame:
         align (0.02, 0.25)
@@ -125,8 +130,7 @@ screen Match_Three:
         frame:
             background None  # clear default
             fixed:
-                for img in building_list[:desired_images]:
-                    add img at building_resized
+                add building_list[desired_images-1] at building_resized
 
 
 

@@ -1,8 +1,6 @@
 ﻿init python:
     current_objectives = None
 
-default screen_modal = False
-
 transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
 
@@ -66,8 +64,6 @@ screen reset_grids:
 
 
 screen Match_Three:
-    modal screen_modal
-    
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
     $ frame_ySize = ((grid.grid_size // grid.icons_per_row) * grid.icon_size) + ((grid.grid_size // grid.icons_per_row) * grid.icon_padding) + 6
     frame:

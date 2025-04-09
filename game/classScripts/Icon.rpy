@@ -221,12 +221,11 @@ init python:
             This method updates the grid data, the tile positions, and optionally animates the swap.
             """
             neighbor = grid.icons[neighbor_index]
-            # Swap in the grid list.
             grid.icons[self.index], grid.icons[neighbor_index] = grid.icons[neighbor_index], grid.icons[self.index]
-            # Swap positions.
+
             self.x, neighbor.x = neighbor.x, self.x
             self.y, neighbor.y = neighbor.y, self.y
-            # Swap grid indices.
+
             self.index, neighbor.index = neighbor.index, self.index
 
             # game.decrement_moves()

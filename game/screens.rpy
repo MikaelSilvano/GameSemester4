@@ -265,7 +265,6 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    ## Ensure this appears on top of other screens.
     zorder 100
 
     if quick_menu:
@@ -354,13 +353,9 @@ screen navigation():
 
         # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## Help isn't necessary or relevant to mobile devices.
             # textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
@@ -382,17 +377,13 @@ style navigation_button_text:
 
 screen main_menu():
 
-    ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background
 
-    ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
 
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
     use navigation
 
     if gui.show_name:
@@ -991,7 +982,6 @@ screen apartment_sublevel3_screen():
             ypos -52
             focus_mask True
 
-        # Previous button to return to page 2
         imagebutton:
             auto "gui/button/PreviousButton2_%s.png"
             action Jump("level_4_page2")
@@ -999,7 +989,6 @@ screen apartment_sublevel3_screen():
             ypos -6
             focus_mask True
 
-        # Next button to jump to level selection
         imagebutton:
             auto "gui/button/NextButton4_%s.png"
             action Jump("level_selection")
@@ -1007,7 +996,6 @@ screen apartment_sublevel3_screen():
             ypos 0
             focus_mask True
 
-        # Home button to return to level 4 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
             action Jump("level_4")
@@ -1213,9 +1201,6 @@ screen settings_page():
 ## About screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
-##
-## There's nothing special about this screen, and hence it also serves as an
-## example of how to make a custom screen.
 
 screen about():
 
@@ -1279,8 +1264,6 @@ screen file_slots(title):
 
         fixed:
 
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
             order_reverse True
 
             ## The page name, which can be edited by clicking on a button.

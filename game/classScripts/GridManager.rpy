@@ -207,14 +207,11 @@ init python:
                     else:
                         candidate = renpy.random.choice(allowed)
                     
-                    # Create the new sprite for this tile.
                     idle_image = Image("Icons/{}.png".format(candidate))
                     new_sprite = self.sprite_manager.create(Transform(child=idle_image, zoom=0.08))
-                    # For refill, spawn the new tile above the visible grid so it drops in.
                     new_sprite.x = x
                     new_sprite.y = - (self.icon_size + self.icon_padding)
                     
-                    # Finally, assign the new Icon to the grid.
                     self.icons[i] = Icon(index=i, x=x, y=y, icon_type=candidate, sprite=new_sprite)
 
 
@@ -228,7 +225,6 @@ init python:
             self.sprite_manager.redraw(0)
 
         def check_for_match(self):
-            # Determine the number of rows.
             rows = self.grid_size // self.icons_per_row
             # Check for horizontal matches.
             for row in range(rows):

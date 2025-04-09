@@ -73,9 +73,6 @@ screen Match_Three:
         xsize frame_xSize
         ysize frame_ySize
 
-        # Position the sprite manager relative to the frame
-
-        # Grid positioning code remains the same
         $ cur_row = 0
         $ cur_col = 0
         for icon in grid.icons:
@@ -119,9 +116,8 @@ screen Match_Three:
 
                 elif name in current_objectives.CompletedAims:
                     $ target = current_objectives.CompletedAims[name]
-                    $ collected = target  # ✅ Display full completion
+                    $ collected = target  # Display full completion
                     use objective_meter(icon_name=name, current=collected, target=target)
-    # ✅ Show the building image with transform
     if current_objectives.all_aims:
         frame:
             background None  # clear default

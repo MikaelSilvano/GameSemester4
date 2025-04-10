@@ -2,12 +2,13 @@ init python:
     from collections import Counter
     import time
     class GameManager:
-        def __init__(self, moves, target_score):
+        def __init__(self, moves, target_score, level):
             self.score = 0
             self.moves = moves
             self.base_points = 5
             self.target_score = target_score
-            self.initializing = True  # <-- New flag to indicate startup state
+            self.level = level      # store the current level
+            self.initializing = True  # flag to indicate startup state
         
         def find_match(self, mouse_event):
             # Do nothing if we are still in the initial state.

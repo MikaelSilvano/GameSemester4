@@ -16,9 +16,11 @@ init python:
     config.rollback_enabled = False
 
 label setup_icons:
+    $ grid.create_sprite_manager()
     python:
         sprite_manager = grid.create_sprite_manager()
         for icon in grid.icons:
+            icon.update_chain_overlay()
             idle_image = Image("Icons/{}.png".format(icon.icon_type))
             icon.sprite = sprite_manager.create(Transform(child=idle_image, zoom=0.08))
             icon.sprite.x = icon.x
@@ -128,7 +130,7 @@ screen Match_Three:
 
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
-    $ game = GameManager(moves, t_score)
+    $ game = GameManager(moves, t_score, level)
     $ grid = GridManager(icpr, grid_size)
     $ grid.initialize_grid()
 

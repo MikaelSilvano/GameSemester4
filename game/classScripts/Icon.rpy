@@ -1,4 +1,6 @@
 init python:
+    chain_image = Image("Icons/Chain.png")
+
     class Icon:
         def __init__(self, index, x, y, icon_type, sprite):
             self.index = index
@@ -6,7 +8,6 @@ init python:
             self.y = y
             self.icon_type = icon_type
             self.sprite = sprite
-            # Reference to grid list and grid settings.
             self.grid = grid.icons
             self.tile_size = grid.icon_size
 
@@ -16,8 +17,12 @@ init python:
 
             self.drag_offset_x = 0
             self.drag_offset_y = 0
-            self.orig_position = None  # (x, y) of the original grid cell
-            self.orig_index = None     # original grid index
+            self.orig_position = None
+            self.orig_index = None
+
+            # For chain locking:
+            self.chain_locked = False
+            self.chain_overlay = None
 
         def compute_grid_position(self):
             """Compute the correct (x, y) coordinates based on the tile's grid index."""
@@ -35,6 +40,10 @@ init python:
             if self.sprite:
                 # Animate to the correct position.
                 self.sprite.child = move_anim(new_x, new_y)
+            # Update the chain overlay position if present.
+            if self.chain_overlay:
+                self.chain_overlay.x = new_x
+                self.chain_overlay.y = new_y
 
         def update_sprite(self):
             """Reassign the sprite's image so that it reflects the tile's current type."""
@@ -42,8 +51,32 @@ init python:
             if self.sprite:
                 self.sprite.child = Transform(child=idle_image, zoom=0.08)
 
+        def update_chain_overlay(self):
+            """Creates or updates the chain overlay if the tile is locked.
+            If the tile is unlocked and an overlay exists, destroys it."""
+            if self.chain_locked:
+                if grid.sprite_manager is not None:
+                    # Create the chain overlay if it does not already exist.
+                    if not self.chain_overlay:
+                        self.chain_overlay = grid.sprite_manager.create(
+                            Transform(child=chain_image, zoom=0.05))
+                    # Set its position to match the tile.
+                    self.chain_overlay.x = self.x
+                    self.chain_overlay.y = self.y
+                else:
+                    renpy.log("Warning: sprite_manager not available when updating chain overlay.")
+            else:
+                # If the tile is not locked but an overlay exists, destroy it.
+                if self.chain_overlay:
+                    self.chain_overlay.destroy()
+                    self.chain_overlay = None
+
         def start_drag(self, mouse_x, mouse_y):
-            """Called when the tile is picked up. Record its original grid position and index."""
+            """Called when the tile is picked up. Record its original grid position and index.
+            If this tile is chain locked (and we’re in Level 3 or 4), block the drag."""
+            # Only enforce chain lock in levels 3 and 4.
+            if self.chain_locked:
+                return  # Do nothing if the tile is locked.
             game.initializing = False
             self.is_dragging = True
             self.drag_offset_x = mouse_x
@@ -84,9 +117,16 @@ init python:
             if not self.swap_attempted:
                 swap_index = self.get_swap_index()
                 if swap_index is not None:
-                    self.swap_attempted = True
-                    self.try_swap(swap_index)
-                    self.stop_drag(animate=True)
+                    # IMPORTANT: also check if the neighbor is chain-locked.
+                    neighbor = grid.icons[swap_index]
+                    if neighbor and not neighbor.chain_locked:
+                        self.swap_attempted = True
+                        self.try_swap(swap_index)
+                        self.stop_drag(animate=True)
+                    else:
+                        # Do nothing if neighbor is locked.
+                        self.snap_to_grid()
+                        self.is_dragging = False
 
         def try_swap(self, neighbor_index):
             """
@@ -95,6 +135,9 @@ init python:
             check for a valid match, and if invalid, revert the swap.
             """
             neighbor = grid.icons[neighbor_index]
+            # If either tile is chain-locked, skip the swap.
+            if self.chain_locked or neighbor.chain_locked:
+                return False
 
             # Record original grid positions.
             orig_self_pos = self.orig_position
@@ -109,33 +152,27 @@ init python:
             if not grid.check_for_match():
                 # Invalid swap: revert it.
                 self.swap_with_neighbor(neighbor_index, animate=False)
-
                 # Restore original grid indices.
                 self.index = orig_self_index
                 neighbor.index = orig_neighbor_index
                 grid.icons[self.index] = self
                 grid.icons[neighbor.index] = neighbor
-
                 # Snap both tiles back to their original grid positions.
                 self.x, self.y = orig_self_pos
                 neighbor.x, neighbor.y = orig_neighbor_pos
                 self.snap_to_grid()
                 neighbor.snap_to_grid()
-
                 # Update sprites so the visuals match.
                 self.update_sprite()
                 neighbor.update_sprite()
                 self.is_dragging = False
                 neighbor.is_dragging = False
-
                 return False
             else:
-
                 # Valid swap: update the original state to the new grid cell.
                 self.orig_position = self.compute_grid_position()
                 self.orig_index = self.index
                 neighbor.orig_position = neighbor.compute_grid_position()
-
                 # Disable dragging.
                 self.is_dragging = False
                 neighbor.is_dragging = False
@@ -195,7 +232,7 @@ init python:
                         grid.icons[top_left_index] is not None and self.is_inside(grid.icons[top_left_index]) and
                         grid.icons[top_left_index].icon_type == self.icon_type)
             top_right = (self.index % grid.icons_per_row != grid.icons_per_row - 1 and top_right_index >= 0 and
-                        grid.icons[top_right_index] is not None and self.is_inside(grid.icons[top_right_index]) and
+                        grid.icons[top_right_index] is not None and self.is_inside(grid.icon[top_right_index]) and
                         grid.icons[top_right_index].icon_type == self.icon_type)
             bot_left = (self.index % grid.icons_per_row != 0 and bottom_left_index < grid.grid_size and
                         grid.icons[bottom_left_index] is not None and self.is_inside(grid.icons[bottom_left_index]) and
@@ -221,19 +258,21 @@ init python:
             This method updates the grid data, the tile positions, and optionally animates the swap.
             """
             neighbor = grid.icons[neighbor_index]
+            # Swap in the grid list.
             grid.icons[self.index], grid.icons[neighbor_index] = grid.icons[neighbor_index], grid.icons[self.index]
-
+            # Swap positions.
             self.x, neighbor.x = neighbor.x, self.x
             self.y, neighbor.y = neighbor.y, self.y
-
+            # Swap grid indices.
             self.index, neighbor.index = neighbor.index, self.index
-
-            # game.decrement_moves()
-
             if animate:
                 self.sprite.child = move_anim(self.x, self.y)
                 neighbor.sprite.child = move_anim(neighbor.x, neighbor.y)
 
+
         def destroy(self):
             if self.sprite:
                 self.sprite.destroy()
+            if self.chain_overlay:
+                self.chain_overlay.destroy()
+                self.chain_overlay = None

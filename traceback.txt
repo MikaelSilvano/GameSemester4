@@ -1,84 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 150, in script call
-    call setup_icons()
-  File "game/script.rpy", line 28, in script
-    call screen Match_Three
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 68, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 68, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 129, in execute
-    if current_objectives.all_aims:
-  File "game/script.rpy", line 130, in execute
-    frame:
-  File "game/script.rpy", line 132, in execute
-    fixed:
-  File "game/script.rpy", line 133, in execute
-    add building_list[desired_images] at building_resized
-  File "game/script.rpy", line 133, in <module>
-    add building_list[desired_images] at building_resized
-IndexError: list index out of range
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+AttributeError: Can't get attribute 'GridManager' on <renpy.python.StoreModule object at 0x0000000004c61160>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 150, in script call
-    call setup_icons()
-  File "game/script.rpy", line 28, in script
-    call screen Match_Three
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
-    self.call("execute")
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 68, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 68, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 129, in execute
-    if current_objectives.all_aims:
-  File "game/script.rpy", line 130, in execute
-    frame:
-  File "game/script.rpy", line 132, in execute
-    fixed:
-  File "game/script.rpy", line 133, in execute
-    add building_list[desired_images] at building_resized
-  File "game/script.rpy", line 133, in <module>
-    add building_list[desired_images] at building_resized
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\python.py", line 1184, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\loadsave.py", line 837, in load
+    roots, log = loads(log_data)
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\compat\pickle.py", line 104, in loads
+    return load(io.BytesIO(s))
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\compat\pickle.py", line 101, in load
+    return up.load()
+  File "C:\Users\Jovinne\OneDrive\Desktop\renpy-8.3.6-sdk\renpy\compat\pickle.py", line 97, in find_class
+    return super().find_class(module, name)
+AttributeError: Can't get attribute 'GridManager' on <renpy.python.StoreModule object at 0x0000000004c61160>
 
 Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.4.24120703
+Ren'Py 8.3.6.25022803
 EcoCity Match 0.1
-Sat Apr  5 17:06:27 2025
+Thu Apr 10 22:47:34 2025

@@ -175,7 +175,7 @@ label win_screen:
 ## Level 1 Lore
 ##########################################################################
 
-image backgroundnew = "images/Backgrounds/backgroundnew.png"
+image hutbg = "images/Backgrounds/HutBackground.png"
 image CharacterLevel1 = "images/Characters/CharacterLevel1.png"
 image SideCharacterLevel1 = "images/Characters/SideCharacterLevel1.png"
 
@@ -193,7 +193,7 @@ define mainchar = Character("Ko Khrisna", color="#c8f2ff")
 define sidechar = Character("Jordan", color="#ffc8c8")
 
 label level1_intro:
-    scene backgroundnew with fade
+    scene hutbg with fade
 
     # Show side character first
     show SideCharacterLevel1 at right_side:
@@ -226,7 +226,7 @@ label level1_intro:
 ## Level 2 Lore
 ##########################################################################
 
-image hutbackground = "images/Backgrounds/backgroundnew.png" # nanti diubah
+image housebg = "images/Backgrounds/HouseBackground.png" # udah diubah
 image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
 image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
 
@@ -244,7 +244,7 @@ define mainchar = Character("Ko Khrisna",color="#c8f2ff")
 define sidechar = Character("Jordan", color="#ffc8c8")
 
 label level2_intro:
-    scene hutbackground with fade
+    scene housebg with fade
 
     # Show side character first
     show SideCharacterLevel2 at right_side:
@@ -279,9 +279,9 @@ label level2_intro:
 ## Level 3 Lore
 ##########################################################################
 
-image hutbackground = "images/Backgrounds/backgroundnew.png" # nanti diubah
-image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
-image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
+image mansionbg = "images/Backgrounds/MansionBackground.png" # nanti diubah
+image CharacterLevel3 = "images/Characters/CharacterLevel2.png"
+image SideCharacterLevel3 = "images/Characters/SideCharacterLevel2.png"
 
 transform left_side:
     xpos 0.2       
@@ -296,67 +296,82 @@ transform right_side:
 define mainchar = Character("Ko Khrisna",color="#c8f2ff")
 define sidechar = Character("Jordan", color="#ffc8c8")
 
+
 label level3_intro:
-    scene hutbackground with fade
+    scene mansionbg with fade
 
     # Show side character first
-    show SideCharacterLevel2 at right_side:
+    show SideCharacterLevel3 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
 
     # Then main character
-    show CharacterLevel2 at left_side:
+    show CharacterLevel3 at left_side:
         zoom 0.2
         linear 0.2 zoom 0.3
 
-    sidechar "You are making a very good progress, Ko Khrisna! Let's step up our game and build a mansion!"
+    sidechar "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
     mainchar "A mansion? Isn’t that… the opposite of sustainability?"
     sidechar "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
-    mainchar "Alright then, let's bring up this building by using cement, metal, glass, and solar panels!"
-    sidechar "Great! No waste, no excess. Just purpose, comfort, and clean energy. This mansion will hold more people inside which will make it sustainable for living."
-    mainchar "True! And remember—what you build now influences how the world builds tomorrow."
-    sidechar "Who knew sustainability could be this stunning?"
-    mainchar "Let's get straight into it!"
+    mainchar "Alright then, let's bring up this building by using cement, metal, glass, and solar panels, let's get straight into it!"
 
     window hide
 
-    show CharacterLevel2 at left_side:
+    show CharacterLevel3 at left_side:
         linear 0.2 zoom 0.5 alpha 0.0
-    show SideCharacterLevel2 at right_side:
+    show SideCharacterLevel3 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
     $ renpy.pause(0.2, hard=True)
     scene black with None
     jump sublevel_level3
 
+##########################################################################
+## Level 4 Lore
+##########################################################################
+
+image apartmentbg = "images/Backgrounds/ApartBackground.png" # nanti diubah
+image CharacterLevel4 = "images/Characters/CharacterLevel2.png"
+image SideCharacterLevel4 = "images/Characters/SideCharacterLevel2.png"
+
+transform left_side:
+    xpos 0.2       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+transform right_side:
+    xpos 0.8       
+    ypos 1.0
+    anchor (0.5, 1.0)
+
+define mainchar = Character("Ko Khrisna",color="#c8f2ff")
+define sidechar = Character("Jordan", color="#ffc8c8")
+
 label level4_intro:
-    scene hutbackground with fade
+    scene apartmentbg with fade
 
     # Show side character first
-    show SideCharacterLevel2 at right_side:
+    show SideCharacterLevel4 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
 
     # Then main character
-    show CharacterLevel2 at left_side:
+    show CharacterLevel4 at left_side:
         zoom 0.2
         linear 0.2 zoom 0.3
 
-    sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. Cities across the globe are asking for your designs."
+    sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
     mainchar "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
-    sidechar "You are wrong! Let’s build a smart skyscrapper where vertical gardens and solar glass is the dominance of this building. This apartment will be the model of eco-urban living."
-    mainchar "Soo... this is the future?!"
-    sidechar "No. This is the present, because you made it happen. You didn’t just build structures—you built a legacy of sustainability."
-    mainchar "What a great insight that you gave to me, let's get started then!"
-    sidechar "Yes, I am excited to see this sustainable apartment to be built ASAP!"
+    sidechar "I am excited to see this sustainable live in the future. Thank you for saving us Ko Khrisna!"
+    mainchar "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
 
     window hide
 
-    show CharacterLevel2 at left_side:
+    show CharacterLevel4 at left_side:
         linear 0.2 zoom 0.5 alpha 0.0
-    show SideCharacterLevel2 at right_side:
+    show SideCharacterLevel4 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
     $ renpy.pause(0.2, hard=True)

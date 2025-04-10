@@ -267,7 +267,7 @@ label level2_intro:
     window hide
 
     show CharacterLevel2 at left_side:
-        linear 0.2 zoom 0.5 alpha 0.0
+        linear 0.1 zoom 0.2 alpha 0.0
     show SideCharacterLevel2 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
@@ -309,7 +309,7 @@ label level3_intro:
     # Then main character
     show CharacterLevel3 at left_side:
         zoom 0.9
-        linear 0.2 zoom 0.7
+        linear 0.1 zoom 0.93
 
     sidechar "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
     mainchar "A mansion? Isn’t that… the opposite of sustainability?"
@@ -360,7 +360,7 @@ label level4_intro:
     # Then main character
     show CharacterLevel4 at left_side:
         zoom 0.9
-        linear 0.2 zoom 0.7
+        linear 0.1 zoom 0.93
 
     sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
     mainchar "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."

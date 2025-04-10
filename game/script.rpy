@@ -176,8 +176,8 @@ label win_screen:
 ##########################################################################
 
 image hutbg = "images/Backgrounds/HutBackground.png"
-image CharacterLevel1 = "images/Characters/CharacterLevel1.png"
-image SideCharacterLevel1 = "images/Characters/SideCharacterLevel1.png"
+image CharacterLevel1 = "images/Characters/Character1.png"
+image SideCharacterLevel1 = "images/Characters/Cewe1.png"
 
 transform left_side:
     xpos 0.2       
@@ -280,8 +280,8 @@ label level2_intro:
 ##########################################################################
 
 image mansionbg = "images/Backgrounds/MansionBackground.png" # nanti diubah
-image CharacterLevel3 = "images/Characters/CharacterLevel2.png"
-image SideCharacterLevel3 = "images/Characters/SideCharacterLevel2.png"
+image CharacterLevel3 = "images/Characters/Character3.png"
+image SideCharacterLevel3 = "images/Characters/SideCharacterLevel1.png"
 
 transform left_side:
     xpos 0.2       
@@ -304,12 +304,12 @@ label level3_intro:
     show SideCharacterLevel3 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
-    pause 0.3
+    pause 0.2
 
     # Then main character
     show CharacterLevel3 at left_side:
-        zoom 0.2
-        linear 0.2 zoom 0.3
+        zoom 0.9
+        linear 0.2 zoom 0.7
 
     sidechar "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
     mainchar "A mansion? Isn’t that… the opposite of sustainability?"
@@ -332,8 +332,8 @@ label level3_intro:
 ##########################################################################
 
 image apartmentbg = "images/Backgrounds/ApartBackground.png" # nanti diubah
-image CharacterLevel4 = "images/Characters/CharacterLevel2.png"
-image SideCharacterLevel4 = "images/Characters/SideCharacterLevel2.png"
+image CharacterLevel4 = "images/Characters/Character4.png"
+image SideCharacterLevel4 = "images/Characters/Cewe4.png"
 
 transform left_side:
     xpos 0.2       
@@ -359,8 +359,8 @@ label level4_intro:
 
     # Then main character
     show CharacterLevel4 at left_side:
-        zoom 0.2
-        linear 0.2 zoom 0.3
+        zoom 0.9
+        linear 0.2 zoom 0.7
 
     sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
     mainchar "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."

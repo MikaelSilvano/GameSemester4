@@ -502,14 +502,14 @@ screen level_1_preview():
         # Home button: returns to level selection
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action Return()  
             xpos 575        
             ypos 1
             focus_mask True
 
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Return()  
+            action Jump("level_selection")  
             xpos 1
             ypos 1
             focus_mask True
@@ -532,7 +532,7 @@ screen level_2_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action Return()  
             xpos 575        
             ypos 1
             focus_mask True
@@ -540,7 +540,7 @@ screen level_2_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Return()  
+            action Jump("level_selection")
             xpos 1
             ypos 1
             focus_mask True
@@ -562,7 +562,7 @@ screen level_3_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action Return()  
             xpos 575        
             ypos 1
             focus_mask True
@@ -570,7 +570,7 @@ screen level_3_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Return()  
+            action Jump("level_selection")
             xpos 1
             ypos 1
             focus_mask True
@@ -593,7 +593,7 @@ screen level_4_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action Return()  
             xpos 575        
             ypos 1
             focus_mask True
@@ -601,7 +601,7 @@ screen level_4_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Return()  
+            action Jump("level_selection")
             xpos 1
             ypos 1
             focus_mask True

@@ -1021,9 +1021,11 @@ screen timer_screen():
 
     text "[format_time(time_left)]" xpos 0.499 ypos 0.16 anchor (0.5, 0.5) color "#FFFFFF"
 
+
 screen level_complete_screen():
     tag menu
     modal True
+    add "images/Backgrounds/backgroundnew.png" 
 
     frame:
         xfill True
@@ -1067,6 +1069,7 @@ screen level_complete_screen():
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     tag menu
     modal True
+    add "images/Backgrounds/backgroundnew.png" 
     
     frame:
         xfill True

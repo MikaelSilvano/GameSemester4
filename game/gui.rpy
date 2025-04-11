@@ -19,6 +19,11 @@ define config.check_conflicting_properties = True
 ## GUI Configuration Variables
 ################################################################################
 
+style tooltip_text:
+    size 20
+    color "#84fff7c6"
+    background "#163e24ff"
+    padding (8, 4)
 
 ## Colors ######################################################################
 ##

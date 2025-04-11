@@ -9,6 +9,8 @@ init python:
             self.target_score = target_score
             self.level = level      # store the current level
             self.initializing = True  # flag to indicate startup state
+            self.forced_compression_used = False
+
         
         def find_match(self, mouse_event):
             # Do nothing if we are still in the initial state.
@@ -114,13 +116,39 @@ init python:
             self.check_target_score(conditions=False)
 
 
-        def check_target_score(self, conditions):
+        def forced_compression(self):
+            """
+            Forced Compression: clears one row from the grid.
+            For this example, we choose the center row.
+            This method applies a crush animation, then clears the row,
+            shifts the grid and refills as necessary, and marks the skill as used.
+            """
+            rows = grid.grid_size // grid.icons_per_row
+            center_row = rows // 2  # compress the middle row
+            start_index = center_row * grid.icons_per_row
+            end_index = start_index + grid.icons_per_row
 
+            # Apply the crush animation and remove each tile in the center row.
+            for i in range(start_index, end_index):
+                tile = grid.icons[i]
+                if tile is not None:
+                    if tile.sprite:
+                        tile.sprite.child = crush_anim
+                    tile.destroy()  # destroy the tile's sprite
+                    grid.icons[i] = None
+
+            # Mark the skill as used so it can’t be reactivated.
+            self.forced_compression_used = True
+
+            # Update grid (shift down and refill as needed)
+            grid.shift_icons(mouse_event=True)
+            grid.refill_grid()
+            
+
+        def check_target_score(self, conditions):
             if (self.moves <= 0 or conditions):
                 print(self.score)
                 self.score *= round((self.moves/self.score + 1))
                 renpy.call_in_new_context("win_screen")
                 time.sleep(2)
         
-        def decrement_moves(self):
-            self.moves -= 1

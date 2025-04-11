@@ -1,8 +1,17 @@
 ﻿init python:
     current_objectives = None
+    
+    config.rollback_enabled = False
+
+transform crush_anim:
+    linear 0.3 zoom 0.0 alpha 0.0
 
 transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
+
+transform skill_button_transform:
+    # Adjust the zoom factor to scale down the button.
+    zoom 0.2
 
 transform building_resized:
     xpos build_xpos
@@ -12,15 +21,12 @@ transform building_resized:
 transform fade_out:
     linear 0.5 alpha 0.0
 
-init python:
-    config.rollback_enabled = False
-
 label setup_icons:
     $ grid.create_sprite_manager()
     python:
         sprite_manager = grid.create_sprite_manager()
         for icon in grid.icons:
-            icon.update_chain_overlay()
+            icon.update_chain_overlay()  
             idle_image = Image("Icons/{}.png".format(icon.icon_type))
             icon.sprite = sprite_manager.create(Transform(child=idle_image, zoom=0.08))
             icon.sprite.x = icon.x
@@ -44,6 +50,23 @@ screen Score_UI:
                 text "[game.target_score]" align (0.0, 0.5) color "#000000"
                 text "Moves Left:"align (1.0, 0.5) color "#000000"
                 text "{}".format(game.moves) align (0.0, 0.5) color "#000000"
+
+screen Skill2Overlay():
+    # This screen shows the Forced Compression skill button for Level 2.
+    # It will appear only if the game level is 2.
+    if game.level == 2:
+        if not game.forced_compression_used:
+            imagebutton:
+                idle "gui/button/Skill2.png"
+                hover "gui/button/Skill2.png"  
+                action Function(game.forced_compression)
+                xpos 0.815
+                ypos 0.14015
+                at skill_button_transform
+                tooltip Text("Forced Compression: Clear one row (usable once)", style="tooltip_text")
+        else:
+            # If already used, show a grayed-out version so the player knows it’s disabled.
+            add "gui/button/Skill2Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
 
 style tx_button:
     color "#000000"
@@ -96,6 +119,10 @@ screen Match_Three:
         add grid.sprite_manager:
             xpos 0
             ypos 0
+
+    if game.level == 2:
+        use Skill2Overlay
+
     frame:
         background None  # clear default
         fixed:
@@ -131,11 +158,15 @@ screen Match_Three:
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
     $ game = GameManager(moves, t_score, level)
+    
+    if game.level == 2:
+        $ game.forced_compression_used = False
+
     $ grid = GridManager(icpr, grid_size)
     $ grid.initialize_grid()
 
     hide screen menu_screen
-    scene background
+    scene backgroundpuzzle
 
     show screen Score_UI
     show screen reset_grids

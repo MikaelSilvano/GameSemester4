@@ -19,17 +19,21 @@ init python:
         global sound_effect_on
         sound_effect_on = not sound_effect_on
 
+        if sound_effect_on:
+            renpy.sound.set_volume(1)
+        else:
+            renpy.sound.set_volume(0)
+
     def toggle_bgm():
         global bgm_on
         bgm_on = not bgm_on
 
         if bgm_on:
-            renpy.music.play("audio/audioEcoCity.ogg", loop=True)
+            renpy.music.set_volume(1)
         else:
-            renpy.music.stop()
+            renpy.music.set_volume(0)
 
 default sound_effect_on = True
-default bgm_on = True
 
 init offset = -1
 
@@ -265,7 +269,7 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    zorder 100
+    zorder 999
 
     if quick_menu:
 
@@ -292,6 +296,13 @@ screen quick_menu():
             focus_mask True
             action ShowMenu("settings_page")
 
+    fixed:
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action ShowMenu("profile_page")
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -328,7 +339,7 @@ screen navigation():
 
         if main_menu:
             align (0.5, 0.75)
-            imagebutton auto "images/UI/PlayButton_%s.png" action Start() 
+            imagebutton auto "images/UI/PlayButton_%s.png" action Start()
             imagebutton auto "images/UI/tutorial_%s.png" action NullAction()
         else:
             xpos gui.navigation_xpos
@@ -1153,6 +1164,53 @@ style return_button:
 style close_button_style is default:
     size 30
 
+style custom_slider:
+    xmaximum 600
+    ymaximum 80
+    left_bar "gui/slider/horizontal_idle_bar.png"
+    right_bar "gui/slider/horizontal_idle_bar.png"
+    hover_left_bar "gui/slider/horizontal_hover_bar.png"
+    hover_right_bar "gui/slider/horizontal_hover_bar.png"
+    thumb "gui/slider/horizontal_idle_thumb.png"
+    hover_thumb "gui/slider/horizontal_hover_thumb.png"
+
+    bar_invert False
+
+screen profile_page():
+    tag menu
+    modal True
+    zorder 200
+    add "images/Backgrounds/backgroundnew.png"
+
+    
+
+    frame:
+        background "gui/profilePage/ProfileFrame.png"
+
+        vbox:
+            add get_profile_frame()
+
+        add get_profile_frame()
+        text get_current_level_text() size 60 color "#1A5143" xalign 0.55 ypos 350
+        
+        imagebutton:
+            auto "gui/settingPage/ExitButton_%s.png"
+            action Return()
+            xalign 100
+            yalign 500
+            focus_mask True
+
+        imagebutton:
+            auto "gui/pause/PauseX_%s.png"
+            action Return()
+            xpos -300
+            yalign 100
+            focus_mask True
+
+## About screen ################################################################
+##
+## This screen gives credit and copyright information about the game and Ren'Py.
+
 screen settings_page():
     tag menu
     modal True
@@ -1167,28 +1225,48 @@ screen settings_page():
             xalign 0.5
             yalign 0.5
 
-            # Sound Effects Section
-            hbox:
-                spacing 20
+            # Sound Effects Toggle + Volume
+            vbox:
+                spacing 10
                 xalign 0.5
-                text "Sound Effects:" size 30 color "#FFFFFF"
-                imagebutton:
-                    idle get_sound_switch_idle(sound_effect_on)
-                    hover get_sound_switch_hover(sound_effect_on)
-                    action Function(toggle_sound_effect)
+                ypos 20
+                text "Sound Effects:" size 40 color "#1A5143" xalign 0.5
 
-            # Background Music Section
-            hbox:
-                spacing 20
+                hbox:
+                    spacing 20
+                    imagebutton:
+                        idle get_sound_switch_idle(sound_effect_on)
+                        hover get_sound_switch_hover(sound_effect_on)
+                        action Function(toggle_sound_effect)
+                        xpos -100
+                        ypos -10
+                hbox:
+                    bar value Preference("sound volume") style "custom_slider"
+                    xpos 150
+                    ypos -130
+
+            # Background Music Toggle + Volume
+            vbox:
+                spacing 10
                 xalign 0.5
-                text "Background Music:" size 30 color "#FFFFFF"
-                imagebutton:
-                    idle get_sound_switch_idle(bgm_on)
-                    hover get_sound_switch_hover(bgm_on)
-                    action Function(toggle_bgm)
+                ypos -80
+                text "Background Music" size 40 color "#1A5143" xalign 0.5
+
+                hbox:
+                    spacing 20
+                    imagebutton:
+                        idle get_sound_switch_idle(bgm_on)
+                        hover get_sound_switch_hover(bgm_on)
+                        action Function(toggle_bgm)
+                        xpos -100
+                        ypos -10
+                hbox:
+                    bar value Preference("music volume") style "custom_slider"
+                    xpos 150
+                    ypos -120
 
         imagebutton:
-            auto "gui/pause/ExitButton_%s.png"
+            auto "gui/settingPage/ExitButton_%s.png"
             action Return()
             xalign 100
             yalign 500
@@ -1197,7 +1275,7 @@ screen settings_page():
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
             action Return()
-            xpos -250
+            xpos -300
             yalign 100
             focus_mask True
 

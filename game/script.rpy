@@ -1,4 +1,10 @@
-﻿init python:
+﻿default bgm_on = True
+
+label before_main_menu:
+    play music "audio/audioEcoCity.ogg"
+    return
+
+init python:
     current_objectives = None
 
 transform move_anim(new_x, new_y):
@@ -126,8 +132,6 @@ screen Match_Three:
             fixed:
                 add building_list[desired_images-1] at building_resized
 
-
-
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
     $ game = GameManager(moves, t_score, level)
@@ -148,8 +152,10 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
-    #play music "audio/audioEcoCity.ogg" fadein 1.0 loop
+    play music "audio/audioEcoCity.ogg" if_changed
+
     jump level_selection
+    return
 
 label delete_matches_callback(game_manager, matches, check):
     $ game_manager._delete_matches_callback(matches, check)
@@ -377,3 +383,21 @@ label level4_intro:
     $ renpy.pause(0.2, hard=True)
     scene black with None
     jump sublevel_level4
+
+
+    #Profile Page Icon
+    default levels_completed = 0
+
+    $ levels_completed += 1
+
+    init python:
+        def get_profile_frame():
+            # If using levels_completed as a number:
+            frame_number = min(levels_completed + 1, 5)  # +1 to match ProfileFrame1.png for 0 completed, ProfileFrame2.png for 1 completed, etc.
+            return f"gui/profilePage/ProfileFrame{frame_number}.png"
+
+    #Profile Page Current Level
+    init python:
+        def get_current_level_text():
+            # If using `levels_completed` as an integer
+            return f"Current Level: {levels_completed + 1}"

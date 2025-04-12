@@ -35,6 +35,37 @@ init python:
 
 default sound_effect_on = True
 
+init python:
+    def next_sublevel():
+        if game.level == 1:
+            max_sub = 4
+            label_prefix = "hut_sublevel_"
+        elif game.level == 2:
+            max_sub = 5
+            label_prefix = "house_sublevel_"
+        elif game.level == 3:
+            max_sub = 8
+            label_prefix = "mansion_sublevel_"
+        elif game.level == 4:
+            max_sub = 12
+            label_prefix = "apartment_sublevel_"
+        else:
+            renpy.jump("level_selection")
+            return
+
+        if not hasattr(game, "sublevel") or game.sublevel is None:
+            game.sublevel = 1
+
+        if game.sublevel < max_sub:
+            game.sublevel += 1
+            jump_label = label_prefix + str(game.sublevel)
+        else:
+            game.sublevel = 1
+            jump_label = "level_selection"
+
+        renpy.jump(jump_label)
+
+
 init offset = -1
 
 ################################################################################
@@ -1045,7 +1076,6 @@ screen level_complete_screen():
 
         add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
-
         frame:
             use result
             xalign 0.5
@@ -1055,7 +1085,7 @@ screen level_complete_screen():
 
         imagebutton:
             auto "gui/button/NextLevelButton_%s.png"
-            action Jump("hut_sublevel_2")  # Or whichever label is your next level.
+            action Function(next_sublevel)  
             ypos 25
             focus_mask True
 

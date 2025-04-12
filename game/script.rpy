@@ -163,6 +163,12 @@ label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
     $ game = GameManager(moves, t_score, level)
     
+    if game is None:
+        $ game = GameManager(moves, t_score, level, sublevel)
+    else:
+        $ game.level = level
+        $ game.sublevel = sublevel
+    
     if game.level == 2:
         $ game.forced_compression_used = False
 
@@ -199,7 +205,7 @@ label win_screen:
     show screen Match_Three
     play sound "audio/building_start.ogg"
     pause 3.0
-    play sound "audio/building_finish.ogg"  # 🔊 Second sound
+    play sound "audio/building_finish.ogg"  
     pause 0.5
     hide screen Score_UI
     hide screen reset_grids

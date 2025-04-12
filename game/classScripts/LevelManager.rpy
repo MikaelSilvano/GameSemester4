@@ -3,6 +3,7 @@ default building_list = []
 default desired_images = None
 default build_xpos = None
 default build_ypos = None
+default game = None
 
 ##########################################################################
 ## Level Selection
@@ -80,6 +81,7 @@ label level_4:
 # For Level 1 (Hut)
 label hut_sublevel_1:
     $ level = 1
+    $ sublevel = 1   
     $ desired_images = 1
     $ current_objectives = Objectives({
         "rocks": 3,
@@ -96,6 +98,7 @@ label hut_sublevel_1:
 
 label hut_sublevel_2:
     $ level = 1
+    $ sublevel = 2   
     $ desired_images = 2
     $ current_objectives = Objectives({
         "rocks": 10,
@@ -112,6 +115,7 @@ label hut_sublevel_2:
 
 label hut_sublevel_3:
     $ level = 1
+    $ sublevel = 3   
     $ desired_images = 3
     $ current_objectives = Objectives({
         "rocks": 20,
@@ -125,8 +129,10 @@ label hut_sublevel_3:
     jump start_game
 
     return
+
 label hut_sublevel_4:
     $ level = 1
+    $ sublevel = 4
     $ desired_images = 4
     $ current_objectives = Objectives({
         "rocks": 15,
@@ -148,6 +154,7 @@ label hut_sublevel_4:
 # For Level 2 (House)
 label house_sublevel_1:
     $ level = 2
+    $ sublevel = 1   
     $ desired_images = 1
     $ current_objectives = Objectives({
         "glass": 10,
@@ -163,6 +170,7 @@ label house_sublevel_1:
 
 label house_sublevel_2:
     $ level = 2
+    $ sublevel = 2   
     $ desired_images = 2
     $ current_objectives = Objectives({
         "glass": 5,
@@ -178,6 +186,7 @@ label house_sublevel_2:
 
 label house_sublevel_3:
     $ level = 2
+    $ sublevel = 3   
     $ desired_images = 3
     $ current_objectives = Objectives({
         "glass": 10,
@@ -193,6 +202,7 @@ label house_sublevel_3:
 
 label house_sublevel_4:
     $ level = 2
+    $ sublevel = 4   
     $ desired_images = 4
     $ current_objectives = Objectives({
         "glass": 5,
@@ -208,6 +218,7 @@ label house_sublevel_4:
 
 label house_sublevel_5:
     $ level = 2
+    $ sublevel = 5   
     $ desired_images = 5
     $ current_objectives = Objectives({
         "glass": 5,
@@ -228,6 +239,7 @@ label house_sublevel_5:
 # For Level 3 (Mansion)
 label mansion_sublevel_1:
     $ level = 3
+    $ sublevel = 1   
     $ desired_images = 1
     $ current_objectives = Objectives({
         "glass": 5,
@@ -237,13 +249,14 @@ label mansion_sublevel_1:
     })
     $ moves = 10
     $ t_score = 3000
-    $ icpr = 8
+    $ icpr = 6
     $ grid_size = 24
     jump start_game
     return
 
 label mansion_sublevel_2:
     $ level = 3
+    $ sublevel = 2   
     $ desired_images = 2
     $ current_objectives = Objectives({
         "glass": 10,
@@ -260,6 +273,7 @@ label mansion_sublevel_2:
 
 label mansion_sublevel_3:
     $ level = 3
+    $ sublevel = 3   
     $ desired_images = 3
     $ current_objectives = Objectives({
         "glass": 5,
@@ -276,6 +290,7 @@ label mansion_sublevel_3:
 
 label mansion_sublevel_4:
     $ level = 3
+    $ sublevel = 4   
     $ desired_images = 4
     $ current_objectives = Objectives({
         "glass": 5,
@@ -292,6 +307,7 @@ label mansion_sublevel_4:
 
 label mansion_sublevel_5:
     $ level = 3
+    $ sublevel = 5   
     $ desired_images = 5
     $ current_objectives = Objectives({
         "glass": 7,
@@ -308,6 +324,7 @@ label mansion_sublevel_5:
 
 label mansion_sublevel_6:
     $ level = 3
+    $ sublevel = 6   
     $ desired_images = 6
     $ current_objectives = Objectives({
         "glass": 9,
@@ -324,6 +341,7 @@ label mansion_sublevel_6:
 
 label mansion_sublevel_7:
     $ level = 3
+    $ sublevel = 7   
     $ desired_images = 7
     $ current_objectives = Objectives({
         "glass": 5,
@@ -340,6 +358,7 @@ label mansion_sublevel_7:
 
 label mansion_sublevel_8:
     $ level = 3
+    $ sublevel = 8   
     $ desired_images = 8
     $ current_objectives = Objectives({
         "glass": 7,
@@ -361,6 +380,7 @@ label mansion_sublevel_8:
 # For Level 4 (Apartment)
 label apartment_sublevel_1:
     $ level = 4
+    $ sublevel = 1   
     $ desired_images = 1
     $ current_objectives = Objectives({
         "glass": 5,
@@ -378,6 +398,7 @@ label apartment_sublevel_1:
 
 label apartment_sublevel_2:
     $ level = 4
+    $ sublevel = 2  
     $ desired_images = 2
     $ current_objectives = Objectives({
         "glass": 10,
@@ -395,6 +416,7 @@ label apartment_sublevel_2:
 
 label apartment_sublevel_3:
     $ level = 4
+    $ sublevel = 3  
     $ desired_images = 3
     $ current_objectives = Objectives({
         "glass": 5,
@@ -412,6 +434,7 @@ label apartment_sublevel_3:
 
 label apartment_sublevel_4:
     $ level = 4
+    $ sublevel = 4  
     $ desired_images = 4
     $ current_objectives = Objectives({
         "glass": 5,
@@ -429,6 +452,7 @@ label apartment_sublevel_4:
 
 label apartment_sublevel_5:
     $ level = 4
+    $ sublevel = 5  
     $ desired_images = 5
     $ current_objectives = Objectives({
         "glass": 12,
@@ -446,6 +470,7 @@ label apartment_sublevel_5:
 
 label apartment_sublevel_6:
     $ level = 4
+    $ sublevel = 6  
     $ desired_images = 6
     $ current_objectives = Objectives({
         "glass": 8,
@@ -463,6 +488,7 @@ label apartment_sublevel_6:
 
 label apartment_sublevel_7:
     $ level = 4
+    $ sublevel = 7  
     $ desired_images = 7
     $ current_objectives = Objectives({
         "glass": 14,
@@ -480,6 +506,7 @@ label apartment_sublevel_7:
 
 label apartment_sublevel_8:
     $ level = 4
+    $ sublevel = 8  
     $ desired_images = 8
     $ current_objectives = Objectives({
         "glass": 11,
@@ -497,6 +524,7 @@ label apartment_sublevel_8:
 
 label apartment_sublevel_9:
     $ level = 4
+    $ sublevel = 9  
     $ desired_images = 9
     $ current_objectives = Objectives({
         "glass": 9,
@@ -514,6 +542,7 @@ label apartment_sublevel_9:
 
 label apartment_sublevel_10:
     $ level = 4
+    $ sublevel = 10  
     $ desired_images = 10
     $ current_objectives = Objectives({
         "glass": 7,
@@ -531,6 +560,7 @@ label apartment_sublevel_10:
 
 label apartment_sublevel_11:
     $ level = 4
+    $ sublevel = 11  
     $ desired_images = 11
     $ current_objectives = Objectives({
         "glass": 13,
@@ -548,6 +578,7 @@ label apartment_sublevel_11:
 
 label apartment_sublevel_12:
     $ level = 4
+    $ sublevel = 12  
     $ desired_images = 12
     $ current_objectives = Objectives({
         "glass": 10,

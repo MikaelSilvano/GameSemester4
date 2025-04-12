@@ -8,9 +8,35 @@ init python:
             self.base_points = 5
             self.target_score = target_score
             self.level = level      # store the current level
+            self.sublevel = sublevel 
             self.initializing = True  # flag to indicate startup state
             self.forced_compression_used = False
 
+        def next_sublevel(self):
+            # Define the maximum number of sublevels per level:
+            if self.level == 1:
+                max_sub = 4
+                label_prefix = "hut_sublevel_"
+            elif self.level == 2:
+                max_sub = 5
+                label_prefix = "house_sublevel_"
+            elif self.level == 3:
+                max_sub = 8
+                label_prefix = "mansion_sublevel_"
+            elif self.level == 4:
+                max_sub = 12
+                label_prefix = "apartment_sublevel_"
+            else:
+                # Fallback: Return to level selection.
+                return "level_selection"
+
+            if self.sublevel < max_sub:
+                self.sublevel += 1
+                return label_prefix + str(self.sublevel)
+            else:
+                # After the last sublevel, return to level selection.
+                self.sublevel = 1
+                return "level_selection"
         
         def find_match(self, mouse_event):
             # Do nothing if we are still in the initial state.
@@ -101,20 +127,20 @@ init python:
 
 
         def _delete_matches_callback(self, matches, check):
-            # Fade out the matched tiles using a transition.
             renpy.transition(Dissolve(0.5))
-            multiplier = len(matches) / 4
             if check:
-                for icon in matches:
+                # Filter out chain-locked icons so they aren’t destroyed.
+                deletable_icons = [icon for icon in matches if not icon.chain_locked]
+                for icon in deletable_icons:
                     grid.icons[icon.index] = None
                     icon.destroy()
-                self.score += round(self.base_points * (len(matches) + multiplier))
-            
+                # Update score using only deletable icons.
+                multiplier = len(deletable_icons) / 4
+                self.score += round(self.base_points * (len(deletable_icons) + multiplier))
             grid.sprite_manager.redraw(0)
             renpy.restart_interaction()
             grid.shift_icons(mouse_event=True)
             self.check_target_score(conditions=False)
-
 
         def forced_compression(self):
             """

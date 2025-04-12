@@ -1,7 +1,7 @@
 ﻿default bgm_on = True
 
 label before_main_menu:
-    play music "audio/audioEcoCity.ogg"
+    #play music "audio/audioEcoCity.ogg"
     return
 
 init python:
@@ -161,13 +161,8 @@ screen Match_Three:
 
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
-    $ game = GameManager(moves, t_score, level)
-    
-    if game is None:
-        $ game = GameManager(moves, t_score, level, sublevel)
-    else:
-        $ game.level = level
-        $ game.sublevel = sublevel
+    $ game = GameManager(moves, t_score, level, sublevel)
+    $ grid = GridManager(icpr, grid_size)
     
     if game.level == 2:
         $ game.forced_compression_used = False
@@ -189,7 +184,7 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
-    play music "audio/audioEcoCity.ogg" if_changed
+    #play music "audio/audioEcoCity.ogg" if_changed
 
     jump level_selection
     return
@@ -211,7 +206,17 @@ label win_screen:
     hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
+    with Dissolve(0.3) 
     call screen level_complete_screen
+    return
+
+label lose_screen:
+    hide screen Score_UI
+    hide screen reset_grids
+    hide screen Match_Three
+    hide screen timer_screen
+    with Dissolve(0.3) 
+    call screen level_lose_screen
     return
 
 ##########################################################################

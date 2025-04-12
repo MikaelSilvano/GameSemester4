@@ -1,19 +1,22 @@
 init python:
-    from collections import Counter
-    import time
     class GameManager:
-        def __init__(self, moves, target_score, level):
+        def __init__(self, moves, target_score, level, sublevel):
             self.score = 0
             self.moves = moves
             self.base_points = 5
             self.target_score = target_score
-            self.level = level      # store the current level
-            self.sublevel = sublevel 
-            self.initializing = True  # flag to indicate startup state
+            self.level = level        # current level (1 through 4)
+            self.sublevel = sublevel  # current sublevel (starting at 1)
+            self.initializing = True  # flag to indicate start-up state
             self.forced_compression_used = False
 
-        def next_sublevel(self):
-            # Define the maximum number of sublevels per level:
+        def advance_sublevel(self):
+            """
+            Advances to the next sublevel using a naming convention. If the current
+            sublevel is the final one in the current level, mark the sublevel complete
+            (and unlock the next level, if applicable) and return to level selection.
+            """
+            # Determine max sublevels and label prefix by level.
             if self.level == 1:
                 max_sub = 4
                 label_prefix = "hut_sublevel_"
@@ -27,16 +30,20 @@ init python:
                 max_sub = 12
                 label_prefix = "apartment_sublevel_"
             else:
-                # Fallback: Return to level selection.
-                return "level_selection"
+                renpy.jump("level_selection")
+                return
 
             if self.sublevel < max_sub:
                 self.sublevel += 1
-                return label_prefix + str(self.sublevel)
+                new_label = label_prefix + str(self.sublevel)
             else:
-                # After the last sublevel, return to level selection.
-                self.sublevel = 1
-                return "level_selection"
+                # Last sublevel of the level has been completed.
+                complete_sublevel(self.level, self.sublevel)
+                new_label = "level_selection"
+            renpy.jump(new_label)
+
+        def retry_sublevel(self):
+            renpy.jump("start_game")
         
         def find_match(self, mouse_event):
             # Do nothing if we are still in the initial state.

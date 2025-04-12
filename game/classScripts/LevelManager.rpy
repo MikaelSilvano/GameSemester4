@@ -195,8 +195,8 @@ label house_sublevel_3:
     })
     $ moves = 15
     $ t_score = 5500
-    $ icpr = 4
-    $ grid_size = 32
+    $ icpr = 6
+    $ grid_size = 30
     jump start_game
     return
 

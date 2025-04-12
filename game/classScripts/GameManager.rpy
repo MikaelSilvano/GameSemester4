@@ -142,33 +142,46 @@ init python:
             grid.shift_icons(mouse_event=True)
             self.check_target_score(conditions=False)
 
+
         def forced_compression(self):
             """
-            Forced Compression: clears one row from the grid.
-            For this example, we choose the center row.
-            This method applies a crush animation, then clears the row,
-            shifts the grid and refills as necessary, and marks the skill as used.
+            Forced Compression: clears the middle row from the grid.
+            Applies crush animation, updates objectives, shifts and refills.
             """
             rows = grid.grid_size // grid.icons_per_row
-            center_row = rows // 2  # compress the middle row
+            center_row = rows // 2
             start_index = center_row * grid.icons_per_row
             end_index = start_index + grid.icons_per_row
 
-            # Apply the crush animation and remove each tile in the center row.
+            # Count the icons removed for objective update
+            icon_counts = {}
+
             for i in range(start_index, end_index):
                 tile = grid.icons[i]
                 if tile is not None:
+                    # Collect type for objectives
+                    icon_type = tile.icon_type
+                    icon_counts[icon_type] = icon_counts.get(icon_type, 0) + 1
+
+                    # Animate and destroy
                     if tile.sprite:
                         tile.sprite.child = crush_anim
-                    tile.destroy()  # destroy the tile's sprite
+                    tile.destroy()
                     grid.icons[i] = None
 
-            # Mark the skill as used so it can’t be reactivated.
+            if current_objectives:
+                for icon_type, count in icon_counts.items():
+                    decrement_amount = count
+                    if decrement_amount > 0:
+                        current_objectives.AimsMet(icon_type, decrement_amount)
+
+            # Mark skill as used
             self.forced_compression_used = True
 
-            # Update grid (shift down and refill as needed)
+            # Shift and refill the grid
             grid.shift_icons(mouse_event=True)
             grid.refill_grid()
+            renpy.restart_interaction()
             
 
         def check_target_score(self, conditions):

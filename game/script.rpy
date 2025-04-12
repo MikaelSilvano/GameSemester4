@@ -163,8 +163,8 @@ label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
     $ game = GameManager(moves, t_score, level)
     
-    if game is None:
-        $ game = GameManager(moves, t_score, level, sublevel)
+    if game.level == 2:
+        $ game.forced_compression_used = False
     else:
         $ game.level = level
         $ game.sublevel = sublevel

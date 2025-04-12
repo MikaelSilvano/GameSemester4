@@ -26,6 +26,9 @@ label level_1:
     return
 
 label level_2:
+    if not persistent.levels_unlocked[1]:
+        "Level 2 is locked! Complete all sublevels in Level 1 first."
+        jump level_selection
     $ build_xpos = 0.62
     $ build_ypos = 450
     hide screen level_selection
@@ -39,6 +42,9 @@ label level_2:
     return
 
 label level_3:
+    if not persistent.levels_unlocked[2]:
+        "Level 3 is locked! Complete all sublevels in Level 2 first."
+        jump level_selection
     $ build_xpos = 0.50
     $ build_ypos = 450
     hide screen level_selection
@@ -55,6 +61,9 @@ label level_3:
     return
 
 label level_4:
+    if not persistent.levels_unlocked[3]:
+        "Level 4 is locked! Complete all sublevels in Level 3 first."
+        jump level_selection
     $ build_xpos = 0.62
     $ build_ypos = 290
     hide screen level_selection
@@ -97,6 +106,9 @@ label hut_sublevel_1:
     return
 
 label hut_sublevel_2:
+    if not sublevel_unlocked(1, 2):
+        "Sublevel 2 is locked. Complete Sublevel 1 first."
+        jump sublevel_level1
     $ level = 1
     $ sublevel = 2   
     $ desired_images = 2
@@ -114,6 +126,9 @@ label hut_sublevel_2:
     return 
 
 label hut_sublevel_3:
+    if not sublevel_unlocked(1, 3):
+        "Sublevel 3 is locked. Complete Sublevel 2 first."
+        jump sublevel_level1
     $ level = 1
     $ sublevel = 3   
     $ desired_images = 3
@@ -131,6 +146,9 @@ label hut_sublevel_3:
     return
 
 label hut_sublevel_4:
+    if not sublevel_unlocked(1, 4):
+        "Sublevel 4 is locked. Complete Sublevel 4 first."
+        jump sublevel_level1    
     $ level = 1
     $ sublevel = 4
     $ desired_images = 4
@@ -153,6 +171,9 @@ label hut_sublevel_4:
 
 # For Level 2 (House)
 label house_sublevel_1:
+    if not sublevel_unlocked(2, 1):
+        "Sublevel 1 is locked. Complete Level 1 Sublevel 4 first."
+        jump sublevel_level2
     $ level = 2
     $ sublevel = 1   
     $ desired_images = 1
@@ -169,6 +190,9 @@ label house_sublevel_1:
     return
 
 label house_sublevel_2:
+    if not sublevel_unlocked(2, 2):
+        "Sublevel 2 is locked. Complete Sublevel 1 first."
+        jump sublevel_level2
     $ level = 2
     $ sublevel = 2   
     $ desired_images = 2
@@ -185,6 +209,9 @@ label house_sublevel_2:
     return
 
 label house_sublevel_3:
+    if not sublevel_unlocked(2, 3):
+        "Sublevel 3 is locked. Complete Sublevel 2 first."
+        jump sublevel_level2
     $ level = 2
     $ sublevel = 3   
     $ desired_images = 3
@@ -201,6 +228,9 @@ label house_sublevel_3:
     return
 
 label house_sublevel_4:
+    if not sublevel_unlocked(2, 4):
+        "Sublevel 4 is locked. Complete Sublevel 3 first."
+        jump sublevel_level2
     $ level = 2
     $ sublevel = 4   
     $ desired_images = 4
@@ -217,6 +247,9 @@ label house_sublevel_4:
     return
 
 label house_sublevel_5:
+    if not sublevel_unlocked(2, 5):
+        "Sublevel 5 is locked. Complete Sublevel 4 first."
+        jump sublevel_level2    
     $ level = 2
     $ sublevel = 5   
     $ desired_images = 5
@@ -238,6 +271,9 @@ label house_sublevel_5:
 
 # For Level 3 (Mansion)
 label mansion_sublevel_1:
+    if not sublevel_unlocked(3, 1):
+        "Sublevel 1 is locked. Complete Level 2 Sublevel 5 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 1   
     $ desired_images = 1
@@ -255,6 +291,9 @@ label mansion_sublevel_1:
     return
 
 label mansion_sublevel_2:
+    if not sublevel_unlocked(3, 2):
+        "Sublevel 2 is locked. Complete Sublevel 1 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 2   
     $ desired_images = 2
@@ -272,6 +311,9 @@ label mansion_sublevel_2:
     return
 
 label mansion_sublevel_3:
+    if not sublevel_unlocked(3, 3):
+        "Sublevel 3 is locked. Complete Sublevel 2 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 3   
     $ desired_images = 3
@@ -289,6 +331,9 @@ label mansion_sublevel_3:
     return
 
 label mansion_sublevel_4:
+    if not sublevel_unlocked(3, 4):
+        "Sublevel 4 is locked. Complete Sublevel 3 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 4   
     $ desired_images = 4
@@ -306,6 +351,9 @@ label mansion_sublevel_4:
     return
 
 label mansion_sublevel_5:
+    if not sublevel_unlocked(3, 5):
+        "Sublevel 5 is locked. Complete Sublevel 4 first."
+        jump sublevel_level3    
     $ level = 3
     $ sublevel = 5   
     $ desired_images = 5
@@ -323,6 +371,9 @@ label mansion_sublevel_5:
     return
 
 label mansion_sublevel_6:
+    if not sublevel_unlocked(3, 6):
+        "Sublevel 6 is locked. Complete Sublevel 5 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 6   
     $ desired_images = 6
@@ -340,6 +391,9 @@ label mansion_sublevel_6:
     return
 
 label mansion_sublevel_7:
+    if not sublevel_unlocked(3, 7):
+        "Sublevel 7 is locked. Complete Sublevel 6 first."
+        jump sublevel_level3
     $ level = 3
     $ sublevel = 7   
     $ desired_images = 7
@@ -357,6 +411,9 @@ label mansion_sublevel_7:
     return
 
 label mansion_sublevel_8:
+    if not sublevel_unlocked(3, 8):
+        "Sublevel 8 is locked. Complete Sublevel 7 first."
+        jump sublevel_level3    
     $ level = 3
     $ sublevel = 8   
     $ desired_images = 8
@@ -379,6 +436,9 @@ label mansion_sublevel_8:
 
 # For Level 4 (Apartment)
 label apartment_sublevel_1:
+    if not sublevel_unlocked(4, 1):
+        "Sublevel 1 is locked. Complete Level 3 Sublevel 8 first."
+        jump sublevel_level4
     $ level = 4
     $ sublevel = 1   
     $ desired_images = 1
@@ -397,6 +457,9 @@ label apartment_sublevel_1:
     return
 
 label apartment_sublevel_2:
+    if not sublevel_unlocked(4, 2):
+        "Sublevel 2 is locked. Complete Sublevel 1 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 2  
     $ desired_images = 2
@@ -415,6 +478,9 @@ label apartment_sublevel_2:
     return
 
 label apartment_sublevel_3:
+    if not sublevel_unlocked(4, 3):
+        "Sublevel 3 is locked. Complete Sublevel 2 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 3  
     $ desired_images = 3
@@ -433,6 +499,9 @@ label apartment_sublevel_3:
     return
 
 label apartment_sublevel_4:
+    if not sublevel_unlocked(4, 4):
+        "Sublevel 4 is locked. Complete Sublevel 3 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 4  
     $ desired_images = 4
@@ -451,6 +520,9 @@ label apartment_sublevel_4:
     return
 
 label apartment_sublevel_5:
+    if not sublevel_unlocked(4, 5):
+        "Sublevel 5 is locked. Complete Sublevel 4 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 5  
     $ desired_images = 5
@@ -469,6 +541,9 @@ label apartment_sublevel_5:
     return
 
 label apartment_sublevel_6:
+    if not sublevel_unlocked(4, 6):
+        "Sublevel 6 is locked. Complete Sublevel 5 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 6  
     $ desired_images = 6
@@ -487,6 +562,9 @@ label apartment_sublevel_6:
     return
 
 label apartment_sublevel_7:
+    if not sublevel_unlocked(4, 7):
+        "Sublevel 7 is locked. Complete Sublevel 6 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 7  
     $ desired_images = 7
@@ -505,6 +583,9 @@ label apartment_sublevel_7:
     return
 
 label apartment_sublevel_8:
+    if not sublevel_unlocked(4, 8):
+        "Sublevel 8 is locked. Complete Sublevel 7 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 8  
     $ desired_images = 8
@@ -523,6 +604,9 @@ label apartment_sublevel_8:
     return
 
 label apartment_sublevel_9:
+    if not sublevel_unlocked(4, 9):
+        "Sublevel 9 is locked. Complete Sublevel 8 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 9  
     $ desired_images = 9
@@ -541,6 +625,9 @@ label apartment_sublevel_9:
     return
 
 label apartment_sublevel_10:
+    if not sublevel_unlocked(4, 10):
+        "Sublevel 10 is locked. Complete Sublevel 9 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 10  
     $ desired_images = 10
@@ -559,6 +646,9 @@ label apartment_sublevel_10:
     return
 
 label apartment_sublevel_11:
+    if not sublevel_unlocked(4, 11):
+        "Sublevel 11 is locked. Complete Sublevel 10 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 11  
     $ desired_images = 11
@@ -577,6 +667,9 @@ label apartment_sublevel_11:
     return
 
 label apartment_sublevel_12:
+    if not sublevel_unlocked(4, 12):
+        "Sublevel 12 is locked. Complete Sublevel 11 first."
+        jump sublevel_level4    
     $ level = 4
     $ sublevel = 12  
     $ desired_images = 12

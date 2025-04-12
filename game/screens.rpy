@@ -33,40 +33,8 @@ init python:
         else:
             renpy.music.set_volume(0)
 
-default sound_effect_on = True
-
-init python:
-    def next_sublevel():
-        if game.level == 1:
-            max_sub = 4
-            label_prefix = "hut_sublevel_"
-        elif game.level == 2:
-            max_sub = 5
-            label_prefix = "house_sublevel_"
-        elif game.level == 3:
-            max_sub = 8
-            label_prefix = "mansion_sublevel_"
-        elif game.level == 4:
-            max_sub = 12
-            label_prefix = "apartment_sublevel_"
-        else:
-            renpy.jump("level_selection")
-            return
-
-        if not hasattr(game, "sublevel") or game.sublevel is None:
-            game.sublevel = 1
-
-        if game.sublevel < max_sub:
-            game.sublevel += 1
-            jump_label = label_prefix + str(game.sublevel)
-        else:
-            game.sublevel = 1
-            jump_label = "level_selection"
-
-        renpy.jump(jump_label)
-
-
 init offset = -1
+default sound_effect_on = True
 
 ################################################################################
 ## Styles
@@ -1057,7 +1025,7 @@ screen timer_screen():
     timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
 
     if time_left <= 0:
-        timer 0.1 action [Hide("timer_screen"), Jump("win_screen")] repeat False
+        timer 0.1 action [Hide("timer_screen"), Jump("lose_screen")] repeat False
 
     add Transform("gui/timer/TimerFrame.png", zoom=0.6) xpos 0.2 ypos 0.01
 
@@ -1068,6 +1036,7 @@ screen level_complete_screen():
     tag menu
     modal True
     add "images/Backgrounds/backgroundnew.png" 
+    $ complete_sublevel(game.level, game.sublevel)
 
     frame:
         xfill True
@@ -1085,7 +1054,7 @@ screen level_complete_screen():
 
         imagebutton:
             auto "gui/button/NextLevelButton_%s.png"
-            action Function(next_sublevel)  
+            action Function(game.advance_sublevel)  
             ypos 25
             focus_mask True
 
@@ -1098,6 +1067,32 @@ screen level_complete_screen():
     python:
         current_objectives = None
 
+screen level_lose_screen():
+    tag menu
+    modal True
+    add "images/Backgrounds/backgroundnew.png" 
+
+    frame:
+        xfill True
+        yfill True
+        background Solid("#00000080")
+
+        add "gui/levelLose/LevelLoseNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+
+        imagebutton:
+            auto "gui/button/RetryButton_%s.png"
+            action Function(game.retry_sublevel)  
+            ypos 0
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/HomeButton_%s.png"
+            action Jump("level_selection")
+            ypos 40
+            focus_mask True
+
+    python:
+        current_objectives = None
 ## Game Menu screen ############################################################
 ##
 ## This lays out the basic common structure of a game menu screen. It's called

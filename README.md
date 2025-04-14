@@ -3,7 +3,7 @@
 
   EcoCity Match dirancang untuk mengatasi tantangan ini dengan memberikan pengalaman edukatif yang mendorong pembangunan perumahan berkepanjangan. Game ini memanfaatkan genre simulasi puzzle untuk memperkenalkan kepada pemain prinsip-prinsip konstruksi ramah lingkungan dan perencanaan kota. Dengan menyelesaikan teka - teki pencocokan, pemain membuka bahan bangunan penting dan secara bertahap membangun rumah, selaras dengan prinsip SDG 11. Melalui gameplay yang interaktif, EcoCity Match menumbuhkan kesadaran dan keterlibatan dalam praktik pembangunan yang berkepanjangan.
 	
-  EcoCity Match akan dirancang dengan menggunakan metode agile. Metode ini adalah metode pendekatan pengembangan perangkat lunak yang berfokus pada iterasi, kolaborasi, dan fleksibilitas dalam menghadapi perubahan. Dengan menggunakan metode ini, pengembangan EcoCity Match dilakukan secara iteratif dan kolaboratif yang memungkinkan tim pengembang untuk secara fleksibel menyesuaikan fitur game berdasarkan umpan balik pengguna. Metodologi ini memastikan bahwa setiap iterasi membawa peningkatan yang lebih sesuai dengan kebutuhan pemain dan tujuan edukatif yang ingin dicapai.
+  EcoCity Match memiliki 4 level yang berprogress dari bangunan hut, house, mansion, dan apartment. Pemain berperan dalam rolenya untuk memulai pembangunan dari konstruksi kecil hingga yang besar. Akhir pemainan dari EcoCity Match adalah pemain berhasil membangun Apartment yang ramah lingkungan.
 
 Dibuat oleh:
 - Annabel K. Jovinne Caron (01082230011)

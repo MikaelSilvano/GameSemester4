@@ -181,12 +181,13 @@ screen Match_Three:
 
     use SkillOverlay
 
+screen Building:
     frame:
         background None  # clear default
         fixed:
             for img in building_list[:desired_images-1]:
                 add img at building_resized
-    
+
     frame:
         align (0.02, 0.25)
         background None
@@ -210,6 +211,33 @@ screen Match_Three:
             background None  # clear default
             fixed:
                 add building_list[desired_images-1] at building_resized
+
+image smoke_1 = "Building/Smoke/smoke_1.png"
+image smoke_2 = "Building/Smoke/smoke_2.png"
+image smoke_3 = "Building/Smoke/smoke_3.png"
+image smoke_4 = "Building/Smoke/smoke_4.png"
+image smoke_5 = "Building/Smoke/smoke_5.png"
+
+image smoke_screen:
+    "smoke_1" with Dissolve(0.05, alpha=True)
+    pause 0.15
+    "smoke_3" with Dissolve(0.05, alpha=True)
+    pause 0.15
+    "smoke_2" with Dissolve(0.05, alpha=True)
+    pause 0.15
+    "smoke_5" with Dissolve(0.05, alpha=True)
+    pause 0.15
+    "smoke_4" with Dissolve(0.05, alpha=True)
+    pause 0.15
+
+    repeat
+
+screen smokes:
+    add "smoke_screen" at smoke_pos
+
+transform smoke_pos:
+    align(0.95, 1.3)
+    zoom(1.1)
 
 label return_to_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True)
@@ -266,32 +294,35 @@ label win_level_screen:
     show screen reset_grids
     show screen timer_screen
     show screen Match_Three
+    show screen Building
+    show screen smokes
     play sound "audio/building_start.ogg"
     pause 3.0
+    hide screen smokes
     play sound "audio/building_finish.ogg"  
-    pause 0.5
+    pause 1.5
     hide screen Score_UI
     hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
-    with Dissolve(0.3) 
     call screen level_complete_screen
     return
 
 label win_sublevel_screen:
-    #show screen Score_UI
     show screen reset_grids
     show screen timer_screen
     show screen Match_Three
+    show screen Building
+    show screen smokes
     play sound "audio/building_start.ogg"
     pause 3.0
+    hide screen smokes
     play sound "audio/building_finish.ogg"  
-    pause 0.5
+    pause 1.5
     hide screen Score_UI
     hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
-    with Dissolve(0.3) 
     call screen sublevel_complete_screen
     return
 

@@ -1,12 +1,16 @@
 ﻿default bgm_on = True
+default blueprint_swap_used = False
 
-label before_main_menu:
-    play music "audio/audioEcoCity.ogg"
-    return
+
+label before_main_menu:#################
+    $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
+    return############
 
 init python:
     current_objectives = None
-    
+    skill_active = False
+    icon_skill_collected = []
+    required_targets = None
     config.rollback_enabled = False
 
 transform crush_anim:
@@ -39,40 +43,94 @@ label setup_icons:
             icon.sprite.y = icon.y
     call screen Match_Three
 
-screen Score_UI:
-    frame:
-        align (0.05, 0.05)
-        background "#2d467a"
-        xysize (450, 100)
-        padding (4, 4)
-        frame:
-            background "#9a90f3"
-            xfill True
-            yfill True
-            grid 2 2:
-                xfill True
-                spacing 0
-                text "[game.score]/" align (1.0, 0.5) color "#000000"
-                text "[game.target_score]" align (0.0, 0.5) color "#000000"
-                text "Moves Left:"align (1.0, 0.5) color "#000000"
-                text "{}".format(game.moves) align (0.0, 0.5) color "#000000"
+# screen Score_UI:
+#     frame:
+#         align (0.05, 0.05)
+#         background "#2d467a"
+#         xysize (450, 100)
+#         padding (4, 4)
+#         frame:
+#             background "#9a90f3"
+#             xfill True
+#             yfill True
+#             grid 2 2:
+#                 xfill True
+#                 spacing 0
+#                 text "[game.score]/" align (1.0, 0.5) color "#000000"
+#                 text "[game.target_score]" align (0.0, 0.5) color "#000000"
+#                 text "Moves Left:"align (1.0, 0.5) color "#000000"
+#                 text "{}".format(game.moves) align (0.0, 0.5) color "#000000"
 
-screen Skill2Overlay():
+screen SkillOverlay():
     # This screen shows the Forced Compression skill button for Level 2.
     # It will appear only if the game level is 2.
-    if game.level == 2:
-        if not game.forced_compression_used:
-            imagebutton:
-                idle "gui/button/Skill2.png"
-                hover "gui/button/Skill2.png"  
-                action Function(game.forced_compression)
+    if game.level == 1:
+        if not timer_freeze_used:
+            if timer_running:
+                imagebutton:
+                    idle "gui/button/Skill1.png"
+                    # hover "gui/button/Skill1_hover.png"  
+                    action Show("time_freeze")
+                    xpos 0.815
+                    ypos 0.14015
+                    at skill_button_transform
+            else:
+                fixed:
+                    xpos 0.815
+                    ypos 0.14015
+                    at skill_button_transform
+                    add "gui/button/Skill1_hover.png"
+        else:
+            fixed:
                 xpos 0.815
                 ypos 0.14015
                 at skill_button_transform
-                tooltip Text("Forced Compression: Clear one row (usable once)", style="tooltip_text")
+                add "gui/button/Skill1Gray.png"
+
+    
+    elif game.level == 2:
+        if not skill.forced_compression_used:
+            imagebutton:
+                idle "gui/button/Skill2.png"
+                # hover "gui/button/Skill2_hover.png"  
+                action Function(skill.forced_compression)
+                xpos 0.815
+                ypos 0.14015
+                at skill_button_transform
         else:
             # If already used, show a grayed-out version so the player knows it’s disabled.
             add "gui/button/Skill2Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
+
+    elif game.level == 3:
+        if not blueprint_swap_used:
+            imagebutton:
+                idle "gui/button/Skill3.png"
+                # hover "gui/button/Skill3_hover.png"  
+                action SetVariable("skill_active", True)
+                xpos 0.815
+                ypos 0.14015
+                at skill_button_transform
+
+        else:
+            fixed:
+                xpos 0.815
+                ypos 0.14015
+                at skill_button_transform
+                # Grayed out skill icon
+                add "gui/button/Skill3Gray.png"
+    
+    elif game.level == 4:
+        if not skill.masterpiece_build_skill_used:
+            imagebutton:
+                idle "gui/button/Skill4.png"
+                # hover "gui/button/Skill4_hover.png"  
+                action SetVariable("skill_active", True)
+                xpos 0.815
+                ypos 0.14015
+                at skill_button_transform
+        else:
+            # If already used, show a grayed-out version so the player knows it’s disabled.
+            add "gui/button/Skill4Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
 
 style tx_button:
     color "#000000"
@@ -92,7 +150,6 @@ screen reset_grids:
             align (0.5,0.5)
             text_style "tx_button"
             action If(len(grid.icons) != 0, [Function(grid.clear_grid), Function(grid.initialize_grid), Jump("setup_icons")])
-
 
 screen Match_Three:
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
@@ -126,8 +183,7 @@ screen Match_Three:
             xpos 0
             ypos 0
 
-    if game.level == 2:
-        use Skill2Overlay
+    use SkillOverlay
 
     frame:
         background None  # clear default
@@ -159,26 +215,37 @@ screen Match_Three:
             fixed:
                 add building_list[desired_images-1] at building_resized
 
+label return_to_menu:
+    $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True)
+    return
+
 label start_game:
     $ my_objectives = current_objectives  # Pull the passed-in objectives
-    $ game = GameManager(moves, t_score, level)
+    $ game = GameManager(moves, t_score, level, sublevel)
+    $ grid = GridManager(icpr, grid_size)
+    $ skill = Skills_list()
     
     if game.level == 2:
-        $ game.forced_compression_used = False
-    else:
-        $ game.level = level
-        $ game.sublevel = sublevel
+        $ skill.forced_compression_used = False
     
-    if game.level == 2:
-        $ game.forced_compression_used = False
+    if game.level == 3:
+        $ required_targets = 2
+
+    if game.level == 4:
+        $ required_targets = 1
 
     $ grid = GridManager(icpr, grid_size)
     $ grid.initialize_grid()
 
+    if blueprint_swap_used == True:
+        show screeen countdown
+
+    $ renpy.music.play("audio/gameplay.ogg", loop=True)
+
     hide screen menu_screen
     scene backgroundpuzzle
 
-    show screen Score_UI
+    # show screen Score_UI
     show screen reset_grids
     show screen timer_screen
 
@@ -189,7 +256,7 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
-    play music "audio/audioEcoCity.ogg" if_changed
+    $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
 
     jump level_selection
     return
@@ -198,8 +265,8 @@ label delete_matches_callback(game_manager, matches, check):
     $ game_manager._delete_matches_callback(matches, check)
     return
 
-label win_screen:
-    show screen Score_UI
+label win_level_screen:
+    # show screen Score_UI
     show screen reset_grids
     show screen timer_screen
     show screen Match_Three
@@ -211,12 +278,44 @@ label win_screen:
     hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
+    with Dissolve(0.3) 
     call screen level_complete_screen
+    return
+
+label win_sublevel_screen:
+    #show screen Score_UI
+    show screen reset_grids
+    show screen timer_screen
+    show screen Match_Three
+    play sound "audio/building_start.ogg"
+    pause 3.0
+    play sound "audio/building_finish.ogg"  
+    pause 0.5
+    hide screen Score_UI
+    hide screen reset_grids
+    hide screen Match_Three
+    hide screen timer_screen
+    with Dissolve(0.3) 
+    call screen sublevel_complete_screen
+    return
+
+label lose_screen:
+    hide screen Score_UI
+    hide screen reset_grids
+    hide screen Match_Three
+    hide screen timer_screen
+    with Dissolve(0.3) 
+    call screen level_lose_screen
+    return
+
+label reset_progress:
+    call screen reset_progress_screen
     return
 
 ##########################################################################
 ## Level 1 Lore
 ##########################################################################
+$ show_overlay = False
 
 image hutbg = "images/Backgrounds/HutBackground.png"
 image CharacterLevel1 = "images/Characters/Character1.png"
@@ -420,7 +519,6 @@ label level4_intro:
     $ renpy.pause(0.2, hard=True)
     scene black with None
     jump sublevel_level4
-
 
     #Profile Page Icon
     default levels_completed = 0

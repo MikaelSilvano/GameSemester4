@@ -20,4 +20,3 @@ init python:
             if not self.Aims and not self.all_aims:
                 self.all_aims = True
                 game.check_target_score(self.all_aims)
-                renpy.call_in_new_context("win_screen")

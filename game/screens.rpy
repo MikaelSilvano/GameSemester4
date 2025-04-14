@@ -14,6 +14,9 @@ init python:
 
     def get_sound_switch_hover(on):
         return "gui/settingPage/SwitchOn_hover.png" if on else "gui/settingPage/SwitchOff_hover.png"
+    
+    def play_and(action):
+        return [Play("sound", "audio/button.ogg"), action]
 
     def toggle_sound_effect():
         global sound_effect_on
@@ -33,8 +36,9 @@ init python:
         else:
             renpy.music.set_volume(0)
 
-init offset = -1
 default sound_effect_on = True
+
+init offset = -1
 
 ################################################################################
 ## Styles
@@ -268,32 +272,13 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    zorder 999
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-
     fixed:
         imagebutton:
             auto "gui/button/settings_%s.png"
             xpos 768
             ypos -507
             focus_mask True
-            action ShowMenu("settings_page")
+            action play_and(ShowMenu("settings_page"))
 
     fixed:
         imagebutton:
@@ -301,7 +286,7 @@ screen quick_menu():
             xpos 768
             ypos -507
             focus_mask True
-            action ShowMenu("profile_page")
+            action play_and(ShowMenu("profile_page"))
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -333,37 +318,12 @@ screen navigation():
 
     vbox:
         style_prefix "navigation"
-
         spacing gui.navigation_spacing
+        align (0.5, 0.75)
 
-        if main_menu:
-            align (0.5, 0.75)
-            imagebutton auto "images/UI/PlayButton_%s.png" action Start()
-            imagebutton auto "images/UI/tutorial_%s.png" action NullAction()
-        else:
-            xpos gui.navigation_xpos
-            yalign 0.5
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        # textbutton _("Load") action ShowMenu("load")
-
-        # textbutton _("Preferences") action ShowMenu("preferences")
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        # textbutton _("About") action ShowMenu("about")
-
-        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            # textbutton _("Help") action ShowMenu("help")
+        # Always show these two buttons
+        imagebutton auto "images/UI/PlayButton_%s.png" action play_and(Start())
+        imagebutton auto "images/UI/tutorial_%s.png" action play_and(NullAction())
 
         if renpy.variant("pc"):
             textbutton _("Quit") action Quit(confirm=not main_menu)
@@ -451,47 +411,86 @@ screen level_selection_screen():
     add "images/Screens/Level_Selection.png"
     key "K_ESCAPE" action NullAction()
 
+
     fixed:
         # Level 1 button
         imagebutton:
             auto "gui/button/Level1Button_%s.png"  # Provide your Level 1 button image or use a transparent image.
-            action Jump("level_1")
+            action play_and(Jump("level_1"))
             xpos 1
             ypos 30
             focus_mask True
 
         # Level 2 button
+        #if persistent.levels_unlocked[1]:
         imagebutton:
             auto "gui/button/Level2Button_%s.png"
-            action Jump("level_2")
+            action play_and(Jump("level_2"))
             xpos 1
             ypos 32
             focus_mask True
 
+        #else:
+        #    imagebutton:
+        #        idle "gui/button/Level2Button_lock.png"
+        #        xpos 1
+        #        ypos 32
+        #        focus_mask True
+
         # Level 3 button
+        #if persistent.levels_unlocked[2]:
         imagebutton:
             auto "gui/button/Level3Button_%s.png"
-            action Jump("level_3")
+            action play_and(Jump("level_3"))
             xpos 4
             ypos 30
             focus_mask True
 
+        #else:
+        #    imagebutton:
+        #        idle "gui/button/Level3Button_lock.png"
+        #        xpos 4
+        #        ypos 30
+        #        focus_mask True
+
         # Level 4 button
+        #if persistent.levels_unlocked[3]:
         imagebutton:
             auto "gui/button/Level4Button_%s.png"
-            action Jump("level_4")
+            action play_and(Jump("level_4"))
             xpos 4
             ypos 32
             focus_mask True
 
+        #else:
+        #    imagebutton:
+        #        idle "gui/button/Level4Button_lock.png"
+        #        xpos 4
+        #        ypos 32
+        #        focus_mask True
+
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Return()  
+            action play_and(Return())
             xpos 1
             ypos 1
             focus_mask True
 
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen level_1_preview():
     tag menu
@@ -504,7 +503,7 @@ screen level_1_preview():
         # Play button: leads to Level 1 sublevel page
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("level1_intro")
+            action play_and(Jump("level1_intro"))
             xpos 555         
             ypos -95
             focus_mask True
@@ -512,18 +511,32 @@ screen level_1_preview():
         # Home button: returns to level selection
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Return()  
+            action play_and(Return())
             xpos 575        
             ypos 1
             focus_mask True
 
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_selection")  
+            action play_and(Jump("level_selection"))
             xpos 1
             ypos 1
             focus_mask True
 
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen level_2_preview():
     tag menu
@@ -535,14 +548,14 @@ screen level_2_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("level2_intro")
+            action play_and(Jump("level2_intro"))
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Return()  
+            action play_and(Return())
             xpos 575        
             ypos 1
             focus_mask True
@@ -550,10 +563,25 @@ screen level_2_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen level_3_preview():
     tag menu
@@ -565,14 +593,14 @@ screen level_3_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("level3_intro")
+            action play_and(Jump("level3_intro"))
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Return()  
+            action play_and(Return())
             xpos 575        
             ypos 1
             focus_mask True
@@ -580,11 +608,25 @@ screen level_3_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 1
             ypos 1
             focus_mask True
 
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen level_4_preview():
     tag menu
@@ -596,14 +638,14 @@ screen level_4_preview():
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
-            action Jump("level4_intro")
+            action play_and(Jump("level4_intro"))
             xpos 555        
             ypos -95
             focus_mask True
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Return()  
+            action play_and(Return())  
             xpos 575        
             ypos 1
             focus_mask True
@@ -611,11 +653,26 @@ screen level_4_preview():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 1
             ypos 1
             focus_mask True
         
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
+
 screen sublevel_hut_screen():
     tag menu
     modal True
@@ -624,41 +681,73 @@ screen sublevel_hut_screen():
 
     fixed:
         # Sublevel 1 button
+        #if persistent.level_progress[1][0]:
         imagebutton:
             auto "gui/button/Sublevel1Button_%s.png"
-            action Jump("hut_sublevel_1")
+            action play_and(Jump("hut_sublevel_1"))
             xpos -656
             ypos -45
             focus_mask True
 
+        #else:
+        #    imagebutton:
+        #        idle "gui/button/Sublevel1Button_lock.png"
+        #        xpos -656
+        #        ypos -45
+        #        focus_mask True
+
         # Sublevel 2 button
+        #if persistent.level_progress[1][1]:
         imagebutton:
             auto "gui/button/Sublevel2Button_%s.png"
-            action Jump("hut_sublevel_2")
+            action play_and(Jump("hut_sublevel_2"))
             xpos -168
             ypos -275
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel2Button_lock.png"
+        #         xpos -168
+        #         ypos -275
+        #         focus_mask True
+
         # Sublevel 3 button
+        #if persistent.level_progress[1][2]:
         imagebutton:
             auto "gui/button/Sublevel3Button_%s.png"
-            action Jump("hut_sublevel_3")
+            action play_and(Jump("hut_sublevel_3"))
             xpos 45
             ypos 100
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel3Button_lock.png"
+        #         xpos 45
+        #         ypos 100
+        #         focus_mask True
+
         # Sublevel 4 button
+        #if persistent.level_progress[1][3]:
         imagebutton:
             auto "gui/button/Sublevel4Button_%s.png"
-            action Jump("hut_sublevel_4")
+            action play_and(Jump("hut_sublevel_4"))
             xpos 483
             ypos -68
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel4Button_lock.png"
+        #         xpos 483
+        #         ypos -68
+        #         focus_mask True
+
         # Next button to jump to level selection
         imagebutton:
             auto "gui/button/NextButton1_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 765
             ypos -10
             focus_mask True
@@ -666,10 +755,25 @@ screen sublevel_hut_screen():
         # Home button to return to level 1 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_1")
+            action play_and(Jump("level_1"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen sublevel_house_screen():
     tag menu
@@ -681,43 +785,75 @@ screen sublevel_house_screen():
         # Five sublevel buttons
         imagebutton:
             auto "gui/button/Sublevel1Button_%s.png"
-            action Jump("house_sublevel_1")
+            action play_and(Jump("house_sublevel_1"))
             xpos -742
             ypos 0
             focus_mask True
 
+        #if persistent.level_progress[2][1]:
         imagebutton:
             auto "gui/button/Sublevel2Button_%s.png"
-            action Jump("house_sublevel_2")
+            action play_and(Jump("house_sublevel_2"))
             xpos -328
             ypos -257
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel2Button_lock.png"
+        #         xpos -328
+        #         ypos -257
+        #         focus_mask True
+
+        #if persistent.level_progress[2][2]:
         imagebutton:
             auto "gui/button/Sublevel3Button_%s.png"
-            action Jump("house_sublevel_3")
+            action play_and(Jump("house_sublevel_3"))
             xpos -139
             ypos 145
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel3Button_lock.png"
+        #         xpos -139
+        #         ypos 145
+        #         focus_mask True
+
+        #if persistent.level_progress[2][3]:
         imagebutton:
             auto "gui/button/Sublevel4Button_%s.png"
-            action Jump("house_sublevel_4")
+            action play_and(Jump("house_sublevel_4"))
             xpos 139
             ypos -250
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel4Button_lock.png"
+        #         xpos 139
+        #         ypos -250
+        #         focus_mask True
+
+        #if persistent.level_progress[2][4]:
         imagebutton:
             auto "gui/button/Sublevel5Button_%s.png"
-            action Jump("house_sublevel_5")
+            action play_and(Jump("house_sublevel_5"))
             xpos 412
             ypos 90
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel5Button_lock.png"
+        #         xpos 412
+        #         ypos 90
+        #         focus_mask True
+
         # Next button to jump to level selection
         imagebutton:
             auto "gui/button/NextButton2_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 675
             ypos -1
             focus_mask True
@@ -725,10 +861,25 @@ screen sublevel_house_screen():
         # Home button to return to level 2 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_2")
+            action play_and(Jump("level_2"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen mansion_sublevel1_screen():
     tag menu
@@ -740,43 +891,75 @@ screen mansion_sublevel1_screen():
         # Five sublevel buttons for sublevels 1 to 5
         imagebutton:
             auto "gui/button/Sublevel1Button_%s.png"
-            action Jump("mansion_sublevel_1")
+            action play_and(Jump("mansion_sublevel_1"))
             xpos -742
             ypos 0
             focus_mask True
 
+        #if persistent.level_progress[3][1]:
         imagebutton:
             auto "gui/button/Sublevel2Button_%s.png"
-            action Jump("mansion_sublevel_2")
+            action play_and(Jump("mansion_sublevel_2"))
             xpos -328
             ypos -257
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel2Button_lock.png"
+        #         xpos -328
+        #         ypos -257
+        #         focus_mask True
+
+        #if persistent.level_progress[3][2]:
         imagebutton:
             auto "gui/button/Sublevel3Button_%s.png"
-            action Jump("mansion_sublevel_3")
+            action play_and(Jump("mansion_sublevel_3"))
             xpos -139
             ypos 145
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel3Button_lock.png"
+        #         xpos -139
+        #         ypos 145
+        #         focus_mask True
+
+        #if persistent.level_progress[3][3]:
         imagebutton:
             auto "gui/button/Sublevel4Button_%s.png"
-            action Jump("mansion_sublevel_4")
+            action play_and(Jump("mansion_sublevel_4"))
             xpos 139
             ypos -250
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel4Button_lock.png"
+        #         xpos 139
+        #         ypos -250
+        #         focus_mask True
+
+        #if persistent.level_progress[3][4]:
         imagebutton:
             auto "gui/button/Sublevel5Button_%s.png"
-            action Jump("mansion_sublevel_5")
+            action play_and(Jump("mansion_sublevel_5"))
             xpos 412
             ypos 90
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel5Button_lock.png"
+        #         xpos 412
+        #         ypos 90
+        #         focus_mask True        
+
         # Next button to jump to page 2
         imagebutton:
             auto "gui/button/NextButton2_%s.png"
-            action Jump("level_3_page2")
+            action play_and(Jump("level_3_page2"))
             xpos 675
             ypos 1
             focus_mask True
@@ -784,10 +967,25 @@ screen mansion_sublevel1_screen():
         # Home button to return to level 3 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_3")
+            action play_and(Jump("level_3"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 
 screen mansion_sublevel2_screen():
@@ -798,31 +996,55 @@ screen mansion_sublevel2_screen():
 
     fixed:
         # Three sublevel buttons for sublevels 6 to 8
+        #if persistent.level_progress[3][5]:
         imagebutton:
             auto "gui/button/Sublevel6Button_%s.png"
-            action Jump("mansion_sublevel_6")
+            action play_and(Jump("mansion_sublevel_6"))
             xpos -307
             ypos -1
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel6Button_lock.png"
+        #         xpos -307
+        #         ypos -1
+        #         focus_mask True
+
+        #if persistent.level_progress[3][6]:
         imagebutton:
             auto "gui/button/Sublevel7Button_%s.png"
-            action Jump("mansion_sublevel_7")
+            action play_and(Jump("mansion_sublevel_7"))
             xpos 210
             ypos -257
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel7Button_lock.png"
+        #         xpos 210
+        #         ypos -257
+        #         focus_mask True
+
+        #if persistent.level_progress[3][7]:
         imagebutton:
             auto "gui/button/Sublevel8Button_%s.png"
-            action Jump("mansion_sublevel_8")
+            action play_and(Jump("mansion_sublevel_8"))
             xpos 538
             ypos 125
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel8Button_lock.png"
+        #         xpos 538
+        #         ypos 125
+        #         focus_mask True
+
         # Previous button to return to page 1
         imagebutton:
             auto "gui/button/PreviousButton1_%s.png"
-            action Jump("mansion_sublevel1")
+            action play_and(Jump("mansion_sublevel1"))
             xpos -622
             ypos -20
             focus_mask True
@@ -830,7 +1052,7 @@ screen mansion_sublevel2_screen():
         # Next button to jump to level selection
         imagebutton:
             auto "gui/button/NextButton3_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 787
             ypos -2
             focus_mask True
@@ -838,10 +1060,25 @@ screen mansion_sublevel2_screen():
         # Home button to return to level 3 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_3")
+            action play_and(Jump("level_3"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen apartment_sublevel1_screen():
     tag menu
@@ -853,39 +1090,63 @@ screen apartment_sublevel1_screen():
         # Sublevel 1 button
         imagebutton:
             auto "gui/button/Sublevel1Button_%s.png"
-            action Jump("apartment_sublevel_1")
+            action play_and(Jump("apartment_sublevel_1"))
             xpos -656
             ypos -45
             focus_mask True
 
         # Sublevel 2 button
+        #if persistent.level_progress[4][1]:
         imagebutton:
             auto "gui/button/Sublevel2Button_%s.png"
-            action Jump("apartment_sublevel_2")
+            action play_and(Jump("apartment_sublevel_2"))
             xpos -168
             ypos -275
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel2Button_lock.png"
+        #         xpos -168
+        #         ypos -275
+        #         focus_mask True            
+
         # Sublevel 3 button
+        #if persistent.level_progress[4][2]:   
         imagebutton:
             auto "gui/button/Sublevel3Button_%s.png"
-            action Jump("apartment_sublevel_3")
+            action play_and(Jump("apartment_sublevel_3"))
             xpos 45
             ypos 100
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel3Button_lock.png"
+        #         xpos 45
+        #         ypos 100
+        #         focus_mask True
+
         # Sublevel 4 button
+        #if persistent.level_progress[4][3]:   
         imagebutton:
             auto "gui/button/Sublevel4Button_%s.png"
-            action Jump("apartment_sublevel_4")
+            action play_and(Jump("apartment_sublevel_4"))
             xpos 483
             ypos -68
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel4Button_lock.png"
+        #         xpos 483
+        #         ypos -68
+        #         focus_mask True            
+
         # Next button to jump to page 2
         imagebutton:
             auto "gui/button/NextButton1_%s.png"
-            action Jump("level_4_page2")
+            action play_and(Jump("level_4_page2"))
             xpos 765
             ypos -10
             focus_mask True
@@ -893,10 +1154,25 @@ screen apartment_sublevel1_screen():
         # Home button to return to level preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_4")
+            action play_and(Jump("level_4"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen apartment_sublevel2_screen():
     tag menu
@@ -905,38 +1181,70 @@ screen apartment_sublevel2_screen():
     key "K_ESCAPE" action NullAction()
 
     fixed:
+        #if persistent.level_progress[4][4]:
         imagebutton:
             auto "gui/button/Sublevel5Button_%s.png"
-            action Jump("apartment_sublevel_5")
+            action play_and(Jump("apartment_sublevel_5"))
             xpos -478
             ypos 45
             focus_mask True
         
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel5Button_lock.png"
+        #         xpos -478
+        #         ypos 45
+        #         focus_mask True            
+        
+        #if persistent.level_progress[4][5]: 
         imagebutton:
             auto "gui/button/Sublevel6Button_%s.png"
-            action Jump("apartment_sublevel_6")
+            action play_and(Jump("apartment_sublevel_6"))
             xpos -113
             ypos -196
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel6Button_lock.png"
+        #         xpos -113
+        #         ypos -196
+        #         focus_mask True
+
+        #if persistent.level_progress[4][6]: 
         imagebutton:
             auto "gui/button/Sublevel7Button_%s.png"
-            action Jump("apartment_sublevel_7")
+            action play_and(Jump("apartment_sublevel_7"))
             xpos 158
             ypos 100
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel7Button_lock.png"
+        #         xpos 158
+        #         ypos 100
+        #         focus_mask True            
+
+        #if persistent.level_progress[4][7]:
         imagebutton:
             auto "gui/button/Sublevel8Button_%s.png"
-            action Jump("apartment_sublevel_8")
+            action play_and(Jump("apartment_sublevel_8"))
             xpos 532
             ypos -68
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel8Button_lock.png"
+        #         xpos 532
+        #         ypos -68
+        #         focus_mask True            
+
         # Previous button to return to page 1
         imagebutton:
             auto "gui/button/PreviousButton2_%s.png"
-            action Jump("apartment_sublevel1")
+            action play_and(Jump("apartment_sublevel1"))
             xpos -753
             ypos -6
             focus_mask True
@@ -944,7 +1252,7 @@ screen apartment_sublevel2_screen():
         # Next button to jump to page 3
         imagebutton:
             auto "gui/button/NextButton4_%s.png"
-            action Jump("level_4_page3")
+            action play_and(Jump("level_4_page3"))
             xpos 786
             ypos 0
             focus_mask True
@@ -952,10 +1260,25 @@ screen apartment_sublevel2_screen():
         # Home button to return to level 4 preview
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_4")
+            action play_and(Jump("level_4"))
             xpos 1
             ypos 1
             focus_mask True
+
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
 
 screen apartment_sublevel3_screen():
     tag menu
@@ -964,79 +1287,188 @@ screen apartment_sublevel3_screen():
     key "K_ESCAPE" action NullAction()
 
     fixed:
+        #if persistent.level_progress[4][8]:
         imagebutton:
             auto "gui/button/Sublevel9Button_%s.png"
-            action Jump("apartment_sublevel_9")
+            action play_and(Jump("apartment_sublevel_9"))
             xpos -478
             ypos 59
             focus_mask True
         
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel9Button_lock.png"
+        #         xpos -478
+        #         ypos 59
+        #         focus_mask True
+        
+        #if persistent.level_progress[4][9]:
         imagebutton:
             auto "gui/button/Sublevel10Button_%s.png"
-            action Jump("apartment_sublevel_10")
+            action play_and(Jump("apartment_sublevel_10"))
             xpos -113
             ypos -188
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel10Button_lock.png"
+        #         xpos -113
+        #         ypos -188
+        #         focus_mask True            
+
+        #if persistent.level_progress[4][10]:
         imagebutton:
             auto "gui/button/Sublevel11Button_%s.png"
-            action Jump("apartment_sublevel_11")
+            action play_and(Jump("apartment_sublevel_11"))
             xpos 156
             ypos 115
             focus_mask True
 
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel11Button_lock.png"
+        #         xpos 156
+        #         ypos 115
+        #         focus_mask True            
+
+        #if persistent.level_progress[4][11]:
         imagebutton:
             auto "gui/button/Sublevel12Button_%s.png"
-            action Jump("apartment_sublevel_12")
+            action play_and(Jump("apartment_sublevel_12"))
             xpos 532
             ypos -52
             focus_mask True
+        
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Sublevel12Button_lock.png"
+        #         xpos 532
+        #         ypos -52
+        #         focus_mask True
 
         imagebutton:
             auto "gui/button/PreviousButton2_%s.png"
-            action Jump("level_4_page2")
+            action play_and(Jump("level_4_page2"))
             xpos -753
             ypos -6
             focus_mask True
 
         imagebutton:
             auto "gui/button/NextButton4_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             xpos 786
             ypos 0
             focus_mask True
 
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action Jump("level_4")
+            action play_and(Jump("level_4"))
             xpos 1
             ypos 1
             focus_mask True
 
+        # Settings & profile
+        imagebutton:
+            auto "gui/button/settings_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("settings_page"))
+        
+        imagebutton:
+            auto "gui/button/profile_%s.png"
+            xpos 768
+            ypos -507
+            focus_mask True
+            action play_and(ShowMenu("profile_page"))
+
 # Define our global timer variables.
 default timer_start = 0
 default time_left = 300
+default timer_running = True
 
 screen timer_screen():
     tag timer
 
     on "show" action [SetVariable("timer_start", time.time()), SetVariable("time_left", 300)]
 
-    timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
+    if timer_running:
+        timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
 
-    if time_left <= 0:
-        timer 0.1 action [Hide("timer_screen"), Jump("lose_screen")] repeat False
+        if time_left <= 0:
+            timer 0.1 action [Hide("timer_screen"), Jump("win_screen")] repeat False
 
     add Transform("gui/timer/TimerFrame.png", zoom=0.6) xpos 0.2 ypos 0.01
 
     text "[format_time(time_left)]" xpos 0.499 ypos 0.16 anchor (0.5, 0.5) color "#FFFFFF"
 
+default timer_countdown_start = 0
+default time_countdown_left = None
+default non_violatable_time = None
+
+screen countdown():
+    # tag timer
+
+    on "show" action [
+        SetVariable("timer_countdown_start", time.time()),
+        SetVariable("blueprint_swap_used", True),
+        SetVariable("skill_active", False),
+        SetVariable("timer_freeze_used", True)
+    ]
+
+    # Update the time left based on the difference since it started
+    timer 0.1 action SetVariable(
+        "time_countdown_left",
+        max(0, non_violatable_time - int(time.time() - timer_countdown_start))
+    ) repeat True
+
+    # When cooldown is over, reset the skill and hide this screen
+    if time_countdown_left <= 0:
+        timer 0.1 action [
+            Hide("countdown"),
+            SetVariable("blueprint_swap_used", False),
+            SetVariable("timer_freeze_used", False),
+        ] repeat False
+
+    # Show countdown timer visually
+    text "[time_countdown_left]s" xpos 0.87 ypos 0.23 anchor (0.5, 0.5) color "#ff0000"
+
+####################### TIME FREEZE ##############################
+
+default timer_freeze_start = 0
+default timer_freeze_left = 10
+default timer_freeze_used = False
+
+screen time_freeze():
+    on "show" action [
+        SetVariable("timer_freeze_start", time.time()),
+        SetVariable("timer_freeze_left", 10),
+        SetVariable("timer_running", False)  # Pause the main timer
+    ]
+
+    timer 0.1 action SetVariable(
+        "timer_freeze_left",
+        max(0, 10 - int(time.time() - timer_freeze_start))
+    ) repeat True
+
+    if timer_freeze_left <= 0:
+        timer 0.1 action [
+            SetVariable("timer_running", True),  # Resume the main timer
+            SetVariable("timer_freeze_used", True),
+            Hide("time_freeze"),
+            Function(renpy.show_screen, "countdown")
+        ] repeat False
+
+    text "[timer_freeze_left]s" xpos 0.87 ypos 0.23 anchor (0.5, 0.5) color "#ff0000"
+
+
+################################################################################
 
 screen level_complete_screen():
     tag menu
     modal True
     add "images/Backgrounds/backgroundnew.png" 
-    $ complete_sublevel(game.level, game.sublevel)
 
     frame:
         xfill True
@@ -1044,6 +1476,7 @@ screen level_complete_screen():
         background Solid("#00000080")
 
         add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+
 
         frame:
             use result
@@ -1054,6 +1487,40 @@ screen level_complete_screen():
 
         imagebutton:
             auto "gui/button/NextLevelButton_%s.png"
+            action play_and(Jump("hut_sublevel_2"))  # Or whichever label is your next level.
+            ypos 25
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/HomeButton_%s.png"
+            action play_and(Jump("level_selection"))
+            ypos 80
+            focus_mask True
+
+    python:
+        current_objectives = None
+
+screen sublevel_complete_screen():
+    tag menu
+    modal True
+    add "images/Backgrounds/backgroundnew.png" 
+
+    frame:
+        xfill True
+        yfill True
+        background Solid("#00000080")
+
+        add "gui/levelComplete/SublevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+
+        frame:
+            use result
+            xalign 0.5
+            ypos 370
+            background Solid("#00000000")
+            
+
+        imagebutton:
+            auto "gui/button/NextStageButton_%s.png"
             action Function(game.advance_sublevel)  
             ypos 25
             focus_mask True
@@ -1093,6 +1560,24 @@ screen level_lose_screen():
 
     python:
         current_objectives = None
+
+screen reset_progress_screen():
+    tag menu
+    modal True
+    add "images/Backgrounds/backgroundnew.png"
+    
+    frame:
+        xalign 0.5
+        yalign 0.5
+        background Solid("#00000080")
+        vbox:
+            spacing 20
+            text "Are you sure you want to reset your game progress?" size 30
+            hbox:
+                spacing 40
+                textbutton "Yes" action [Function(reset_persistent), Return()]
+                textbutton "No" action Return()
+
 ## Game Menu screen ############################################################
 ##
 ## This lays out the basic common structure of a game menu screen. It's called
@@ -1116,21 +1601,21 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     imagebutton:
         auto "gui/pause/ContinueButton_%s.png"
-        action Return()
+        action play_and(Return())
         xalign 100
         yalign 500
         focus_mask True
 
     imagebutton:
         auto "gui/pause/ExitButton_%s.png"
-        action MainMenu(confirm=True)
+        action play_and(MainMenu(confirm=True))
         xalign 100
         yalign 500
         focus_mask True
 
     imagebutton:
         auto "gui/pause/PauseX_%s.png"
-        action Return()
+        action play_and(Return())
         xalign 100
         yalign 100
         focus_mask True
@@ -1220,14 +1705,14 @@ screen profile_page():
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action Return()
+            action play_and(Return())
             xalign 100
             yalign 500
             focus_mask True
 
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
-            action Return()
+            action play_and(Return())
             xpos -300
             yalign 100
             focus_mask True
@@ -1262,7 +1747,7 @@ screen settings_page():
                     imagebutton:
                         idle get_sound_switch_idle(sound_effect_on)
                         hover get_sound_switch_hover(sound_effect_on)
-                        action Function(toggle_sound_effect)
+                        action play_and(Function(toggle_sound_effect))
                         xpos -100
                         ypos -10
                 hbox:
@@ -1282,7 +1767,7 @@ screen settings_page():
                     imagebutton:
                         idle get_sound_switch_idle(bgm_on)
                         hover get_sound_switch_hover(bgm_on)
-                        action Function(toggle_bgm)
+                        action play_and(Function(toggle_bgm))
                         xpos -100
                         ypos -10
                 hbox:
@@ -1292,14 +1777,14 @@ screen settings_page():
 
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action Return()
+            action play_and(MainMenu(confirm=True))
             xalign 100
             yalign 500
             focus_mask True
 
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
-            action Return()
+            action play_and(Return())
             xpos -300
             yalign 100
             focus_mask True
@@ -2194,202 +2679,3 @@ style nvl_button:
 
 style nvl_button_text:
     properties gui.text_properties("nvl_button")
-
-
-## Bubble screen ###############################################################
-##
-## The bubble screen is used to display dialogue to the player when using speech
-## bubbles. The bubble screen takes the same parameters as the say screen, must
-## create a displayable with the id of "what", and can create displayables with
-## the "namebox", "who", and "window" ids.
-##
-## https://www.renpy.org/doc/html/bubble.html#bubble-screen
-
-screen bubble(who, what):
-    style_prefix "bubble"
-
-    window:
-        id "window"
-
-        if who is not None:
-
-            window:
-                id "namebox"
-                style "bubble_namebox"
-
-                text who:
-                    id "who"
-
-        text what:
-            id "what"
-
-style bubble_window is empty
-style bubble_namebox is empty
-style bubble_who is default
-style bubble_what is default
-
-style bubble_window:
-    xpadding 30
-    top_padding 5
-    bottom_padding 5
-
-style bubble_namebox:
-    xalign 0.5
-
-style bubble_who:
-    xalign 0.5
-    textalign 0.5
-    color "#000"
-
-style bubble_what:
-    align (0.5, 0.5)
-    text_align 0.5
-    layout "subtitle"
-    color "#000"
-
-define bubble.frame = Frame("gui/bubble.png", 55, 55, 55, 95)
-define bubble.thoughtframe = Frame("gui/thoughtbubble.png", 55, 55, 55, 55)
-
-define bubble.properties = {
-    "bottom_left" : {
-        "window_background" : Transform(bubble.frame, xzoom=1, yzoom=1),
-        "window_bottom_padding" : 27,
-    },
-
-    "bottom_right" : {
-        "window_background" : Transform(bubble.frame, xzoom=-1, yzoom=1),
-        "window_bottom_padding" : 27,
-    },
-
-    "top_left" : {
-        "window_background" : Transform(bubble.frame, xzoom=1, yzoom=-1),
-        "window_top_padding" : 27,
-    },
-
-    "top_right" : {
-        "window_background" : Transform(bubble.frame, xzoom=-1, yzoom=-1),
-        "window_top_padding" : 27,
-    },
-
-    "thought" : {
-        "window_background" : bubble.thoughtframe,
-    }
-}
-
-define bubble.expand_area = {
-    "bottom_left" : (0, 0, 0, 22),
-    "bottom_right" : (0, 0, 0, 22),
-    "top_left" : (0, 22, 0, 0),
-    "top_right" : (0, 22, 0, 0),
-    "thought" : (0, 0, 0, 0),
-}
-
-
-
-################################################################################
-## Mobile Variants
-################################################################################
-
-style pref_vbox:
-    variant "medium"
-    xsize 675
-
-## Since a mouse may not be present, we replace the quick menu with a version
-## that uses fewer and bigger buttons that are easier to touch.
-screen quick_menu():
-    variant "touch"
-
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
-
-style window:
-    variant "small"
-    background "gui/phone/textbox.png"
-
-style radio_button:
-    variant "small"
-    foreground "gui/phone/button/radio_[prefix_]foreground.png"
-
-style check_button:
-    variant "small"
-    foreground "gui/phone/button/check_[prefix_]foreground.png"
-
-style nvl_window:
-    variant "small"
-    background "gui/phone/nvl.png"
-
-style main_menu_frame:
-    variant "small"
-    background "gui/phone/overlay/main_menu.png"
-
-style game_menu_outer_frame:
-    variant "small"
-    background "gui/phone/overlay/game_menu.png"
-
-style game_menu_navigation_frame:
-    variant "small"
-    xsize 510
-
-style game_menu_content_frame:
-    variant "small"
-    top_margin 0
-
-style pref_vbox:
-    variant "small"
-    xsize 600
-
-style bar:
-    variant "small"
-    ysize gui.bar_size
-    left_bar Frame("gui/phone/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/phone/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
-
-style vbar:
-    variant "small"
-    xsize gui.bar_size
-    top_bar Frame("gui/phone/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/phone/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
-
-style scrollbar:
-    variant "small"
-    ysize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-
-style vscrollbar:
-    variant "small"
-    xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-
-style slider:
-    variant "small"
-    ysize gui.slider_size
-    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
-
-style vslider:
-    variant "small"
-    xsize gui.slider_size
-    base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/vertical_[prefix_]thumb.png"
-
-style slider_vbox:
-    variant "small"
-    xsize None
-
-style slider_slider:
-    variant "small"
-    xsize 900

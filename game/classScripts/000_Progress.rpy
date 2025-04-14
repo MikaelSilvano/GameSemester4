@@ -36,3 +36,22 @@ init python:
         Returns True if the specified sublevel is unlocked.
         """
         return persistent.level_progress.get(level, [])[sublevel - 1]
+
+    def reset_persistent():
+        # Reset level unlocking: Level 1 is unlocked by default.
+        persistent.levels_unlocked = [True, False, False, False]
+
+        # Reset sublevel progress. For example, assume:
+        # Level 1 has 4 sublevels, level 2 has 5, level 3 has 8, and level 4 has 12.
+        persistent.level_progress = {
+            1: [True, False, False, False],
+            2: [False, False, False, False, False],
+            3: [False, False, False, False, False, False, False, False],
+            4: [False, False, False, False, False, False, False, False, False, False, False, False]
+        }
+
+        # Save persistent data immediately after resetting.
+        renpy.save_persistent()
+
+        # (Optional) Print or log a message for debugging.
+        renpy.notify("Game progress has been reset.")

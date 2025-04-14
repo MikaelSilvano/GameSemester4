@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 326: is not terminated with a newline. (Check strings and parenthesis.)
-        config.overlay_screens.append("global_ui_buttons"
+File "game/screens.rpy", line 1501: unexpected EOF while parsing
+    current_objectives = None\
 
-Ren'Py Version: Ren'Py 8.3.6.25022803
-Fri Apr 11 16:54:01 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Sun Apr 13 22:09:30 2025

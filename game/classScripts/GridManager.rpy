@@ -143,10 +143,20 @@ init python:
                 for icon in self.icons:
                     if icon and icon.is_dragging:
                         icon.update_drag(x, y)
-            if event.type == 1025 and event.button == 1:
+            if event.type == 1025 and event.button == 1: #mouse click
                 for icon in self.icons:
-                    if icon and (icon.x <= x <= (icon.x + self.icon_size) and
-                                icon.y <= y <= (icon.y + self.icon_size)):
+                    if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
+                        icon_skill_collected.append(icon.index)
+                        if len(icon_skill_collected) == required_targets:
+                            print("if_run")
+                            if game.level == 3:
+                                skill.blueprint_swap(icon_skill_collected[0], icon_skill_collected[1])
+                                icon_skill_collected.clear()
+                                renpy.show_screen("countdown")
+                            if game.level == 4:
+                                skill.masterpiece_build(icon_skill_collected[0])
+                                icon_skill_collected.clear()
+                    elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
                         icon.start_drag(x, y)
                         break
             if event.type == 1026 and event.button == 1:
@@ -228,7 +238,7 @@ init python:
 
             if mouse_event:
                 pass
-            renpy.show_screen("Score_UI")
+            # renpy.show_screen("Score_UI")
 
         def refill_grid(self):
             """

@@ -1,74 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 209, in script
-    call screen level_complete_screen
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 1035, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1035, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1041, in execute
-    frame:
-  File "game/screens.rpy", line 1055, in execute
-    imagebutton:
-  File "game/screens.rpy", line 1055, in keywords
-    imagebutton:
-  File "game/screens.rpy", line 1057, in <module>
-    action Function(advance_sublevel)
-NameError: name 'advance_sublevel' is not defined
+  File "game/script.rpy", line 252, in script call
+    call setup_icons()
+  File "game/script.rpy", line 44, in script
+    call screen Match_Three
+ScriptError: could not find label 'win_screen'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 209, in script
-    call screen level_complete_screen
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
-    self.call("execute")
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/exports/statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 480, in visit_all
-    callback(self)
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 491, in per_interact
-    self.update()
-  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1035, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1035, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1041, in execute
-    frame:
-  File "game/screens.rpy", line 1055, in execute
-    imagebutton:
-  File "game/screens.rpy", line 1055, in keywords
-    imagebutton:
-  File "game/screens.rpy", line 1057, in <module>
-    action Function(advance_sublevel)
-NameError: name 'advance_sublevel' is not defined
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/script.rpy", line 252, in script call
+    call setup_icons()
+  File "game/script.rpy", line 44, in script
+    call screen Match_Three
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'win_screen'.
 
-macOS-15.3.2-arm64-arm-64bit arm64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 EcoCity Match 0.1
-Sat Apr 12 17:02:36 2025
+Mon Apr 14 11:04:54 2025

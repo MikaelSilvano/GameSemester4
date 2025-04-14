@@ -1,14 +1,15 @@
 init python:
+    from collections import Counter
+    import time
     class GameManager:
         def __init__(self, moves, target_score, level, sublevel):
             self.score = 0
             self.moves = moves
             self.base_points = 5
             self.target_score = target_score
-            self.level = level        # current level (1 through 4)
-            self.sublevel = sublevel  # current sublevel (starting at 1)
-            self.initializing = True  # flag to indicate start-up state
-            self.forced_compression_used = False
+            self.level = level      # store the current level
+            self.sublevel = sublevel 
+            self.initializing = True  # flag to indicate startup state
 
         def advance_sublevel(self):
             """
@@ -150,51 +151,73 @@ init python:
             self.check_target_score(conditions=False)
 
 
-        def forced_compression(self):
-            """
-            Forced Compression: clears the middle row from the grid.
-            Applies crush animation, updates objectives, shifts and refills.
-            """
-            rows = grid.grid_size // grid.icons_per_row
-            center_row = rows // 2
-            start_index = center_row * grid.icons_per_row
-            end_index = start_index + grid.icons_per_row
+        # def forced_compression(self):
+        #     """
+        #     Forced Compression: clears the middle row from the grid.
+        #     Applies crush animation, updates objectives, shifts and refills.
+        #     """
+        #     rows = grid.grid_size // grid.icons_per_row
+        #     center_row = rows // 2
+        #     start_index = center_row * grid.icons_per_row
+        #     end_index = start_index + grid.icons_per_row
 
-            # Count the icons removed for objective update
-            icon_counts = {}
+        #     # Count the icons removed for objective update
+        #     icon_counts = {}
 
-            for i in range(start_index, end_index):
-                tile = grid.icons[i]
-                if tile is not None:
-                    # Collect type for objectives
-                    icon_type = tile.icon_type
-                    icon_counts[icon_type] = icon_counts.get(icon_type, 0) + 1
+        #     for i in range(start_index, end_index):
+        #         tile = grid.icons[i]
+        #         if tile is not None:
+        #             # Collect type for objectives
+        #             icon_type = tile.icon_type
+        #             icon_counts[icon_type] = icon_counts.get(icon_type, 0) + 1
 
-                    # Animate and destroy
-                    if tile.sprite:
-                        tile.sprite.child = crush_anim
-                    tile.destroy()
-                    grid.icons[i] = None
+        #             # Animate and destroy
+        #             if tile.sprite:
+        #                 tile.sprite.child = crush_anim
+        #             tile.destroy()
+        #             grid.icons[i] = None
 
-            if current_objectives:
-                for icon_type, count in icon_counts.items():
-                    decrement_amount = count
-                    if decrement_amount > 0:
-                        current_objectives.AimsMet(icon_type, decrement_amount)
+        #     if current_objectives:
+        #         for icon_type, count in icon_counts.items():
+        #             decrement_amount = count
+        #             if decrement_amount > 0:
+        #                 current_objectives.AimsMet(icon_type, decrement_amount)
 
-            # Mark skill as used
-            self.forced_compression_used = True
+        #     # Mark skill as used
+        #     self.forced_compression_used = True
 
-            # Shift and refill the grid
-            grid.shift_icons(mouse_event=True)
-            grid.refill_grid()
-            renpy.restart_interaction()
+        #     # Shift and refill the grid
+        #     grid.shift_icons(mouse_event=True)
+        #     grid.refill_grid()
+        #     renpy.restart_interaction()
             
 
         def check_target_score(self, conditions):
-            if (self.moves <= 0 or conditions):
-                print(self.score)
-                self.score *= round((self.moves/self.score + 1))
-                renpy.call_in_new_context("win_screen")
-                time.sleep(2)
+            if self.moves <= 0 or conditions:
+                # Debug: print current score
+                print("Score:", self.score)
+                
+                # Update the score—guarding against zero score to avoid division by zero.
+                if self.score > 0:
+                    multiplier = round((self.moves / self.score) + 1)
+                    self.score *= multiplier
+
+                # First update persistent progress for this sublevel.
+                complete_sublevel(self.level, self.sublevel)
+
+                # Determine how many sublevels there are for the current level.
+                max_sub = len(persistent.level_progress.get(self.level, []))
+                
+                # Pause briefly before transitioning so the player can see the effect
+                
+                
+                # If the current sublevel equals (or exceeds) the maximum sublevels,
+                # then the player has finished this level.
+                if self.sublevel >= max_sub:
+                    renpy.call_in_new_context("win_level_screen")
+                else:
+                    renpy.call_in_new_context("win_sublevel_screen")
+
+                renpy.pause(2)
+
         

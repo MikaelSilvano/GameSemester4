@@ -68,8 +68,7 @@ screen SkillOverlay():
         if not timer_freeze_used:
             if timer_running:
                 imagebutton:
-                    idle "gui/button/Skill1.png"
-                    # hover "gui/button/Skill1_hover.png"  
+                    auto "gui/button/Skill1_%s.png"
                     action Show("time_freeze")
                     xpos 0.815
                     ypos 0.14015
@@ -91,8 +90,7 @@ screen SkillOverlay():
     elif game.level == 2:
         if not skill.forced_compression_used:
             imagebutton:
-                idle "gui/button/Skill2.png"
-                # hover "gui/button/Skill2_hover.png"  
+                auto "gui/button/Skill2_%s.png"
                 action Function(skill.forced_compression)
                 xpos 0.815
                 ypos 0.14015
@@ -104,8 +102,7 @@ screen SkillOverlay():
     elif game.level == 3:
         if not blueprint_swap_used:
             imagebutton:
-                idle "gui/button/Skill3.png"
-                # hover "gui/button/Skill3_hover.png"  
+                auto "gui/button/Skill3_%s.png"
                 action SetVariable("skill_active", True)
                 xpos 0.815
                 ypos 0.14015
@@ -122,8 +119,7 @@ screen SkillOverlay():
     elif game.level == 4:
         if not skill.masterpiece_build_skill_used:
             imagebutton:
-                idle "gui/button/Skill4.png"
-                # hover "gui/button/Skill4_hover.png"  
+                auto "gui/button/Skill4_%s.png" 
                 action SetVariable("skill_active", True)
                 xpos 0.815
                 ypos 0.14015

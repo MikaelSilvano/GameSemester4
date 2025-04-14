@@ -319,15 +319,13 @@ screen navigation():
     vbox:
         style_prefix "navigation"
         spacing gui.navigation_spacing
-        align (0.5, 0.75)
+        align (0.5, 0.8)
 
         # Always show these two buttons
-        imagebutton auto "images/UI/PlayButton_%s.png" action play_and(Start())
-        imagebutton auto "images/UI/tutorial_%s.png" action play_and(NullAction())
-
-        if renpy.variant("pc"):
-            textbutton _("Quit") action Quit(confirm=not main_menu)
-            textbutton _("Restart Progress") action Jump("reset_progress_label")
+        imagebutton auto "gui/mainMenu/MainMenu_play_%s.png" action play_and(Start()) yoffset 30
+        imagebutton auto "gui/mainMenu/MainMenu_tutorial_%s.png" action play_and(NullAction()) yoffset 20
+        imagebutton auto "gui/mainMenu/MainMenu_credits_%s.png" action Show("credits_page") yoffset 10
+        imagebutton auto "gui/mainMenu/MainMenu_quit_%s.png" action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -379,7 +377,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/mainMenu/mainMenuPolos.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -397,6 +395,42 @@ style main_menu_title:
 style main_menu_version:
     properties gui.text_properties("version")
 
+## About screen ################################################################
+##
+## Credits Screen.
+
+screen credits_page():
+    tag menu
+    modal True
+    zorder 200
+    add "images/Backgrounds/backgroundnew.png"
+
+    frame:
+        background "images/Backgrounds/backgroundnew.png"
+
+        vbox:
+            spacing 20
+            xalign 0.5
+            yalign 0.1
+
+            text "CREDITS" size 80 color "#1A5143" xalign 0.5
+
+            text "Game Design: Cap Kaki 6\n" xalign 0.5
+            text "Programming:" xalign 0.5
+            text "Mikael Silvano, Annabel K. Jovinne Caron" xalign 0.5
+            text "Pratama Gill Undap, Bryan Susanto Yo" xalign 0.5
+            text "Lee Hyun, Tirta Manoso S.\n" xalign 0.5
+            text "Art:" xalign 0.5
+            text "Lee Hyun" xalign 0.5
+            text "Assets: Freepik @felicites & @catalyststuff\n" xalign 0.5
+            text "Music: " xalign 0.5
+        
+        imagebutton:
+            auto "gui/mainMenu/CreditsExit_%s.png"
+            action Return()
+            xalign 0.5
+            yoffset 850
+            focus_mask True
 
 ## Level Selection screen ###########################################################
 ##
@@ -1706,18 +1740,22 @@ screen profile_page():
             add get_profile_frame()
 
         add get_profile_frame()
-        text get_current_level_text() size 60 color "#1A5143" xalign 0.55 ypos 350
+        text get_current_level_text() size 60 color "#1A5143" xpos 850 ypos 350
+
+        text "Current Position:" size 60 color "#1A5143" xpos 850 ypos 450
+        text get_current_position_text() size 60 color "#FFFFFF" xpos 850 ypos 530
+
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action play_and(Return())
+            action Return()
             xalign 100
             yalign 500
             focus_mask True
 
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
-            action play_and(Return())
+            action Return()
             xpos -300
             yalign 100
             focus_mask True
@@ -1782,14 +1820,14 @@ screen settings_page():
 
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action play_and(MainMenu(confirm=True))
+            action Return()
             xalign 100
             yalign 500
             focus_mask True
 
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
-            action play_and(Return())
+            action play_and(Return)
             xpos -300
             yalign 100
             focus_mask True
@@ -2402,28 +2440,35 @@ screen confirm(message, yes_action, no_action):
     modal True
 
     zorder 200
-
+    add Solid("#00000080")
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
-
     frame:
+        background "gui/confirmFrame/confirmFrame.png"
+        
 
         vbox:
             xalign .5
             yalign .5
             spacing 45
-
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
-
+            
             hbox:
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                imagebutton:
+                    auto "gui/confirmFrame/confirmYes_%s.png"
+                    action yes_action
+                    ypos 550
+                    xpos 625
+                    focus_mask True
+                
+                imagebutton:
+                    auto "gui/confirmFrame/confirmNo_%s.png"
+                    action no_action
+                    ypos 550
+                    xpos 625
+                    focus_mask True
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -2434,16 +2479,6 @@ style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
-
-style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
-    padding gui.confirm_frame_borders.padding
-    xalign .5
-    yalign .5
-
-style confirm_prompt_text:
-    textalign 0.5
-    layout "subtitle"
 
 style confirm_button:
     properties gui.button_properties("confirm_button")

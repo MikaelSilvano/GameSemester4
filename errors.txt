@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1501: unexpected EOF while parsing
-    current_objectives = None\
+File "game/screens.rpy", line 2443: 'background' is not a keyword argument or valid child of the screen statement.
+    background Solid("#00000080")
+              ^
 
-Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Apr 13 22:09:30 2025
+Ren'Py Version: Ren'Py 8.3.6.25022803
+Mon Apr 14 17:00:42 2025

@@ -1,70 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {size+=20} in '{size+=20}10s{/size}'.:
-  File "game/script.rpy", line 277, in script call
-    call setup_icons()
-  File "game/script.rpy", line 44, in script
-    call screen Match_Three
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: Unknown text tag 'size+=20'
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 277, in script call
-    call setup_icons()
-  File "game/script.rpy", line 44, in script
-    call screen Match_Three
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
-    self.call("execute")
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\python.py", line 1184, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2879, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 1381, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 752, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\text\text.py", line 2600, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\text\text.py", line 730, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\text\text.py", line 1526, in segment
-    raise Exception("Unknown text tag %r" % text)
-Exception: Unknown text tag 'size+=20'
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 3284, in interact_core
+    rv = renpy.display.focus.mouse_handler(ev, x, y)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 638, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 564, in change_focus
+    set_focused(current, newfocus.arg, newfocus.screen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 226, in set_focused
+    new_tooltip = widget._get_tooltip()
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 951, in _get_tooltip
+    return get_tooltip(self.action)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 444, in get_tooltip
+    rv = get_tooltip(i)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 454, in get_tooltip
+    return func()
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
 
-Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.4.24120703
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.6.25022803
 EcoCity Match 0.1
-Mon Apr 14 15:25:01 2025
+Mon Apr 14 17:29:06 2025

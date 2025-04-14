@@ -306,6 +306,7 @@ label win_level_screen:
     # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
+    $ levels_completed = max(levels_completed, game.level) #profile page level update
     call screen level_complete_screen
     return
 
@@ -551,16 +552,26 @@ label level4_intro:
     #Profile Page Icon
     default levels_completed = 0
 
-    $ levels_completed += 1
-
+    # Function to get profile image frame based on progress
     init python:
         def get_profile_frame():
-            # If using levels_completed as a number:
-            frame_number = min(levels_completed + 1, 5)  # +1 to match ProfileFrame1.png for 0 completed, ProfileFrame2.png for 1 completed, etc.
+            # ProfileFrame1.png = 0 completed, ProfileFrame2.png = 1 completed, etc.
+            frame_number = min(levels_completed + 1, 5)
             return f"gui/profilePage/ProfileFrame{frame_number}.png"
 
-    #Profile Page Current Level
+    # Function to get current level text
     init python:
         def get_current_level_text():
-            # If using `levels_completed` as an integer
             return f"Current Level: {levels_completed + 1}"
+
+    init python:
+        def get_current_position_text():
+            titles = [
+                "Construction Worker",
+                "Architect",
+                "Architectural Firm Owner",
+                "World-Renowned Architectural Icon"
+            ]
+
+            index = min(levels_completed, len(titles) - 1)
+            return f"{titles[index]}"

@@ -272,6 +272,7 @@ label start_game:
     # show screen Score_UI
     show screen reset_grids
     show screen timer_screen
+    show screen Building
 
     call setup_icons()
     return

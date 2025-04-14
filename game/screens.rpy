@@ -327,6 +327,7 @@ screen navigation():
 
         if renpy.variant("pc"):
             textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Restart Progress") action Jump("reset_progress_label")
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -1577,6 +1578,10 @@ screen reset_progress_screen():
                 spacing 40
                 textbutton "Yes" action [Function(reset_persistent), Return()]
                 textbutton "No" action Return()
+
+label reset_progress_label:
+    call screen reset_progress_screen
+    return
 
 ## Game Menu screen ############################################################
 ##

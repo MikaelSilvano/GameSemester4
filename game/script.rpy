@@ -70,7 +70,7 @@ screen SkillOverlay():
                 imagebutton:
                     auto "gui/button/Skill1_%s.png"
                     action Show("time_freeze")
-                    xpos 0.815
+                    xpos 0.768
                     ypos 0.14015
                     at skill_button_transform
             else:
@@ -81,7 +81,7 @@ screen SkillOverlay():
                     add "gui/button/Skill1_hover.png"
         else:
             fixed:
-                xpos 0.815
+                xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
                 add "gui/button/Skill1Gray.png"
@@ -92,7 +92,7 @@ screen SkillOverlay():
             imagebutton:
                 auto "gui/button/Skill2_%s.png"
                 action Function(skill.forced_compression)
-                xpos 0.815
+                xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
         else:

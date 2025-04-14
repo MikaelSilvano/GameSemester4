@@ -1433,7 +1433,7 @@ screen countdown():
         ] repeat False
 
     # Show countdown timer visually
-    text "[time_countdown_left]s" xpos 0.87 ypos 0.23 anchor (0.5, 0.5) color "#ff0000"
+    text "[time_countdown_left]s" size 80 xpos 0.825 ypos 0.235 anchor (0.5, 0.5) color "#ff0000"
 
 ####################### TIME FREEZE ##############################
 
@@ -1461,7 +1461,7 @@ screen time_freeze():
             Function(renpy.show_screen, "countdown")
         ] repeat False
 
-    text "[timer_freeze_left]s" xpos 0.87 ypos 0.23 anchor (0.5, 0.5) color "#ff0000"
+    text "[timer_freeze_left]s" size 80 xpos 0.825 ypos 0.235 anchor (0.5, 0.5) color "#0099ff"
 
 
 ################################################################################

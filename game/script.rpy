@@ -75,10 +75,10 @@ screen SkillOverlay():
                     at skill_button_transform
             else:
                 fixed:
-                    xpos 0.815
+                    xpos 0.768
                     ypos 0.14015
                     at skill_button_transform
-                    add "gui/button/Skill1_hover.png"
+                    add "gui/button/Skill1_hover_on time_freeze.png"
         else:
             fixed:
                 xpos 0.768
@@ -270,7 +270,7 @@ label start_game:
     scene backgroundpuzzle
 
     # show screen Score_UI
-    show screen reset_grids
+    # show screen reset_grids
     show screen timer_screen
     show screen Building
 
@@ -292,7 +292,7 @@ label delete_matches_callback(game_manager, matches, check):
 
 label win_level_screen:
     # show screen Score_UI
-    show screen reset_grids
+    # show screen reset_grids
     show screen timer_screen
     show screen Match_Three
     show screen Building
@@ -303,14 +303,14 @@ label win_level_screen:
     play sound "audio/building_finish.ogg"  
     pause 1.5
     hide screen Score_UI
-    hide screen reset_grids
+    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
     call screen level_complete_screen
     return
 
 label win_sublevel_screen:
-    show screen reset_grids
+    # show screen reset_grids
     show screen timer_screen
     show screen Match_Three
     show screen Building
@@ -321,7 +321,7 @@ label win_sublevel_screen:
     play sound "audio/building_finish.ogg"  
     pause 1.5
     hide screen Score_UI
-    hide screen reset_grids
+    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
     call screen sublevel_complete_screen
@@ -329,7 +329,7 @@ label win_sublevel_screen:
 
 label lose_screen:
     hide screen Score_UI
-    hide screen reset_grids
+    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
     with Dissolve(0.3) 

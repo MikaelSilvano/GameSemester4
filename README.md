@@ -1,11 +1,11 @@
 # EcoCity Match
-   Dalam beberapa tahun terakhir, urbanisasi telah menjadi tantangan global yang dapat dibilang signifikan. Hal ini dapat menyebabkan masalah seperti perumahan yang tidak memadai dan infrastruktur yang tidak efisien. Sustainable Development Goals (SDG) 11 dari Perserikatan Bangsa - Bangsa (PBB) berfokus pada menciptakan kota yang inklusif, aman, tangguh, dan berkepanjangan. Namun, meningkatkan kesadaran dan mendidik individu tentang pembangunan perkotaan yang berkepanjangan tetap menjadi tantangan.
+  In recent years, urbanization has emerged as a significant global challenge. It often leads to issues such as inadequate housing and inefficient infrastructure. The United Nations’ Sustainable Development Goal (SDG) 11 focuses on making cities inclusive, safe, resilient, and sustainable. However, raising awareness and educating individuals about sustainable urban development remains a persistent challenge.
 
-  EcoCity Match dirancang untuk mengatasi tantangan ini dengan memberikan pengalaman edukatif yang mendorong pembangunan perumahan berkepanjangan. Game ini memanfaatkan genre simulasi puzzle untuk memperkenalkan kepada pemain prinsip-prinsip konstruksi ramah lingkungan dan perencanaan kota. Dengan menyelesaikan teka - teki pencocokan, pemain membuka bahan bangunan penting dan secara bertahap membangun rumah, selaras dengan prinsip SDG 11. Melalui gameplay yang interaktif, EcoCity Match menumbuhkan kesadaran dan keterlibatan dalam praktik pembangunan yang berkepanjangan.
-	
-  EcoCity Match memiliki 4 level yang berprogress dari bangunan hut, house, mansion, dan apartment. Pemain berperan dalam rolenya untuk memulai pembangunan dari konstruksi kecil hingga yang besar. Akhir pemainan dari EcoCity Match adalah pemain berhasil membangun Apartment yang ramah lingkungan.
+EcoCity Match is designed to address this issue by providing an educational experience that promotes sustainable housing development. This puzzle-simulation game introduces players to eco-friendly construction principles and urban planning strategies. By solving matching puzzles, players unlock essential building materials and gradually construct homes that align with the principles of SDG 11. Through interactive gameplay, EcoCity Match fosters awareness and engagement in sustainable development practices.
 
-Dibuat oleh:
+The game features four progressive levels: Hut, House, Mansion, and Apartment. Players take on the role of a builder, starting from small-scale construction and advancing to more complex structures. The ultimate goal of EcoCity Match is to successfully build an environmentally friendly apartment complex.
+
+Made by:
 - Annabel K. Jovinne Caron (01082230011)
 - Bryan Susanto Yo (01082230005)
 - Lee Hyun (01082230007)

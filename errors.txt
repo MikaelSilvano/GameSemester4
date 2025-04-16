@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 2443: 'background' is not a keyword argument or valid child of the screen statement.
-    background Solid("#00000080")
-              ^
+File "game/screens.rpy", line 517: Line is indented, but the preceding yoffset statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    at Transform(zoom=0.7)
+    ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Mon Apr 14 17:00:42 2025
+Wed Apr 16 21:39:09 2025

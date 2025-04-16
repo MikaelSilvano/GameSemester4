@@ -324,7 +324,7 @@ screen navigation():
         # Always show these two buttons
         imagebutton auto "gui/mainMenu/MainMenu_play_%s.png" action play_and(Start()) yoffset 30
         imagebutton auto "gui/mainMenu/MainMenu_tutorial_%s.png" action play_and(NullAction()) yoffset 20
-        imagebutton auto "gui/mainMenu/MainMenu_credits_%s.png" action Show("credits_page") yoffset 10
+        imagebutton auto "gui/mainMenu/MainMenu_credits_%s.png" action play_and(Show("credits_page_1")) yoffset 10
         imagebutton auto "gui/mainMenu/MainMenu_quit_%s.png" action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
@@ -397,9 +397,9 @@ style main_menu_version:
 
 ## About screen ################################################################
 ##
-## Credits Screen.
+## Credits Screen 1.
 
-screen credits_page():
+screen credits_page_1():
     tag menu
     modal True
     zorder 200
@@ -407,30 +407,121 @@ screen credits_page():
 
     frame:
         background "images/Backgrounds/backgroundnew.png"
+        add "gui/creditsPage/creditsTitle.png"
+        add "gui/creditsPage/creditsFrame.png"
 
         vbox:
             spacing 20
             xalign 0.5
-            yalign 0.1
+            yoffset 250
 
-            text "CREDITS" size 80 color "#1A5143" xalign 0.5
+            text "PROGRAMMING" size 60 color "#1A5143" xalign 0.5
+            text "Pratama Gill Undap" size 35 color "2B6B62" xalign 0.5 
+            text "Annabel Kineta Jovinne Caron" size 35 color "2B6B62" xalign 0.5 yoffset -10
+            text "Mikael Silvano" size 35 color "2B6B62" xalign 0.5 yoffset -20
+            text "Bryan Susanto Yo" size 35 color "2B6B62" xalign 0.5 yoffset -30
+            text "Lee Hyun" size 35 color "2B6B62" xalign 0.5 yoffset -40
+            text "Tirta Manoso S." size 35 color "2B6B62" xalign 0.5 yoffset -50
 
-            text "Game Design: Cap Kaki 6\n" xalign 0.5
-            text "Programming:" xalign 0.5
-            text "Mikael Silvano, Annabel K. Jovinne Caron" xalign 0.5
-            text "Pratama Gill Undap, Bryan Susanto Yo" xalign 0.5
-            text "Lee Hyun, Tirta Manoso S.\n" xalign 0.5
-            text "Art:" xalign 0.5
-            text "Lee Hyun" xalign 0.5
-            text "Assets: Freepik @felicites & @catalyststuff\n" xalign 0.5
-            text "Music: " xalign 0.5
-        
+        # Navigation Buttons
         imagebutton:
-            auto "gui/mainMenu/CreditsExit_%s.png"
-            action Return()
+            auto "gui/creditsPage/CreditsNext_%s.png"
+            action play_and(Show("credits_page_2"))
             xalign 0.5
-            yoffset 850
+            yoffset 765
             focus_mask True
+
+
+        imagebutton:
+            auto "gui/creditsPage/CreditsExit_%s.png"
+            action play_and(Return())
+            xalign 0.5
+            yoffset 900
+            focus_mask True
+
+## About screen ################################################################
+##
+## Credits Screen 2.
+
+screen credits_page_2():
+    tag menu
+    modal True
+    zorder 200
+    add "images/Backgrounds/backgroundnew.png"
+
+    frame:
+        background "images/Backgrounds/backgroundnew.png"
+        add "gui/creditsPage/creditsTitle.png"
+        add "gui/creditsPage/creditsFrame.png"
+        
+        vbox:
+            spacing 20
+            xalign 0.5
+            yoffset 250
+            
+            text "ART" size 60 color "#1A5143" xalign 0.5
+            text "Lee Hyun" size 35 color "2B6B62" xalign 0.5
+            text "Annabel Kineta Jovinne Caron" size 35 color "2B6B62" xalign 0.5 yoffset -10
+            text "Freepik felicites" size 35 color "2B6B62" xalign 0.5 yoffset -20
+            text "Freepik catalyststuff" size 35 color "2B6B62" xalign 0.5 yoffset -30
+
+        # Navigation Buttons
+        imagebutton:
+            auto "gui/creditsPage/CreditsNext_%s.png"
+            action play_and(Show("credits_page_3"))
+            xalign 0.5
+            yoffset 765
+            focus_mask True
+
+        imagebutton:
+            auto "gui/creditsPage/CreditsExit_%s.png"
+            action play_and(Return())
+            xalign 0.5
+            yoffset 900
+            focus_mask True
+
+            
+
+## About screen ################################################################
+##
+## Credits Screen 3.
+
+screen credits_page_3():
+    tag menu
+    modal True
+    zorder 200
+    add "images/Backgrounds/backgroundnew.png"
+
+    frame:
+        background "images/Backgrounds/backgroundnew.png"
+        add "gui/creditsPage/creditsTitle.png"
+        add "gui/creditsPage/creditsFrame.png"
+
+        vbox:
+            spacing 20
+            xalign 0.5
+            yoffset 250
+
+            text "MUSIC & SOUND" size 60 color "#1A5143" xalign 0.5
+            text "Pixabay Cryberwave Orchestra" size 35 color "2B6B62" xalign 0.5
+            text "Pixabay Denis Pavlov Music" size 35 color "2B6B62" xalign 0.5 yoffset -10
+            text "Pixabay Freesound Community" size 35 color "2B6B62" xalign 0.5 yoffset -20
+
+        # Navigation Buttons
+        imagebutton:
+            auto "gui/creditsPage/CreditsNext_%s.png"
+            action play_and(Show("credits_page_1"))
+            xalign 0.5
+            yoffset 765
+            focus_mask True
+
+        imagebutton:
+            auto "gui/creditsPage/CreditsExit_%s.png"
+            action play_and(Return())
+            xalign 0.5
+            yoffset 900
+            focus_mask True
+
 
 ## Level Selection screen ###########################################################
 ##
@@ -1748,14 +1839,14 @@ screen profile_page():
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action Return()
+            action play_and(Return())
             xalign 100
             yalign 500
             focus_mask True
 
         imagebutton:
             auto "gui/pause/PauseX_%s.png"
-            action Return()
+            action play_and(Return())
             xpos -300
             yalign 100
             focus_mask True
@@ -1820,7 +1911,7 @@ screen settings_page():
 
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
-            action Return()
+            action play_and(Return())
             xalign 100
             yalign 500
             focus_mask True

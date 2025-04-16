@@ -1,44 +1,57 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-TypeError: get_tooltip() missing 1 required positional argument: 'self'
+While processing the offset property of anonymous style:
+TypeError: 'int' object is not subscriptable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
   File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\python.py", line 1184, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
   File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 3284, in interact_core
-    rv = renpy.display.focus.mouse_handler(ev, x, y)
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 638, in mouse_handler
-    return change_focus(new_focus, default=default)
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 564, in change_focus
-    set_focused(current, newfocus.arg, newfocus.screen)
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\focus.py", line 226, in set_focused
-    new_tooltip = widget._get_tooltip()
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 951, in _get_tooltip
-    return get_tooltip(self.action)
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 444, in get_tooltip
-    rv = get_tooltip(i)
-  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\behavior.py", line 454, in get_tooltip
-    return func()
-TypeError: get_tooltip() missing 1 required positional argument: 'self'
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\screen.py", line 485, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\displayable.py", line 436, in visit_all
+    callback(self)
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Hyun\Desktop\renpy-8.3.6-sdk\renpy\text\text.py", line 2235, in per_interact
+    if self.style.slow_abortable:
+  File "gen3-static/styleclass.pxi", line 613, in renpy.styledata.styleclass.Style.slow_abortable.__get__
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 717, in renpy.style.build_style
+  File "style.pyx", line 714, in renpy.style.build_style
+  File "gen3-static/style_functions.pyx", line 1898, in style_functions.offset_property
+  File "include/style_common.pxi", line 30, in style_functions.index_0
+TypeError: 'int' object is not subscriptable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.6.25022803
 EcoCity Match 0.1
-Mon Apr 14 17:29:06 2025
+Wed Apr 16 22:18:16 2025

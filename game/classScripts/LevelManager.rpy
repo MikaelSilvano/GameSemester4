@@ -5,9 +5,6 @@ default build_xpos = None
 default build_ypos = None
 default game = None
 
-##########################################################################
-## Level Selection
-##########################################################################
 label level_selection:
     hide screen main_menu  
     call screen level_selection_screen
@@ -78,10 +75,6 @@ label level_4:
     call screen level_4_preview
     return
 
-##########################################################################
-## Level Selection
-##########################################################################
-
 # For Level 1 (Hut)
 label hut_sublevel_1:
     $ level = 1
@@ -150,10 +143,6 @@ label hut_sublevel_4:
     jump start_game
     
     return
-
-##########################################################################
-## Level Selection
-##########################################################################
 
 # For Level 2 (House)
 label house_sublevel_1:
@@ -235,10 +224,6 @@ label house_sublevel_5:
     $ grid_size = 18
     jump start_game
     return
-
-##########################################################################
-## Level Selection
-##########################################################################
 
 # For Level 3 (Mansion)
 label mansion_sublevel_1:
@@ -376,10 +361,6 @@ label mansion_sublevel_8:
     $ grid_size = 28
     jump start_game
     return
-
-##########################################################################
-## Level Selection
-##########################################################################
 
 # For Level 4 (Apartment)
 label apartment_sublevel_1:
@@ -597,10 +578,6 @@ label apartment_sublevel_12:
     $ grid_size = 12
     jump start_game
     return
-
-##########################################################################
-## Level Selection
-##########################################################################
 
 # Level 1 Sublevel Page
 label sublevel_level1:

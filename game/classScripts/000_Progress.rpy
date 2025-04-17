@@ -1,11 +1,8 @@
 init python:
-    # Only set these if they don't exist or are None (possible leftover from old saves).
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
-        # For example, assume we have 4 levels total
         persistent.levels_unlocked = [True, False, False, False]
 
     if not hasattr(persistent, "level_progress") or persistent.level_progress is None:
-        # E.g. level 1 has 4 sublevels, level 2 has 5, level 3 has 8, level 4 has 12.
         persistent.level_progress = {
             1: [True, False, False, False],
             2: [False, False, False, False, False],
@@ -18,14 +15,11 @@ init python:
         """
         Mark the given sublevel as complete and unlock the next sublevel (and next level, if needed).
         """
-        # Mark the current sublevel as complete
         persistent.level_progress[level][sublevel - 1] = True
 
-        # If not last sublevel in this level, unlock the next sublevel
         if sublevel < len(persistent.level_progress[level]):
             persistent.level_progress[level][sublevel] = True
         else:
-            # If this is the last sublevel of the level, unlock next level if any
             if level < len(persistent.levels_unlocked):
                 persistent.levels_unlocked[level] = True
 
@@ -38,11 +32,8 @@ init python:
         return persistent.level_progress.get(level, [])[sublevel - 1]
 
     def reset_persistent():
-        # Reset level unlocking: Level 1 is unlocked by default.
         persistent.levels_unlocked = [True, False, False, False]
 
-        # Reset sublevel progress. For example, assume:
-        # Level 1 has 4 sublevels, level 2 has 5, level 3 has 8, and level 4 has 12.
         persistent.level_progress = {
             1: [True, False, False, False],
             2: [False, False, False, False, False],
@@ -50,8 +41,5 @@ init python:
             4: [False, False, False, False, False, False, False, False, False, False, False, False]
         }
 
-        # Save persistent data immediately after resetting.
         renpy.save_persistent()
-
-        # (Optional) Print or log a message for debugging.
         renpy.notify("Game progress has been reset.")

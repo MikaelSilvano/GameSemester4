@@ -1,10 +1,10 @@
-default bgm_on = True
+﻿default bgm_on = True
 default blueprint_swap_used = False
 
 
-label before_main_menu:#################
+label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
-    return############
+    return
 
 init python:
     current_objectives = None
@@ -20,7 +20,6 @@ transform move_anim(new_x, new_y):
     linear 0.3 xpos new_x ypos new_y
 
 transform skill_button_transform:
-    # Adjust the zoom factor to scale down the button.
     zoom 0.2
 
 transform building_resized:
@@ -46,8 +45,6 @@ label setup_icons:
 transform rotation(angle):
     rotate angle
 screen SkillOverlay():
-    # This screen shows the Forced Compression skill button for Level 2.
-    # It will appear only if the game level is 2.
     if game.level == 1:
         if not timer_freeze_used:
             if timer_running:
@@ -95,7 +92,6 @@ screen SkillOverlay():
                 ypos 0.14015
                 at skill_button_transform
         else:
-            # If already used, show a grayed-out version so the player knows it’s disabled.
             add "gui/button/Skill2Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
 
     elif game.level == 3:
@@ -112,7 +108,6 @@ screen SkillOverlay():
                 xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
-                # Grayed out skill icon
                 add "gui/button/Skill3Gray.png"
     
     elif game.level == 4:
@@ -124,7 +119,6 @@ screen SkillOverlay():
                 ypos 0.14015
                 at skill_button_transform
         else:
-            # If already used, show a grayed-out version so the player knows it’s disabled.
             add "gui/button/Skill4Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
 
 
@@ -183,7 +177,7 @@ screen Match_Three:
 
 screen Building:
     frame:
-        background None  # clear default
+        background None 
         fixed:
             for img in building_list[:desired_images-1]:
                 add img at building_resized
@@ -204,11 +198,11 @@ screen Building:
 
                 elif name in current_objectives.CompletedAims:
                     $ target = current_objectives.CompletedAims[name]
-                    $ collected = target  # Display full completion
+                    $ collected = target  
                     use objective_meter(icon_name=name, current=collected, target=target)
     if current_objectives.all_aims:
         frame:
-            background None  # clear default
+            background None  
             fixed:
                 add building_list[desired_images-1] at building_resized
 
@@ -244,7 +238,7 @@ label return_to_menu:
     return
 
 label start_game:
-    $ my_objectives = current_objectives  # Pull the passed-in objectives
+    $ my_objectives = current_objectives 
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
@@ -269,8 +263,6 @@ label start_game:
     hide screen menu_screen
     scene backgroundpuzzle
 
-    # show screen Score_UI
-    # show screen reset_grids
     show screen timer_screen
     show screen Building
 
@@ -291,8 +283,6 @@ label delete_matches_callback(game_manager, matches, check):
     return
 
 label win_level_screen:
-    # show screen Score_UI
-    # show screen reset_grids
     show screen timer_screen
     show screen Match_Three
     show screen Building
@@ -303,15 +293,13 @@ label win_level_screen:
     play sound "audio/building_finish.ogg"  
     pause 1.5
     hide screen Score_UI
-    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
-    $ levels_completed = max(levels_completed, game.level) #profile page level update
+    $ levels_completed = max(levels_completed, game.level) 
     call screen level_complete_screen
     return
 
 label win_sublevel_screen:
-    # show screen reset_grids
     show screen timer_screen
     show screen Match_Three
     show screen Building
@@ -322,7 +310,6 @@ label win_sublevel_screen:
     play sound "audio/building_finish.ogg"  
     pause 1.5
     hide screen Score_UI
-    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
     call screen sublevel_complete_screen
@@ -330,7 +317,6 @@ label win_sublevel_screen:
 
 label lose_screen:
     hide screen Score_UI
-    # hide screen reset_grids
     hide screen Match_Three
     hide screen timer_screen
     with Dissolve(0.3) 
@@ -366,13 +352,11 @@ define sidechar = Character("Jordan", color="#ffc8c8")
 label level1_intro:
     scene hutbg with fade
 
-    # Show side character first
     show SideCharacterLevel1 at right_side:
         zoom 0.5
         linear 0.2 zoom 1.0
     pause 0.3
 
-    # Then main character
     show CharacterLevel1 at left_side:
         zoom 0.5
         linear 0.2 zoom 1.0
@@ -397,7 +381,7 @@ label level1_intro:
 ## Level 2 Lore
 ##########################################################################
 
-image housebg = "images/Backgrounds/HouseBackground.png" # udah diubah
+image housebg = "images/Backgrounds/HouseBackground.png" 
 image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
 image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
 
@@ -417,13 +401,11 @@ define sidechar = Character("Jordan", color="#ffc8c8")
 label level2_intro:
     scene housebg with fade
 
-    # Show side character first
     show SideCharacterLevel2 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
 
-    # Then main character
     show CharacterLevel2 at left_side:
         zoom 0.2
         linear 0.2 zoom 0.3
@@ -450,7 +432,7 @@ label level2_intro:
 ## Level 3 Lore
 ##########################################################################
 
-image mansionbg = "images/Backgrounds/MansionBackground.png" # nanti diubah
+image mansionbg = "images/Backgrounds/MansionBackground.png" 
 image CharacterLevel3 = "images/Characters/Character3.png"
 image SideCharacterLevel3 = "images/Characters/SideCharacterLevel1.png"
 
@@ -471,13 +453,11 @@ define sidechar = Character("Jordan", color="#ffc8c8")
 label level3_intro:
     scene mansionbg with fade
 
-    # Show side character first
     show SideCharacterLevel3 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.2
 
-    # Then main character
     show CharacterLevel3 at left_side:
         zoom 0.9
         linear 0.1 zoom 0.93
@@ -502,7 +482,7 @@ label level3_intro:
 ## Level 4 Lore
 ##########################################################################
 
-image apartmentbg = "images/Backgrounds/ApartBackground.png" # nanti diubah
+image apartmentbg = "images/Backgrounds/ApartBackground.png" 
 image CharacterLevel4 = "images/Characters/Character4.png"
 image SideCharacterLevel4 = "images/Characters/Cewe4.png"
 
@@ -522,13 +502,11 @@ define sidechar = Character("Jordan", color="#ffc8c8")
 label level4_intro:
     scene apartmentbg with fade
 
-    # Show side character first
     show SideCharacterLevel4 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
 
-    # Then main character
     show CharacterLevel4 at left_side:
         zoom 0.9
         linear 0.1 zoom 0.93
@@ -549,17 +527,13 @@ label level4_intro:
     scene black with None
     jump sublevel_level4
 
-    #Profile Page Icon
     default levels_completed = 0
 
-    # Function to get profile image frame based on progress
     init python:
         def get_profile_frame():
-            # ProfileFrame1.png = 0 completed, ProfileFrame2.png = 1 completed, etc.
             frame_number = min(levels_completed + 1, 5)
             return f"gui/profilePage/ProfileFrame{frame_number}.png"
 
-    # Function to get current level text
     init python:
         def get_current_level_text():
             return f"Current Level: {levels_completed + 1}"

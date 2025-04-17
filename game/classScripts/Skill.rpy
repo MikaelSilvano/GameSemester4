@@ -5,30 +5,21 @@ init python:
             self.masterpiece_build_skill_used = False
 
         def forced_compression(self):
-            """
-            Forced Compression: clears one row from the grid.
-            For this example, we choose the center row.
-            This method applies a crush animation, then clears the row,
-            shifts the grid and refills as necessary, and marks the skill as used.
-            """
             rows = grid.grid_size // grid.icons_per_row
-            center_row = rows // 2  # compress the middle row
+            center_row = rows // 2 
             start_index = center_row * grid.icons_per_row
             end_index = start_index + grid.icons_per_row
 
-            # Apply the crush animation and remove each tile in the center row.
             for i in range(start_index, end_index):
                 tile = grid.icons[i]
                 if tile is not None:
                     if tile.sprite:
                         tile.sprite.child = crush_anim
-                    tile.destroy()  # destroy the tile's sprite
+                    tile.destroy()  
                     grid.icons[i] = None
 
-            # Mark the skill as used so it can’t be reactivated.
             self.forced_compression_used = True
 
-            # Update grid (shift down and refill as needed)
             grid.shift_icons(mouse_event=True)
             grid.refill_grid()
 
@@ -39,10 +30,6 @@ init python:
                 icon.start_drag(icon.x, icon.y)
 
         def masterpiece_build(self, center_index):
-            """
-            Masterpiece Build: clears a 3x3 area centered around the selected icon index,
-            removing any chain-locks before destroying the tiles.
-            """
             icons_per_row = grid.icons_per_row
             total_rows = grid.grid_size // icons_per_row
             center_row = center_index // icons_per_row
@@ -58,16 +45,13 @@ init python:
                     if 0 <= index < len(grid.icons):
                         tile = grid.icons[index]
                         if tile:
-                            # Unlock the tile if it was chain-locked
                             if grid.fixed_positions and (c, r) in grid.fixed_positions:
                                 grid.fixed_positions.remove((c, r))
                                 tile.chain_locked = False
-                                # Optional: remove chain overlay visually
                                 if tile.chain_overlay:
                                     tile.chain_overlay.destroy()
                                     tile.chain_overlay = None
 
-                            # Now destroy the tile
                             if tile.sprite:
                                 tile.sprite.child = crush_anim
                             tile.destroy()

@@ -1,4 +1,4 @@
-﻿default bgm_on = True
+default bgm_on = True
 default blueprint_swap_used = False
 
 
@@ -43,24 +43,8 @@ label setup_icons:
             icon.sprite.y = icon.y
     call screen Match_Three
 
-# screen Score_UI:
-#     frame:
-#         align (0.05, 0.05)
-#         background "#2d467a"
-#         xysize (450, 100)
-#         padding (4, 4)
-#         frame:
-#             background "#9a90f3"
-#             xfill True
-#             yfill True
-#             grid 2 2:
-#                 xfill True
-#                 spacing 0
-#                 text "[game.score]/" align (1.0, 0.5) color "#000000"
-#                 text "[game.target_score]" align (0.0, 0.5) color "#000000"
-#                 text "Moves Left:"align (1.0, 0.5) color "#000000"
-#                 text "{}".format(game.moves) align (0.0, 0.5) color "#000000"
-
+transform rotation(angle):
+    rotate angle
 screen SkillOverlay():
     # This screen shows the Forced Compression skill button for Level 2.
     # It will appear only if the game level is 2.
@@ -74,6 +58,21 @@ screen SkillOverlay():
                     ypos 0.14015
                     at skill_button_transform
             else:
+                frame:
+                    xysize (1920, 1080)
+                    align (0.3, 0.2)
+                    background "#ecc1fa24" at rotation(30)
+                frame:
+                    xysize (1920, 1080)
+                    align (-0.1, 0.2)
+                    background "#6bf3ff27" at rotation(-30)
+                frame:
+                    xysize (1920, 1980)
+                    align (-0.3, 0.2)
+                    background "#87a6fb1e" at rotation(-70)
+                frame:
+                    xysize (1920, 1080)
+                    background "#87d2fb34"
                 fixed:
                     xpos 0.768
                     ypos 0.14015
@@ -104,13 +103,13 @@ screen SkillOverlay():
             imagebutton:
                 auto "gui/button/Skill3_%s.png"
                 action SetVariable("skill_active", True)
-                xpos 0.815
+                xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
 
         else:
             fixed:
-                xpos 0.815
+                xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
                 # Grayed out skill icon
@@ -121,12 +120,13 @@ screen SkillOverlay():
             imagebutton:
                 auto "gui/button/Skill4_%s.png" 
                 action SetVariable("skill_active", True)
-                xpos 0.815
+                xpos 0.768
                 ypos 0.14015
                 at skill_button_transform
         else:
             # If already used, show a grayed-out version so the player knows it’s disabled.
-            add "gui/button/Skill4Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
+            add "gui/button/Skill4Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
+
 
 style tx_button:
     color "#000000"

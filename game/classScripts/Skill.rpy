@@ -1,9 +1,5 @@
 init python:
     class Skills_list:
-        def __init__(self):
-            self.forced_compression_used = False
-            self.masterpiece_build_skill_used = False
-
         def forced_compression(self):
             rows = grid.grid_size // grid.icons_per_row
             center_row = rows // 2 
@@ -18,10 +14,13 @@ init python:
                     tile.destroy()  
                     grid.icons[i] = None
 
-            self.forced_compression_used = True
+            forced_compression_used = True
 
             grid.shift_icons(mouse_event=True)
             grid.refill_grid()
+            store.time_countdown_left = 20
+            store.non_violatable_time = 20
+            renpy.show_screen("countdown")
 
         def blueprint_swap(self, index1, index2):
             icons_per_row = grid.icons_per_row
@@ -69,9 +68,9 @@ init python:
                             tile.destroy()
                             grid.icons[index] = None
 
-            self.masterpiece_used = True
+            masterpiece_used = True
             grid.shift_icons(mouse_event=True)
             grid.refill_grid()
-            self.masterpiece_build_skill_used = True
+            masterpiece_build_skill_used = True
 
 

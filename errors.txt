@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 347: expected statement.
-    renpy.notify("hidden")
-                          ^
+File "game/classScripts/Skill.rpy", line 5: expected an indented block
+        def forced_compression(self):
+         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Apr 21 10:15:12 2025
+Mon Apr 21 22:21:13 2025

@@ -28,7 +28,7 @@ label level_2:
     $ build_xpos = 0.62
     $ build_ypos = 450
     hide screen level_selection
-    $ icon_image_use = ["Brick", "Glass", "Rocks", "Steel", "Wood", "Cement", "Plant"]
+    $ icon_image_use = ["Brick", "Glass", "Steel", "Wood", "Cement", "Plant"]
     $ building_list.clear()
     $ building_list.append("images/Building/House/house1.png")
     $ building_list.append("images/Building/House/house2.png")
@@ -56,6 +56,8 @@ label level_3:
     return
 
 label level_4:
+    $ time_countdown_left = 30
+    $ non_violatable_time = 30
     $ build_xpos = 0.62
     $ build_ypos = 290
     hide screen level_selection
@@ -77,8 +79,6 @@ label level_4:
     return
 # For Level 1 (Hut)
 label hut_sublevel_1:
-    $ time_countdown_left = 60
-    $ non_violatable_time = 60
     $ level = 1
     $ sublevel = 1   
     $ desired_images = 1
@@ -96,8 +96,6 @@ label hut_sublevel_1:
     return
 
 label hut_sublevel_2:
-    $ time_countdown_left = 60
-    $ non_violatable_time = 60
     $ level = 1
     $ sublevel = 2   
     $ desired_images = 2
@@ -115,8 +113,6 @@ label hut_sublevel_2:
     return 
 
 label hut_sublevel_3:
-    $ time_countdown_left = 60
-    $ non_violatable_time = 60
     $ level = 1
     $ sublevel = 3   
     $ desired_images = 3
@@ -135,8 +131,6 @@ label hut_sublevel_3:
     return
 
 label hut_sublevel_4:
-    $ time_countdown_left = 60
-    $ non_violatable_time = 60
     $ level = 1
     $ sublevel = 4
     $ desired_images = 4
@@ -161,13 +155,13 @@ label house_sublevel_1:
     $ desired_images = 1
     $ current_objectives = Objectives({
         "Cement": 5, 
-        "Rocks": 15, 
+        "Steel": 15, 
         "Brick": 2
     })
     $ moves = 15
     $ t_score = 3000
-    $ icpr = 5
-    $ grid_size = 30
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 
@@ -177,7 +171,7 @@ label house_sublevel_2:
     $ desired_images = 2
     $ current_objectives = Objectives({
         "Cement": 3, 
-        "Rocks": 5, 
+        "Steel": 5, 
         "Brick": 15
     })
     $ moves = 20
@@ -192,7 +186,7 @@ label house_sublevel_3:
     $ sublevel = 3   
     $ desired_images = 3
     $ current_objectives = Objectives({
-        "Rocks": 5, 
+        "Steel": 5, 
         "Wood": 7, 
         "Glass": 8, 
         "Brick": 7
@@ -221,12 +215,12 @@ label house_sublevel_4:
     jump start_game
     return
 
-label house_sublevel_5:  
+label house_sublevel_5:
     $ level = 2
     $ sublevel = 5   
     $ desired_images = 5
     $ current_objectives = Objectives({
-        "Rocks": 3, 
+        "Cement": 3, 
         "Glass": 5, 
         "Wood": 15, 
         "Steel": 7, 
@@ -234,14 +228,12 @@ label house_sublevel_5:
     })
     $ moves = 15
     $ t_score = 7500
-    $ icpr = 5
-    $ grid_size = 30
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 
 label mansion_sublevel_1:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 1
     $ desired_images = 1
@@ -258,8 +250,6 @@ label mansion_sublevel_1:
     return
 
 label mansion_sublevel_2:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 2
     $ desired_images = 2
@@ -276,8 +266,6 @@ label mansion_sublevel_2:
     return
 
 label mansion_sublevel_3:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 3
     $ desired_images = 3
@@ -294,8 +282,6 @@ label mansion_sublevel_3:
     return
 
 label mansion_sublevel_4:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 4
     $ desired_images = 4
@@ -313,8 +299,6 @@ label mansion_sublevel_4:
     return
 
 label mansion_sublevel_5:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 5
     $ desired_images = 5
@@ -332,8 +316,6 @@ label mansion_sublevel_5:
     return
 
 label mansion_sublevel_6:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 6
     $ desired_images = 6
@@ -351,8 +333,6 @@ label mansion_sublevel_6:
     return
 
 label mansion_sublevel_7:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 7
     $ desired_images = 7
@@ -371,8 +351,6 @@ label mansion_sublevel_7:
     return
 
 label mansion_sublevel_8:
-    $ time_countdown_left = 30
-    $ non_violatable_time = 30
     $ level = 3
     $ sublevel = 8
     $ desired_images = 8

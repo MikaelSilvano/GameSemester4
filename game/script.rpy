@@ -1,6 +1,7 @@
 ﻿default bgm_on = True
 default blueprint_swap_used = False
-
+default forced_compression_used = False
+default masterpiece_build_skill_used = False
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -84,7 +85,7 @@ screen SkillOverlay():
 
     
     elif game.level == 2:
-        if not skill.forced_compression_used:
+        if not forced_compression_used:
             imagebutton:
                 auto "gui/button/Skill2_%s.png"
                 action Function(skill.forced_compression)
@@ -111,7 +112,7 @@ screen SkillOverlay():
                 add "gui/button/Skill3Gray.png"
     
     elif game.level == 4:
-        if not skill.masterpiece_build_skill_used:
+        if not masterpiece_build_skill_used:
             imagebutton:
                 auto "gui/button/Skill4_%s.png" 
                 action SetVariable("skill_active", True)
@@ -251,18 +252,19 @@ label start_game:
     $ skill = Skills_list()
 
     # debugging purposes
-    # $ current_objectives = Objectives({
-    #     "Rocks": 1
-    # })
+    $ current_objectives = Objectives({
+        "Plant": 1
+    })
 
     if game.level == 2:
-        $ skill.forced_compression_used = False
+        $ forced_compression_used = False
     
     if game.level == 3:
         $ blueprint_swap_used = False
         $ required_targets = 2
 
     if game.level == 4:
+        $ masterpiece_build_skill_used = False
         $ required_targets = 1
 
     $ grid = GridManager(icpr, grid_size)

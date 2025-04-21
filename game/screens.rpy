@@ -1511,7 +1511,9 @@ screen countdown():
         SetVariable("timer_countdown_start", time.time()),
         SetVariable("blueprint_swap_used", True),
         SetVariable("skill_active", False),
-        SetVariable("timer_freeze_used", True)
+        SetVariable("timer_freeze_used", True),
+        SetVariable("forced_compression_used", True),
+        SetVariable("masterpiece_build_skill_used", True)
     ]
 
     timer 0.1 action SetVariable(
@@ -1524,6 +1526,8 @@ screen countdown():
             Hide("countdown"),
             SetVariable("blueprint_swap_used", False),
             SetVariable("timer_freeze_used", False),
+            SetVariable("forced_compression_used", False),
+            SetVariable("masterpiece_build_skill_used", False)
         ] repeat False
 
     text "[time_countdown_left]s" size 80 xpos 0.825 ypos 0.235 anchor (0.5, 0.5) color "#ff0000"
@@ -1548,6 +1552,8 @@ screen time_freeze():
         timer 0.1 action [
             SetVariable("timer_running", True),  
             SetVariable("timer_freeze_used", True),
+            SetVariable("time_countdown_left", 60),
+            SetVariable("non_violatable_time", 60),
             Hide("time_freeze"),
             Function(renpy.show_screen, "countdown")
         ] repeat False

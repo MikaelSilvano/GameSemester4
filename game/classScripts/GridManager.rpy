@@ -9,7 +9,7 @@ init python:
             self.icon_padding = 10
             self.icons_per_row = icons_per_row
             self.grid_size = grid_size
-            self.icon_images = ["brick", "glass", "rocks", "steel", "wood"]
+            self.icon_images = icon_image_use
             self.fixed_positions = None
 
         def has_initial_match(self):
@@ -124,16 +124,17 @@ init python:
             if event.type == 1025 and event.button == 1: 
                 for icon in self.icons:
                     if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
-                        icon_skill_collected.append(icon.index)
-                        if len(icon_skill_collected) == required_targets:
-                            print("if_run")
                             if game.level == 3:
-                                skill.blueprint_swap(icon_skill_collected[0], icon_skill_collected[1])
-                                icon_skill_collected.clear()
-                                renpy.show_screen("countdown")
+                                icon_skill_collected.append(icon.index)
+                                if len(icon_skill_collected) == required_targets:
+                                    if skill.blueprint_swap(icon_skill_collected[0], icon_skill_collected[1]):
+                                        renpy.show_screen("countdown")
+                                    icon_skill_collected.clear()
                             if game.level == 4:
-                                skill.masterpiece_build(icon_skill_collected[0])
-                                icon_skill_collected.clear()
+                                icon_skill_collected.append(icon.index)
+                                if len(icon_skill_collected) == required_targets:
+                                    skill.masterpiece_build(icon_skill_collected[0])
+                                    icon_skill_collected.clear()
                     elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
                         icon.start_drag(x, y)
                         break

@@ -18,12 +18,24 @@ init python:
             elif self.level == 2:
                 max_sub = 5
                 label_prefix = "house_sublevel_"
+                if "Cement" not in grid.icon_images:
+                    grid.icon_images.append("Cement")
+                if "SolarPanel" in grid.icon_images:
+                    grid.icon_images.remove("SolarPanel")
             elif self.level == 3:
                 max_sub = 8
                 label_prefix = "mansion_sublevel_"
+                if "Cement" not in grid.icon_images:
+                    grid.icon_images.append("Cement")
+                if "SolarPanel" not in grid.icon_images:
+                    grid.icon_images.append("SolarPanel")
             elif self.level == 4:
                 max_sub = 12
                 label_prefix = "apartment_sublevel_"
+                if "Cement" not in grid.icon_images:
+                    grid.icon_images.append("Cement")
+                if "SolarPanel" not in grid.icon_images:
+                    grid.icon_images.append("SolarPanel")
             else:
                 renpy.jump("level_selection")
                 return
@@ -144,6 +156,6 @@ init python:
                 else:
                     renpy.call_in_new_context("win_sublevel_screen")
 
-                renpy.pause(2)
+                renpy.call_in_new_context("delay_and_continue")
 
         

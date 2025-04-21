@@ -74,7 +74,7 @@ screen SkillOverlay():
                     xpos 0.768
                     ypos 0.14015
                     at skill_button_transform
-                    add "gui/button/Skill1_hover_on time_freeze.png"
+                    add "gui/button/Skill1HoverOnTimeFreeze.png"
         else:
             fixed:
                 xpos 0.768
@@ -92,7 +92,7 @@ screen SkillOverlay():
                 ypos 0.14015
                 at skill_button_transform
         else:
-            add "gui/button/Skill2Gray.png" xpos 0.815 ypos 0.14015 at skill_button_transform
+            add "gui/button/Skill2Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
 
     elif game.level == 3:
         if not blueprint_swap_used:
@@ -157,7 +157,7 @@ screen Match_Three:
             $ xp = (grid.icon_size * cur_col) + (grid.icon_padding * cur_col) 
             $ yp = (grid.icon_size * cur_row) + (grid.icon_padding * cur_row)
             
-            image "Icons/grid-cell.png" xpos xp ypos yp zoom 1.0
+            image "Icons/GridCell.png" xpos xp ypos yp zoom 1.0
             if icon:
                 $ icon.x = xp
                 $ icon.y = yp
@@ -206,11 +206,11 @@ screen Building:
             fixed:
                 add building_list[desired_images-1] at building_resized
 
-image smoke_1 = "Building/Smoke/smoke_1.png"
-image smoke_2 = "Building/Smoke/smoke_2.png"
-image smoke_3 = "Building/Smoke/smoke_3.png"
-image smoke_4 = "Building/Smoke/smoke_4.png"
-image smoke_5 = "Building/Smoke/smoke_5.png"
+image smoke_1 = "Building/Smoke/Smoke1.png"
+image smoke_2 = "Building/Smoke/Smoke2.png"
+image smoke_3 = "Building/Smoke/Smoke3.png"
+image smoke_4 = "Building/Smoke/Smoke4.png"
+image smoke_5 = "Building/Smoke/Smoke5.png"
 
 image smoke_screen:
     "smoke_1" with Dissolve(0.05, alpha=True)
@@ -233,20 +233,33 @@ transform smoke_pos:
     align(0.95, 1.3)
     zoom(1.1)
 
-label return_to_menu:
-    $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True)
+label tutorial_scene:
+    window hide
+    scene black
+    stop music fadeout 1.0
+    play movie "videos/tutorial.webm"
+    show screen tutorial_video_screen
+    $ renpy.pause(148.0)
+    stop movie
     return
+
 
 label start_game:
     $ my_objectives = current_objectives 
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
-    
+
+    # debugging purposes
+    # $ current_objectives = Objectives({
+    #     "Rocks": 1
+    # })
+
     if game.level == 2:
         $ skill.forced_compression_used = False
     
     if game.level == 3:
+        $ blueprint_swap_used = False
         $ required_targets = 2
 
     if game.level == 4:
@@ -266,7 +279,7 @@ label start_game:
     show screen timer_screen
     show screen Building
 
-    call setup_icons()
+    call setup_icons() from _call_setup_icons
     return
 
 screen result:
@@ -288,10 +301,11 @@ label win_level_screen:
     show screen Building
     show screen smokes
     play sound "audio/building_start.ogg"
-    pause 3.0
+    $ renpy.pause(3.0, hard=True)
     hide screen smokes
     play sound "audio/building_finish.ogg"  
-    pause 1.5
+    $ renpy.pause(1.5, hard=True)
+    hide screen Building
     hide screen Score_UI
     hide screen Match_Three
     hide screen timer_screen
@@ -305,27 +319,37 @@ label win_sublevel_screen:
     show screen Building
     show screen smokes
     play sound "audio/building_start.ogg"
-    pause 3.0
+    $ renpy.pause(3.0, hard=True)
     hide screen smokes
     play sound "audio/building_finish.ogg"  
-    pause 1.5
+    $ renpy.pause(1.5, hard=True)
+    hide screen Building
     hide screen Score_UI
     hide screen Match_Three
     hide screen timer_screen
+    hide screen countdown
     call screen sublevel_complete_screen
     return
 
 label lose_screen:
+    hide screen Building
     hide screen Score_UI
     hide screen Match_Three
     hide screen timer_screen
+    hide screen countdown
     with Dissolve(0.3) 
     call screen level_lose_screen
     return
 
 label reset_progress:
     call screen reset_progress_screen
+    # call screen main_menu
+    
+
+label delay_and_continue:
+    $ renpy.pause(2)
     return
+
 
 ##########################################################################
 ## Level 1 Lore

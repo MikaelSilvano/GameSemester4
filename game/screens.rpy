@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     import time
 
     def format_time(seconds):
@@ -80,23 +80,23 @@ style vbar:
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/scrollbar/HorizontalBar[_prefix].png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/scrollbar/HorizontalThumb[_prefix].png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/scrollbar/VerticalBar[_prefix].png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/scrollbar/VerticalThumb[_prefix].png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    base_bar Frame("gui/slider/HorizontalBar[_prefix].png", gui.slider_borders, tile=gui.slider_tile)
+    thumb "gui/slider/HorizontalThumb[_prefix].png"
 
 style vslider:
     xsize gui.slider_size
-    base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/vertical_[prefix_]thumb.png"
+    base_bar Frame("gui/slider/VerticalBar[_prefix].png", gui.vslider_borders, tile=gui.slider_tile)
+    thumb "gui/slider/VerticalThumb[_prefix].png"
 
 
 style frame:
@@ -302,12 +302,11 @@ screen navigation():
         style_prefix "navigation"
         spacing gui.navigation_spacing
         align (0.5, 0.8)
-
-        # Always show these two buttons
-        imagebutton auto "gui/mainMenu/MainMenu_play_%s.png" action play_and(Start()) yoffset 30
-        imagebutton auto "gui/mainMenu/MainMenu_tutorial_%s.png" action play_and(NullAction()) yoffset 20
-        imagebutton auto "gui/mainMenu/MainMenu_credits_%s.png" action play_and(Show("credits_page_1")) yoffset 10
-        imagebutton auto "gui/mainMenu/MainMenu_quit_%s.png" action Quit(confirm=not main_menu)
+        
+        imagebutton auto "gui/mainMenu/MainMenuPlay_%s.png" action play_and(Start()) yoffset 30
+        imagebutton auto "gui/mainMenu/MainMenuTutorial_%s.png" action play_and(ShowMenu("tutorial_scene")) yoffset 20
+        imagebutton auto "gui/mainMenu/MainMenuCredits_%s.png" action play_and(Show("credits_page_1")) yoffset 10
+        imagebutton auto "gui/mainMenu/MainMenuQuit_%s.png" action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -318,6 +317,21 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+
+## Tutorial Screen ###############
+screen tutorial_video_screen():
+    add Movie(channel="movie") 
+    
+    imagebutton:
+        auto "gui/button/BackButton_%s.png"
+        action [
+            Stop("movie"), 
+            Play("music", "audio/menu.ogg"),
+            Return()
+        ]
+        xpos 1
+        ypos 1
+        focus_mask True
 
 
 ## Main Menu screen ############################################################
@@ -401,14 +415,12 @@ screen credits_page_1():
             text "Lee Hyun" size 35 color "2B6B62" xalign 0.5 yoffset -40
             text "Tirta Manoso S." size 35 color "2B6B62" xalign 0.5 yoffset -50
 
-        # Navigation Buttons
         imagebutton:
             auto "gui/creditsPage/CreditsNext_%s.png"
             action play_and(Show("credits_page_2"))
             xalign 0.5
             yoffset 765
             focus_mask True
-
 
         imagebutton:
             auto "gui/creditsPage/CreditsExit_%s.png"
@@ -500,7 +512,7 @@ screen credits_page_3():
 screen level_selection_screen():
     tag menu
     modal True
-    add "images/Screens/Level_Selection.png"
+    add "images/Screens/LevelSelection.png"
     key "K_ESCAPE" action NullAction()
 
 
@@ -564,7 +576,10 @@ screen level_selection_screen():
         # Back button to return to main menu
         imagebutton:
             auto "gui/button/BackButton_%s.png"
-            action play_and(Return())
+            action [
+                Function(renpy.full_restart),
+                play_and(Show("main_menu"))
+            ]
             xpos 1
             ypos 1
             focus_mask True
@@ -600,7 +615,10 @@ screen level_1_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action play_and(Return())
+            action [
+                Function(renpy.full_restart),
+                play_and(Show("main_menu"))
+            ]
             xpos 575        
             ypos 1
             focus_mask True
@@ -642,7 +660,10 @@ screen level_2_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action play_and(Return())
+            action [
+                Function(renpy.full_restart),
+                play_and(Show("main_menu"))
+            ]
             xpos 575        
             ypos 1
             focus_mask True
@@ -684,7 +705,10 @@ screen level_3_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action play_and(Return())
+            action [
+                Function(renpy.full_restart),
+                play_and(Show("main_menu"))
+            ]
             xpos 575        
             ypos 1
             focus_mask True
@@ -726,7 +750,10 @@ screen level_4_preview():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action play_and(Return())  
+            action [
+                Function(renpy.full_restart),
+                play_and(Show("main_menu"))
+            ]  
             xpos 575        
             ypos 1
             focus_mask True
@@ -1468,7 +1495,7 @@ screen timer_screen():
         timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
 
         if time_left <= 0:
-            timer 0.1 action [Hide("timer_screen"), Jump("win_screen")] repeat False
+            timer 0.1 action [Hide("timer_screen"), Jump("lose_screen")] repeat False
 
     add Transform("gui/timer/TimerFrame.png", zoom=0.6) xpos 0.2 ypos 0.01
 
@@ -1539,23 +1566,15 @@ screen level_complete_screen():
 
         add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
-
-        frame:
-            use result
-            xalign 0.5
-            ypos 400
-            background Solid("#00000000")
-            
-
         imagebutton:
             auto "gui/button/NextLevelButton_%s.png"
-            action play_and(Jump("hut_sublevel_2")) 
-            ypos 25
+            action play_and(Jump("level_selection")) 
+            ypos 10
             focus_mask True
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action play_and(Jump("level_selection"))
+            action [Play("sound", "audio/button.ogg"), Hide("Match_Three"), Jump("level_selection")]
             ypos 80
             focus_mask True
 
@@ -1573,12 +1592,6 @@ screen sublevel_complete_screen():
         background Solid("#00000080")
 
         add "gui/levelComplete/SublevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
-
-        frame:
-            use result
-            xalign 0.5
-            ypos 370
-            background Solid("#00000000")
             
 
         imagebutton:
@@ -1589,7 +1602,7 @@ screen sublevel_complete_screen():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action [Play("sound", "audio/button.ogg"), Hide("Match_Three"), Jump("level_selection")]
             ypos 80
             focus_mask True
 
@@ -1616,7 +1629,7 @@ screen level_lose_screen():
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"
-            action Jump("level_selection")
+            action play_and(Jump("level_selection"))
             ypos 40
             focus_mask True
 
@@ -1628,21 +1641,47 @@ screen reset_progress_screen():
     modal True
     add "images/Backgrounds/backgroundnew.png"
     
+    zorder 200
+    add Solid("#00000080")
+    style_prefix "confirm"
+    
     frame:
-        xalign 0.5
-        yalign 0.5
-        background Solid("#00000080")
-        vbox:
-            spacing 20
-            text "Are you sure you want to reset your game progress?" size 30
-            hbox:
-                spacing 40
-                textbutton "Yes" action [Function(reset_persistent), Return()]
-                textbutton "No" action Return()
+        background "gui/confirmFrame/ResetProgressFrame.png"
 
-label reset_progress_label:
-    call screen reset_progress_screen
-    return
+        vbox:
+            xalign .5
+            yalign .5
+            spacing 45
+            
+            hbox:
+                xalign 0.5
+                spacing 150
+
+                imagebutton:
+                    auto "gui/confirmFrame/confirmYes_%s.png"
+                    action [
+                        Function(reset_persistent),
+                        Function(renpy.full_restart),
+                        Show ("main_menu")
+                    ]
+                    ypos 550
+                    xpos 625
+                    focus_mask True
+                
+                imagebutton:
+                    auto "gui/confirmFrame/confirmNo_%s.png"
+                    action Return()
+                    ypos 550
+                    xpos 625
+                    focus_mask True
+        
+        # vbox:
+        #     spacing 20
+        #     text "Are you sure you want to reset your game progress?" size 30
+        #     hbox:
+        #         spacing 40
+        #         textbutton "Yes" action [Function(reset_persistent), Return()]
+        #         textbutton "No" action Return()
 
 ## Game Menu screen ############################################################
 ##
@@ -1743,12 +1782,12 @@ style close_button_style is default:
 style custom_slider:
     xmaximum 600
     ymaximum 80
-    left_bar "gui/slider/horizontal_idle_bar.png"
-    right_bar "gui/slider/horizontal_idle_bar.png"
-    hover_left_bar "gui/slider/horizontal_hover_bar.png"
-    hover_right_bar "gui/slider/horizontal_hover_bar.png"
-    thumb "gui/slider/horizontal_idle_thumb.png"
-    hover_thumb "gui/slider/horizontal_hover_thumb.png"
+    left_bar "gui/slider/HorizontalBar_idle.png"
+    right_bar "gui/slider/HorizontalBar_idle.png"
+    hover_left_bar "gui/slider/HorizontalBar_hover.png"
+    hover_right_bar "gui/slider/HorizontalBar_hover.png"
+    thumb "gui/slider/HorizontalThumb_idle.png"
+    hover_thumb "gui/slider/HorizontalThumb_hover.png"
 
     bar_invert False
 
@@ -1790,6 +1829,9 @@ screen profile_page():
 ## About screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
+
+transform small_button:
+    zoom 0.91
 
 screen settings_page():
     tag menu
@@ -1844,10 +1886,16 @@ screen settings_page():
                     ypos -120
 
         imagebutton:
-            auto "gui/settingPage/ExitButton_%s.png"
-            action play_and(Return())
-            xalign 100
-            yalign 500
+            auto "gui/button/ExitButtonSetting_%s.png"
+            yalign 0.8
+            at small_button
+            action play_and(MainMenu(confirm=True))
+            focus_mask True
+
+        imagebutton:
+            auto "gui/button/ResetProgressButton_%s.png"
+            at small_button
+            action play_and(Jump("reset_progress"))
             focus_mask True
 
         imagebutton:
@@ -2163,9 +2211,9 @@ style pref_vbox:
 style radio_vbox:
     spacing gui.pref_button_spacing
 
-style radio_button:
-    properties gui.button_properties("radio_button")
-    foreground "gui/button/radio_[prefix_]foreground.png"
+# style radio_button:
+#     properties gui.button_properties("radio_button")
+#     foreground "gui/button/radio_[_prefix]foreground.png"
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
@@ -2173,9 +2221,9 @@ style radio_button_text:
 style check_vbox:
     spacing gui.pref_button_spacing
 
-style check_button:
-    properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
+# style check_button:
+#     properties gui.button_properties("check_button")
+#     foreground "gui/button/check_[_prefix]foreground.png"
 
 style check_button_text:
     properties gui.text_properties("check_button")

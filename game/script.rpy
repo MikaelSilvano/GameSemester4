@@ -252,9 +252,9 @@ label start_game:
     $ skill = Skills_list()
 
     # debugging purposes
-    $ current_objectives = Objectives({
-        "Plant": 1
-    })
+    # $ current_objectives = Objectives({
+    #     "Plant": 1
+    # })
 
     if game.level == 2:
         $ forced_compression_used = False

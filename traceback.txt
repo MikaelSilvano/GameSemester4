@@ -1,86 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 284, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 44, in script
-    call screen Match_Three
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 145, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 145, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 177, in execute
-    use SkillOverlay
-  File "game/script.rpy", line 48, in execute
-    screen SkillOverlay():
-  File "game/script.rpy", line 48, in execute
-    screen SkillOverlay():
-  File "game/script.rpy", line 49, in execute
-    if game.level == 1:
-  File "game/script.rpy", line 115, in execute
-    if not skill.masterpiece_build_skill_used:
-  File "game/script.rpy", line 115, in <module>
-    if not skill.masterpiece_build_skill_used:
-AttributeError: 'Skills_list' object has no attribute 'masterpiece_build_skill_used'
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 548, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 548, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 559, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 284, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 44, in script
-    call screen Match_Three
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
-    self.call("execute")
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 145, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 145, in execute
-    screen Match_Three:
-  File "game/script.rpy", line 177, in execute
-    use SkillOverlay
-  File "game/script.rpy", line 48, in execute
-    screen SkillOverlay():
-  File "game/script.rpy", line 48, in execute
-    screen SkillOverlay():
-  File "game/script.rpy", line 49, in execute
-    if game.level == 1:
-  File "game/script.rpy", line 115, in execute
-    if not skill.masterpiece_build_skill_used:
-  File "game/script.rpy", line 115, in <module>
-    if not skill.masterpiece_build_skill_used:
-AttributeError: 'Skills_list' object has no attribute 'masterpiece_build_skill_used'
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 548, in script
+    python hide:
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 548, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 559, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\loadsave.py", line 838, in load
+    log.unfreeze(roots, label="_after_load")
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\rollback.py", line 1135, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\rollback.py", line 930, in rollback
+    self.load_failed()
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\rollback.py", line 848, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 EcoCityMatch 0.1
-Mon Apr 21 22:27:18 2025
+Tue Apr 22 20:20:45 2025

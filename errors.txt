@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/Skill.rpy", line 5: expected an indented block
-        def forced_compression(self):
-         ^
+The label before_main_menu is defined twice, at File "game/screens.rpy", line 410:
+label before_main_menu:
+and File "game/script.rpy", line 5:
+label before_main_menu:
+
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Apr 21 22:21:13 2025
+Tue Apr 22 19:45:25 2025

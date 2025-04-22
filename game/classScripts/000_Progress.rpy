@@ -1,4 +1,8 @@
 init python:
+    if not hasattr(persistent, "sound_effect_on"):
+        persistent.sound_effect_on = True
+    if not hasattr(persistent, "bgm_on"):
+        persistent.bgm_on = True
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
         persistent.levels_unlocked = [True, False, False, False]
 

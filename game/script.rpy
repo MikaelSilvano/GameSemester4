@@ -1,10 +1,13 @@
-﻿default bgm_on = True
-default blueprint_swap_used = False
+﻿default blueprint_swap_used = False
 default forced_compression_used = False
 default masterpiece_build_skill_used = False
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
+    if persistent.bgm_on:
+        $ renpy.music.set_volume(1)
+    else:
+        $ renpy.music.set_volume(0)
     return
 
 init python:
@@ -290,6 +293,10 @@ screen result:
 label start:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
 
+    if persistent.bgm_on:
+        $ renpy.music.set_volume(1)
+    else:
+        $ renpy.music.set_volume(0)
     jump level_selection
     return
 

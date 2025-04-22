@@ -13,27 +13,43 @@ init python:
         return "gui/settingPage/SwitchOn_hover.png" if on else "gui/settingPage/SwitchOff_hover.png"
     
     def play_and(action):
-        return [Play("sound", "audio/button.ogg"), action]
+        if not persistent.sound_effect_on:
+            return [action]
+        if persistent.sound_effect_on:
+            return [Play("sound", "audio/button.ogg"), action]
 
     def toggle_sound_effect():
-        global sound_effect_on
-        sound_effect_on = not sound_effect_on
 
-        if sound_effect_on:
-            renpy.sound.set_volume(1)
+        if persistent.sound_effect_on == True:
+            persistent.sound_effect_on = False
+            renpy.save_persistent()
         else:
-            renpy.sound.set_volume(0)
+            persistent.sound_effect_on = True
+            renpy.save_persistent()
+
+        # if persistent.sound_effect_on:
+        #     renpy.sound.set_volume(1)
+        # else:
+        #     renpy.sound.set_volume(0)
 
     def toggle_bgm():
-        global bgm_on
-        bgm_on = not bgm_on
-
-        if bgm_on:
-            renpy.music.set_volume(1)
-        else:
+        
+        if persistent.bgm_on == True:
             renpy.music.set_volume(0)
+            persistent.bgm_on = False
+            renpy.save_persistent()
+        else:
+            renpy.music.set_volume(1)
+            persistent.bgm_on = True
+            renpy.save_persistent()
 
-default sound_effect_on = True
+        # if persistent.bgm_on:
+        #     renpy.music.set_volume(1)
+        # else:
+        #     renpy.music.set_volume(0)
+
+# default bgm_on = True
+# default sound_effect_on = True
 
 init offset = -1
 
@@ -290,6 +306,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+
 
 ## Navigation screen ###########################################################
 ##
@@ -1862,8 +1879,8 @@ screen settings_page():
                 hbox:
                     spacing 20
                     imagebutton:
-                        idle get_sound_switch_idle(sound_effect_on)
-                        hover get_sound_switch_hover(sound_effect_on)
+                        idle get_sound_switch_idle(persistent.sound_effect_on)
+                        hover get_sound_switch_hover(persistent.sound_effect_on)
                         action play_and(Function(toggle_sound_effect))
                         xpos -100
                         ypos -10
@@ -1881,8 +1898,8 @@ screen settings_page():
                 hbox:
                     spacing 20
                     imagebutton:
-                        idle get_sound_switch_idle(bgm_on)
-                        hover get_sound_switch_hover(bgm_on)
+                        idle get_sound_switch_idle(persistent.bgm_on)
+                        hover get_sound_switch_hover(persistent.bgm_on)
                         action play_and(Function(toggle_bgm))
                         xpos -100
                         ypos -10

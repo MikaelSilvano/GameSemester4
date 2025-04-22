@@ -11,6 +11,7 @@ init python:
             self.grid_size = grid_size
             self.icon_images = icon_image_use
             self.fixed_positions = None
+            self.icon_skill_collected = None
 
         def has_initial_match(self):
             for index, icon in enumerate(self.icons):
@@ -130,16 +131,24 @@ init python:
                                     if skill.blueprint_swap(icon_skill_collected[0], icon_skill_collected[1]):
                                         store.time_countdown_left = 10
                                         store.non_violatable_time = 10
+                                        icon_skill_collected.clear()
+                                        if icon_skill_collected == None:
+                                            print("NONE")
+                                        else:
+                                            print(icon_skill_collected)
                                         renpy.show_screen("countdown")
-                                    icon_skill_collected.clear()
                             if game.level == 4:
                                 icon_skill_collected.append(icon.index)
                                 if len(icon_skill_collected) == required_targets:
                                     skill.masterpiece_build(icon_skill_collected[0])
                                     store.time_countdown_left = 20
                                     store.non_violatable_time = 20
-                                    renpy.show_screen("countdown")
                                     icon_skill_collected.clear()
+                                    if icon_skill_collected == None:
+                                            print("NONE")
+                                    else:
+                                        print(icon_skill_collected)
+                                    renpy.show_screen("countdown")
                     elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
                         icon.start_drag(x, y)
                         break

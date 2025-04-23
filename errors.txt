@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label before_main_menu is defined twice, at File "game/screens.rpy", line 410:
-label before_main_menu:
-and File "game/script.rpy", line 5:
-label before_main_menu:
+File "game/script.rpy", line 586: expected an indented block
+        if all(sublevels):
+         ^
 
-
-Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Apr 22 19:45:25 2025
+Ren'Py Version: Ren'Py 8.3.6.25022803
+Wed Apr 23 09:52:17 2025

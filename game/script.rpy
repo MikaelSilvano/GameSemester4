@@ -318,7 +318,6 @@ label win_level_screen:
     hide screen Score_UI
     hide screen Match_Three
     hide screen timer_screen
-    $ levels_completed = max(levels_completed, game.level) 
     call screen level_complete_screen
     return
 
@@ -564,12 +563,13 @@ label level4_intro:
 
     init python:
         def get_profile_frame():
-            frame_number = min(levels_completed + 1, 5)
-            return f"gui/profilePage/ProfileFrame{frame_number}.png"
+            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+            return f"gui/profilePage/profileFrame{highest_level}.png"
 
     init python:
         def get_current_level_text():
-            return f"Current Level: {levels_completed + 1}"
+            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+            return f"Current Level: {highest_level}"
 
     init python:
         def get_current_position_text():
@@ -579,6 +579,11 @@ label level4_intro:
                 "Architectural Firm Owner",
                 "World-Renowned Architectural Icon"
             ]
+
+            levels_completed = 0
+            for level, sublevels in persistent.level_progress.items():
+                if all(sublevels):
+                    levels_completed += 1
 
             index = min(levels_completed, len(titles) - 1)
             return f"{titles[index]}"

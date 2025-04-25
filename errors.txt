@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 292: expected statement.
-    skill_active = False
-                 ^
+File "game/classScripts/GridManager.rpy", line 130: expected an indented block
+                        self.icon_skill_collected.append(icon.index)
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Apr 25 13:57:16 2025
+Fri Apr 25 17:27:20 2025

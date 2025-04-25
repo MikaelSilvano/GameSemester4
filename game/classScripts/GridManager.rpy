@@ -121,39 +121,44 @@ init python:
             if event.type == 1024:
                 for icon in self.icons:
                     if icon and icon.is_dragging:
-                        icon_skill_collected.clear()
                         icon.update_drag(x, y)
             if event.type == 1025 and event.button == 1: 
                 for icon in self.icons:
                     if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
                         if game.level == 3:
-                            icon_skill_collected.append(icon.index)
-                            if len(icon_skill_collected) == required_targets:
-                                if skill.blueprint_swap(icon_skill_collected[0], icon_skill_collected[1]):
+                        # append into YOUR manager’s list
+                            self.icon_skill_collected.append(icon.index)
+
+                            # once you have two picks, try the swap
+                            if len(self.icon_skill_collected) == required_targets:
+                                i1, i2 = self.icon_skill_collected
+                                self.icon_skill_collected.clear()
+
+                                success = skill.blueprint_swap(i1, i2)
+
+                                if success:
                                     store.time_countdown_left = 10
                                     store.non_violatable_time = 10
-                                    icon_skill_collected.clear()
                                     renpy.show_screen("countdown")
                                 else:
-                                    icon_skill_collected.clear()
-                                    continue
-                        elif game.level == 4:
-                            icon_skill_collected.append(icon.index)
-                            if len(icon_skill_collected) == required_targets:
-                                skill.masterpiece_build(icon_skill_collected[0])
-                                store.time_countdown_left = 20
-                                store.non_violatable_time = 20
-                                icon_skill_collected.clear()
-                                renpy.show_screen("countdown")
+                                    break
+                            elif game.level == 4:
+                                icon_skill_collected.append(icon.index)
+                                if len(icon_skill_collected) == required_targets:
+                                    skill.masterpiece_build(icon_skill_collected[0])
+                                    store.time_countdown_left = 20
+                                    store.non_violatable_time = 20
+                                    self.icon_skill_collected.clear()
+                                    renpy.show_screen("countdown")
                     elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
-                        icon_skill_collected.clear()
+                        self.icon_skill_collected.clear()
                         icon.start_drag(x, y)
                         break
             if event.type == 1026 and event.button == 1:
                 for icon in self.icons:
                     if icon and (icon.x <= x <= (icon.x + self.icon_size) and
                                 icon.y <= y <= (icon.y + self.icon_size)) and icon.is_dragging:
-                        icon_skill_collected.clear()
+                        self.icon_skill_collected.clear()
                         icon.stop_drag()
                         break
 

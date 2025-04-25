@@ -1,37 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 321, in script call
+  File "game/script.rpy", line 330, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 321, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 321, in script call
-    call setup_icons() from _call_setup_icons
-  [Previous line repeated 1 more time]
-  File "game/script.rpy", line 389, in script
-    call screen level_lose_screen
+  File "game/script.rpy", line 48, in script
+    call screen Match_Three
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/common/00action_other.rpy", line 582, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/classScripts/GameManager.rpy", line 52, in retry_sublevel
-    current_objectives.reset_obj()
-  File "game/classScripts/Objectives.rpy", line 47, in reset_obj
-    self.Aims            = self._original_aims.copy()
-AttributeError: 'Objectives' object has no attribute '_original_aims'
+  File "game/classScripts/GridManager.rpy", line 136, in handle_event
+    self.icon_skill_collected.pop(1)
+IndexError: pop index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 321, in script call
+  File "game/script.rpy", line 330, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 321, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 321, in script call
-    call setup_icons() from _call_setup_icons
-  [Previous line repeated 1 more time]
-  File "game/script.rpy", line 389, in script
-    call screen level_lose_screen
+  File "game/script.rpy", line 48, in script
+    call screen Match_Three
   File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
     self.call("execute")
   File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
@@ -64,21 +50,17 @@ Full traceback:
     rv = d.event(ev, x - xo, y - yo, st)
   File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
     rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\behavior.py", line 1182, in event
-    return handle_click(self.clicked)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\behavior.py", line 1103, in handle_click
-    rv = run(action)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\behavior.py", line 401, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_other.rpy", line 582, in __call__
-    rv = self.callable(*self.args, **self.kwargs)
-  File "game/classScripts/GameManager.rpy", line 52, in retry_sublevel
-    current_objectives.reset_obj()
-  File "game/classScripts/Objectives.rpy", line 47, in reset_obj
-    self.Aims            = self._original_aims.copy()
-AttributeError: 'Objectives' object has no attribute '_original_aims'
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\transform.py", line 1083, in event
+    rv = d.event(ev, cx, cy, st)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\display\particle.py", line 333, in event
+    return self.event_function(ev, x, y, st)
+  File "game/classScripts/GridManager.rpy", line 136, in handle_event
+    self.icon_skill_collected.pop(1)
+  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\revertable.py", line 90, in do_mutation
+    return method(self, *args, **kwargs)
+IndexError: pop index out of range
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
 EcoCityMatch 0.1
-Fri Apr 25 13:43:14 2025
+Fri Apr 25 17:43:42 2025

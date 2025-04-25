@@ -297,8 +297,8 @@ label start_game:
     $ skill = Skills_list()
 
     # debugging purposes
-    $ current_objectives = Objectives({
-    })
+    # $ current_objectives = Objectives({
+    # })
 
     if game.level == 2:
         $ forced_compression_used = False

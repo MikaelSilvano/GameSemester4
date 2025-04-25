@@ -100,13 +100,27 @@ screen SkillOverlay():
 
     elif game.level == 3:
         if not blueprint_swap_used:
-            imagebutton:
-                auto "gui/button/Skill3_%s.png"
-                action SetVariable("skill_active", True)
-                xpos 0.768
-                ypos 0.14015
-                at skill_button_transform
-
+            if not skill_active:
+                imagebutton:
+                    auto "gui/button/Skill3_%s.png"
+                    action SetVariable("skill_active", True)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill3SkillActive.png"
+                    action SetVariable("skill_active", False)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+                frame:
+                    xysize (1920, 1080)
+                    background "#1fc25e34"
+                frame:
+                    xysize (1920, 1080)
+                    background "#1fc25e34" 
+                    
         else:
             fixed:
                 xpos 0.768
@@ -116,12 +130,26 @@ screen SkillOverlay():
     
     elif game.level == 4:
         if not masterpiece_build_skill_used:
-            imagebutton:
-                auto "gui/button/Skill4_%s.png" 
-                action SetVariable("skill_active", True)
-                xpos 0.768
-                ypos 0.14015
-                at skill_button_transform
+            if not skill_active:
+                imagebutton:
+                    auto "gui/button/Skill4_%s.png" 
+                    action SetVariable("skill_active", True)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill4SkillActive.png"
+                    action SetVariable("skill_active", False)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+                frame:
+                    xysize (1920, 1080)
+                    background "#ff3c0034"
+                frame:
+                    xysize (1920, 1080)
+                    background "#ff3c0034"
         else:
             add "gui/button/Skill4Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
 
@@ -146,6 +174,10 @@ screen reset_grids:
             action If(len(grid.icons) != 0, [Function(grid.clear_grid), Function(grid.initialize_grid), Jump("setup_icons")])
 
 screen Match_Three:
+    key "K_ESCAPE" action [
+        SetVariable("timer_running", False),
+        Show("pause_menu")
+    ]
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
     $ frame_ySize = ((grid.grid_size // grid.icons_per_row) * grid.icon_size) + ((grid.grid_size // grid.icons_per_row) * grid.icon_padding) + 6
     frame:
@@ -176,8 +208,6 @@ screen Match_Three:
         add grid.sprite_manager:
             xpos 0
             ypos 0
-
-    use SkillOverlay
 
 screen Building:
     frame:
@@ -255,9 +285,10 @@ label start_game:
     $ skill = Skills_list()
 
     # debugging purposes
-    # $ current_objectives = Objectives({
-    #     "Plant": 1
-    # })
+    $ current_objectives = Objectives({
+    })
+
+    $ skill_active = False
 
     if game.level == 2:
         $ forced_compression_used = False
@@ -280,9 +311,11 @@ label start_game:
 
     hide screen menu_screen
     scene backgroundpuzzle
-
+    
+    show screen Match_Three
     show screen timer_screen
     show screen Building
+    show screen SkillOverlay
 
     call setup_icons() from _call_setup_icons
     return
@@ -316,6 +349,8 @@ label win_level_screen:
     $ renpy.pause(1.5, hard=True)
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
     call screen level_complete_screen
@@ -333,6 +368,8 @@ label win_sublevel_screen:
     $ renpy.pause(1.5, hard=True)
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
     hide screen countdown
@@ -342,6 +379,8 @@ label win_sublevel_screen:
 label lose_screen:
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
     hide screen countdown

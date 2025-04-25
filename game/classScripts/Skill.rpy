@@ -30,7 +30,7 @@ init python:
             col2, row2 = index2 % icons_per_row, index2 // icons_per_row
 
             if (col1, row1) in grid.fixed_positions or (col2, row2) in grid.fixed_positions:
-                renpy.notify("Swap prevented: one or more selected tiles are fixed.")
+                renpy.notify("Swap prevented: one or more selected tiles are fixed, TRY AGAIN.")
                 return False
 
             if 0 <= index1 < len(grid.icons) and 0 <= index2 < len(grid.icons):
@@ -38,6 +38,7 @@ init python:
                 grid.icons[index1].index, grid.icons[index2].index = index1, index2
                 icon.start_drag(grid.icons[index1].x, grid.icons[index1].y)
                 icon.start_drag(grid.icons[index2].x, grid.icons[index2].y)
+                grid.icon_skill_collected.clear()
                 return True
 
         def masterpiece_build(self, center_index):

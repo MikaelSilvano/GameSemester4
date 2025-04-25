@@ -61,29 +61,31 @@ init python:
 
             if center_row < 1 or center_col < 1 or center_row > total_rows - 2 or center_col > icons_per_row - 2:
                 renpy.notify("Cannot use Masterpiece here — not enough space around the tile.")
-                return
+                return False
 
-            for r in range(center_row - 1, center_row + 2):
-                for c in range(center_col - 1, center_col + 2):
-                    index = r * icons_per_row + c
-                    if 0 <= index < len(grid.icons):
-                        tile = grid.icons[index]
-                        if tile:
-                            if grid.fixed_positions and (c, r) in grid.fixed_positions:
-                                grid.fixed_positions.remove((c, r))
-                                tile.chain_locked = False
-                                if tile.chain_overlay:
-                                    tile.chain_overlay.destroy()
-                                    tile.chain_overlay = None
+            else:
+                for r in range(center_row - 1, center_row + 2):
+                    for c in range(center_col - 1, center_col + 2):
+                        index = r * icons_per_row + c
+                        if 0 <= index < len(grid.icons):
+                            tile = grid.icons[index]
+                            if tile:
+                                if grid.fixed_positions and (c, r) in grid.fixed_positions:
+                                    grid.fixed_positions.remove((c, r))
+                                    tile.chain_locked = False
+                                    if tile.chain_overlay:
+                                        tile.chain_overlay.destroy()
+                                        tile.chain_overlay = None
 
-                            if tile.sprite:
-                                tile.sprite.child = crush_anim
-                            tile.destroy()
-                            grid.icons[index] = None
+                                if tile.sprite:
+                                    tile.sprite.child = crush_anim
+                                tile.destroy()
+                                grid.icons[index] = None
 
-            masterpiece_used = True
-            grid.shift_icons(mouse_event=True)
-            grid.refill_grid()
-            masterpiece_build_skill_used = True
+                masterpiece_used = True
+                grid.shift_icons(mouse_event=True)
+                grid.refill_grid()
+                masterpiece_build_skill_used = True
+                return True
 
 

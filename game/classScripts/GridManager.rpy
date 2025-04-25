@@ -146,14 +146,17 @@ init python:
                                     renpy.show_screen("countdown")
                                 else:
                                     break
-                            elif game.level == 4:
-                                icon_skill_collected.append(icon.index)
-                                if len(icon_skill_collected) == required_targets:
-                                    skill.masterpiece_build(icon_skill_collected[0])
+                        elif game.level == 4:
+                            store.icon_skill_collected.append(icon.index)
+                            if len(store.icon_skill_collected) == required_targets:
+                                if (skill.masterpiece_build(store.icon_skill_collected[0])):
                                     store.time_countdown_left = 20
                                     store.non_violatable_time = 20
                                     store.icon_skill_collected.clear()
                                     renpy.show_screen("countdown")
+                                else:
+                                    store.icon_skill_collected.clear()
+                                    continue
                     elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
                         store.icon_skill_collected.clear()
                         icon.start_drag(x, y)

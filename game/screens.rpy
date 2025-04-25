@@ -342,13 +342,15 @@ style navigation_button_text:
 ## Tutorial Screen ###############
 screen tutorial_video_screen():
     add Movie(channel="movie") 
+
+    key "K_SPACE" action PauseAudio("movie", "toggle")
     
     imagebutton:
         auto "gui/button/BackButton_%s.png"
         action [
             Stop("movie"), 
             Play("music", "audio/menu.ogg"),
-            Return()
+            Show("main_menu")
         ]
         xpos 1
         ypos 1

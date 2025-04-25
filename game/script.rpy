@@ -283,9 +283,18 @@ label tutorial_scene:
     window hide
     scene black
     stop music fadeout 1.0
+
     play movie "videos/tutorial.webm"
     show screen tutorial_video_screen
-    $ renpy.pause(148.0)
+
+    python:
+        dur = renpy.music.get_duration("movie") or 148.0  
+        pos = renpy.music.get_pos("movie") or 0.0         
+
+        while pos < dur:
+            renpy.pause(0.1)
+            pos = renpy.music.get_pos("movie") or pos
+
     stop movie
     return
 

@@ -22,7 +22,7 @@ init python:
         def initialize_grid(self, fixed_positions=None):
             if fixed_positions is None and game.level in (3,4):
                 total = self.grid_size
-                chain_count = int(total * 0.2)
+                chain_count = int(total * 0.15)
                 rows = self.grid_size // self.icons_per_row
                 all_positions = [(col, row) for row in range(rows) for col in range(self.icons_per_row)]
                 fixed_positions = random.sample(all_positions, chain_count)

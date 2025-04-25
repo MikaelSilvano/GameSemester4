@@ -357,7 +357,7 @@ label mansion_sublevel_8:
     $ current_objectives = Objectives({
         "Cement": 3,
         "Glass": 5,
-        "Steel": 30,
+        "Steel": 15,
         "Rocks": 15,
         "Plant": 10
     })
@@ -375,7 +375,7 @@ label apartment_sublevel_1:
     $ desired_images = 1
     $ current_objectives = Objectives({
         "Cement": 7,
-        "Rocks": 20,
+        "Rocks": 15,
         "Steel": 2
     })
     $ moves = 15

@@ -1648,7 +1648,7 @@ screen sublevel_complete_screen():
         yfill True
         background Solid("#00000080")
 
-        add "gui/levelComplete/SublevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+        add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
             
 
         imagebutton:

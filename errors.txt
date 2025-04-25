@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 21: invalid syntax
-        else
+File "game/script.rpy", line 292: expected statement.
+    skill_active = False
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Apr 25 07:07:27 2025
+Fri Apr 25 13:57:16 2025

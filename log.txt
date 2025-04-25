@@ -1,753 +1,160 @@
-2025-04-25 04:33:24 UTC
+2025-04-25 06:57:55 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.4.24120703
 
-Early init took 0.12s
-Loading error handling took 0.05s
-Loading script took 0.61s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.11s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.44s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.15s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.05s
-Running _start took 0.00s
-Interface start took 0.17s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
-Maximum texture size: 4096x4096
-Matched: 3 Dirt
-AimsMet: Dirt x1
-Matched: 3 Wood
-AimsMet: Wood x1
-No Matches
-Matched: 3 Plant
-AimsMet: Plant x1
-Score: 238
-Matched: 3 Plant
-AimsMet: Plant x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 6 Plant
-AimsMet: Plant x1
-Score: 200
-Matched: 6 Plant
-AimsMet: Plant x1
-AimsMet: Rocks x1
-Matched: 7 Wood
-AimsMet: Wood x1
-AimsMet: Dirt x1
-Matched: 3 Plant
-AimsMet: Plant x1
-Matched: 3 Wood
-AimsMet: Wood x1
-No Matches
-Matched: 12 Dirt
-AimsMet: Dirt x2
-AimsMet: Rocks x1
-Matched: 6 Plant
-AimsMet: Plant x1
-AimsMet: Steel x1
-No Matches
-Matched: 12 Dirt
-AimsMet: Dirt x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-Matched: 8 Rocks
-AimsMet: Rocks x1
-AimsMet: Dirt x1
-Matched: 8 Steel
-AimsMet: Steel x1
-AimsMet: Wood x1
-No Matches
-Matched: 10 Steel
-AimsMet: Steel x2
-AimsMet: Plant x1
-Matched: 6 Dirt
-AimsMet: Dirt x1
-AimsMet: Rocks x1
-Matched: 6 Plant
-AimsMet: Plant x1
-AimsMet: Steel x1
-No Matches
-Matched: 3 Wood
-AimsMet: Wood x1
-Matched: 3 Plant
-AimsMet: Plant x1
-Matched: 3 Dirt
-AimsMet: Dirt x1
-Matched: 6 Steel
-AimsMet: Steel x1
-AimsMet: Rocks x1
-No Matches
-Matched: 7 Rocks
-AimsMet: Rocks x1
-AimsMet: Plant x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 188.88s
+Early init took 0.07s
 Loading error handling took 0.03s
-Loading script took 0.30s
-Loading save slot metadata took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.03s
+Running init code took 0.04s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.05s
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.11s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
+Creating interface object took 0.22s
 Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.02s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
-Maximum texture size: 4096x4096
-Matched: 3 Dirt
-AimsMet: Dirt x1
-Matched: 3 Wood
-AimsMet: Wood x1
-No Matches
-Matched: 3 Plant
-AimsMet: Plant x1
-Score: 238
-Matched: 3 Plant
-AimsMet: Plant x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Cleaning stores took 0.00s
-Init translation took 0.00s
+Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-
-Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "C:\Users\Corv1122\Downloads\Ren'Py\renpy-8.3.4-sdk\renpy\ui.py", line 295, in interact
-    raise Exception("ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?\nStack was " + ('\n'.join([str(item) for item in stack])))
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: 'transient'>
-<Many: <renpy.display.layout.Fixed object at 0x0000000008cd8a60>>
-
-While running game code:
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: 'transient'>
-<Many: <renpy.display.layout.Fixed object at 0x0000000008cd8a60>>
-Resetting cache.
-Early init took 442.44s
-Loading error handling took 0.02s
-Loading script took 0.28s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.02s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.02s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
-Maximum texture size: 4096x4096
-Matched: 3 Dirt
-AimsMet: Dirt x1
-Matched: 3 Wood
-AimsMet: Wood x1
-No Matches
-Matched: 3 Plant
-AimsMet: Plant x1
-Score: 238
-Matched: 3 Plant
-AimsMet: Plant x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Resetting cache.
-Early init took 566.98s
-Loading error handling took 0.02s
-Loading script took 0.31s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.02s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 570.20s
-Loading error handling took 0.02s
-Loading script took 0.27s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.10s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Matched: 3 Plant
-AimsMet: Plant x1
-Score: 200
-Matched: 3 Plant
-AimsMet: Plant x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Resetting cache.
-Early init took 606.12s
-Loading error handling took 0.02s
-Loading script took 0.12s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.09s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.03s
 Running _start took 0.00s
 Interface start took 0.11s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
-Windowed mode.
+Fullscreen mode.
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 566.07'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
 Maximum texture size: 4096x4096
-Matched: 3 Wood
-AimsMet: Wood x1
+Matched: 8 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 8 Plant
+AimsMet: Plant x1
+AimsMet: Steel x1
+Matched: 3 Glass
+AimsMet: Glass x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 4 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 4 Plant
+AimsMet: Plant x1
 Matched: 3 Brick
 AimsMet: Brick x1
 No Matches
@@ -819,620 +226,109 @@ No Matches
 No Matches
 No Matches
 No Matches
-Matched: 3 Cement
-AimsMet: Cement x1
 No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 179.20s
+Loading error handling took 0.03s
+Loading script took 0.19s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
+Maximum texture size: 4096x4096
+Matched: 4 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 4 Plant
+AimsMet: Plant x1
 Matched: 3 Steel
 AimsMet: Steel x1
 No Matches
-Matched: 3 Cement
-AimsMet: Cement x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
+Matched: 3 SolarPanel
+AimsMet: SolarPanel x1
+Matched: 6 Steel
+AimsMet: Steel x2
 No Matches
 No Matches
 No Matches
@@ -1542,16 +438,17 @@ No Matches
 No Matches
 No Matches
 Resetting cache.
-Early init took 631.14s
+Early init took 223.24s
 Loading error handling took 0.02s
-Loading script took 0.11s
+Loading script took 0.16s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.03s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
+Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
 Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -1563,33 +460,340 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
 Prepare screens took 0.08s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.12s
+Interface start took 0.11s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
-Windowed mode.
+Fullscreen mode.
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 566.07'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 658.52s
+Early init took 477.80s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
+Maximum texture size: 4096x4096
+Matched: 3 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 SolarPanel
+AimsMet: SolarPanel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 532.40s
 Loading error handling took 0.02s
 Loading script took 0.17s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.03s
-Loading analysis data took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
+Maximum texture size: 4096x4096
+Matched: 3 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 SolarPanel
+AimsMet: SolarPanel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 585.51s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
@@ -1617,132 +821,59 @@ Interface start took 0.10s
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
-Windowed mode.
+Fullscreen mode.
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 566.07'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
 Maximum texture size: 4096x4096
-Matched: 3 Cement
-AimsMet: Cement x1
+Resetting cache.
+Early init took 1303.94s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
+Maximum texture size: 4096x4096
+Matched: 3 Plant
+AimsMet: Plant x1
 Score: 0
-Matched: 3 Cement
-AimsMet: Cement x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 6 Rocks
-AimsMet: Rocks x1
-Score: 0
-Matched: 6 Rocks
-AimsMet: Rocks x1
+Matched: 3 Plant
 AimsMet: Plant x1
 No Matches
 No Matches
@@ -1844,4 +975,594 @@ No Matches
 No Matches
 No Matches
 No Matches
+Matched: 4 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 4 Plant
+AimsMet: Plant x1
 No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 6 Dirt
+AimsMet: Dirt x1
+Score: 0
+Matched: 6 Dirt
+AimsMet: Dirt x1
+AimsMet: Plant x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 2219.87s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1680, 1050) drawable=(1680, 1050)
+Maximum texture size: 4096x4096
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 4 Plant
+AimsMet: Plant x1
+Score: 0
+Matched: 4 Plant
+AimsMet: Plant x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 3 Steel
+AimsMet: Steel x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 11 Plant
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Dirt x1
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Score: 0
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 3 Steel
+AimsMet: Steel x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 4 Wood
+AimsMet: Wood x1
+Matched: 8 Wood
+AimsMet: Wood x1
+AimsMet: Rocks x1
+Matched: 6 Dirt
+AimsMet: Dirt x1
+AimsMet: Plant x1
+No Matches
+Matched: 10 Steel
+AimsMet: Steel x2
+AimsMet: Plant x1
+Matched: 7 Rocks
+AimsMet: Rocks x2
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 7 Dirt
+AimsMet: Dirt x1
+AimsMet: Steel x1
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096

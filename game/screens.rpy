@@ -1654,7 +1654,6 @@ screen sublevel_complete_screen():
             action [
                 Function(game.advance_sublevel),
                 SetVariable("skill_active", False)
-
             ]  
             ypos 25
             focus_mask True

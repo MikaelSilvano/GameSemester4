@@ -1,6 +1,7 @@
 ﻿default blueprint_swap_used = False
 default forced_compression_used = False
 default masterpiece_build_skill_used = False
+default non_violatable_objectives = { }
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -279,7 +280,18 @@ label tutorial_scene:
 
 
 label start_game:
-    $ my_objectives = current_objectives 
+    $ pause_start = 0.0
+    $ pause_duration = 0
+    $ timer_on_pause = False
+    $ timer_start = 0
+    $ time_left = 300
+    $ timer_running = True
+    $ timer_countdown_start = 0
+    $ skill_active = False
+    $ timer_freeze_start = 0
+    $ timer_freeze_left = 10
+    $ timer_freeze_used = False
+    $ time_freeze_running = False
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
@@ -287,8 +299,6 @@ label start_game:
     # debugging purposes
     $ current_objectives = Objectives({
     })
-
-    $ skill_active = False
 
     if game.level == 2:
         $ forced_compression_used = False

@@ -1,3 +1,5 @@
+default In_stored = 0
+
 init python:
     class Skills_list:
         def forced_compression(self):
@@ -46,7 +48,6 @@ init python:
 
                 icon.start_drag(grid.icons[index1].x, grid.icons[index1].y)
                 icon.start_drag(grid.icons[index2].x, grid.icons[index2].y)
-
                 return True
             
             renpy.notify("Invalid swap – try again.")

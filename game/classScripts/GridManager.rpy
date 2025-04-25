@@ -11,7 +11,6 @@ init python:
             self.grid_size = grid_size
             self.icon_images = icon_image_use
             self.fixed_positions = None
-            self.icon_skill_collected = []
 
         def has_initial_match(self):
             for index, icon in enumerate(self.icons):
@@ -122,17 +121,22 @@ init python:
                 for icon in self.icons:
                     if icon and icon.is_dragging:
                         icon.update_drag(x, y)
-            if event.type == 1025 and event.button == 1: 
+            if event.type == 1025 and event.button == 1:
                 for icon in self.icons:
-                    if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
+                    if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):            
+                        if len(store.icon_skill_collected) != 0:
+                            if store.In_stored == 0:
+                                store.icon_skill_collected.clear()
+                        store.In_stored = 0
                         if game.level == 3:
                         # append into YOUR manager’s list
-                            self.icon_skill_collected.append(icon.index)
+                            store.icon_skill_collected.append(icon.index)
+                            store.In_stored+=1
 
                             # once you have two picks, try the swap
-                            if len(self.icon_skill_collected) == required_targets:
-                                i1, i2 = self.icon_skill_collected
-                                self.icon_skill_collected.clear()
+                            if len(store.icon_skill_collected) == required_targets:
+                                i1, i2 = store.icon_skill_collected
+                                store.icon_skill_collected.clear()
 
                                 success = skill.blueprint_swap(i1, i2)
 
@@ -148,17 +152,17 @@ init python:
                                     skill.masterpiece_build(icon_skill_collected[0])
                                     store.time_countdown_left = 20
                                     store.non_violatable_time = 20
-                                    self.icon_skill_collected.clear()
+                                    store.icon_skill_collected.clear()
                                     renpy.show_screen("countdown")
                     elif icon and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):
-                        self.icon_skill_collected.clear()
+                        store.icon_skill_collected.clear()
                         icon.start_drag(x, y)
                         break
             if event.type == 1026 and event.button == 1:
                 for icon in self.icons:
                     if icon and (icon.x <= x <= (icon.x + self.icon_size) and
                                 icon.y <= y <= (icon.y + self.icon_size)) and icon.is_dragging:
-                        self.icon_skill_collected.clear()
+                        store.icon_skill_collected.clear()
                         icon.stop_drag()
                         break
 

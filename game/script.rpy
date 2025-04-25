@@ -2,6 +2,7 @@
 default forced_compression_used = False
 default masterpiece_build_skill_used = False
 default non_violatable_objectives = { }
+default icon_skill_collected = []
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -17,6 +18,10 @@ init python:
     icon_skill_collected = []
     required_targets = None
     config.rollback_enabled = False
+
+    def clear_icon_selection():
+        store.icon_skill_collected.clear()
+        renpy.restart_interaction()
 
 transform crush_anim:
     linear 0.3 zoom 0.0 alpha 0.0
@@ -104,14 +109,20 @@ screen SkillOverlay():
             if not skill_active:
                 imagebutton:
                     auto "gui/button/Skill3_%s.png"
-                    action SetVariable("skill_active", True)
+                    action [
+                        Function(clear_icon_selection),
+                        SetVariable("skill_active", True)
+                    ]
                     xpos 0.768
                     ypos 0.14015
                     at skill_button_transform
             else:
                 imagebutton:
                     idle "gui/button/Skill3SkillActive.png"
-                    action SetVariable("skill_active", False)
+                    action [
+                        Function(clear_icon_selection),
+                        SetVariable("skill_active", False)
+                    ]
                     xpos 0.768
                     ypos 0.14015
                     at skill_button_transform

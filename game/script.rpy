@@ -288,6 +288,7 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
+    $ load_user_data("Guest")
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
 
     jump level_selection
@@ -376,31 +377,32 @@ define mainchar = Character("Ko Khrisna", color="#c8f2ff")
 define sidechar = Character("Jordan", color="#ffc8c8")
 
 label level1_intro:
-    scene hutbg with fade
+    if persistent.level_progress[1][1] == False:
+        scene hutbg with fade
 
-    show SideCharacterLevel1 at right_side:
-        zoom 0.5
-        linear 0.2 zoom 1.0
-    pause 0.3
+        show SideCharacterLevel1 at right_side:
+            zoom 0.5
+            linear 0.2 zoom 1.0
+        pause 0.3
 
-    show CharacterLevel1 at left_side:
-        zoom 0.5
-        linear 0.2 zoom 1.0
+        show CharacterLevel1 at left_side:
+            zoom 0.5
+            linear 0.2 zoom 1.0
 
-    sidechar "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
-    mainchar "Oh this is exciting! Where do I even start Jordan?"
-    sidechar "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
-    mainchar "Okay! I’ll show you I’ve got what it takes."
+        sidechar "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
+        mainchar "Oh this is exciting! Where do I even start Jordan?"
+        sidechar "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
+        mainchar "Okay! I’ll show you I’ve got what it takes."
 
-    window hide
+        window hide
 
-    show CharacterLevel1 at left_side:
-        linear 0.2 zoom 0.5 alpha 0.0
-    show SideCharacterLevel1 at right_side:
-        linear 0.2 zoom 0.5 alpha 0.0
+        show CharacterLevel1 at left_side:
+            linear 0.2 zoom 0.5 alpha 0.0
+        show SideCharacterLevel1 at right_side:
+            linear 0.2 zoom 0.5 alpha 0.0
 
-    $ renpy.pause(0.2, hard=True)
-    scene black with None
+        $ renpy.pause(0.2, hard=True)
+        scene black with None
     jump sublevel_level1
 
 ##########################################################################

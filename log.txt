@@ -1,1799 +1,63 @@
-2025-04-21 15:38:35 UTC
-macOS-15.3.2-arm64-arm-64bit
-Ren'Py 8.3.4.24120703
+2025-04-26 12:25:18 UTC
+Windows-10-10.0.22631
+Ren'Py 8.3.6.25022803
 
-Early init took 0.03s
-Loading error handling took 0.03s
-Loading script took 0.57s
-Loading save slot metadata took 0.02s
+Early init took 0.07s
+Loading error handling took 0.04s
+Loading script took 0.34s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.05s
-Loading analysis data took 0.01s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
+Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Dump and make backups took 0.03s
+Backing up script files to 'C:\\Users\\undap\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.02s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.29s
 Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.35s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1290, 726) drawable=(2580, 1452)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Matched: 3 Steel
-AimsMet: Steel x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 3 Steel
-AimsMet: Steel x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 3 Cement
-AimsMet: Cement x1
-Matched: 3 Brick
-AimsMet: Brick x1
-No Matches
-Matched: 3 Steel
-AimsMet: Steel x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 3 Wood
-AimsMet: Wood x1
-Matched: 3 Glass
-AimsMet: Glass x1
-No Matches
-Matched: 3 Wood
-AimsMet: Wood x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Resetting cache.
-Early init took 109.95s
-Loading error handling took 0.02s
-Loading script took 0.13s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/vano/Library/RenPy/backups/GameSemester4':
-Dump and make backups took 0.03s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.02s
-Prepare screens took 0.05s
+Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.15s
+Interface start took 0.24s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1 Pro'
-Version: b'2.1 Metal - 89.3'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 572.83'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1290, 726) drawable=(2580, 1452)
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 7 Glass
-AimsMet: Glass x1
+Guest
+Matched: 6 Dirt
+AimsMet: Dirt x2
+Matched: 9 Rocks
+AimsMet: Rocks x1
 AimsMet: Steel x1
-No Matches
+AimsMet: Wood x1
 Matched: 3 Wood
 AimsMet: Wood x1
-Matched: 3 Glass
-AimsMet: Glass x1
 No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 4 Rocks
+AimsMet: Rocks x1
 No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 4 Brick
-AimsMet: Brick x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 5 Cement
-AimsMet: Cement x1
-Matched: 5 Plant
-AimsMet: Plant x1
-No Matches
-Matched: 7 Wood
-AimsMet: Wood x1
-AimsMet: Glass x1
-Matched: 8 Wood
-AimsMet: Wood x1
-AimsMet: Steel x1
-No Matches
-Matched: 3 Glass
-AimsMet: Glass x1
-No Matches
-Matched: 3 Plant
-AimsMet: Plant x1
-Matched: 3 Brick
-AimsMet: Brick x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 6 Steel
-AimsMet: Steel x1
-AimsMet: Glass x1
-Matched: 3 Cement
-AimsMet: Cement x1
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-No Matches
-Matched: 3 Plant
-AimsMet: Plant x1
 Matched: 3 Steel
 AimsMet: Steel x1
 No Matches
@@ -1942,6 +206,718 @@ No Matches
 No Matches
 No Matches
 No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 7 Rocks
+AimsMet: Rocks x1
+AimsMet: Steel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 4 Steel
+AimsMet: Steel x1
+Matched: 9 Plant
+AimsMet: Plant x1
+AimsMet: Rocks x1
+No Matches
+Matched: 9 Dirt
+AimsMet: Dirt x1
+AimsMet: Plant x1
+AimsMet: Steel x1
+No Matches
+Matched: 4 Steel
+AimsMet: Steel x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 8 Steel
+AimsMet: Steel x1
+AimsMet: Rocks x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 5 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 4 Steel
+AimsMet: Steel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 4 Dirt
+AimsMet: Dirt x1
+Score: 1202
+Matched: 4 Dirt
+AimsMet: Dirt x1
+Matched: 4 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Guest
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
@@ -1949,42 +925,3 @@ Load screen analysis took 0.03s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
-Resetting cache.
-Early init took 175.22s
-Loading error handling took 0.03s
-Loading script took 0.50s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.03s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.14s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1290, 726) drawable=(2580, 1452)
-Maximum texture size: 4096x4096

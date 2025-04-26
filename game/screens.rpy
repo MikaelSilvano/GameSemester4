@@ -297,7 +297,7 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
+        
     vbox:
         style_prefix "navigation"
         spacing gui.navigation_spacing
@@ -307,7 +307,7 @@ screen navigation():
         imagebutton auto "gui/mainMenu/MainMenuTutorial_%s.png" action play_and(ShowMenu("tutorial_scene")) yoffset 20
         imagebutton auto "gui/mainMenu/MainMenuCredits_%s.png" action play_and(Show("credits_page_1")) yoffset 10
         imagebutton auto "gui/mainMenu/MainMenuQuit_%s.png" action Quit(confirm=not main_menu)
-
+    
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
@@ -341,7 +341,6 @@ screen tutorial_video_screen():
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
     tag menu
 
     add gui.main_menu_background
@@ -350,6 +349,7 @@ screen main_menu():
         style "main_menu_frame"
 
     use navigation
+    use login_screen
 
     if gui.show_name:
 
@@ -1472,7 +1472,7 @@ screen apartment_sublevel3_screen():
             auto "gui/button/settings_%s.png"
             xpos 768
             ypos -507
-            focus_mask True
+            focus_mask True 
             action play_and(ShowMenu("settings_page"))
         
         imagebutton:
@@ -1979,83 +1979,83 @@ screen file_slots(title):
 
             order_reverse True
 
-            ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
+            # ## The page name, which can be edited by clicking on a button.
+            # button:
+            #     style "page_label"
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+            #     key_events True
+            #     xalign 0.5
+            #     action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #     input:
+            #         style "page_label_text"
+            #         value page_name_value
 
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
+            # ## The grid of file slots.
+            # grid gui.file_slot_cols gui.file_slot_rows:
+            #     style_prefix "slot"
 
-                xalign 0.5
-                yalign 0.5
+            #     xalign 0.5
+            #     yalign 0.5
 
-                spacing gui.slot_spacing
+            #     spacing gui.slot_spacing
 
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+            #     for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
-                    $ slot = i + 1
+            #         $ slot = i + 1
 
-                    button:
-                        action FileAction(slot)
+            #         button:
+            #             action FileAction(slot)
 
-                        has vbox
+            #             has vbox
 
-                        add FileScreenshot(slot) xalign 0.5
+            #             add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
+            #             text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+            #                 style "slot_time_text"
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+            #             text FileSaveName(slot):
+            #                 style "slot_name_text"
 
-                        key "save_delete" action FileDelete(slot)
+            #             key "save_delete" action FileDelete(slot)
 
-            ## Buttons to access other pages.
-            vbox:
-                style_prefix "page"
+            # ## Buttons to access other pages.
+            # vbox:
+            #     style_prefix "page"
 
-                xalign 0.5
-                yalign 1.0
+            #     xalign 0.5
+            #     yalign 1.0
 
-                hbox:
-                    xalign 0.5
+            #     hbox:
+            #         xalign 0.5
 
-                    spacing gui.page_spacing
+            #         spacing gui.page_spacing
 
-                    textbutton _("<") action FilePagePrevious()
-                    key "save_page_prev" action FilePagePrevious()
+            #         textbutton _("<") action FilePagePrevious()
+            #         key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
+            #         if config.has_autosave:
+            #             textbutton _("{#auto_page}A") action FilePage("auto")
 
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
+            #         if config.has_quicksave:
+            #             textbutton _("{#quick_page}Q") action FilePage("quick")
 
-                    ## range(1, 10) gives the numbers from 1 to 9.
-                    for page in range(1, 10):
-                        textbutton "[page]" action FilePage(page)
+            #         ## range(1, 10) gives the numbers from 1 to 9.
+            #         for page in range(1, 10):
+            #             textbutton "[page]" action FilePage(page)
 
-                    textbutton _(">") action FilePageNext()
-                    key "save_page_next" action FilePageNext()
+            #         textbutton _(">") action FilePageNext()
+            #         key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Upload Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Download Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+            #     if config.has_sync:
+            #         if CurrentScreenName() == "save":
+            #             textbutton _("Upload Sync"):
+            #                 action UploadSync()
+            #                 xalign 0.5
+            #         else:
+            #             textbutton _("Download Sync"):
+            #                 action DownloadSync()
+            #                 xalign 0.5
 
 
 style page_label is gui_label

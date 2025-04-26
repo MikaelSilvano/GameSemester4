@@ -29,6 +29,7 @@ init python:
                 "levels_unlocked": new_data()["levels_unlocked"],
                 "level_progress": new_data()["level_progress"],
                 }
+            print(persistent.saved_user)
             renpy.save_persistent()
 
             store.login_error = "Account successfully registered"
@@ -47,7 +48,7 @@ transform scale (ratio):
 screen login_screen():
 
     add "login_border" align (0.025, 0.025) at scale(0.9)
-    text "Current user: [store.cur_user]" align (0.5, 0.42) color "#004a09"
+    text "Current user: [persistent.current_user]" align (0.5, 0.42) color "#004a09"
     
     frame:
         background "#00000000"
@@ -70,18 +71,14 @@ screen login_screen():
         if login_error:
             use notify_texts
 
-        textbutton "Login" action [Function(check_login), NullAction()] align (0.045, 0.25) xysize (150, 50) background "#00b916" text_style "text_color"
-        textbutton "Register" action [Function(add_user), NullAction()] align (0.145, 0.25) xysize (150, 50) background "#00b916" text_style "text_color"
-
-style text_color:
-    hover_color "#ffffff"
-    color "#004a09"
+        imagebutton auto "gui/button/loginButton_%s.png" action [Function(check_login), NullAction()] align (0.025, 0.25) xysize (150, 50)
+        imagebutton auto "gui/button/registerButton_%s.png" action [Function(add_user), NullAction()] align (0.125, 0.25) xysize (150, 50)
 
 screen notify_texts:
     frame:
         background "#00000000"
         text "[login_error]"
-        align (0.05, 0.3) 
+        align (0.05, 0.35) 
         xysize (350, 50)
 
 

@@ -1,5 +1,4 @@
 init python:
-
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
         persistent.levels_unlocked = [True, False, False, False]
 
@@ -83,12 +82,14 @@ init python:
 
         renpy.save_persistent()
 
-    def reset_persistent(isGuest):
+    def reset_persistent():
 
-        cur_user = persistent.saved_user[persistent.current_user]
+        print(persistent.saved_user)
+        cur_user = persistent.saved_user
 
-        cur_user["levels_unlocked"] = {new_data()["levels_unlocked"]}
-        cur_user["levels_unlocked"] = {new_data()["level_progress"]}
+        print(cur_user)
+        cur_user.update({"levels_unlocked": new_data()["levels_unlocked"], "level_progress": new_data()["level_progress"]})
+        print(cur_user)
 
         persistent.saved_user = cur_user
 

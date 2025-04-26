@@ -49,6 +49,7 @@ init python:
             renpy.jump(new_label)
 
         def retry_sublevel(self):
+            current_objectives.reset_obj()
             renpy.jump("start_game")
         
         def find_match(self, mouse_event):

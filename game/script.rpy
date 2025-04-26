@@ -1,10 +1,15 @@
-﻿default bgm_on = True
-default blueprint_swap_used = False
+﻿default blueprint_swap_used = False
 default forced_compression_used = False
 default masterpiece_build_skill_used = False
+default non_violatable_objectives = { }
+default icon_skill_collected = []
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
+    if persistent.bgm_on:
+        $ renpy.music.set_volume(1)
+    else:
+        $ renpy.music.set_volume(0)
     return
 
 init python:
@@ -13,6 +18,10 @@ init python:
     icon_skill_collected = []
     required_targets = None
     config.rollback_enabled = False
+
+    def clear_icon_selection():
+        store.icon_skill_collected.clear()
+        renpy.restart_interaction()
 
 transform crush_anim:
     linear 0.3 zoom 0.0 alpha 0.0
@@ -45,6 +54,7 @@ label setup_icons:
 
 transform rotation(angle):
     rotate angle
+    
 screen SkillOverlay():
     if game.level == 1:
         if not timer_freeze_used:
@@ -97,13 +107,33 @@ screen SkillOverlay():
 
     elif game.level == 3:
         if not blueprint_swap_used:
-            imagebutton:
-                auto "gui/button/Skill3_%s.png"
-                action SetVariable("skill_active", True)
-                xpos 0.768
-                ypos 0.14015
-                at skill_button_transform
-
+            if not skill_active:
+                imagebutton:
+                    auto "gui/button/Skill3_%s.png"
+                    action [
+                        Function(clear_icon_selection),
+                        SetVariable("skill_active", True)
+                    ]
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill3SkillActive.png"
+                    action [
+                        Function(clear_icon_selection),
+                        SetVariable("skill_active", False)
+                    ]
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+                frame:
+                    xysize (1920, 1080)
+                    background "#37d27334"
+                frame:
+                    xysize (1920, 1080)
+                    background "#1fc25e34" 
+                    
         else:
             fixed:
                 xpos 0.768
@@ -113,12 +143,26 @@ screen SkillOverlay():
     
     elif game.level == 4:
         if not masterpiece_build_skill_used:
-            imagebutton:
-                auto "gui/button/Skill4_%s.png" 
-                action SetVariable("skill_active", True)
-                xpos 0.768
-                ypos 0.14015
-                at skill_button_transform
+            if not skill_active:
+                imagebutton:
+                    auto "gui/button/Skill4_%s.png" 
+                    action SetVariable("skill_active", True)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill4SkillActive.png"
+                    action SetVariable("skill_active", False)
+                    xpos 0.768
+                    ypos 0.14015
+                    at skill_button_transform
+                frame:
+                    xysize (1920, 1080)
+                    background "#f2744d34"
+                frame:
+                    xysize (1920, 1080)
+                    background "#ff3c0034"
         else:
             add "gui/button/Skill4Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
 
@@ -143,6 +187,10 @@ screen reset_grids:
             action If(len(grid.icons) != 0, [Function(grid.clear_grid), Function(grid.initialize_grid), Jump("setup_icons")])
 
 screen Match_Three:
+    key "K_ESCAPE" action [
+        SetVariable("timer_running", False),
+        Show("pause_menu")
+    ]
     $ frame_xSize = (grid.icons_per_row * grid.icon_size) + (grid.icons_per_row * grid.icon_padding) + 6
     $ frame_ySize = ((grid.grid_size // grid.icons_per_row) * grid.icon_size) + ((grid.grid_size // grid.icons_per_row) * grid.icon_padding) + 6
     frame:
@@ -173,8 +221,6 @@ screen Match_Three:
         add grid.sprite_manager:
             xpos 0
             ypos 0
-
-    use SkillOverlay
 
 screen Building:
     frame:
@@ -238,22 +284,42 @@ label tutorial_scene:
     window hide
     scene black
     stop music fadeout 1.0
+
     play movie "videos/tutorial.webm"
     show screen tutorial_video_screen
-    $ renpy.pause(148.0)
+
+    python:
+        dur = renpy.music.get_duration("movie") or 148.0  
+        pos = renpy.music.get_pos("movie") or 0.0         
+
+        while pos < dur:
+            renpy.pause(0.1)
+            pos = renpy.music.get_pos("movie") or pos
+
     stop movie
     return
 
 
 label start_game:
-    $ my_objectives = current_objectives 
+    $ pause_start = 0.0
+    $ pause_duration = 0
+    $ timer_on_pause = False
+    $ timer_start = 0
+    $ time_left = 300
+    $ timer_running = True
+    $ timer_countdown_start = 0
+    $ skill_active = False
+    $ timer_freeze_start = 0
+    $ timer_freeze_left = 10
+    $ timer_freeze_used = False
+    $ time_freeze_running = False
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
 
-    # debugging purposes
+    #debugging purposes
     # $ current_objectives = Objectives({
-    #     "Plant": 1
+    #     "Steel": 1,
     # })
 
     if game.level == 2:
@@ -277,9 +343,11 @@ label start_game:
 
     hide screen menu_screen
     scene backgroundpuzzle
-
+    
+    show screen Match_Three
     show screen timer_screen
     show screen Building
+    show screen SkillOverlay
 
     call setup_icons() from _call_setup_icons
     return
@@ -288,9 +356,15 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
-    $ load_user_data("Guest")
+    if persistent.current_user == "Guest":
+        $ load_user_data("Guest")
+
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
 
+    if persistent.bgm_on:
+        $ renpy.music.set_volume(1)
+    else:
+        $ renpy.music.set_volume(0)
     jump level_selection
     return
 
@@ -310,9 +384,10 @@ label win_level_screen:
     $ renpy.pause(1.5, hard=True)
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
-    $ levels_completed = max(levels_completed, game.level) 
     call screen level_complete_screen
     return
 
@@ -328,6 +403,8 @@ label win_sublevel_screen:
     $ renpy.pause(1.5, hard=True)
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
     hide screen countdown
@@ -337,6 +414,8 @@ label win_sublevel_screen:
 label lose_screen:
     hide screen Building
     hide screen Score_UI
+    hide screen SkillOverlay
+    hide screen time_freeze
     hide screen Match_Three
     hide screen timer_screen
     hide screen countdown
@@ -559,12 +638,13 @@ label level4_intro:
 
     init python:
         def get_profile_frame():
-            frame_number = min(levels_completed + 1, 5)
-            return f"gui/profilePage/ProfileFrame{frame_number}.png"
+            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+            return f"gui/profilePage/profileFrame{highest_level}.png"
 
     init python:
         def get_current_level_text():
-            return f"Current Level: {levels_completed + 1}"
+            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+            return f"Current Level: {highest_level}"
 
     init python:
         def get_current_position_text():
@@ -572,8 +652,13 @@ label level4_intro:
                 "Construction Worker",
                 "Architect",
                 "Architectural Firm Owner",
-                "World-Renowned Architectural Icon"
+                "World-Renowned \nArchitectural Icon"
             ]
+
+            levels_completed = 0
+            for level, sublevels in persistent.level_progress.items():
+                if all(sublevels):
+                    levels_completed += 1
 
             index = min(levels_completed, len(titles) - 1)
             return f"{titles[index]}"

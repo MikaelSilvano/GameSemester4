@@ -1,4 +1,5 @@
 init python:
+    config.keymap['game_menu'] = [  ]
     import time
 
     def format_time(seconds):
@@ -11,31 +12,50 @@ init python:
 
     def get_sound_switch_hover(on):
         return "gui/settingPage/SwitchOn_hover.png" if on else "gui/settingPage/SwitchOff_hover.png"
-    
+
     def play_and(action):
-        return [Play("sound", "audio/button.ogg"), action]
+        if not persistent.sound_effect_on:
+            return [action]
+        if persistent.sound_effect_on:
+            return [Play("sound", "audio/button.ogg"), action]
+
+        return acts
 
     def toggle_sound_effect():
-        global sound_effect_on
-        sound_effect_on = not sound_effect_on
 
-        if sound_effect_on:
-            renpy.sound.set_volume(1)
+        if persistent.sound_effect_on == True:
+            persistent.sound_effect_on = False
+            renpy.save_persistent()
         else:
-            renpy.sound.set_volume(0)
+            persistent.sound_effect_on = True
+            renpy.save_persistent()
+
+        # if persistent.sound_effect_on:
+        #     renpy.sound.set_volume(1)
+        # else:
+        #     renpy.sound.set_volume(0)
 
     def toggle_bgm():
-        global bgm_on
-        bgm_on = not bgm_on
-
-        if bgm_on:
-            renpy.music.set_volume(1)
-        else:
+        
+        if persistent.bgm_on == True:
             renpy.music.set_volume(0)
+            persistent.bgm_on = False
+            renpy.save_persistent()
+        else:
+            renpy.music.set_volume(1)
+            persistent.bgm_on = True
+            renpy.save_persistent()
 
-default sound_effect_on = True
+        # if persistent.bgm_on:
+        #     renpy.music.set_volume(1)
+        # else:
+        #     renpy.music.set_volume(0)
+
+# default bgm_on = True
+# default sound_effect_on = True
 
 init offset = -1
+default pause_time = 0
 
 style default:
     properties gui.text_properties()
@@ -291,6 +311,7 @@ style quick_button:
 style quick_button_text:
     properties gui.text_properties("quick_button")
 
+
 ## Navigation screen ###########################################################
 ##
 ## This screen is included in the main and game menus, and provides navigation
@@ -321,13 +342,15 @@ style navigation_button_text:
 ## Tutorial Screen ###############
 screen tutorial_video_screen():
     add Movie(channel="movie") 
+
+    key "K_SPACE" action PauseAudio("movie", "toggle")
     
     imagebutton:
         auto "gui/button/BackButton_%s.png"
         action [
             Stop("movie"), 
             Play("music", "audio/menu.ogg"),
-            Return()
+            Show("main_menu")
         ]
         xpos 1
         ypos 1
@@ -514,7 +537,6 @@ screen level_selection_screen():
     modal True
     add "images/Screens/LevelSelection.png"
     key "K_ESCAPE" action NullAction()
-
 
     fixed:
         # Level 1 button
@@ -1489,13 +1511,19 @@ default timer_running = True
 screen timer_screen():
     tag timer
 
-    on "show" action [SetVariable("timer_start", time.time()), SetVariable("time_left", 300)]
+    on "show" action [
+        SetVariable("timer_start", time.time()),
+        SetVariable("time_left", 300),
+    ]
 
-    if timer_running:
-        timer 0.1 action SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))) repeat True
+    timer 0.1 action If(
+        timer_running,
+        SetVariable("time_left", max(0, 300 - int(time.time() - timer_start))),
+        None
+    ) repeat True
 
-        if time_left <= 0:
-            timer 0.1 action [Hide("timer_screen"), Jump("lose_screen")] repeat False
+    if time_left <= 0:
+        timer 0.1 action [Hide("timer_screen"), Jump("lose_screen")] repeat False
 
     add Transform("gui/timer/TimerFrame.png", zoom=0.6) xpos 0.2 ypos 0.01
 
@@ -1504,6 +1532,7 @@ screen timer_screen():
 default timer_countdown_start = 0
 default time_countdown_left = None
 default non_violatable_time = None
+default countdown_running = True
 
 screen countdown():
 
@@ -1516,10 +1545,16 @@ screen countdown():
         SetVariable("masterpiece_build_skill_used", True)
     ]
 
-    timer 0.1 action SetVariable(
-        "time_countdown_left",
-        max(0, non_violatable_time - int(time.time() - timer_countdown_start))
+    timer 0.1 action If(
+        timer_running,
+        SetVariable("time_countdown_left", max(0, non_violatable_time - int(time.time() - timer_countdown_start))),
+        None
     ) repeat True
+
+    # timer 0.1 action SetVariable(
+    #     "time_countdown_left",
+    #     max(0, non_violatable_time - int(time.time() - timer_countdown_start))
+    # ) repeat True
 
     if time_countdown_left <= 0:
         timer 0.1 action [
@@ -1535,28 +1570,43 @@ screen countdown():
 default timer_freeze_start = 0
 default timer_freeze_left = 10
 default timer_freeze_used = False
+default time_freeze_running = False
 
 screen time_freeze():
     on "show" action [
         SetVariable("timer_freeze_start", time.time()),
         SetVariable("timer_freeze_left", 10),
-        SetVariable("timer_running", False)  
+        SetVariable("timer_running", False),
+        SetVariable("freeze_active", True),  
+        SetVariable("time_freeze_running", True)
     ]
 
-    timer 0.1 action SetVariable(
-        "timer_freeze_left",
-        max(0, 10 - int(time.time() - timer_freeze_start))
+    timer 0.1 action If(
+        time_freeze_running,
+        SetVariable("timer_freeze_left", max(0, 10 - int(time.time() - timer_freeze_start))),
+        None
     ) repeat True
 
     if timer_freeze_left <= 0:
         timer 0.1 action [
             SetVariable("timer_running", True),  
             SetVariable("timer_freeze_used", True),
+            SetVariable("freeze_active", False), 
             SetVariable("time_countdown_left", 60),
-            SetVariable("non_violatable_time", 60),
+            SetVariable("non_violatable_time", 60),  
+            SetVariable("time_freeze_running", False),
             Hide("time_freeze"),
             Function(renpy.show_screen, "countdown")
         ] repeat False
+    
+    on "hide" action [
+            SetVariable("timer_running", True), 
+            SetVariable("freeze_active", False),
+            SetVariable("time_freeze_start", 0),
+            SetVariable("time_freeze_left", 10),
+            SetVariable("timer_freeze_used", False),
+            SetVariable("timer_freeze_running", False)
+        ]
 
     text "[timer_freeze_left]s" size 80 xpos 0.825 ypos 0.235 anchor (0.5, 0.5) color "#0099ff"
 
@@ -1602,7 +1652,10 @@ screen sublevel_complete_screen():
 
         imagebutton:
             auto "gui/button/NextStageButton_%s.png"
-            action Function(game.advance_sublevel)  
+            action [
+                Function(game.advance_sublevel),
+                SetVariable("skill_active", False)
+            ]  
             ypos 25
             focus_mask True
 
@@ -1698,21 +1751,70 @@ screen reset_progress_screen():
 ## This screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
+default pause_start = 0.0
+default pause_duration = 0
+default timer_on_pause = False
+
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+    frame:
+        xfill True
+        yfill True
+        background Solid("#00000080") 
+
+screen pause_menu:
     tag menu
     modal True
-    add "images/Backgrounds/backgroundnew.png" 
+
+    if time_freeze_running:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("time_freeze_running", False),
+            SetVariable("timer_on_pause", True)
+        ]
+    else:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("timer_running",  False)
+        ]
     
+    timer 0.1 action SetVariable(
+        "pause_duration",
+        int(time.time() - pause_start)
+    ) repeat True
+
+    if timer_on_pause:
+        on "hide" action [
+            SetVariable("time_freeze_running", True),
+            SetVariable("timer_freeze_start",   timer_freeze_start + pause_duration),
+            SetVariable("timer_on_pause", False)
+        ]
+    else:
+        on "hide" action [
+            SetVariable("timer_running", True),
+            SetVariable("timer_start",   timer_start + pause_duration),
+            SetVariable("timer_countdown_start",   timer_countdown_start + pause_duration)
+        ]
+    
+    key "K_ESCAPE" action Hide("pause_menu")
+    add "images/Backgrounds/backgroundnew.png" 
+
     frame:
         xfill True
         yfill True
         background Solid("#00000080")
+    #     background None
 
-    add "gui/pause/PauseFrame.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+    # fixed:
+        add "gui/pause/PauseFrame.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
     imagebutton:
         auto "gui/pause/ContinueButton_%s.png"
-        action play_and(Return())
+        action [
+        play_and(Hide ("pause_menu"))
+        # SetVariable("time_left", time_left + (time.time() - pause_start))
+        ]
         xalign 100
         yalign 500
         focus_mask True
@@ -1726,7 +1828,10 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     imagebutton:
         auto "gui/pause/PauseX_%s.png"
-        action play_and(Return())
+        action [
+        play_and(Hide ("pause_menu"))
+        # SetVariable("time_left", time_left + (time.time() - pause_start))
+        ]
         xalign 100
         yalign 100
         focus_mask True
@@ -1801,9 +1906,40 @@ screen profile_page():
     tag menu
     modal True
     zorder 200
-    add "images/Backgrounds/backgroundnew.png"
 
+    if time_freeze_running:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("time_freeze_running", False),
+            SetVariable("timer_on_pause", True)
+        ]
+    else:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("timer_running",  False)
+        ]
     
+    timer 0.1 action SetVariable(
+        "pause_duration",
+        int(time.time() - pause_start)
+    ) repeat True
+
+    if timer_on_pause:
+        on "hide" action [
+            SetVariable("time_freeze_running", True),
+            SetVariable("timer_freeze_start",   timer_freeze_start + pause_duration),
+            SetVariable("timer_on_pause", False)
+        ]
+    else:
+        on "hide" action [
+            SetVariable("timer_running", True),
+            SetVariable("timer_start",   timer_start + pause_duration),
+            SetVariable("timer_countdown_start",   timer_countdown_start + pause_duration)
+        ]
+
+    add "images/Backgrounds/backgroundnew.png"
 
     frame:
         background "gui/profilePage/ProfileFrame.png"
@@ -1815,8 +1951,7 @@ screen profile_page():
         text get_current_level_text() size 60 color "#1A5143" xpos 850 ypos 350
 
         text "Current Position:" size 60 color "#1A5143" xpos 850 ypos 450
-        text get_current_position_text() size 60 color "#FFFFFF" xpos 850 ypos 530
-
+        text get_current_position_text() size 50 color "#FFFFFF" xpos 850 ypos 530
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"
@@ -1843,6 +1978,39 @@ screen settings_page():
     tag menu
     modal True
     zorder 200
+
+    if time_freeze_running:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("time_freeze_running", False),
+            SetVariable("timer_on_pause", True)
+        ]
+    else:
+        on "show" action [
+            SetVariable("pause_start",    time.time()),
+            SetVariable("pause_duration", 0),
+            SetVariable("timer_running",  False)
+        ]
+    
+    timer 0.1 action SetVariable(
+        "pause_duration",
+        int(time.time() - pause_start)
+    ) repeat True
+
+    if timer_on_pause:
+        on "hide" action [
+            SetVariable("time_freeze_running", True),
+            SetVariable("timer_freeze_start",   timer_freeze_start + pause_duration),
+            SetVariable("timer_on_pause", False)
+        ]
+    else:
+        on "hide" action [
+            SetVariable("timer_running", True),
+            SetVariable("timer_start",   timer_start + pause_duration),
+            SetVariable("timer_countdown_start",   timer_countdown_start + pause_duration)
+        ]
+
     add "images/Backgrounds/backgroundnew.png"
 
     frame:
@@ -1862,8 +2030,8 @@ screen settings_page():
                 hbox:
                     spacing 20
                     imagebutton:
-                        idle get_sound_switch_idle(sound_effect_on)
-                        hover get_sound_switch_hover(sound_effect_on)
+                        idle get_sound_switch_idle(persistent.sound_effect_on)
+                        hover get_sound_switch_hover(persistent.sound_effect_on)
                         action play_and(Function(toggle_sound_effect))
                         xpos -100
                         ypos -10
@@ -1881,8 +2049,8 @@ screen settings_page():
                 hbox:
                     spacing 20
                     imagebutton:
-                        idle get_sound_switch_idle(bgm_on)
-                        hover get_sound_switch_hover(bgm_on)
+                        idle get_sound_switch_idle(persistent.bgm_on)
+                        hover get_sound_switch_hover(persistent.bgm_on)
                         action play_and(Function(toggle_bgm))
                         xpos -100
                         ypos -10

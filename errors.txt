@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/000_Progress.rpy", line 30: invalid syntax
-                    "password": "admin", 
-                               ^
+File "game/classScripts/login.rpy", line 73: 'text_style' is not a keyword argument or valid child of the imagebutton statement.
+    imagebutton auto "gui/button/loginButton_%s.png" action [Function(check_login), NullAction()] align (0.045, 0.25) xysize (150, 50) background "#00b916" text_style "text_color"
+                                                                                                                                                                      ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Sat Apr 26 15:45:26 2025
+Sat Apr 26 19:40:45 2025

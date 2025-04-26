@@ -317,8 +317,9 @@ label start_game:
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
 
-    # debugging purposes
+    #debugging purposes
     # $ current_objectives = Objectives({
+    #     "Steel": 1,
     # })
 
     if game.level == 2:
@@ -647,7 +648,7 @@ label level4_intro:
                 "Construction Worker",
                 "Architect",
                 "Architectural Firm Owner",
-                "World-Renowned Architectural Icon"
+                "World-Renowned \nArchitectural Icon"
             ]
 
             levels_completed = 0

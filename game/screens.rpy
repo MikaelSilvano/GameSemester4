@@ -538,7 +538,6 @@ screen level_selection_screen():
     add "images/Screens/LevelSelection.png"
     key "K_ESCAPE" action NullAction()
 
-
     fixed:
         # Level 1 button
         imagebutton:
@@ -1648,7 +1647,7 @@ screen sublevel_complete_screen():
         yfill True
         background Solid("#00000080")
 
-        add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
+        add "gui/levelComplete/SublevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
             
 
         imagebutton:
@@ -1942,8 +1941,6 @@ screen profile_page():
 
     add "images/Backgrounds/backgroundnew.png"
 
-    
-
     frame:
         background "gui/profilePage/ProfileFrame.png"
 
@@ -1954,8 +1951,7 @@ screen profile_page():
         text get_current_level_text() size 60 color "#1A5143" xpos 850 ypos 350
 
         text "Current Position:" size 60 color "#1A5143" xpos 850 ypos 450
-        text get_current_position_text() size 60 color "#FFFFFF" xpos 850 ypos 530
-
+        text get_current_position_text() size 50 color "#FFFFFF" xpos 850 ypos 530
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"

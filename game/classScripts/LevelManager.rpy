@@ -89,8 +89,8 @@ label hut_sublevel_1:
     })
     $ moves = 5
     $ t_score = 1000
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 32
     jump start_game
 
     return
@@ -106,8 +106,8 @@ label hut_sublevel_2:
     })
     $ moves = 10
     $ t_score = 1500
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
 
     return 
@@ -124,7 +124,7 @@ label hut_sublevel_3:
     })
     $ moves = 20
     $ t_score = 2500
-    $ icpr = 5
+    $ icpr = 6
     $ grid_size = 30
     jump start_game
 
@@ -176,8 +176,8 @@ label house_sublevel_2:
     })
     $ moves = 20
     $ t_score = 4500
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 32
     jump start_game
     return
 
@@ -244,8 +244,8 @@ label mansion_sublevel_1:
     })
     $ moves = 10
     $ t_score = 3000
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 40
     jump start_game
     return
 
@@ -260,8 +260,8 @@ label mansion_sublevel_2:
     })
     $ moves = 15
     $ t_score = 4500
-    $ icpr = 6
-    $ grid_size = 30
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 
@@ -276,8 +276,8 @@ label mansion_sublevel_3:
     })
     $ moves = 10
     $ t_score = 2500
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 40
     jump start_game
     return
 
@@ -327,8 +327,8 @@ label mansion_sublevel_6:
     })
     $ moves = 15
     $ t_score = 5000
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 40
     jump start_game
     return
 
@@ -363,8 +363,8 @@ label mansion_sublevel_8:
     })
     $ moves = 15
     $ t_score = 5000
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 40
     jump start_game
     return
 
@@ -413,7 +413,7 @@ label apartment_sublevel_3:
     $ moves = 15
     $ t_score = 4000
     $ icpr = 6
-    $ grid_size = 36
+    $ grid_size = 30
     jump start_game
     return
 
@@ -428,7 +428,7 @@ label apartment_sublevel_4:
     })
     $ moves = 15
     $ t_score = 5000
-    $ icpr = 5
+    $ icpr = 7
     $ grid_size = 35
     jump start_game
     return
@@ -445,8 +445,8 @@ label apartment_sublevel_5:
     })
     $ moves = 15
     $ t_score = 3500
-    $ icpr = 7
-    $ grid_size = 35
+    $ icpr = 8
+    $ grid_size = 32
     jump start_game
     return
 
@@ -462,8 +462,8 @@ label apartment_sublevel_6:
     })
     $ moves = 15
     $ t_score = 5500
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 
@@ -479,7 +479,7 @@ label apartment_sublevel_7:
     })
     $ moves = 15
     $ t_score = 4000
-    $ icpr = 5
+    $ icpr = 7
     $ grid_size = 35
     jump start_game
     return
@@ -514,8 +514,8 @@ label apartment_sublevel_9:
     })
     $ moves = 15
     $ t_score = 5300
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 32
     jump start_game
     return
 
@@ -550,7 +550,7 @@ label apartment_sublevel_11:
     })
     $ moves = 15
     $ t_score = 3300
-    $ icpr = 5
+    $ icpr = 7
     $ grid_size = 35
     jump start_game
     return
@@ -562,18 +562,16 @@ label apartment_sublevel_12:
     $ current_objectives = Objectives({
         "SolarPanel": 7,
         "Cement": 4,
-        "Rocks": 5,
-        "Glass": 30,
+        "Glass": 20,
         "Steel": 15,
         "Wood": 10
     })
     $ moves = 15
     $ t_score = 5100
-    $ icpr = 6
-    $ grid_size = 36
+    $ icpr = 8
+    $ grid_size = 32
     jump start_game
     return
-
 
 # Level 1 Sublevel Page
 label sublevel_level1:

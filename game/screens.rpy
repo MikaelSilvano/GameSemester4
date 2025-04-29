@@ -484,7 +484,7 @@ screen credits_page_2():
 
         imagebutton:
             auto "gui/creditsPage/CreditsExit_%s.png"
-            action play_and(Return())
+            action play_and(Show("main_menu"))
             xalign 0.5
             yoffset 900
             focus_mask True
@@ -520,7 +520,7 @@ screen credits_page_3():
 
         imagebutton:
             auto "gui/creditsPage/CreditsExit_%s.png"
-            action play_and(Return())
+            action play_and(Show("main_menu"))
             xalign 0.5
             yoffset 900
             focus_mask True

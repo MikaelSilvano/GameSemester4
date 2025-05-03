@@ -44,7 +44,7 @@ init python:
                 self.sublevel += 1
                 new_label = label_prefix + str(self.sublevel)
             else:
-                complete_sublevel(self.level, self.sublevel)
+                complete_sublevel(self.level, self.sublevel, self.score)
                 new_label = "level_selection"
             renpy.jump(new_label)
 
@@ -148,7 +148,7 @@ init python:
                     multiplier = round((self.moves / self.score) + 1)
                     self.score *= multiplier
 
-                complete_sublevel(self.level, self.sublevel)
+                complete_sublevel(self.level, self.sublevel, self.score)
 
                 max_sub = len(persistent.level_progress.get(self.level, []))
 

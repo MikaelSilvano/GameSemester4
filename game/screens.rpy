@@ -1948,10 +1948,13 @@ screen profile_page():
             add get_profile_frame()
 
         add get_profile_frame()
-        text get_current_level_text() size 60 color "#1A5143" xpos 850 ypos 350
 
-        text "Current Position:" size 60 color "#1A5143" xpos 850 ypos 450
-        text get_current_position_text() size 50 color "#FFFFFF" xpos 850 ypos 530
+        text get_time_played() size 40 color "#1A5143" xpos 650 ypos 265
+        text get_score() size 60 color "#1A5143" xpos 850 ypos 320
+        text get_current_level_text() size 60 color "#1A5143" xpos 850 ypos 395
+
+        text "Current Position:" size 60 color "#1A5143" xpos 850 ypos 470
+        text get_current_position_text() size 50 color "#FFFFFF" xpos 850 ypos 550
         
         imagebutton:
             auto "gui/settingPage/ExitButton_%s.png"

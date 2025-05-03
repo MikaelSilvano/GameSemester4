@@ -14,7 +14,7 @@ init python:
                 persistent.current_user = store.input_username
                 store.cur_user = persistent.current_user
                 store.login_error = "Login Successful"
-                load_user_data(persistent.saved_user[store.cur_user])
+                load_user_data(store.cur_user)
             else:   
                 store.login_error = "Incorrect Password"
         else:
@@ -28,8 +28,10 @@ init python:
                 "password": store.input_password,
                 "levels_unlocked": new_data()["levels_unlocked"],
                 "level_progress": new_data()["level_progress"],
+                "level_score" : new_data()["level_score"],
+                "tot_score" : new_data()["tot_score"],
+                "time_played": new_data()["time_played"]
                 }
-            print(persistent.saved_user)
             renpy.save_persistent()
 
             store.login_error = "Account successfully registered"

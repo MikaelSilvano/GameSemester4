@@ -356,7 +356,7 @@ screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)
 
 label start:
-    if persistent.current_user == "Guest":
+    if persistent.current_user == "Guest" or persistent.current_user == None:
         $ load_user_data("Guest")
 
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -642,8 +642,24 @@ label level4_intro:
             return f"gui/profilePage/profileFrame{highest_level}.png"
 
     init python:
+        def get_score():
+            high_score = persistent.saved_user[persistent.current_user]["tot_score"]
+            return f"Current Score: {high_score}"
+
+    init python:
+        def get_time_played():
+            seconds = int(persistent.saved_user[persistent.current_user]["time_played"])
+            days    = seconds // 86400
+            seconds = seconds % 86400
+            hours   = seconds // 3600
+            seconds = seconds % 3600
+            minutes = seconds // 60
+            return f"Time Played: {days} days, {hours} hours, {minutes} minutes"
+
+    init python:
         def get_current_level_text():
             highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+            update_leaderboard()
             return f"Current Level: {highest_level}"
 
     init python:

@@ -1,12 +1,12 @@
-<<<<<<< HEAD
-renpy.dissolve renpy.dissolve
-renpy.geometry renpy.solid
->>>>>>> origin/Class-Updated-Scripts
-renpy.dissolve renpy.geometry
-renpy.geometry renpy.texture
-renpy.ftl
-renpy.solid
-=======
-renpy.texture
 renpy.alpha renpy.texture
 renpy.alpha renpy.geometry renpy.texture
+=======
+renpy.ftl
+renpy.texture
+renpy.dissolve renpy.geometry
+renpy.geometry renpy.solid
+renpy.geometry renpy.texture
+renpy.solid
+<<<<<<< HEAD
+>>>>>>> origin/Class-Updated-Scripts
+renpy.dissolve renpy.dissolve

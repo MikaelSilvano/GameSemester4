@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 370: 'size' is not a keyword argument or valid child of the frame statement.
-    size (550, 980)
-        ^
+The label login is defined twice, at File "game/classScripts/LoginPage.rpy", line 41:
+label login():
+and File "game/classScripts/login.rpyc", line 41:
+
+
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Sun May  4 20:22:25 2025
+Sun May  4 21:14:33 2025

@@ -649,12 +649,9 @@ label level4_intro:
     init python:
         def get_time_played():
             seconds = int(persistent.saved_user[persistent.current_user]["time_played"])
-            days    = seconds // 86400
-            seconds = seconds % 86400
             hours   = seconds // 3600
-            seconds = seconds % 3600
-            minutes = seconds // 60
-            return f"Time Played: {days} days, {hours} hours, {minutes} minutes"
+            minutes = (seconds % 3600) // 60
+            return f"Time Played: {hours} hours, {minutes} minutes"
 
     init python:
         def get_current_level_text():

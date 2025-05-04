@@ -153,7 +153,11 @@ init python:
         cur_user = persistent.saved_user
 
         print(cur_user)
-        cur_user.update({"levels_unlocked": new_data()["levels_unlocked"], "level_progress": new_data()["level_progress"], "tot_score": new_data()["tot_score"]}, "time_played": new_data()["time_played"]})
+        cur_user.update({
+            "levels_unlocked": new_data()["levels_unlocked"], 
+            "level_progress": new_data()["level_progress"], 
+            "tot_score": new_data()["tot_score"], 
+            "time_played": new_data()["time_played"]})
         print(cur_user)
 
         persistent.saved_user = cur_user

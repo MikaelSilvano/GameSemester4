@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/000_Progress.rpy", line 156: invalid syntax
-        cur_user.update({"levels_unlocked": new_data()["levels_unlocked"], "level_progress": new_data()["level_progress"], "tot_score": new_data()["tot_score"]}, "time_played": new_data()["time_played"]})
-                                                                                                                                                                                ^
+File "game/screens.rpy", line 370: 'size' is not a keyword argument or valid child of the frame statement.
+    size (550, 980)
+        ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Sun May  4 15:37:19 2025
+Sun May  4 20:22:25 2025

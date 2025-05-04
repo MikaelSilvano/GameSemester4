@@ -440,7 +440,7 @@ $ show_overlay = False
 
 image hutbg = "images/Backgrounds/HutBackground.png"
 image CharacterLevel1 = "images/Characters/Character1.png"
-image SideCharacterLevel1 = "images/Characters/Cewe1.png"
+image side_characterLevel1 = "images/Characters/Cewe1.png"
 
 transform left_side:
     xpos 0.2       
@@ -452,14 +452,14 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define mainchar = Character("Ko Khrisna", color="#c8f2ff")
-define sidechar = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna", color="#c8f2ff")
+define side_char = Character("Jordan", color="#ffc8c8")
 
 label level1_intro:
     if persistent.level_progress[1][1] == False:
         scene hutbg with fade
 
-        show SideCharacterLevel1 at right_side:
+        show side_characterLevel1 at right_side:
             zoom 0.5
             linear 0.2 zoom 1.0
         pause 0.3
@@ -468,16 +468,16 @@ label level1_intro:
             zoom 0.5
             linear 0.2 zoom 1.0
 
-        sidechar "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
-        mainchar "Oh this is exciting! Where do I even start Jordan?"
-        sidechar "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
-        mainchar "Okay! I’ll show you I’ve got what it takes."
+        side_char "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
+        main_char "Oh this is exciting! Where do I even start Jordan?"
+        side_char "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
+        main_char "Okay! I’ll show you I’ve got what it takes."
 
         window hide
 
         show CharacterLevel1 at left_side:
             linear 0.2 zoom 0.5 alpha 0.0
-        show SideCharacterLevel1 at right_side:
+        show side_characterLevel1 at right_side:
             linear 0.2 zoom 0.5 alpha 0.0
 
         $ renpy.pause(0.2, hard=True)
@@ -490,7 +490,7 @@ label level1_intro:
 
 image housebg = "images/Backgrounds/HouseBackground.png" 
 image CharacterLevel2 = "images/Characters/CharacterLevel2.png"
-image SideCharacterLevel2 = "images/Characters/SideCharacterLevel2.png"
+image side_characterLevel2 = "images/Characters/side_characterLevel2.png"
 
 transform left_side:
     xpos 0.2       
@@ -502,13 +502,13 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define mainchar = Character("Ko Khrisna",color="#c8f2ff")
-define sidechar = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna",color="#c8f2ff")
+define side_char = Character("Jordan", color="#ffc8c8")
 
 label level2_intro:
     scene housebg with fade
 
-    show SideCharacterLevel2 at right_side:
+    show side_characterLevel2 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
@@ -517,18 +517,18 @@ label level2_intro:
         zoom 0.2
         linear 0.2 zoom 0.3
 
-    sidechar "Great job Ko Khrisna. You did well, look where you are now!"
-    mainchar "They all want homes. Safe ones. Beautiful ones. And… green ones."
-    sidechar "That’s why you’re here, Architect Ko Khrisna. These aren’t just houses—they’re a chance to build resilience and community."
-    mainchar "I’ve only built huts before… but I’ll try. No shortcuts, no waste right Jordan?"
-    sidechar "Exactly. Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
-    mainchar "Okay Miss Jordan, I won't let you down!"
+    side_char "Great job Ko Khrisna. You did well, look where you are now!"
+    main_char "They all want homes. Safe ones. Beautiful ones. And… green ones."
+    side_char "That’s why you’re here, Architect Ko Khrisna. These aren’t just houses—they’re a chance to build resilience and community."
+    main_char "I’ve only built huts before… but I’ll try. No shortcuts, no waste right Jordan?"
+    side_char "Exactly. Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
+    main_char "Okay Miss Jordan, I won't let you down!"
 
     window hide
 
     show CharacterLevel2 at left_side:
         linear 0.1 zoom 0.2 alpha 0.0
-    show SideCharacterLevel2 at right_side:
+    show side_characterLevel2 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
     $ renpy.pause(0.2, hard=True)
@@ -541,7 +541,7 @@ label level2_intro:
 
 image mansionbg = "images/Backgrounds/MansionBackground.png" 
 image CharacterLevel3 = "images/Characters/Character3.png"
-image SideCharacterLevel3 = "images/Characters/SideCharacterLevel1.png"
+image side_characterLevel3 = "images/Characters/side_characterLevel1.png"
 
 transform left_side:
     xpos 0.2       
@@ -553,14 +553,14 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define mainchar = Character("Ko Khrisna",color="#c8f2ff")
-define sidechar = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna",color="#c8f2ff")
+define side_char = Character("Jordan", color="#ffc8c8")
 
 
 label level3_intro:
     scene mansionbg with fade
 
-    show SideCharacterLevel3 at right_side:
+    show side_characterLevel3 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.2
@@ -569,16 +569,16 @@ label level3_intro:
         zoom 0.9
         linear 0.1 zoom 0.93
 
-    sidechar "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
-    mainchar "A mansion? Isn’t that… the opposite of sustainability?"
-    sidechar "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
-    mainchar "Alright then, let's bring up this building by using cement, metal, glass, and solar panels, let's get straight into it!"
+    side_char "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
+    main_char "A mansion? Isn’t that… the opposite of sustainability?"
+    side_char "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
+    main_char "Alright then, let's bring up this building by using cement, metal, glass, and solar panels, let's get straight into it!"
 
     window hide
 
     show CharacterLevel3 at left_side:
         linear 0.2 zoom 0.5 alpha 0.0
-    show SideCharacterLevel3 at right_side:
+    show side_characterLevel3 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
     $ renpy.pause(0.2, hard=True)
@@ -591,7 +591,7 @@ label level3_intro:
 
 image apartmentbg = "images/Backgrounds/ApartBackground.png" 
 image CharacterLevel4 = "images/Characters/Character4.png"
-image SideCharacterLevel4 = "images/Characters/Cewe4.png"
+image side_characterLevel4 = "images/Characters/Cewe4.png"
 
 transform left_side:
     xpos 0.2       
@@ -603,13 +603,13 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define mainchar = Character("Ko Khrisna",color="#c8f2ff")
-define sidechar = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna",color="#c8f2ff")
+define side_char = Character("Jordan", color="#ffc8c8")
 
 label level4_intro:
     scene apartmentbg with fade
 
-    show SideCharacterLevel4 at right_side:
+    show side_characterLevel4 at right_side:
         zoom 0.5
         linear 0.2 zoom 0.7
     pause 0.3
@@ -618,16 +618,16 @@ label level4_intro:
         zoom 0.9
         linear 0.1 zoom 0.93
 
-    sidechar "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
-    mainchar "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
-    sidechar "I am excited to see this sustainable live in the future. Thank you for saving us Ko Khrisna!"
-    mainchar "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
+    side_char "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
+    main_char "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
+    side_char "I am excited to see this sustainable live in the future. Thank you for saving us Ko Khrisna!"
+    main_char "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
 
     window hide
 
     show CharacterLevel4 at left_side:
         linear 0.2 zoom 0.5 alpha 0.0
-    show SideCharacterLevel4 at right_side:
+    show side_characterLevel4 at right_side:
         linear 0.2 zoom 0.5 alpha 0.0
 
     $ renpy.pause(0.2, hard=True)

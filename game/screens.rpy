@@ -356,6 +356,40 @@ screen tutorial_video_screen():
         ypos 1
         focus_mask True
 
+## Leaderboard #############################################
+##
+############################################################
+
+image leaderboard_img = "gui/Leaderboard.png"
+
+screen leaderboard():
+    frame:
+        background "#00000000"
+        add "gui/Leaderboard.png" zoom 0.8
+        align (1.0, 0.3)
+        
+    vbox:
+        align (0.95, 0.2)
+        spacing 12
+
+        if not persistent.leaderboard:
+            text "No scores yet." color "#dddddd"
+        else:
+            # Header Row
+            hbox:
+                spacing 50
+                text "Rank " size 30 color "#ffffff" xsize 100 xalign 0.0
+                text "Name " size 30 color "#ffffff" xsize 300 xalign 0.5
+                text "Score " size 30 color "#ffffff" xsize 150 xalign 1.0
+
+            # Leaderboard rows
+            for i, entry in enumerate(persistent.leaderboard, 1):
+                $ name, score = entry
+                hbox:
+                    spacing 80
+                    text "[i]" size 36 color "#ffffff" xsize 100 xalign 0.0
+                    text "[name]" size 36 color "#ffffff" xsize 300 xalign 0.5
+                    text "[score]" size 36 color "#ffffff" xsize 150 xalign 1.0
 
 ## Main Menu screen ############################################################
 ##
@@ -373,6 +407,8 @@ screen main_menu():
 
     use navigation
     use login_screen
+
+    use leaderboard
 
     if gui.show_name:
 

@@ -110,7 +110,7 @@ init python:
         
         if user == "Guest" or user is None:
             persistent.current_user = "Guest"
-            persistent.saved_user[user] = {
+            persistent.saved_user["Guest"] = {
                 "password": "",
                 "levels_unlocked": [True, False, False, False],
                 "level_progress": {
@@ -148,20 +148,20 @@ init python:
             renpy.save_persistent()
 
     def reset_persistent():
+        user = persistent.current_user
 
-        print(persistent.saved_user)
-        cur_user = persistent.saved_user
+        if user in persistent.saved_user:
+            old_data = persistent.saved_user[user]
+            password = old_data.get("password", "")
 
-        print(cur_user)
-        cur_user.update({
-            "levels_unlocked": new_data()["levels_unlocked"], 
-            "level_progress": new_data()["level_progress"], 
-            "tot_score": new_data()["tot_score"], 
-            "time_played": new_data()["time_played"]})
-        print(cur_user)
+            # Get new default data and reinsert the password
+            new_user_data = new_data()
+            new_user_data["password"] = password
 
-        persistent.saved_user = cur_user
+            # Save the updated user data
+            persistent.saved_user[user] = new_user_data
 
-        renpy.save_persistent()
-        renpy.notify("Game progress has been reset.")
+            update_leaderboard()
+            renpy.save_persistent()
+            renpy.notify("Game progress has been reset.")
         

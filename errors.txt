@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label login is defined twice, at File "game/classScripts/LoginPage.rpy", line 41:
-label login():
-and File "game/classScripts/login.rpyc", line 41:
+File "game/script.rpy", line 212: 'reset_remaining' is not a keyword argument or valid child of the frame statement.
+    reset_remaining = 3 - Reset_Usage
+                   ^
 
-
-
-Ren'Py Version: Ren'Py 8.3.6.25022803
-Sun May  4 21:14:33 2025
+Ren'Py Version: Ren'Py 8.4.0.25071206
+Sun Jul 20 19:27:17 2025

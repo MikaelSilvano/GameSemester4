@@ -1,26 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading the script.
-ScriptError: Name ('game/classScripts/Login.rpy', 1746368040, 0) is defined twice, at game/classScripts/Login.rpy:1 and game/classScripts/Login.rpy:1.
+While running game code:
+  File "game/script.rpy", line 380, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 50, in script
+    $ temp_objectives.reform_objectives(current_objectives)
+  File "game/script.rpy", line 50, in <module>
+    $ temp_objectives.reform_objectives(current_objectives)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                    
+AttributeError: 'NoneType' object has no attribute 'reform_objectives'
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "D:\renpy-8.3.6-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "D:\renpy-8.3.6-sdk\renpy\main.py", line 470, in main
-    renpy.game.script.load_script() # sets renpy.game.script.
-  File "D:\renpy-8.3.6-sdk\renpy\script.py", line 359, in load_script
-    self.load_appropriate_file(".rpyc", [ "_ren.py", ".rpy" ], dir, fn, initcode)
-  File "D:\renpy-8.3.6-sdk\renpy\script.py", line 957, in load_appropriate_file
-    self.finish_load(stmts, initcode, filename=lastfn) # type: ignore
-  File "D:\renpy-8.3.6-sdk\renpy\script.py", line 590, in finish_load
-    check_name(node)
-  File "D:\renpy-8.3.6-sdk\renpy\script.py", line 566, in check_name
-    raise ScriptError("Name %s is defined twice, at %s:%d and %s:%d." %
-ScriptError: Name ('game/classScripts/Login.rpy', 1746368040, 0) is defined twice, at game/classScripts/Login.rpy:1 and game/classScripts/Login.rpy:1.
+Traceback (most recent call last):
+  File "game/script.rpy", line 380, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 50, in script
+    $ temp_objectives.reform_objectives(current_objectives)
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 50, in <module>
+    $ temp_objectives.reform_objectives(current_objectives)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                    
+AttributeError: 'NoneType' object has no attribute 'reform_objectives'
 
-Windows-10-10.0.22631 AMD64
-Ren'Py 8.3.6.25022803
- 
-Sun May  4 21:14:00 2025
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.4.0.25071206
+EcoCityMatch 1.1
+Sun Jul 20 10:53:24 2025

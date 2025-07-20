@@ -30,6 +30,7 @@ init python:
             self.fixed_positions = fixed_positions 
 
             valid_grid = False
+            print ("valid grid:", valid_grid)
             while not valid_grid:
                 self.icons = [None] * self.grid_size
                 for index in range(self.grid_size):
@@ -63,6 +64,7 @@ init python:
                                                 chain_locked=fixed_chain)
                 if not self.has_initial_match():
                     valid_grid = True
+                    sprite_manager = self.create_sprite_manager()
             global grid
             grid = self
 
@@ -113,10 +115,36 @@ init python:
                     icon.chain_overlay.y = icon.y
             return 0
 
+        def is_mouse_within_grid(self, x: float, y: float) -> bool:
+            """
+            Hit‑test: returns True if the given (x, y) coordinate
+            lies within the current grid bounds, False otherwise.
+            """
+            # If there are no icons laid out, there’s no valid grid area
+            if not self.icons:
+                return False
+
+            # Derive the grid’s extents from icon positions + icon_size
+            xs = [icon.x for icon in self.icons if icon is not None]
+            ys = [icon.y for icon in self.icons if icon is not None]
+
+            min_x = min(xs)
+            min_y = min(ys)
+            max_x = max(xs) + self.icon_size
+            max_y = max(ys) + self.icon_size
+
+            # Return True only if the point lies within those bounds
+            return (min_x <= x <= max_x) and (min_y <= y <= max_y)
+
         def handle_event(self, event, x, y, st):
+            if not self.is_mouse_within_grid(x, y):
+                return
             self.shift_icons(mouse_event=False)
             game.find_match(mouse_event=False)
             
+            # make me a condition so that if the mouse is outside the grid, it doesn't start dragging, use only existing variables
+            # --- compute the grid's bounding rectangle from your icons ---
+
             if event.type == 1024:
                 for icon in self.icons:
                     if icon and icon.is_dragging:

@@ -1,4 +1,6 @@
 init python:
+    from renpy.store import store
+    import time
 
     class Objectives:
         def __init__(self, aims_dict):
@@ -20,6 +22,19 @@ init python:
             Call this when the player collects `amount` of icon_type.
             Awards points and removes completed aims.
             """
+            # if store.Reset_Grid:
+            #     print("reset grid:" + str(store.Reset_Grid))
+            #     t = 0.01
+            # else:
+            #     t = 0
+            # while t:
+            #     mins, secs = divmod(t, 60)
+            #     timer = '{:02d}:{:02d}'.format(mins, secs)
+            #     print(timer, end="\r")
+            #     time.sleep(1)
+            #     t -= 1
+            # print("reset grid:" + str(store.Reset_Grid))
+            # print("valid grid (check build):", grid.valid_grid)
             if icon_type in self.Aims:
                 self.total_collected[icon_type] = (
                     self.total_collected.get(icon_type, 0) + amount
@@ -49,3 +64,12 @@ init python:
             self.CompletedAims   = {}
             self.order           = list(self._original_aims.keys())
             self.all_aims        = False
+        
+        def reform_objectives(self, Objectives_base):
+
+            self.Aims             = Objectives_base.Aims.copy()
+            self.total_collected  = Objectives_base.total_collected.copy()
+            self.CompletedAims    = Objectives_base.CompletedAims.copy()
+            self._original_aims   = Objectives_base._original_aims.copy()
+            self.order            = Objectives_base.order.copy()
+            self.all_aims         = Objectives_base.all_aims

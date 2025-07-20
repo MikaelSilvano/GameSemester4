@@ -68,6 +68,16 @@ init python:
                 return
             game.initializing = False
             self.is_dragging = True
+            # 2) Compute this icon’s top‑left pixel coordinates
+            # x0, y0 = self.compute_grid_position()
+
+            # # 3) Only begin drag if click is within the icon’s bounds
+            # #    (grid.icon_size is your existing square size)
+            # if (mouse_x < x0
+            #     or mouse_x > x0 + grid.icon_size
+            #     or mouse_y < y0
+            #     or mouse_y > y0 + grid.icon_size):
+            #     return
             self.drag_offset_x = mouse_x
             self.drag_offset_y = mouse_y
             self.orig_position = self.compute_grid_position()

@@ -1,5 +1,6 @@
 init python:
     from collections import Counter
+    from renpy.store import store
     import time
     class GameManager:
         def __init__(self, moves, target_score, level, sublevel):
@@ -97,19 +98,19 @@ init python:
                         processed.add(m.index)
 
                 if all_matches:
-                    print("Matched:", len(all_matches), all_matches[0].icon_type)
+                    # print("Matched:", len(all_matches), all_matches[0].icon_type)
                     self.delete_matches(all_matches, True)
                     grid.shift_icons(mouse_event=True)
                     renpy.restart_interaction()
                 else:
-                    print("No Matches")
+                    # print("No Matches")
                     break
 
             grid.refill_grid()
 
         
         def delete_matches(self, matches, check):
-            if current_objectives:
+            if current_objectives and check == True:
                 icon_counts = {}
 
                 for icon in matches:
@@ -124,6 +125,22 @@ init python:
 
                 renpy.restart_interaction()
             renpy.call_in_new_context("delete_matches_callback", self, matches, check)
+        
+        def post_reset(self):
+            if not store.Reset_Grid:
+                t = 0
+            else: 
+                t = 0.01
+            while t != 0:
+                mins, secs = divmod(t, 60)
+                timer = '{:02d}:{:02d}'.format(mins, secs)
+                print(timer, end="\r")
+                time.sleep(1)
+                t -= 0.001
+            if t == 0:
+                return True
+            else:
+                return False
 
 
         def _delete_matches_callback(self, matches, check):

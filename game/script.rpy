@@ -196,18 +196,19 @@ style alpha_color:
 screen reset_grids:
     frame:        
         xysize (200, 100)
-        background "#fff6c0"
-        align(0.12, 0.928)
-        at Transform(zoom=0.25)
+        background "#0000"
+        align(0.83, 0.04)
+        at Transform(zoom=0.5)
 
-        imagebutton:
-            idle "gui/button/Resetgridbutton.png"
-            hover "gui/button/Resetgridbutton_hover.png"
-            align (0.5, 0.5)
-            action [
-                SetVariable("Reset_Grid", True),
-                Jump("setup_icons")
-            ]
+        if Reset_Usage < 3:
+            imagebutton:
+                idle "gui/button/Resetgridbutton.png"
+                hover "gui/button/Resetgridbutton_hover.png"
+                align (0.5, 0.5)
+                action [
+                    SetVariable("Reset_Grid", True),
+                    Jump("setup_icons")
+                ]
         
         $ reset_remaining = 3 - Reset_Usage
         if reset_remaining < 0:
@@ -216,7 +217,8 @@ screen reset_grids:
             add "gui/button/Resetgridbutton_finish.png" align (0.5, 0.5) at Transform(zoom=1)
         text f"{reset_remaining}":
             align (0.5, 0.5)
-            size 300
+            xoffset 130
+            size 100
             color "#ff0000"
             outlines [(1, "#fff", 0, 0)]
         

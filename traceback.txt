@@ -1,34 +1,107 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 380, in script call
+  File "game/script.rpy", line 406, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 50, in script
-    $ temp_objectives.reform_objectives(current_objectives)
-  File "game/script.rpy", line 50, in <module>
-    $ temp_objectives.reform_objectives(current_objectives)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                    
-AttributeError: 'NoneType' object has no attribute 'reform_objectives'
+  File "game/script.rpy", line 406, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 342, in script
+    python:
+  File "game/script.rpy", line 347, in <module>
+    renpy.pause(0.1)
+    ~~~~~~~~~~~^^^^^
+  File "game/script.rpy", line 196, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 196, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 197, in execute
+    frame:
+  File "game/script.rpy", line 215, in execute
+    if reset_remaining == 0:
+  File "game/script.rpy", line 216, in execute
+    add "gui/button/Resetgridbutton_finish.png" align (2.5, 0.5) offset -140 at Transform(zoom=1)
+TypeError: cannot unpack non-iterable int object
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 380, in script call
+  File "game/script.rpy", line 406, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 50, in script
-    $ temp_objectives.reform_objectives(current_objectives)
+  File "game/script.rpy", line 406, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 342, in script
+    python:
   File "renpy/ast.py", line 1187, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1260, in py_exec_bytecode
     exec(bytecode, globals, locals)
     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 50, in <module>
-    $ temp_objectives.reform_objectives(current_objectives)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                    
-AttributeError: 'NoneType' object has no attribute 'reform_objectives'
+  File "game/script.rpy", line 347, in <module>
+    renpy.pause(0.1)
+    ~~~~~~~~~~~^^^^^
+  File "renpy/exports/statementexports.py", line 198, in pause
+    rv = renpy.ui.interact(mouse="pause", type="pause", roll_forward=roll_forward, pause=delay, pause_modal=modal)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2216, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )  # type: ignore
+    ^                
+  File "renpy/display/core.py", line 2754, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2754, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/script.rpy", line 196, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 196, in execute
+    screen reset_grids:
+  File "game/script.rpy", line 197, in execute
+    frame:
+  File "game/script.rpy", line 215, in execute
+    if reset_remaining == 0:
+  File "game/script.rpy", line 216, in execute
+    add "gui/button/Resetgridbutton_finish.png" align (2.5, 0.5) offset -140 at Transform(zoom=1)
+  File "renpy/sl2/sldisplayables.py", line 471, in sl2add
+    rv = Transform(child=d, **kwargs)
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/transform.py", line 794, in __init__
+    setattr(self.state, k, v)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "renpy/display/transform.py", line 585, in set_offset
+    self.xoffset, self.yoffset = value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^        
+TypeError: cannot unpack non-iterable int object
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Sun Jul 20 10:53:24 2025
+Sun Jul 20 20:13:32 2025

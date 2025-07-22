@@ -3,6 +3,8 @@ default forced_compression_used = False
 default masterpiece_build_skill_used = False
 default non_violatable_objectives = { }
 default icon_skill_collected = []
+default Reset_Grid = False
+default Reset_Usage = 0
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -41,8 +43,18 @@ transform fade_out:
     linear 0.5 alpha 0.0
 
 label setup_icons:
+    if Reset_Grid and len(grid.icons) != 0 and Reset_Usage < 3:
+        hide screen Match_Three
+        $ print("Reset Usage:", Reset_Usage)
+        $ grid.icons.clear()
+        $ grid = None
+        $ grid = GridManager(icpr, grid_size)
+        $ grid.initialize_grid()
+    elif Reset_Usage >= 3:
+        $ Reset_Usage = 3
     $ grid.create_sprite_manager()
     python:
+        print("reset grid:", Reset_Grid)
         sprite_manager = grid.create_sprite_manager()
         for icon in grid.icons:
             icon.update_chain_overlay()  
@@ -50,6 +62,10 @@ label setup_icons:
             icon.sprite = sprite_manager.create(Transform(child=idle_image, zoom=0.08))
             icon.sprite.x = icon.x
             icon.sprite.y = icon.y
+            renpy.restart_interaction()
+    if Reset_Grid:
+        $ Reset_Usage += 1
+        $ Reset_Grid = False
     call screen Match_Three
 
 transform rotation(angle):
@@ -177,14 +193,33 @@ style alpha_color:
     size 80
 
 screen reset_grids:
-    frame:
+    frame:        
         xysize (200, 100)
-        background "#fff6c0"
-        align(0.05, 0.95)
-        textbutton "Reset":
-            align (0.5,0.5)
-            text_style "tx_button"
-            action If(len(grid.icons) != 0, [Function(grid.clear_grid), Function(grid.initialize_grid), Jump("setup_icons")])
+        background "#0000"
+        align(0.83, 0.04)
+        at Transform(zoom=0.5)
+
+        if Reset_Usage < 3:
+            imagebutton:
+                idle "gui/button/Resetgridbutton.png"
+                hover "gui/button/Resetgridbutton_hover.png"
+                align (0.5, 0.5)
+                action [
+                    SetVariable("Reset_Grid", True),
+                    Jump("setup_icons")
+                ]
+        
+        $ reset_remaining = 3 - Reset_Usage
+        if reset_remaining < 0:
+            $ reset_remaining = 0
+        if reset_remaining == 0:
+            add "gui/button/Resetgridbutton_finish.png" align (0.5, 0.5) at Transform(zoom=1)
+        text f"{reset_remaining}":
+            align (0.5, 0.5)
+            xoffset 130
+            size 100
+            color "#ff0000"
+            outlines [(1, "#fff", 0, 0)]
 
 screen Match_Three:
     key "K_ESCAPE" action [
@@ -316,7 +351,7 @@ label start_game:
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
-
+    $ Reset_Usage = 0
     #debugging purposes
     # $ current_objectives = Objectives({
     #     "Steel": 1,
@@ -348,6 +383,7 @@ label start_game:
     show screen timer_screen
     show screen Building
     show screen SkillOverlay
+    show screen reset_grids
 
     call setup_icons() from _call_setup_icons
     return

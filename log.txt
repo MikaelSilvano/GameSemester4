@@ -1,161 +1,8737 @@
-2025-04-29 12:55:44 UTC
-Windows-10-10.0.26100
-Ren'Py 8.3.4.24120703
+2025-07-22 13:53:18 UTC
+Windows-11-10.0.26100-SP0
+Ren'Py 8.4.0.25071206
 
-Early init took 0.10s
-Loading error handling took 0.04s
-Loading script took 0.14s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
+Early init took 30 ms
+Loading error handling took 20 ms
+Loading script took 90 ms
+Loading save slot metadata took 13 ms
+Loading persistent took 0 ms
+Running init code took 37 ms
+Loading analysis data took 0 ms
+Analyze and compile ATL took 9 ms
+Reloading save slot metadata took 3 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 39 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.31s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.16s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 258 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 20 ms
+Analyze screens took 0 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 5 ms
+Interface start took 353 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
-Maximum texture size: 4096x4096
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+reset grid: False
 Resetting cache.
-Early init took 189.21s
-Loading error handling took 0.03s
-Loading script took 0.12s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.07s
+Early init took 4 ms
+Loading error handling took 14 ms
+Loading script took 81 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 1 ms
+Running init code took 29 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Dump and make backups took 28 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 72 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.08s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.13s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 230 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 1 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 354 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+reset grid: False
 Resetting cache.
-Early init took 1460.46s
-Loading error handling took 0.03s
-Loading script took 0.45s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Corv1122\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
+Early init took 5 ms
+Loading error handling took 16 ms
+Loading script took 114 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 0 ms
+Running init code took 36 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b'DRS_SaveSettings() = -1.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.14s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 292 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 11 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 373 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 566.07'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1129) drawable=(1920, 1129)
+reset grid: False
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 9 ms
+Loading script took 217 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 1 ms
+Running init code took 26 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 275 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 4 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 372 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+reset grid: False
+Reset Usage: 0
+reset grid: True
+Reset Usage: 1
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Resetting cache.
+Early init took 4 ms
+Loading error handling took 8 ms
+Loading script took 80 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 31 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Dump and make backups took 28 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 239 ms
+Init translation took 0 ms
+Cleaning stores took 1 ms
+Load screen analysis took 20 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 371 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Steel x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 8 Steel
+AimsMet: Steel x1
+AimsMet: Wood x1
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 8 Dirt
+AimsMet: Dirt x1
+AimsMet: Steel x1
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 6 Rocks
+AimsMet: Rocks x1
+AimsMet: Dirt x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 9 Steel
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Wood x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 4 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 3 Steel
+AimsMet: Steel x1
+Matched: 4 Plant
+AimsMet: Plant x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 10 Rocks
+AimsMet: Rocks x1
+AimsMet: Dirt x1
+Score: 1179
+Matched: 10 Rocks
+AimsMet: Rocks x1
+AimsMet: Dirt x1
+AimsMet: Steel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+reset grid: False
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 8 ms
+Loading script took 171 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 23 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 30 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 59 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 223 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 9 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 362 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Steel x1
+No Matches
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 8 Steel
+AimsMet: Steel x1
+AimsMet: Wood x1
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 8 Dirt
+AimsMet: Dirt x1
+AimsMet: Steel x1
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 4 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Rocks x1
+Matched: 8 Steel
+AimsMet: Steel x1
+AimsMet: Rocks x1
+Matched: 5 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 4 Dirt
+AimsMet: Dirt x1
+Score: 1160
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 3 Wood
+AimsMet: Wood x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+reset grid: False
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 8 ms
+Loading script took 170 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 6 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 29 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 63 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 258 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 11 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 365 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 4 Wood
+AimsMet: Wood x1
+Matched: 7 Dirt
+AimsMet: Dirt x1
+AimsMet: Steel x1
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 6 Steel
+AimsMet: Steel x2
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 4 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+Matched: 4 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 7 Steel
+AimsMet: Steel x2
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 2
+reset grid: True
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Score: 1086
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 9 ms
+Loading script took 105 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 39 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 6 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 32 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 109 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 273 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 395 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Plant x1
+Matched: 5 Steel
+AimsMet: Steel x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 11 Steel
+AimsMet: Steel x1
+AimsMet: Dirt x2
+No Matches
+Matched: 4 Dirt
+AimsMet: Dirt x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Steel x1
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Plant x1
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 9 Plant
+AimsMet: Plant x2
+AimsMet: Rocks x1
+Matched: 9 Dirt
+AimsMet: Dirt x1
+AimsMet: Plant x1
+Matched: 7 Rocks
+AimsMet: Rocks x1
+AimsMet: Wood x1
+Matched: 3 Steel
+AimsMet: Steel x1
+No Matches
+Matched: 9 Dirt
+AimsMet: Dirt x3
+No Matches
+Matched: 7 Wood
+AimsMet: Wood x2
+Matched: 3 Steel
+AimsMet: Steel x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 4 Dirt
+AimsMet: Dirt x1
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 4 Wood
+AimsMet: Wood x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 6 Dirt
+AimsMet: Dirt x1
+AimsMet: Wood x1
+Matched: 3 Steel
+AimsMet: Steel x1
+Matched: 3 Plant
+AimsMet: Plant x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+No Matches
+Matched: 9 Plant
+AimsMet: Plant x2
+AimsMet: Dirt x1
+Matched: 6 Steel
+AimsMet: Steel x1
+AimsMet: Dirt x1
+No Matches
+Matched: 6 Rocks
+AimsMet: Rocks x2
+Matched: 11 Plant
+AimsMet: Plant x3
+Matched: 3 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 4 Plant
+AimsMet: Plant x1
+Matched: 3 Rocks
+AimsMet: Rocks x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+Matched: 5 Wood
+AimsMet: Wood x1
+No Matches
+Matched: 6 Steel
+AimsMet: Steel x1
+AimsMet: Rocks x1
+Score: 1820
+Matched: 6 Steel
+AimsMet: Steel x1
+AimsMet: Rocks x1
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+Matched: 6 Wood
+AimsMet: Wood x1
+AimsMet: Steel x1
+No Matches
+Matched: 3 Dirt
+AimsMet: Dirt x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 8 ms
+Loading script took 108 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 37 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 29 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 87 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 264 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 348 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(1278, 719)
+Maximum texture size: 4096x4096
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Matched: 3 Plant
+AimsMet: Plant x1
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Reset Usage: 0
+reset grid: True
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 8 ms
+Loading script took 183 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 0 ms
+Running init code took 26 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 30 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 81 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 228 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 9 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 386 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Reset Usage: 2
+reset grid: True
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+No Matches
+reset grid: False
+Reset Usage: 0
+reset grid: True
+Reset Usage: 1
+reset grid: True
+Reset Usage: 2
+reset grid: True

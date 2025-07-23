@@ -19,6 +19,8 @@ init python:
                 store.login_error = "Incorrect Password"
         else:
             store.login_error = "Username not found"
+        
+        update_leaderboard()
 
     def add_user():
         store.login_error = ""
@@ -37,6 +39,29 @@ init python:
             store.login_error = "Account successfully registered"
         else:
             store.login_error = "Username already exist"
+        
+        update_leaderboard()
+    
+    def delete_user(user):
+        if user in persistent.saved_user:
+            del persistent.saved_user[user]
+            if persistent.current_user == user:
+                persistent.current_user = None
+            update_leaderboard()
+            renpy.save_persistent()
+            renpy.notify(f"User '{user}' has been deleted.")
+        else:
+            renpy.notify(f"User '{user}' does not exist.")
+        
+        update_leaderboard()
+    
+    def clear_all_user_data():
+        persistent.saved_user = {}
+        persistent.current_user = None
+        renpy.save_persistent()
+        renpy.notify("All user data has been cleared.")
+        update_leaderboard()
+    
 
 label login():
     hide screen main_menu
@@ -70,6 +95,10 @@ screen login_screen():
             action passw.Toggle()
             input value passw length 100
         
+        use clear_player_data
+
+        use clear_all_user_data
+        
         if login_error:
             use notify_texts
 
@@ -83,6 +112,25 @@ screen notify_texts:
         align (0.05, 0.35) 
         xysize (350, 50)
 
+screen clear_player_data:
+    frame:
+        xysize (200, 100)
+        background "#fff6c0"
+        align(0.05, 0.95)
+        textbutton "Clear":
+            align (0.5,0.5)
+            text_style "tx_button"
+            action (Function(delete_user, input_username), Function(renpy.restart_interaction))
+
+screen clear_all_user_data:
+    frame:
+        xysize (200, 100)
+        background "#f16c6c"
+        align(0.17, 0.95)
+        textbutton "DELETE":
+            align (0.5,0.5)
+            text_style "tx_button"
+            action (Function(clear_all_user_data), Function(renpy.restart_interaction))
 
             
               

@@ -1,5 +1,9 @@
 init python:
     import time
+    def format_user_dict(d):
+        # repr(d) gives the "{…}" string; doubling braces escapes them
+        return repr(d).replace("{", "{{").replace("}", "}}")
+    
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
         persistent.levels_unlocked = [True, False, False, False]
 
@@ -22,6 +26,17 @@ init python:
 
     if not hasattr(persistent, "leaderboard") or persistent.leaderboard is None:
         persistent.leaderboard = []
+
+    if not hasattr(persistent, "saved_user") or persistent.saved_user is None:
+        persistent.saved_user = {}
+        renpy.save_persistent()
+    
+    if not hasattr(persistent, "start_time_session") or persistent.start_time_session is None:
+        persistent.start_time_session = {}
+
+    if not hasattr(persistent, "current_user") or persistent.current_user is None:
+        persistent.current_user = None
+        renpy.save_persistent()
 
     def update_leaderboard():
         persistent.leaderboard = [
@@ -54,16 +69,7 @@ init python:
             "time_played": 0.0
         }
 
-    if not hasattr(persistent, "saved_user") or persistent.saved_user is None:
-        persistent.saved_user = {}
-        renpy.save_persistent()
     
-    if not hasattr(persistent, "start_time_session") or persistent.start_time_session is None:
-        persistent.start_time_session = {}
-
-    if not hasattr(persistent, "current_user") or persistent.current_user is None:
-        persistent.current_user = None
-        renpy.save_persistent()
 
     def complete_sublevel(level, sublevel, score):
         """
@@ -75,14 +81,17 @@ init python:
         curr_level = curr_user["level_progress"][level]
         score_curr_level = curr_user["level_score"][level]
 
-        curr_level[sublevel] = True
         score_curr_level[sublevel-1] = score
         
-        if all(curr_level):
-        # levels_unlocked is 0-based, but your levels are 1-based keys:
-            idx = level - 1
-            if 0 <= idx < len(curr_user["levels_unlocked"]):
-                curr_user["levels_unlocked"][idx] = True
+        if sublevel >= len(curr_level):
+            # If all sublevels are complete, unlock the next level
+            print("Level Unlocked:", level)
+            if level < len(curr_user["levels_unlocked"]) and curr_user["levels_unlocked"][level] is False:
+                curr_user["levels_unlocked"][level] = True
+        else:
+            print("Curent Level:", level)
+            print("Sublevel Unlocked:", sublevel)
+            curr_user["level_progress"][level][sublevel] = True
 
         curr_user["tot_score"] = sum(sum(sublist) for sublist in curr_user["level_score"].values())
 
@@ -90,6 +99,7 @@ init python:
 
         update_play_time()
         renpy.save_persistent()
+        print(f"Sublevel {sublevel} of Level {level} completed with score: {score}")
 
     def sublevel_unlocked(level, sublevel):
         """
@@ -154,12 +164,25 @@ init python:
             old_data = persistent.saved_user[user]
             password = old_data.get("password", "")
 
-            # Get new default data and reinsert the password
-            new_user_data = new_data()
-            new_user_data["password"] = password
-
             # Save the updated user data
-            persistent.saved_user[user] = new_user_data
+            persistent.saved_user[user] = {
+                "password": password,
+                "levels_unlocked": [True, False, False, False],
+                "level_progress": {
+                    1: [True, False, False, False],
+                    2: [False, False, False, False, False],
+                    3: [False, False, False, False, False, False, False, False],
+                    4: [False, False, False, False, False, False, False, False, False, False, False, False]
+                },
+                "level_score": {
+                    1: [0, 0, 0, 0],
+                    2: [0, 0, 0, 0, 0],
+                    3: [0, 0, 0, 0, 0, 0, 0, 0],
+                    4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                },
+                "tot_score": 0,
+                "time_played": 0.0
+            }
 
             update_leaderboard()
             renpy.save_persistent()

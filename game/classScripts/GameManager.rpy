@@ -42,10 +42,10 @@ init python:
                 return
 
             if self.sublevel < max_sub:
+                print(f"Score: {self.score}")
                 self.sublevel += 1
                 new_label = label_prefix + str(self.sublevel)
             else:
-                complete_sublevel(self.level, self.sublevel, self.score)
                 new_label = "level_selection"
             renpy.jump(new_label)
 
@@ -126,23 +126,6 @@ init python:
                 renpy.restart_interaction()
             renpy.call_in_new_context("delete_matches_callback", self, matches, check)
         
-        def post_reset(self):
-            if not store.Reset_Grid:
-                t = 0
-            else: 
-                t = 0.01
-            while t != 0:
-                mins, secs = divmod(t, 60)
-                timer = '{:02d}:{:02d}'.format(mins, secs)
-                print(timer, end="\r")
-                time.sleep(1)
-                t -= 0.001
-            if t == 0:
-                return True
-            else:
-                return False
-
-
         def _delete_matches_callback(self, matches, check):
             renpy.transition(Dissolve(0.5))
             if check:
@@ -165,9 +148,9 @@ init python:
                     multiplier = round((self.moves / self.score) + 1)
                     self.score *= multiplier
 
-                complete_sublevel(self.level, self.sublevel, self.score)
-
                 max_sub = len(persistent.level_progress.get(self.level, []))
+                print (f"Current Sublevel: {self.sublevel}, Max Sublevel: {max_sub}")
+                complete_sublevel(self.level, self.sublevel, self.score)
 
                 if self.sublevel >= max_sub:
                     renpy.call_in_new_context("win_level_screen")

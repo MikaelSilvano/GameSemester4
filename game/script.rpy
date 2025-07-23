@@ -65,7 +65,7 @@ label setup_icons:
             icon.sprite.y = icon.y
             renpy.restart_interaction()
     if Reset_Grid:
-        $ Reset_Usage += 1
+        # $ Reset_Usage += 1
         $ Reset_Grid = False
     call screen Match_Three
 

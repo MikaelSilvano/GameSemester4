@@ -1,48 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 406, in script call
+  File "game/script.rpy", line 407, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 406, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 342, in script
-    python:
-  File "game/script.rpy", line 347, in <module>
-    renpy.pause(0.1)
-    ~~~~~~~~~~~^^^^^
-  File "game/script.rpy", line 196, in execute
-    screen reset_grids:
-  File "game/script.rpy", line 196, in execute
-    screen reset_grids:
-  File "game/script.rpy", line 197, in execute
-    frame:
-  File "game/script.rpy", line 215, in execute
-    if reset_remaining == 0:
-  File "game/script.rpy", line 216, in execute
-    add "gui/button/Resetgridbutton_finish.png" align (2.5, 0.5) offset -140 at Transform(zoom=1)
-TypeError: cannot unpack non-iterable int object
+  File "game/script.rpy", line 70, in script
+    call screen Match_Three
+  File "game/classScripts/GridManager.rpy", line 143, in handle_event
+    game.find_match(mouse_event=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 102, in find_match
+    self.delete_matches(all_matches, True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 124, in delete_matches
+    current_objectives.AimsMet(icon_type, decrement_amount)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/Objectives.rpy", line 52, in AimsMet
+    game.check_target_score(self.all_aims)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 153, in check_target_score
+    complete_sublevel(self.level, self.sublevel, self.score)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/000_Progress.rpy", line 94, in complete_sublevel
+    curr_user["level_progress"][level][sublevel] = True
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^       
+IndexError: list assignment index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 406, in script call
+  File "game/script.rpy", line 407, in script call
     call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 406, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 342, in script
-    python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 347, in <module>
-    renpy.pause(0.1)
-    ~~~~~~~~~~~^^^^^
-  File "renpy/exports/statementexports.py", line 198, in pause
-    rv = renpy.ui.interact(mouse="pause", type="pause", roll_forward=roll_forward, pause=delay, pause_modal=modal)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 70, in script
+    call screen Match_Three
+  File "renpy/ast.py", line 2231, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 379, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 689, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/ui.py", line 304, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -56,52 +60,63 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )  # type: ignore
     ^                
-  File "renpy/display/core.py", line 2754, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2754, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/script.rpy", line 196, in execute
-    screen reset_grids:
-  File "game/script.rpy", line 196, in execute
-    screen reset_grids:
-  File "game/script.rpy", line 197, in execute
-    frame:
-  File "game/script.rpy", line 215, in execute
-    if reset_remaining == 0:
-  File "game/script.rpy", line 216, in execute
-    add "gui/button/Resetgridbutton_finish.png" align (2.5, 0.5) offset -140 at Transform(zoom=1)
-  File "renpy/sl2/sldisplayables.py", line 471, in sl2add
-    rv = Transform(child=d, **kwargs)
-         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/transform.py", line 794, in __init__
-    setattr(self.state, k, v)
-    ~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "renpy/display/transform.py", line 585, in set_offset
-    self.xoffset, self.yoffset = value
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^        
-TypeError: cannot unpack non-iterable int object
+  File "renpy/display/core.py", line 3299, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 805, in event
+    rv = self.child.event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1508, in event
+    rv = super(Window, self).event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 273, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/transform.py", line 1115, in event
+    rv = d.event(ev, cx, cy, st)
+         ~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/particle.py", line 375, in event
+    return self.event_function(ev, x, y, st)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/classScripts/GridManager.rpy", line 143, in handle_event
+    game.find_match(mouse_event=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 102, in find_match
+    self.delete_matches(all_matches, True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 124, in delete_matches
+    current_objectives.AimsMet(icon_type, decrement_amount)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/Objectives.rpy", line 52, in AimsMet
+    game.check_target_score(self.all_aims)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 153, in check_target_score
+    complete_sublevel(self.level, self.sublevel, self.score)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/000_Progress.rpy", line 94, in complete_sublevel
+    curr_user["level_progress"][level][sublevel] = True
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^       
+  File "renpy/revertable.py", line 81, in do_mutation
+    return method(self, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list assignment index out of range
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Sun Jul 20 20:13:32 2025
+Wed Jul 23 10:12:06 2025

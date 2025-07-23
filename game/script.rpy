@@ -5,6 +5,7 @@ default non_violatable_objectives = { }
 default icon_skill_collected = []
 default Reset_Grid = False
 default Reset_Usage = 0
+default lv_FT = False
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -38,6 +39,11 @@ transform skill_button_transform:
 transform building_resized:
     xpos build_xpos
     ypos build_ypos 
+    zoom 0.4
+
+transform building_resized_FT:
+    xpos build_xpos_FT
+    ypos build_ypos_FT
     zoom 0.4
 
 transform fade_out:
@@ -303,7 +309,10 @@ screen Building:
         frame:
             background None  
             fixed:
-                add building_list[desired_images-1] at building_resized
+                if not lv_FT:
+                    add building_list[desired_images-1] at building_resized
+                else:
+                    add building_list[desired_images-1] at building_resized_FT
 
 image smoke_1 = "Building/Smoke/Smoke1.png"
 image smoke_2 = "Building/Smoke/Smoke2.png"

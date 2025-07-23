@@ -3,6 +3,8 @@ default building_list = []
 default desired_images = None
 default build_xpos = None
 default build_ypos = None
+default build_xpos_FT = None
+default build_ypos_FT = None
 default game = None
 default icon_image_use = None
 
@@ -556,6 +558,9 @@ label apartment_sublevel_11:
     return
 
 label apartment_sublevel_12:
+    $ build_xpos_FT = 0.645
+    $ build_ypos_FT = 384
+    $ lv_FT = True
     $ level = 4
     $ sublevel = 12
     $ desired_images = 12

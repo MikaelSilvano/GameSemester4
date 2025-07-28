@@ -6,6 +6,7 @@ default icon_skill_collected = []
 default Reset_Grid = False
 default Reset_Usage = 0
 default lv_FT = False
+default idle_player = False
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -206,15 +207,29 @@ screen reset_grids:
         align(0.83, 0.04)
         at Transform(zoom=0.5)
 
+        if not idle_player:
+            timer 30 action SetVariable("idle_player", True)
+
         if Reset_Usage < 3:
-            imagebutton:
-                idle "gui/button/Resetgridbutton.png"
-                hover "gui/button/Resetgridbutton_hover.png"
-                align (0.5, 0.5)
-                action [
-                    SetVariable("Reset_Grid", True),
-                    Jump("setup_icons")
-                ]
+            if not idle_player:
+                imagebutton:
+                    idle "gui/button/Resetgridbutton.png"
+                    hover "gui/button/Resetgridbutton_hover.png"
+                    align (0.5, 0.5)
+                    action [
+                        SetVariable("Reset_Grid", True),
+                        Jump("setup_icons")
+                    ]
+            else:
+                imagebutton:
+                    idle "gui/button/Resetgridbutton_idle.png"
+                    hover "gui/button/Resetgridbutton_hover.png"
+                    align (0.5, 0.5)
+                    action [
+                        SetVariable("Reset_Grid", True),
+                        Jump("setup_icons"),
+                        SetVariable("idle_player", False)
+                    ]
         
         $ reset_remaining = 3 - Reset_Usage
         if reset_remaining < 0:
@@ -225,7 +240,7 @@ screen reset_grids:
             align (0.5, 0.5)
             xoffset 130
             size 100
-            color "#ff0000"
+            color "#000000"
             outlines [(1, "#fff", 0, 0)]
         
         
@@ -397,6 +412,9 @@ label start_game:
     $ grid = GridManager(icpr, grid_size)
     $ grid.initialize_grid()
 
+    # if not grid.available_matches:
+    #     $ renpy.notify("no matches")
+
     if blueprint_swap_used == True:
         show screeen countdown
 
@@ -412,9 +430,31 @@ label start_game:
     show screen Building
     show screen SkillOverlay
     show screen reset_grids
+    # show screen check_grid
 
     call setup_icons() from _call_setup_icons
     return
+
+# screen check_grid:
+#     frame:
+#         xysize (300, 80)
+#         background "#d48934"
+#         align(0.05, 0.83)
+#         textbutton "Check Grid":
+#             align (0.5,0.5)
+#             text_style "tx_button"
+#             text_size 30
+#             action If(
+#                 Function(grid.possible_move_exists),
+#                 [
+#                     Function(renpy.notify, "There are still matches " + str(grid.get_current_checked_index()) + ".")
+#                 ],
+#                 [
+#                     Function(renpy.notify, "No more moves available, try reshuffling.")
+#                 ]
+            
+#             )
+
 
 screen result:
     text "{size=+20}Total Score: [game.score]{/size}" color "#FFFFFF" xysize (600, 200)

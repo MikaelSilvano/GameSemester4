@@ -1,249 +1,33 @@
-2025-07-23 14:07:04 UTC
+2025-07-28 14:52:44 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.0.25071206
 
-Early init took 40 ms
+Early init took 33 ms
 Loading error handling took 18 ms
-Loading script took 285 ms
-Loading save slot metadata took 17 ms
+Loading script took 85 ms
+Loading save slot metadata took 12 ms
 Loading persistent took 0 ms
-Running init code took 33 ms
-Loading analysis data took 3 ms
-Analyze and compile ATL took 4 ms
-Reloading save slot metadata took 7 ms
-Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 31 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 41 ms
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 304 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 14 ms
-Save screen analysis took 14 ms
-Save pyanalysis took 6 ms
-Save bytecode took 23 ms
-Running _start took 0 ms
-Interface start took 765 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 566.07'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
-Maximum texture size: 4096x4096
-Guest
-{'Guest': {'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0}}
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-valid grid: False
-reset grid: False
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-Reset Usage: 0
-valid grid: False
-reset grid: True
-AimsMet: Cement x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Rocks x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-Reset Usage: 1
-valid grid: False
-reset grid: True
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Cement x2
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Rocks x1
-AimsMet: Cement x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Glass x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: SolarPanel x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: SolarPanel x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-Score: 3747
-Current Sublevel: 12, Max Sublevel: 12
-Level Unlocked: 4
-{'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3747]}, 'tot_score': 3747, 'time_played': 0.0}
-Sublevel 12 of Level 4 completed with score: 3747
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-1. Guest - 3747 points
-1. Guest - 3747 points
-1. Guest - 3747 points
-Resetting cache.
-Early init took 5 ms
-Loading error handling took 16 ms
-Loading script took 92 ms
-Loading save slot metadata took 10 ms
-Loading persistent took 0 ms
-Running init code took 30 ms
+Running init code took 43 ms
 Loading analysis data took 3 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 8 ms
-Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Reloading save slot metadata took 7 ms
 Dump and make backups took 28 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 72 ms
+Making clean stores took 0 ms
+Initial gc took 34 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 293 ms
+Creating interface object took 241 ms
 Init translation took 1 ms
 Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 9 ms
-Save screen analysis took 16 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 434 ms
+Running _start took 2 ms
+Interface start took 350 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -252,24 +36,6 @@ Windowed mode.
 Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 566.07'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
-1. Guest - 3747 points
-1. Guest - 0 points
-Cleaning stores took 0 ms
-Load screen analysis took 19 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Guest
-{'Guest': {'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0}}
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points
-1. Guest - 0 points

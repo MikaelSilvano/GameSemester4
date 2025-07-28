@@ -120,24 +120,25 @@ init python:
         
         if user == "Guest" or user is None:
             persistent.current_user = "Guest"
-            persistent.saved_user["Guest"] = {
-                "password": "",
-                "levels_unlocked": [True, False, False, False],
-                "level_progress": {
-                    1: [True, False, False, False],
-                    2: [False, False, False, False, False],
-                    3: [False, False, False, False, False, False, False, False],
-                    4: [False, False, False, False, False, False, False, False, False, False, False, False]
-                },
-                "level_score" : {
-                    1: [0, 0, 0, 0],
-                    2: [0, 0, 0, 0, 0],
-                    3: [0, 0, 0, 0, 0, 0, 0, 0],
-                    4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-                },
-                "tot_score": 0,
-                "time_played": 0.0,
-            }
+            if "Guest" not in persistent.saved_user:
+                persistent.saved_user["Guest"] = {
+                    "password": "",
+                    "levels_unlocked": [True, False, False, False],
+                    "level_progress": {
+                        1: [True, False, False, False],
+                        2: [False, False, False, False, False],
+                        3: [False, False, False, False, False, False, False, False],
+                        4: [False, False, False, False, False, False, False, False, False, False, False, False]
+                    },
+                    "level_score" : {
+                        1: [0, 0, 0, 0],
+                        2: [0, 0, 0, 0, 0],
+                        3: [0, 0, 0, 0, 0, 0, 0, 0],
+                        4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                    },
+                    "tot_score": 0,
+                    "time_played": 0.0,
+                }
 
         print(persistent.saved_user)
 

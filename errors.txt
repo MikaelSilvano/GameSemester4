@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 415: invalid syntax
+    timer 30 action SetVariable("idle_player", True)
+                    ^^
+
+Ren'Py Version: Ren'Py 8.4.0.25071206
+Mon Jul 28 21:28:06 2025

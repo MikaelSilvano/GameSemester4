@@ -177,7 +177,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/nvl2.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -193,9 +193,11 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
+    size 65
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
+    size 40
 
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
@@ -2964,7 +2966,7 @@ style nvl_window:
     xfill True
     yfill True
 
-    background "gui/nvl.png"
+    background "gui/nvl2.png"
     padding gui.nvl_borders.padding
 
 style nvl_entry:

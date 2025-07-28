@@ -95,9 +95,9 @@ screen login_screen():
             action passw.Toggle()
             input value passw length 100
         
-        use clear_player_data
+        # use clear_player_data
 
-        use clear_all_user_data
+        # use clear_all_user_data
         
         if login_error:
             use notify_texts
@@ -114,22 +114,24 @@ screen notify_texts:
 
 screen clear_player_data:
     frame:
-        xysize (200, 100)
-        background "#fff6c0"
-        align(0.05, 0.95)
-        textbutton "Clear":
+        xysize (300, 80)
+        background "#d48934"
+        align(0.05, 0.83)
+        textbutton "Delete current user":
             align (0.5,0.5)
             text_style "tx_button"
+            text_size 30
             action (Function(delete_user, input_username), Function(renpy.restart_interaction))
 
 screen clear_all_user_data:
     frame:
-        xysize (200, 100)
+        xysize (300, 80)
         background "#f16c6c"
-        align(0.17, 0.95)
-        textbutton "DELETE":
+        align(0.05, 0.95)
+        textbutton "DELETE ALL USER":
             align (0.5,0.5)
             text_style "tx_button"
+            text_size 30
             action (Function(clear_all_user_data), Function(renpy.restart_interaction))
 
             

@@ -102,12 +102,18 @@ label hut_sublevel_2:
     $ sublevel = 2   
     $ desired_images = 2
     $ current_objectives = Objectives({
+        # "Dirt": 10000, 
+        # "Rocks": 10000, 
+        # "Wood": 30000
+        
         "Dirt": 2, 
         "Rocks": 10, 
         "Wood": 3
     })
     $ moves = 10
     $ t_score = 1500
+    # $ icpr = 5
+    # $ grid_size = 20
     $ icpr = 7
     $ grid_size = 35
     jump start_game

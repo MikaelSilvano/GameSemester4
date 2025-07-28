@@ -1,5 +1,6 @@
 init python:
-    import random  
+    import random
+    from typing import List
 
     class GridManager:
         def __init__(self, icons_per_row, grid_size):
@@ -11,6 +12,7 @@ init python:
             self.grid_size = grid_size
             self.icon_images = icon_image_use
             self.fixed_positions = None
+            self.current_checked_index = None
 
         def has_initial_match(self):
             for index, icon in enumerate(self.icons):
@@ -72,8 +74,8 @@ init python:
             start_icon = self.icons[index]
             if start_icon is None:
                 return []
-            if start_icon.chain_locked:
-                return []
+            # if start_icon.chain_locked:
+            #     return []
             cluster = set()
             to_check = [index]
             while to_check:
@@ -150,6 +152,7 @@ init python:
                     if icon and icon.is_dragging:
                         icon.update_drag(x, y)
             if event.type == 1025 and event.button == 1:
+                store.idle_player = True
                 for icon in self.icons:
                     if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):            
                         if len(store.icon_skill_collected) != 0:
@@ -189,6 +192,7 @@ init python:
                         store.icon_skill_collected.clear()
                         icon.start_drag(x, y)
                         break
+                store.idle_player = False
             if event.type == 1026 and event.button == 1:
                 for icon in self.icons:
                     if icon and (icon.x <= x <= (icon.x + self.icon_size) and
@@ -302,7 +306,7 @@ init python:
                     sprite=new_sprite,
                     chain_locked=False
                 )
-
+            
         def clear_grid(self):
             renpy.hide_screen("result", immediately=True)
             game.score = 0
@@ -331,3 +335,5 @@ init python:
                             self.icons[index + 2 * self.icons_per_row] is not None and self.icons[index + 2 * self.icons_per_row].icon_type == icon_type):
                             return True
             return False
+
+        

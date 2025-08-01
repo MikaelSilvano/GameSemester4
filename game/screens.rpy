@@ -1586,6 +1586,11 @@ screen countdown():
     timer 0.1 action If(
         timer_running,
         SetVariable("time_countdown_left", max(0, non_violatable_time - int(time.time() - timer_countdown_start))),
+        # If(
+        #     Aim_time >= time_countdown_left,
+        #     SetVariable("Aim_time", time_countdown_left - 30),
+        #     SetVariable("idle_player", True)
+        # ),
         None
     ) repeat True
 

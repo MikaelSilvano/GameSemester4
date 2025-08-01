@@ -51,7 +51,8 @@ transform fade_out:
     linear 0.5 alpha 0.0
 
 label setup_icons:
-    if Reset_Grid and len(grid.icons) != 0 and Reset_Usage < 3:
+    if Reset_Grid and len(grid.icons) != 0 and Reset_Usage < 3:    
+        $ idle_player = True
         hide screen Match_Three
         $ print("Reset Usage:", Reset_Usage)
         $ grid.icons.clear()
@@ -71,7 +72,8 @@ label setup_icons:
             icon.sprite.x = icon.x
             icon.sprite.y = icon.y
             renpy.restart_interaction()
-    if Reset_Grid:
+    if Reset_Grid:    
+        $ idle_player = False
         $ Reset_Usage += 1
         $ Reset_Grid = False
     call screen Match_Three
@@ -199,6 +201,9 @@ style tx_button:
 style alpha_color:
     color "#00000000"
     size 80
+
+default idle_time_max = 30
+default Aim_time = 300
 
 screen reset_grids:
     frame:        

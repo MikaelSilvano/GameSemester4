@@ -264,6 +264,8 @@ init python:
                 pass
 
         def refill_grid(self):
+        
+            store.idle_player = True
             for i in range(self.grid_size):
                 if self.icons[i] is not None:
                     continue
@@ -306,6 +308,8 @@ init python:
                     sprite=new_sprite,
                     chain_locked=False
                 )
+        
+            store.idle_player = False
             
         def clear_grid(self):
             renpy.hide_screen("result", immediately=True)

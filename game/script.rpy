@@ -397,6 +397,7 @@ label start_game:
     $ game = GameManager(moves, t_score, level, sublevel)
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
+    $ idle_player = False
 
     #debugging purposes
     # $ current_objectives = Objectives({

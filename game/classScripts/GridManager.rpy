@@ -152,7 +152,6 @@ init python:
                     if icon and icon.is_dragging:
                         icon.update_drag(x, y)
             if event.type == 1025 and event.button == 1:
-                store.idle_player = True
                 for icon in self.icons:
                     if skill_active == True and icon.x <= x <= (icon.x + self.icon_size) and icon.y <= y <= (icon.y + self.icon_size):            
                         if len(store.icon_skill_collected) != 0:
@@ -192,7 +191,6 @@ init python:
                         store.icon_skill_collected.clear()
                         icon.start_drag(x, y)
                         break
-                store.idle_player = False
             if event.type == 1026 and event.button == 1:
                 for icon in self.icons:
                     if icon and (icon.x <= x <= (icon.x + self.icon_size) and

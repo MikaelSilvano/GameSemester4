@@ -523,7 +523,7 @@ label apartment_sublevel_9:
     $ moves = 15
     $ t_score = 5300
     $ icpr = 8
-    $ grid_size = 32
+    $ grid_size = 40
     jump start_game
     return
 

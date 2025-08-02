@@ -540,8 +540,8 @@ label apartment_sublevel_10:
     })
     $ moves = 15
     $ t_score = 3000
-    $ icpr = 5
-    $ grid_size = 30
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 
@@ -558,8 +558,8 @@ label apartment_sublevel_11:
     })
     $ moves = 15
     $ t_score = 3300
-    $ icpr = 7
-    $ grid_size = 35
+    $ icpr = 8
+    $ grid_size = 40
     jump start_game
     return
 
@@ -579,8 +579,8 @@ label apartment_sublevel_12:
     })
     $ moves = 15
     $ t_score = 5100
-    $ icpr = 8
-    $ grid_size = 32
+    $ icpr = 7
+    $ grid_size = 35
     jump start_game
     return
 

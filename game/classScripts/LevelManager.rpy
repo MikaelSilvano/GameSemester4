@@ -329,7 +329,7 @@ label mansion_sublevel_6:
     $ desired_images = 6
     $ current_objectives = Objectives({
         "Glass": 4,
-        "Brick": 15,
+        "Brick": 10,
         "Steel": 10,
         "Cement": 7
     })
@@ -365,7 +365,7 @@ label mansion_sublevel_8:
     $ current_objectives = Objectives({
         "Cement": 3,
         "Glass": 5,
-        "Steel": 15,
+        "Steel": 10,
         "Rocks": 15,
         "Plant": 10
     })

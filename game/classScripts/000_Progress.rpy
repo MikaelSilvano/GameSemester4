@@ -6,6 +6,12 @@ init python:
     
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
         persistent.levels_unlocked = [True, False, False, False]
+    
+    if not hasattr(persistent, "sound_effect_on") or persistent.sound_effect_on is None:
+        persistent.sound_effect_on = True
+    
+    if not hasattr(persistent, "bgm_on") or persistent.bgm_on is None:
+        persistent.bgm_on = True
 
     if not hasattr(persistent, "level_progress") or persistent.level_progress is None:
         persistent.level_progress = {

@@ -1812,6 +1812,7 @@ screen pause_menu:
         on "show" action [
             SetVariable("pause_start",    time.time()),
             SetVariable("pause_duration", 0),
+            SetVariable("idle_player", True),
             SetVariable("time_freeze_running", False),
             SetVariable("timer_on_pause", True)
         ]
@@ -1819,6 +1820,7 @@ screen pause_menu:
         on "show" action [
             SetVariable("pause_start",    time.time()),
             SetVariable("pause_duration", 0),
+            SetVariable("idle_player", True),
             SetVariable("timer_running",  False)
         ]
     
@@ -1831,12 +1833,14 @@ screen pause_menu:
         on "hide" action [
             SetVariable("time_freeze_running", True),
             SetVariable("timer_freeze_start",   timer_freeze_start + pause_duration),
+            SetVariable("idle_player", False),
             SetVariable("timer_on_pause", False)
         ]
     else:
         on "hide" action [
             SetVariable("timer_running", True),
             SetVariable("timer_start",   timer_start + pause_duration),
+            SetVariable("idle_player", False),
             SetVariable("timer_countdown_start",   timer_countdown_start + pause_duration)
         ]
     
@@ -2030,12 +2034,14 @@ screen settings_page():
             SetVariable("pause_start",    time.time()),
             SetVariable("pause_duration", 0),
             SetVariable("time_freeze_running", False),
+            SetVariable("idle_player", True),
             SetVariable("timer_on_pause", True)
         ]
     else:
         on "show" action [
             SetVariable("pause_start",    time.time()),
             SetVariable("pause_duration", 0),
+            SetVariable("idle_player", True),
             SetVariable("timer_running",  False)
         ]
     
@@ -2048,12 +2054,14 @@ screen settings_page():
         on "hide" action [
             SetVariable("time_freeze_running", True),
             SetVariable("timer_freeze_start",   timer_freeze_start + pause_duration),
+            SetVariable("idle_player", False),
             SetVariable("timer_on_pause", False)
         ]
     else:
         on "hide" action [
             SetVariable("timer_running", True),
             SetVariable("timer_start",   timer_start + pause_duration),
+            SetVariable("idle_player", False),
             SetVariable("timer_countdown_start",   timer_countdown_start + pause_duration)
         ]
 

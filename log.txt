@@ -1,29 +1,41 @@
-2025-08-07 05:09:48 UTC
+2025-08-09 13:30:33 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.0.25071206
 
-Early init took 36 ms
-Loading error handling took 98 ms
-Loading script took 906 ms
-Loading save slot metadata took 17 ms
-Loading persistent took 0 ms
-Running init code took 85 ms
-Loading analysis data took 0 ms
-Analyze and compile ATL took 6 ms
-Reloading save slot metadata took 7 ms
-Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 28 ms
+Early init took 41 ms
+Loading error handling took 17 ms
+Loading script took 96 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 1 ms
+Running init code took 48 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Dump and make backups took 27 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 39 ms
+Making clean stores took 0 ms
+Initial gc took 38 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 241 ms
-Init translation took 0 ms
+Creating interface object took 252 ms
+Init translation took 1 ms
 Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 23 ms
-Save screen analysis took 12 ms
-Save pyanalysis took 3 ms
+Load screen analysis took 18 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
 Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 365 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096

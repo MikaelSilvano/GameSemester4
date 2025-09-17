@@ -82,7 +82,7 @@ transform rotation(angle):
     rotate angle
     
 screen SkillOverlay():
-    if game.level == 1:
+    if persistent.current_skill == 1:
         if not timer_freeze_used:
             if timer_running:
                 imagebutton:
@@ -120,7 +120,7 @@ screen SkillOverlay():
                 add "gui/button/Skill1Gray.png"
 
     
-    elif game.level == 2:
+    elif persistent.current_skill == 2:
         if not forced_compression_used:
             imagebutton:
                 auto "gui/button/Skill2_%s.png"
@@ -131,7 +131,7 @@ screen SkillOverlay():
         else:
             add "gui/button/Skill2Gray.png" xpos 0.768 ypos 0.14015 at skill_button_transform
 
-    elif game.level == 3:
+    elif persistent.current_skill == 3:
         if not blueprint_swap_used:
             if not skill_active:
                 imagebutton:
@@ -167,7 +167,7 @@ screen SkillOverlay():
                 at skill_button_transform
                 add "gui/button/Skill3Gray.png"
     
-    elif game.level == 4:
+    elif persistent.current_skill == 4:
         if not masterpiece_build_skill_used:
             if not skill_active:
                 imagebutton:
@@ -404,14 +404,14 @@ label start_game:
     #     "Steel": 1,
     # })
 
-    if game.level == 2:
+    if persistent.current_skill == 2:
         $ forced_compression_used = False
     
-    if game.level == 3:
+    if persistent.current_skill == 3:
         $ blueprint_swap_used = False
         $ required_targets = 2
 
-    if game.level == 4:
+    if persistent.current_skill == 4:
         $ masterpiece_build_skill_used = False
         $ required_targets = 1
 
@@ -423,6 +423,10 @@ label start_game:
 
     if blueprint_swap_used == True:
         show screeen countdown
+
+    
+    if persistent.current_skill == 0:
+        $ persistent.current_skill = game.level
 
     $ renpy.music.play("audio/gameplay.ogg", loop=True)
 

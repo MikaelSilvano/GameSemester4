@@ -1,33 +1,33 @@
-2025-08-09 13:30:33 UTC
+2025-09-17 09:18:42 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.0.25071206
 
-Early init took 41 ms
-Loading error handling took 17 ms
-Loading script took 96 ms
-Loading save slot metadata took 15 ms
-Loading persistent took 1 ms
-Running init code took 48 ms
-Loading analysis data took 3 ms
+Early init took 40 ms
+Loading error handling took 31 ms
+Loading script took 726 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 64 ms
+Loading analysis data took 4 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 8 ms
-Dump and make backups took 27 ms
+Reloading save slot metadata took 7 ms
+Dump and make backups took 28 ms
 Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 38 ms
+Making clean stores took 1 ms
+Initial gc took 45 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 252 ms
-Init translation took 1 ms
+Creating interface object took 273 ms
+Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 18 ms
+Load screen analysis took 20 ms
 Analyze screens took 1 ms
 Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
-Save bytecode took 0 ms
+Save bytecode took 19 ms
 Running _start took 1 ms
-Interface start took 365 ms
+Interface start took 374 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -39,3 +39,201 @@ Version: '4.6.0 NVIDIA 566.07'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0}}
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+
+Full traceback:
+  File "game/classScripts/LevelManager.rpy", line 26, in script
+    call screen level_1_preview
+  File "renpy/ast.py", line 2231, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 379, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 689, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2214, in interact
+    raise Exception("renpy.restart_interaction() was called 100 times without processing any input.")
+Exception: renpy.restart_interaction() was called 100 times without processing any input.
+
+While running game code:
+  File "game/classScripts/LevelManager.rpy", line 26, in script
+    call screen level_1_preview
+Exception: renpy.restart_interaction() was called 100 times without processing any input.
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 15 ms
+Loading script took 352 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 30 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 74 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 254 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 9 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 375 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 17 ms
+Loading script took 103 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 1 ms
+Running init code took 37 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 238 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 11 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 473 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+Cleaning stores took 0 ms
+Load screen analysis took 20 ms
+Analyze screens took 0 ms
+Running _start took 0 ms
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0}}
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 10 ms
+Loading script took 103 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 0 ms
+Running init code took 39 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 33 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 91 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 290 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 1 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 373 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0}}
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 0 ms

@@ -273,6 +273,101 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
 
+default SkillListed = False
+
+transform skill_list_transform:
+    ypos 0.8
+    zoom 0.4
+
+transform skill_picked_transform:
+    ypos 0.8
+    zoom 0.2
+
+screen SkillChooser():
+    if SkillListed == False:
+        imagebutton:
+            idle "gui/button/Skill_List.png"
+            action SetVariable("SkillListed", True)
+            xpos 0.05
+            at skill_list_transform
+    else:
+        imagebutton:
+            idle "gui/button/Skill_List_Unfold.png"
+            action SetVariable("SkillListed", False)
+            xpos 0.05
+            at skill_list_transform
+        if not persistent.current_skill == 1:
+            imagebutton:
+                idle "gui/button/Skill1_idle.png"
+                action SetVariable("persistent.current_skill", 1)
+                xpos 0.2
+                at skill_picked_transform
+        else:
+            imagebutton:
+                idle "gui/button/Skill1HoverOnTimeFreeze.png"
+                action SetVariable("persistent.current_skill", 0)
+                xpos 0.2
+                at skill_picked_transform
+        
+        if persistent.levels_unlocked[1] == True:
+            if not persistent.current_skill == 2:
+                imagebutton:
+                    idle "gui/button/Skill2_idle.png"
+                    action SetVariable("persistent.current_skill", 2)
+                    xpos 0.35
+                    at skill_picked_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill2SkillActive.png"
+                    action SetVariable("persistent.current_skill", 0)
+                    xpos 0.35
+                    at skill_picked_transform
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Skill2Gray.png"
+        #         action [Function(renpy.notify("Skill Locked"))]
+        #         xpos 0.35
+        #         at skill_picked_transform
+
+        if persistent.levels_unlocked[2] == True:
+            if not persistent.current_skill == 3:
+                imagebutton:
+                    idle "gui/button/Skill3_idle.png"
+                    action SetVariable("persistent.current_skill", 3)
+                    xpos 0.5
+                    at skill_picked_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill3SkillActive.png"
+                    action SetVariable("persistent.current_skill", 0)
+                    xpos 0.5
+                    at skill_picked_transform
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Skill3Gray.png"
+        #         action [Function(renpy.notify("Skill Locked"))]
+        #         xpos 0.5
+        #         at skill_picked_transform
+
+        if persistent.levels_unlocked[3] == True: 
+            if not persistent.current_skill == 4:
+                imagebutton:
+                    idle "gui/button/Skill4_idle.png"
+                    action SetVariable("persistent.current_skill", 4)
+                    xpos 0.65
+                    at skill_picked_transform
+            else:
+                imagebutton:
+                    idle "gui/button/Skill4SkillActive.png"
+                    action SetVariable("persistent.current_skill", 0)
+                    xpos 0.65
+                    at skill_picked_transform
+        # else:
+        #     imagebutton:
+        #         idle "gui/button/Skill4Gray.png"
+        #         action [Function(renpy.notify("Skill Locked"))]
+        #         xpos 0.65
+        #         at skill_picked_transform
 
 ## Quick Menu screen ###########################################################
 ##
@@ -664,6 +759,8 @@ screen level_1_preview():
     modal True
     add "images/Screens/HutLevel.png"
     key "K_ESCAPE" action NullAction()
+
+    use SkillChooser
     
     fixed:
         imagebutton:
@@ -710,6 +807,8 @@ screen level_2_preview():
     add "images/Screens/HouseLevel.png"
     key "K_ESCAPE" action NullAction()
     
+    use SkillChooser
+    
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
@@ -755,6 +854,8 @@ screen level_3_preview():
     add "images/Screens/MansionLevel.png"
     key "K_ESCAPE" action NullAction()
     
+    use SkillChooser
+
     fixed:
         imagebutton:
             auto "gui/button/PlayButton_%s.png"
@@ -799,6 +900,8 @@ screen level_4_preview():
     modal True
     add "images/Screens/ApartmentLevel.png"
     key "K_ESCAPE" action NullAction()
+    
+    use SkillChooser
 
     fixed:
         imagebutton:
@@ -844,6 +947,8 @@ screen sublevel_hut_screen():
     modal True
     add "images/Screens/SublevelHut.png"  
     key "K_ESCAPE" action NullAction()
+
+    use SkillChooser
 
     fixed:
         # Sublevel 1 button
@@ -946,6 +1051,8 @@ screen sublevel_house_screen():
     modal True
     add "images/Screens/SublevelHouse.png"  
     key "K_ESCAPE" action NullAction()
+
+    use SkillChooser
 
     fixed:
         imagebutton:
@@ -1051,6 +1158,8 @@ screen mansion_sublevel1_screen():
     modal True
     add "images/Screens/MansionSublevel1.png"  
     key "K_ESCAPE" action NullAction()
+
+    use SkillChooser
 
     fixed:
         imagebutton:
@@ -1158,6 +1267,8 @@ screen mansion_sublevel2_screen():
     add "images/Screens/MansionSublevel2.png"
     key "K_ESCAPE" action NullAction()
 
+    use SkillChooser
+
     fixed:
         if persistent.level_progress[3][5]:
             imagebutton:
@@ -1248,6 +1359,8 @@ screen apartment_sublevel1_screen():
     modal True
     add "images/Screens/ApartmentSublevel1.png" 
     key "K_ESCAPE" action NullAction()
+    
+    use SkillChooser
 
     fixed:
         imagebutton:
@@ -1338,6 +1451,8 @@ screen apartment_sublevel2_screen():
     modal True
     add "images/Screens/ApartmentSublevel2.png"  
     key "K_ESCAPE" action NullAction()
+    
+    use SkillChooser
 
     fixed:
         if persistent.level_progress[4][4]:
@@ -1444,6 +1559,8 @@ screen apartment_sublevel3_screen():
     modal True
     add "images/Screens/ApartmentSublevel3.png"  
     key "K_ESCAPE" action NullAction()
+    
+    use SkillChooser
 
     fixed:
         if persistent.level_progress[4][8]:

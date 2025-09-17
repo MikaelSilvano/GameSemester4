@@ -158,7 +158,7 @@ init python:
                             if store.In_stored == 0:
                                 store.icon_skill_collected.clear()
                         store.In_stored = 0
-                        if game.level == 3:
+                        if persistent.current_skill == 3:
                         # append into YOUR manager’s list
                             store.icon_skill_collected.append(icon.index)
                             store.In_stored+=1
@@ -176,7 +176,7 @@ init python:
                                     renpy.show_screen("countdown")
                                 else:
                                     break
-                        elif game.level == 4:
+                        elif persistent.current_skill == 4:
                             store.icon_skill_collected.append(icon.index)
                             if len(store.icon_skill_collected) == required_targets:
                                 if (skill.masterpiece_build(store.icon_skill_collected[0])):

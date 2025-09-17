@@ -1,169 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/style.pyx", line 808, in renpy.style.rebuild
-  File "game/screens.rpy", line 1575, in prepare_screen
-    screen countdown():
-  File "game/screens.rpy", line 1575, in prepare
-    screen countdown():
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1591
-    SetVariable("Aim_time", time_countdown_left - idle_time_max)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/screens.rpy", line 1575, in prepare_screen
-    screen countdown():
-  File "game/screens.rpy", line 1575, in prepare
-    screen countdown():
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1591
-    SetVariable("Aim_time", time_countdown_left - idle_time_max)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "game/classScripts/LevelManager.rpy", line 26, in script
+    call screen level_1_preview
+Exception: renpy.restart_interaction() was called 100 times without processing any input.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00start.rpy", line 202, in <module>
-    _init_language()
-    ~~~~~~~~~~~~~~^^
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language, force=True)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 805, in change_language
-    i()
-    ~^^
-  File "renpy/common/00stylepreferences.rpy", line 127, in _m1_00stylepreferences__change_language
-    __update()
-    ~~~~~~~~^^
-  File "renpy/common/00stylepreferences.rpy", line 99, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/style.pyx", line 808, in renpy.style.rebuild
-  File "renpy/display/screen.py", line 1035, in prepare_screens
-    s.ast.prepare_screen()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/screens.rpy", line 1575, in prepare_screen
-    screen countdown():
-  File "game/screens.rpy", line 1575, in prepare
-    screen countdown():
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "renpy/pyanalysis.py", line 913, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^   
-  File "renpy/pyanalysis.py", line 895, in ast_eval_literal
-    expr = py_compile(expr, "eval", ast_node=True)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 1591
-    SetVariable("Aim_time", time_countdown_left - idle_time_max)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/bootstrap.py", line 376, in bootstrap
-    renpy.main.main()
-    ~~~~~~~~~~~~~~~^^
-  File "renpy/main.py", line 614, in main
-    run(restart)
-    ~~~^^^^^^^^^
-  File "renpy/main.py", line 137, in run
-    renpy.execution.run_context(True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "renpy/execution.py", line 1022, in run_context
-    context.run()
-    ~~~~~~~~~~~^^
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/display/error.py", line 135, in report_exception
-    renpy.game.invoke_in_new_context(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        call_exception_screen,
-        ^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        ignore_action=ignore_action,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/game.py", line 301, in invoke_in_new_context
-    return callable(*args, **kwargs)
-           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/display/error.py", line 44, in call_exception_screen
-    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/LevelManager.rpy", line 26, in script
+    call screen level_1_preview
+  File "renpy/ast.py", line 2231, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 379, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 689, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/ui.py", line 304, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2216, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2447, in interact_core
-    renpy.display.screen.prepare_screens()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 1035, in prepare_screens
-    s.ast.prepare_screen()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/screens.rpy", line 1575, in prepare_screen
-    screen countdown():
-  File "game/screens.rpy", line 1575, in prepare
-    screen countdown():
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "game/screens.rpy", line 1586, in prepare
-    timer 0.1 action If(
-  File "renpy/pyanalysis.py", line 913, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^   
-  File "renpy/pyanalysis.py", line 895, in ast_eval_literal
-    expr = py_compile(expr, "eval", ast_node=True)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 1591
-    SetVariable("Aim_time", time_countdown_left - idle_time_max)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "renpy/display/core.py", line 2214, in interact
+    raise Exception("renpy.restart_interaction() was called 100 times without processing any input.")
+Exception: renpy.restart_interaction() was called 100 times without processing any input.
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Thu Jul 31 11:40:17 2025
+Wed Sep 17 16:18:48 2025

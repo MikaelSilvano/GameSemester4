@@ -30,9 +30,10 @@ init python:
             col2, row2 = index2 % icons_per_row, index2 // icons_per_row
 
             # 1) fixed‐position guard
-            if (col1, row1) in grid.fixed_positions or (col2, row2) in grid.fixed_positions:
-                renpy.notify("Swap prevented: fixed tile – try again.")
-                return False
+            if game.level == 3 or game.level == 4:
+                if (col1, row1) in grid.fixed_positions or (col2, row2) in grid.fixed_positions:
+                    renpy.notify("Swap prevented: fixed tile – try again.")
+                    return False
 
             # 2) same‐tile guard
             if col1 == col2 and row1 == row2:

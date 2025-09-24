@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 312: reached end of line when expecting ':'.
-    if persistent.levels_unlocked[1] == True
-                                            ^
+File "game/screens.rpy", line 257: Line is indented, but the preceding add statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    xpos 0.5
+    ^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Wed Sep 17 16:10:01 2025
+Sun Sep 21 16:07:19 2025

@@ -568,6 +568,7 @@ transform right_side:
 
 define main_char = Character("Ko Khrisna", color="#c8f2ff")
 define side_char = Character("Jordan", color="#ffc8c8")
+define background_chat = Image("gui/button/Backgroundtxt_idle.png")
 
 label level1_intro:
     if persistent.level_progress[1][1] == False:
@@ -582,10 +583,22 @@ label level1_intro:
             zoom 0.5
             linear 0.2 zoom 1.0
 
-        side_char "Welcome to your first site, Ko Khrisna. It may look like just dirt and rocks, but it’s a place waiting to become a home."
-        main_char "Oh this is exciting! Where do I even start Jordan?"
-        side_char "Right here—with your hands, your heart, and a whole lot of sustainable thinking. Let’s build your first hut using natural materials by entering the sublevels and prove your skills."
-        main_char "Okay! I’ll show you I’ve got what it takes."
+        side_char "Welcome to your first site, Ko Khrisna."
+        side_char "It may look like just dirt and rocks, but it’s a place waiting to become a home."
+        menu:
+            "A place waiting to become a home?":
+                pass
+            "Where do I start?":
+                pass
+        main_char "A home? Oh this sounds fun! Where do I even start Jordan?"
+        side_char "Right here—with your hands, your heart, and a whole lot of sustainable thinking."
+        side_char "Let’s build your first hut using natural materials by entering the sublevels and prove your skills. Are you up to it?"
+        menu:
+            "I was born ready!":
+                pass
+            "I've got what it takes!":
+                pass
+        main_char "I was born ready! I’ll show you I’ve got what it takes."
 
         window hide
 
@@ -597,6 +610,7 @@ label level1_intro:
         $ renpy.pause(0.2, hard=True)
         scene black with None
     jump sublevel_level1
+
 
 ##########################################################################
 ## Level 2 Lore
@@ -632,9 +646,19 @@ label level2_intro:
         linear 0.2 zoom 0.3
 
     side_char "Great job Ko Khrisna. You did well, look where you are now!"
+    menu:
+        "They all want a home":
+            pass
+        "They only want a safe place":
+            pass
     main_char "They all want homes. Safe ones. Beautiful ones. And… green ones."
     side_char "That’s why you’re here, Architect Ko Khrisna. These aren’t just houses—they’re a chance to build resilience and community."
-    main_char "I’ve only built huts before… but I’ll try. No shortcuts, no waste right Jordan?"
+    menu:
+        "I've only built huts before...":
+            pass
+        "I'll give it a try!":
+            pass
+    main_char "I’ve only built huts before… but I’ll give it a try! No shortcuts, no waste right Jordan?"
     side_char "Exactly. Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
     main_char "Okay Miss Jordan, I won't let you down!"
 
@@ -684,8 +708,18 @@ label level3_intro:
         linear 0.1 zoom 0.93
 
     side_char "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
+    menu:
+        "A mansion?":
+            pass
+        "Isn't that non-sustanable":
+            pass
     main_char "A mansion? Isn’t that… the opposite of sustainability?"
     side_char "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
+    menu:
+        "Alright!":
+            pass
+        "Lets' start building!":
+            pass
     main_char "Alright then, let's bring up this building by using cement, metal, glass, and solar panels, let's get straight into it!"
 
     window hide
@@ -733,8 +767,17 @@ label level4_intro:
         linear 0.1 zoom 0.93
 
     side_char "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
+    menu:
+        "It's overwhelming":
+            pass
+        "It's too late to stop here":
+            pass
     main_char "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
     side_char "I am excited to see this sustainable live in the future. Thank you for saving us Ko Khrisna!"
+    menu:
+        "You are most welcomed":
+            pass
+        "I focus on the 11th SDG"
     main_char "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
 
     window hide

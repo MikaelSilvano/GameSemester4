@@ -239,7 +239,6 @@ style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
 
-
 ## Choice screen ###############################################################
 ##
 ## This screen is used to display the in-game choices presented by the menu
@@ -248,18 +247,45 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+default choice_btn_idle = "gui/button/Backgroundtxt_idle.png"
+default choice_btn_hover = "gui/button/Backgroundtxt_idle.png"
+
 screen choice(items):
     style_prefix "choice"
 
+    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.44 zoom 0.6
+    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.33 zoom 0.6
+    
     vbox:
-        for i in items:
-            textbutton i.caption action i.action
+        spacing 53
+        xalign 0.55
+        yalign 0.425
 
+        for i in items:
+            textbutton i.caption action i.action:
+                text_color "#ffffff"
+                text_hover_color "#33ff00"
+
+# optional tiny hover animation
+transform hover_pop:
+    on hover:
+        linear 0.1 zoom 1.04
+    on idle:
+        linear 0.1 zoom 1.0
+
+# base look (font/size/colors; tweak freely)
+style choice_button is button:
+    xminimum 760
+    xalign 0.5
+    padding (24, 16)
+
+style choice_button_text is button_text:
+    size 34
+    color "#ffffff"
+    hover_color "#4bff04"
+    outlines [(2, "#0008", 0, 0)]
 
 style choice_vbox is vbox
-style choice_button is button
-style choice_button_text is button_text
-
 style choice_vbox:
     xalign 0.5
     ypos 405

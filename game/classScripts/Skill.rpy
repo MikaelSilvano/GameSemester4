@@ -1,27 +1,40 @@
 default In_stored = 0
 
 init python:
+    from collections import Counter
+
     class Skills_list:
+        def AddToObjectives(self, Icon_types):
+            Icons = Icon_types
+            Counted = Counter(Icons)
+
+            for items, amount in Counted.items():
+                if amount >= 3:
+                    current_objectives.AimsMet(items)
+
         def forced_compression(self):
             rows = grid.grid_size // grid.icons_per_row
             center_row = rows // 2 
             start_index = center_row * grid.icons_per_row
             end_index = start_index + grid.icons_per_row
+            tiles_compressed = []
 
             for i in range(start_index, end_index):
                 tile = grid.icons[i]
                 if tile is not None:
                     if tile.sprite:
                         tile.sprite.child = crush_anim
+                    tiles_compressed.append(tile.icon_type)
                     tile.destroy()  
                     grid.icons[i] = None
-
+            
+            self.AddToObjectives(tiles_compressed)
             forced_compression_used = True
 
             grid.shift_icons(mouse_event=True)
             grid.refill_grid()
-            store.time_countdown_left = 20
-            store.non_violatable_time = 20
+            store.time_countdown_left = 30
+            store.non_violatable_time = 30
             renpy.show_screen("countdown")
 
         def blueprint_swap(self, index1, index2):
@@ -59,6 +72,7 @@ init python:
             total_rows = grid.grid_size // icons_per_row
             center_row = center_index // icons_per_row
             center_col = center_index % icons_per_row
+            masterpiece_bombed_items = []
 
             if center_row < 1 or center_col < 1 or center_row > total_rows - 2 or center_col > icons_per_row - 2:
                 renpy.notify("Cannot use Masterpiece here — not enough space around the tile.")
@@ -77,12 +91,13 @@ init python:
                                     if tile.chain_overlay:
                                         tile.chain_overlay.destroy()
                                         tile.chain_overlay = None
-
+                                
+                                masterpiece_bombed_items.append(tile.icon_type)
                                 if tile.sprite:
                                     tile.sprite.child = crush_anim
                                 tile.destroy()
                                 grid.icons[index] = None
-
+                self.AddToObjectives(masterpiece_bombed_items)
                 masterpiece_used = True
                 grid.shift_icons(mouse_event=True)
                 grid.refill_grid()

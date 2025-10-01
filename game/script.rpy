@@ -27,6 +27,30 @@ init python:
     def clear_icon_selection():
         store.icon_skill_collected.clear()
         renpy.restart_interaction()
+    
+    # class Delayer:
+    #     def __init__(self):
+    #         self.Dragged_icon = False
+    #         self.AM_icon = False
+
+    #     def reinit():
+    #         self.Dragged_icon = False
+    #         self.AM_icon = False
+            
+    #     def Set_Dragged_Icon():
+    #         self.Dragged_icon = True
+            
+    #     def Set_AM_Icon():
+    #         self.AM_icon = True
+        
+    #     def CheckBoth():
+    #         if self.Dragged_icon == True:
+    #             if self.AM_icon == True:
+    #                 return True
+    #             else: 
+    #                 return False
+    #         else:
+    #             return False
 
 transform crush_anim:
     linear 0.3 zoom 0.0 alpha 0.0
@@ -398,6 +422,7 @@ label start_game:
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
     $ idle_player = False
+    # $ Delayed = Delayer()
 
     #debugging purposes
     # $ current_objectives = Objectives({
@@ -424,7 +449,6 @@ label start_game:
     if blueprint_swap_used == True:
         show screeen countdown
 
-    
     if persistent.current_skill == 0:
         $ persistent.current_skill = game.level
 
@@ -777,7 +801,8 @@ label level4_intro:
     menu:
         "You are most welcomed":
             pass
-        "I focus on the 11th SDG"
+        "I focus on the 11th SDG":
+            pass
     main_char "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
 
     window hide

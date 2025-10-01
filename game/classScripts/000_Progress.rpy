@@ -5,7 +5,7 @@ init python:
         return repr(d).replace("{", "{{").replace("}", "}}")
 
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
-        persistent.levels_unlocked = [True, False, False, False]
+        persistent.levels_unlocked = [True, True, True, True]
 
     if not hasattr(persistent, "sound_effect_on") or persistent.sound_effect_on is None:
         persistent.sound_effect_on = True
@@ -15,10 +15,10 @@ init python:
 
     if not hasattr(persistent, "level_progress") or persistent.level_progress is None:
         persistent.level_progress = {
-            1: [True, False, False, False],
-            2: [False, False, False, False, False],
-            3: [False, False, False, False, False, False, False, False],
-            4: [False, False, False, False, False, False, False, False, False, False, False, False]
+            1: [True, True, True, True],
+            2: [True, True, True, True, True],
+            3: [True, True, True, True, True, True, True, True],
+            4: [True, True, True, True, True, True, True, True, True, True, True, True]
         }
         renpy.save_persistent()
 
@@ -30,10 +30,6 @@ init python:
             4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
     
-    if not hasattr(persistent, "current_skill") or persistent.current_skill is None:
-        persistent.current_skill = 1
-
-
     if not hasattr(persistent, "leaderboard") or persistent.leaderboard is None:
         persistent.leaderboard = []
 
@@ -47,6 +43,9 @@ init python:
     if not hasattr(persistent, "current_user") or persistent.current_user is None:
         persistent.current_user = None
         renpy.save_persistent()
+
+    if not hasattr(persistent, "current_skill") or persistent.current_skill is None:
+        persistent.current_skill = 0
 
     def update_leaderboard():
         persistent.leaderboard = [
@@ -62,12 +61,12 @@ init python:
     def new_data():
         return {
             "password": "",
-            "levels_unlocked": [True, False, False, False],
+            "levels_unlocked": [True, True, True, True],
             "level_progress" : {
-                1: [True, False, False, False],
-                2: [False, False, False, False, False],
-                3: [False, False, False, False, False, False, False, False],
-                4: [False, False, False, False, False, False, False, False, False, False, False, False]
+                1: [True, True, True, True],
+                2: [True, True, True, True, True],
+                3: [True, True, True, True, True, True, True, True],
+                4: [True, True, True, True, True, True, True, True, True, True, True, True]
             },
             "level_score" : {
                 1: [0, 0, 0, 0],
@@ -76,7 +75,8 @@ init python:
                 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             },
             "tot_score": 0,
-            "time_played": 0.0
+            "time_played": 0.0,
+            "current_skill": 0,
         }
 
 
@@ -96,12 +96,15 @@ init python:
         if sublevel >= len(curr_level):
             # If all sublevels are complete, unlock the next level
             print("Level Unlocked:", level)
-            if level < len(curr_user["levels_unlocked"]) and curr_user["levels_unlocked"][level] is False:
+            if level < len(curr_user["levels_unlocked"]) and curr_user["levels_unlocked"][level] is True:
                 curr_user["levels_unlocked"][level] = True
         else:
             print("Curent Level:", level)
             print("Sublevel Unlocked:", sublevel)
             curr_user["level_progress"][level][sublevel] = True
+        #     current_skill = level+1
+        
+        # print("After unlocking level:", persistent.current_skill)
 
         curr_user["tot_score"] = sum(sum(sublist) for sublist in curr_user["level_score"].values())
 
@@ -133,12 +136,12 @@ init python:
             if "Guest" not in persistent.saved_user:
                 persistent.saved_user["Guest"] = {
                     "password": "",
-                    "levels_unlocked": [True, False, False, False],
+                    "levels_unlocked": [True, True, True, True],
                     "level_progress": {
-                        1: [True, False, False, False],
-                        2: [False, False, False, False, False],
-                        3: [False, False, False, False, False, False, False, False],
-                        4: [False, False, False, False, False, False, False, False, False, False, False, False]
+                        1: [True, True, True, True],
+                        2: [True, True, True, True, True],
+                        3: [True, True, True, True, True, True, True, True],
+                        4: [True, True, True, True, True, True, True, True, True, True, True, True]
                     },
                     "level_score" : {
                         1: [0, 0, 0, 0],
@@ -148,6 +151,7 @@ init python:
                     },
                     "tot_score": 0,
                     "time_played": 0.0,
+                    "current_skill": 0,
                 }
 
         print(persistent.saved_user)
@@ -178,12 +182,12 @@ init python:
             # Save the updated user data
             persistent.saved_user[user] = {
                 "password": password,
-                "levels_unlocked": [True, False, False, False],
+                "levels_unlocked": [True, True, True, True],
                 "level_progress": {
-                    1: [True, False, False, False],
-                    2: [False, False, False, False, False],
-                    3: [False, False, False, False, False, False, False, False],
-                    4: [False, False, False, False, False, False, False, False, False, False, False, False]
+                    1: [True, True, True, True],
+                    2: [True, True, True, True, True],
+                    3: [True, True, True, True, True, True, True, True],
+                    4: [True, True, True, True, True, True, True, True, True, True, True, True]
                 },
                 "level_score": {
                     1: [0, 0, 0, 0],
@@ -192,8 +196,13 @@ init python:
                     4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                 },
                 "tot_score": 0,
-                "time_played": 0.0
+                "time_played": 0.0,
+                "current_skill": 0,
             }
+            
+            persistent.current_skill=persistent.saved_user[user]["current_skill"]
+            print("After reset:", persistent.saved_user[user]["current_skill"], persistent.current_skill)
+            
 
             update_leaderboard()
             renpy.save_persistent()

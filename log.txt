@@ -1,34 +1,34 @@
-2025-10-01 06:33:03 UTC
+2025-10-01 08:01:08 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.0.25071206
 
-Early init took 36 ms
-Loading error handling took 17 ms
-Loading script took 107 ms
-Loading save slot metadata took 16 ms
+Early init took 43 ms
+Loading error handling took 16 ms
+Loading script took 208 ms
+Loading save slot metadata took 20 ms
 Loading persistent took 0 ms
-Running init code took 35 ms
-Loading analysis data took 3 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 7 ms
+Running init code took 30 ms
+Loading analysis data took 10 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 10 ms
 Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 30 ms
-Cleaning cache took 0 ms
+Dump and make backups took 40 ms
+Cleaning cache took 1 ms
 Making clean stores took 0 ms
-Initial gc took 36 ms
+Initial gc took 39 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 275 ms
+Creating interface object took 297 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 9 ms
+Load screen analysis took 0 ms
+Analyze screens took 11 ms
 Save screen analysis took 12 ms
-Save pyanalysis took 0 ms
-Save bytecode took 19 ms
-Running _start took 2 ms
-Interface start took 373 ms
+Save pyanalysis took 5 ms
+Save bytecode took 15 ms
+Running _start took 0 ms
+Interface start took 383 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -40,17 +40,6 @@ Version: '4.6.0 NVIDIA 566.07'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
-Guest
-{'Guest': {'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [1373, 1606, 1788, 1995], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_s1. Guest - 6762 points
-1. Guest - 0 points
-5, 'current_skill': 0}}
-1. Guest - 6762 points
-After reset: 0 0
-1. Guest - 0 points
-Cleaning stores took 0 ms
-Load screen analysis took 23 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
 Guest
 {'Guest': {'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0, 'current_skill': 0}}
 1. Guest - 0 points
@@ -64,29 +53,611 @@ Guest
 1. Guest - 0 points
 1. Guest - 0 points
 1. Guest - 0 points
-valid grid: False
-reset grid: False
-AimsMet: Glass x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: Glass x1
-AimsMet: Brick x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Brick x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 19 ms
+Loading script took 215 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
+Running init code took 28 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 11 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 75 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 276 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 10 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 4 ms
+Save bytecode took 2 ms
+Running _start took 0 ms
+Interface start took 377 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 9 ms
+Loading script took 191 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 26 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 32 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 66 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 261 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 8 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 359 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 9 ms
+Loading script took 175 ms
+Loading save slot metadata took 10 ms
+Loading persistent took 0 ms
+Running init code took 25 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 30 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 263 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 358 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 12 ms
+Loading script took 217 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 28 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 32 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 75 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 367 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 404 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 10 ms
+Loading script took 207 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 39 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 90 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 334 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 9 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 400 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 253 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 39 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 10 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 36 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 98 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 428 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 5 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 402 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 9 ms
+Loading script took 211 ms
+Loading save slot metadata took 13 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 719: positional argument follows keyword argument
+    Character("Jordan", color="#ff8282", outlines [ (2, "#000000", 0, 0) ])
+                                                                          ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 389 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 11 ms
+Loading script took 240 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 58 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 33 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 63 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 295 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 17 ms
+Save pyanalysis took 6 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 395 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 11 ms
+Loading script took 221 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 30 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 85 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 288 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 10 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 417 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 10 ms
+Loading error handling took 11 ms
+Loading script took 243 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 33 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 11 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 86 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 286 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 9 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 4 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 387 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 227 ms
+Loading save slot metadata took 12 ms
+Loading persistent took 0 ms
+Running init code took 28 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 110 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 308 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 2 ms
+Analyze screens took 10 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 5 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 409 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 8 ms
+Loading script took 221 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 83 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 304 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 17 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 455 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+Resetting cache.
+Early init took 5 ms
+Loading error handling took 9 ms
+Loading script took 200 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 28 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 32 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 80 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 258 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 10 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 4 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 395 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points

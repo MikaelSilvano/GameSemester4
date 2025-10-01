@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/AtlChild.rpy", line 10: expected an indented block after function definition on line 10
-    def OverWriteSpeed():
-                             ^
+File "game/script.rpy", line 719: positional argument follows keyword argument
+    Character("Jordan", color="#ff8282", outlines [ (2, "#000000", 0, 0) ])
+                                                                          ^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Sun Sep 28 15:40:51 2025
+Wed Oct  1 15:45:05 2025

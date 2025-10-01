@@ -843,7 +843,6 @@ label level4_intro:
                 "There's no stopping now!":
                     main_char "There's no stopping now! The future doesn't wait for us!"
             side_char "Thank you for saving us Ko Khrisna! Keep moving forward, I'll always be here cheering you on!"
-
     menu:
         "You are most welcomed":
             main_char "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."

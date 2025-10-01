@@ -5,7 +5,7 @@ init python:
         return repr(d).replace("{", "{{").replace("}", "}}")
 
     if not hasattr(persistent, "levels_unlocked") or persistent.levels_unlocked is None:
-        persistent.levels_unlocked = [True, True, True, True]
+        persistent.levels_unlocked = [True, False, False, False]
 
     if not hasattr(persistent, "sound_effect_on") or persistent.sound_effect_on is None:
         persistent.sound_effect_on = True
@@ -15,10 +15,10 @@ init python:
 
     if not hasattr(persistent, "level_progress") or persistent.level_progress is None:
         persistent.level_progress = {
-            1: [True, True, True, True],
-            2: [True, True, True, True, True],
-            3: [True, True, True, True, True, True, True, True],
-            4: [True, True, True, True, True, True, True, True, True, True, True, True]
+            1: [True, False, False, False],
+            2: [False, False, False, False, False],
+            3: [False, False, False, False, False, False, False, False],
+            4: [False, False, False, False, False, False, False, False, False, False, False, False]
         }
         renpy.save_persistent()
 
@@ -61,12 +61,12 @@ init python:
     def new_data():
         return {
             "password": "",
-            "levels_unlocked": [True, True, True, True],
+            "levels_unlocked": [True, False, False, False],
             "level_progress" : {
-                1: [True, True, True, True],
-                2: [True, True, True, True, True],
-                3: [True, True, True, True, True, True, True, True],
-                4: [True, True, True, True, True, True, True, True, True, True, True, True]
+                1: [True, False, False, False],
+                2: [False, False, False, False, False],
+                3: [False, False, False, False, False, False, False, False],
+                4: [False, False, False, False, False, False, False, False, False, False, False, False]
             },
             "level_score" : {
                 1: [0, 0, 0, 0],
@@ -96,7 +96,7 @@ init python:
         if sublevel >= len(curr_level):
             # If all sublevels are complete, unlock the next level
             print("Level Unlocked:", level)
-            if level < len(curr_user["levels_unlocked"]) and curr_user["levels_unlocked"][level] is True:
+            if level < len(curr_user["levels_unlocked"]) and curr_user["levels_unlocked"][level] is False:
                 curr_user["levels_unlocked"][level] = True
         else:
             print("Curent Level:", level)
@@ -136,12 +136,12 @@ init python:
             if "Guest" not in persistent.saved_user:
                 persistent.saved_user["Guest"] = {
                     "password": "",
-                    "levels_unlocked": [True, True, True, True],
+                    "levels_unlocked": [True, False, False, False],
                     "level_progress": {
-                        1: [True, True, True, True],
-                        2: [True, True, True, True, True],
-                        3: [True, True, True, True, True, True, True, True],
-                        4: [True, True, True, True, True, True, True, True, True, True, True, True]
+                        1: [True, False, False, False],
+                        2: [False, False, False, False, False],
+                        3: [False, False, False, False, False, False, False, False],
+                        4: [False, False, False, False, False, False, False, False, False, False, False, False]
                     },
                     "level_score" : {
                         1: [0, 0, 0, 0],
@@ -182,12 +182,12 @@ init python:
             # Save the updated user data
             persistent.saved_user[user] = {
                 "password": password,
-                "levels_unlocked": [True, True, True, True],
+                "levels_unlocked": [True, False, False, False],
                 "level_progress": {
-                    1: [True, True, True, True],
-                    2: [True, True, True, True, True],
-                    3: [True, True, True, True, True, True, True, True],
-                    4: [True, True, True, True, True, True, True, True, True, True, True, True]
+                    1: [True, False, False, False],
+                    2: [False, False, False, False, False],
+                    3: [False, False, False, False, False, False, False, False],
+                    4: [False, False, False, False, False, False, False, False, False, False, False, False]
                 },
                 "level_score": {
                     1: [0, 0, 0, 0],

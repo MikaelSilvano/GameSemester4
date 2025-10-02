@@ -14,6 +14,7 @@ label level_selection:
     return
 
 label level_1:
+    $ CurrLevel = 1
     $ build_xpos = 0.62
     $ build_ypos = 450
     hide screen level_selection
@@ -27,6 +28,7 @@ label level_1:
     return
 
 label level_2:
+    $ CurrLevel = 2
     $ build_xpos = 0.62
     $ build_ypos = 450
     hide screen level_selection
@@ -41,6 +43,7 @@ label level_2:
     return
 
 label level_3:
+    $ CurrLevel = 3
     $ build_xpos = 0.50
     $ build_ypos = 450
     hide screen level_selection
@@ -58,6 +61,7 @@ label level_3:
     return
 
 label level_4:
+    $ CurrLevel = 4
     $ time_countdown_left = 30
     $ non_violatable_time = 30
     $ build_xpos = 0.62

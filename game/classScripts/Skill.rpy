@@ -13,6 +13,7 @@ init python:
                     current_objectives.AimsMet(items)
 
         def forced_compression(self):
+            icons_per_row = grid.icons_per_row
             rows = grid.grid_size // grid.icons_per_row
             center_row = rows // 2 
             start_index = center_row * grid.icons_per_row
@@ -21,6 +22,16 @@ init python:
 
             for i in range(start_index, end_index):
                 tile = grid.icons[i]
+
+                c = i % icons_per_row
+                r = i // icons_per_row
+
+                if grid.fixed_positions and (c, r) in grid.fixed_positions:
+                    grid.fixed_positions.remove((c, r))
+                    tile.chain_locked = False
+                    if tile.chain_overlay:
+                        tile.chain_overlay.destroy()
+                        tile.chain_overlay = None
                 if tile is not None:
                     if tile.sprite:
                         tile.sprite.child = crush_anim

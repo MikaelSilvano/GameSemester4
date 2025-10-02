@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 719: positional argument follows keyword argument
-    Character("Jordan", color="#ff8282", outlines [ (2, "#000000", 0, 0) ])
-                                                                          ^
+File "game/screens.rpy", line 324: 'zoom' is not a keyword argument or valid child of the imagebutton statement.
+    zoom 0.2
+        ^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Wed Oct  1 15:45:05 2025
+Thu Oct  2 17:49:12 2025

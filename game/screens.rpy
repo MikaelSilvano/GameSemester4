@@ -264,7 +264,7 @@ screen choice(items):
         for i in items:
             textbutton i.caption action i.action:
                 text_color "#ffffff"
-                text_hover_color "#33ff00"
+                text_hover_color "#b7e9e8"
 
 # optional tiny hover animation
 transform hover_pop:
@@ -282,7 +282,7 @@ style choice_button is button:
 style choice_button_text is button_text:
     size 34
     color "#ffffff"
-    hover_color "#4bff04"
+    hover_color "#b7e9e8"
     outlines [(2, "#0008", 0, 0)]
 
 style choice_vbox is vbox
@@ -309,11 +309,29 @@ transform skill_picked_transform:
     ypos 0.8
     zoom 0.2
 
+transform cutscene_btn:
+    ypos 0.05
+    zoom 0.5
+
+default LevelCutsceneCalled = False
+default CurrLevel = 0
+
+screen CutsceneButton():
+    imagebutton:
+        idle "gui/button/CutsceneButton_idle.png"
+        hover "gui/button/CutsceneButton_hover.png"
+        action play_and([
+            SetVariable("LevelCutsceneCalled", True),
+            Call(f"level{CurrLevel}_intro")
+        ])
+        xpos 0.85
+        at cutscene_btn
+
 screen SkillChooser():
     if SkillListed == False:
         imagebutton:
             idle "gui/button/Skill_List.png"
-            action SetVariable("SkillListed", True)
+            action play_and(SetVariable("SkillListed", True))
             xpos 0.05
             at skill_list_transform
     else:
@@ -325,13 +343,16 @@ screen SkillChooser():
         if not persistent.current_skill == 1:
             imagebutton:
                 idle "gui/button/Skill1_idle.png"
-                action SetVariable("persistent.current_skill", 1)
+                action play_and([
+                    SetVariable("persistent.current_skill", 1),
+                    SetVariable("SkillListed", False)
+                ])
                 xpos 0.2
                 at skill_picked_transform
         else:
             imagebutton:
                 idle "gui/button/Skill1HoverOnTimeFreeze.png"
-                action SetVariable("persistent.current_skill", 0)
+                action play_and(SetVariable("persistent.current_skill", 1))
                 xpos 0.2
                 at skill_picked_transform
         
@@ -339,13 +360,16 @@ screen SkillChooser():
             if not persistent.current_skill == 2:
                 imagebutton:
                     idle "gui/button/Skill2_idle.png"
-                    action SetVariable("persistent.current_skill", 2)
+                    action play_and([
+                        SetVariable("persistent.current_skill", 2),
+                        SetVariable("SkillListed", False)
+                    ])
                     xpos 0.35
                     at skill_picked_transform
             else:
                 imagebutton:
                     idle "gui/button/Skill2SkillActive.png"
-                    action SetVariable("persistent.current_skill", 0)
+                    action play_and(SetVariable("persistent.current_skill", 2))
                     xpos 0.35
                     at skill_picked_transform
         # else:
@@ -359,13 +383,16 @@ screen SkillChooser():
             if not persistent.current_skill == 3:
                 imagebutton:
                     idle "gui/button/Skill3_idle.png"
-                    action SetVariable("persistent.current_skill", 3)
+                    action play_and([
+                        SetVariable("persistent.current_skill", 3),
+                        SetVariable("SkillListed", False)
+                    ])
                     xpos 0.5
                     at skill_picked_transform
             else:
                 imagebutton:
                     idle "gui/button/Skill3SkillActive.png"
-                    action SetVariable("persistent.current_skill", 0)
+                    action play_and(SetVariable("persistent.current_skill", 3))
                     xpos 0.5
                     at skill_picked_transform
         # else:
@@ -379,13 +406,16 @@ screen SkillChooser():
             if not persistent.current_skill == 4:
                 imagebutton:
                     idle "gui/button/Skill4_idle.png"
-                    action SetVariable("persistent.current_skill", 4)
+                    action play_and([
+                        SetVariable("persistent.current_skill", 4),
+                        SetVariable("SkillListed", False)
+                    ])
                     xpos 0.65
                     at skill_picked_transform
             else:
                 imagebutton:
                     idle "gui/button/Skill4SkillActive.png"
-                    action SetVariable("persistent.current_skill", 0)
+                    action play_and(SetVariable("persistent.current_skill", 4))
                     xpos 0.65
                     at skill_picked_transform
         # else:
@@ -975,6 +1005,7 @@ screen sublevel_hut_screen():
     key "K_ESCAPE" action NullAction()
 
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         # Sublevel 1 button
@@ -1079,6 +1110,7 @@ screen sublevel_house_screen():
     key "K_ESCAPE" action NullAction()
 
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         imagebutton:
@@ -1186,6 +1218,7 @@ screen mansion_sublevel1_screen():
     key "K_ESCAPE" action NullAction()
 
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         imagebutton:
@@ -1294,6 +1327,7 @@ screen mansion_sublevel2_screen():
     key "K_ESCAPE" action NullAction()
 
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         if persistent.level_progress[3][5]:
@@ -1387,6 +1421,7 @@ screen apartment_sublevel1_screen():
     key "K_ESCAPE" action NullAction()
     
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         imagebutton:
@@ -1479,6 +1514,7 @@ screen apartment_sublevel2_screen():
     key "K_ESCAPE" action NullAction()
     
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         if persistent.level_progress[4][4]:
@@ -1587,6 +1623,7 @@ screen apartment_sublevel3_screen():
     key "K_ESCAPE" action NullAction()
     
     use SkillChooser
+    use CutsceneButton
 
     fixed:
         if persistent.level_progress[4][8]:

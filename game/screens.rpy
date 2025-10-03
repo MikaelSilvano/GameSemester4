@@ -1845,11 +1845,18 @@ screen level_complete_screen():
 
         add "gui/levelComplete/LevelCompleteNoButtons.png" xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
 
-        imagebutton:
-            auto "gui/button/NextLevelButton_%s.png"
-            action play_and(Jump("level_selection")) 
-            ypos 10
-            focus_mask True
+        if SubLevel412 == False:
+            imagebutton:
+                auto "gui/button/NextLevelButton_%s.png"
+                action play_and(Jump("level_selection")) 
+                ypos 10
+                focus_mask True
+        else:
+            imagebutton:
+                auto "gui/button/NextLevelButton_%s.png"
+                action play_and(Jump("level4_end")) 
+                ypos 10
+                focus_mask True
 
         imagebutton:
             auto "gui/button/HomeButton_%s.png"

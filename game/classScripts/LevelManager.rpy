@@ -568,6 +568,7 @@ label apartment_sublevel_11:
     return
 
 label apartment_sublevel_12:
+    $ SubLevel412 = True
     $ build_xpos_FT = 0.645
     $ build_ypos_FT = 384
     $ lv_FT = True

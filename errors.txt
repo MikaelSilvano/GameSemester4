@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 324: 'zoom' is not a keyword argument or valid child of the imagebutton statement.
-    zoom 0.2
-        ^
+File "game/screens.rpy", line 1857: expected ':' not found.
+    else if Sublevel412 == True:
+         ^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Thu Oct  2 17:49:12 2025
+Fri Oct  3 20:19:17 2025

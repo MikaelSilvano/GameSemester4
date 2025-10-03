@@ -867,44 +867,89 @@ label level4_intro:
         $ LevelCutsceneCalled = False
     jump sublevel_level4
 
-    default levels_completed = 0
+default SubLevel412 = False
 
-    init python:
-        def get_profile_frame():
-            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
-            return f"gui/profilePage/profileFrame{highest_level}.png"
+label level4_end:
+    scene apartmentbg with fade
 
-    init python:
-        def get_score():
-            high_score = persistent.saved_user[persistent.current_user]["tot_score"]
-            return f"Current Score: {high_score}"
+    show side_characterLevel4 at right_side:
+        zoom 0.5
+        linear 0.2 zoom 0.7
+    pause 0.3
 
-    init python:
-        def get_time_played():
-            seconds = int(persistent.saved_user[persistent.current_user]["time_played"])
-            hours   = seconds // 3600
-            minutes = (seconds % 3600) // 60
-            return f"Time Played: {hours} hours, {minutes} minutes"
+    show CharacterLevel4 at left_side:
+        zoom 0.9
+        linear 0.1 zoom 0.93
 
-    init python:
-        def get_current_level_text():
-            highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
-            update_leaderboard()
-            return f"Current Level: {highest_level}"
+    side_char "Congratulations Ko Khrisna, you have finally reached the end of our plan for building sustainable buildings."
+    side_char "Even words itself can't express my appreciation for your hardwork, if it wasn't for you who was willing to build these buildings nothing would have been a reality"
+    menu:
+        "It was also thanks to your help":
+            main_char "It was also thanks to your help that I was able to make it this far."
+        "Thanks to you too":
+            main_char "It was also thanks to you too that I was able to make it this far"
+    side_char "Well you might be correct but your role is indispensible in building these sustainable buildings"
+    side_char "So don't put yourself down too much after all there is still a long way to go!"
+    menu:
+        "Right! This is just the beginning!":
+            main_char "You are right Miss Jordan! This ain't the end its the beginning of a future with tall and majestic buildings!"
+        "An ending, yet another beginning":
+            main_char "There was never only an ending. An ending marks a new beginning, the beginning of a future with tall and majestic buildings!"
+    side_char "Now that's the spirit Ko Khrisna! But remember, buildings maybe tall and majestic, but you must never forget that it must always be sustainable and eco-friendly"
+    main_char "You got it Miss Jordan, I will make sure to never forget about sustainability and ecofriendly factors in my buildings! Thanks for everything Miss Jordan!"
 
-    init python:
-        def get_current_position_text():
-            titles = [
-                "Construction Worker",
-                "Architect",
-                "Architectural Firm Owner",
-                "World-Renowned \nArchitectural Icon"
-            ]
+    window hide
 
-            levels_completed = 0
-            for level, sublevels in persistent.level_progress.items():
-                if all(sublevels):
-                    levels_completed += 1
+    show CharacterLevel4 at left_side:
+        linear 0.2 zoom 0.5 alpha 0.0
+    show side_characterLevel4 at right_side:
+        linear 0.2 zoom 0.5 alpha 0.0
 
-            index = min(levels_completed, len(titles) - 1)
-            return f"{titles[index]}"
+    $ renpy.pause(0.2, hard=True)
+    scene black with None
+    $ Sublevel412 = False
+    jump level_selection
+
+
+
+default levels_completed = 0
+
+init python:
+    def get_profile_frame():
+        highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+        return f"gui/profilePage/profileFrame{highest_level}.png"
+
+init python:
+    def get_score():
+        high_score = persistent.saved_user[persistent.current_user]["tot_score"]
+        return f"Current Score: {high_score}"
+
+init python:
+    def get_time_played():
+        seconds = int(persistent.saved_user[persistent.current_user]["time_played"])
+        hours   = seconds // 3600
+        minutes = (seconds % 3600) // 60
+        return f"Time Played: {hours} hours, {minutes} minutes"
+
+init python:
+    def get_current_level_text():
+        highest_level = max([lvl for lvl, unlocked in enumerate(persistent.levels_unlocked, start=1) if unlocked])
+        update_leaderboard()
+        return f"Current Level: {highest_level}"
+
+init python:
+    def get_current_position_text():
+        titles = [
+            "Construction Worker",
+            "Architect",
+            "Architectural Firm Owner",
+            "World-Renowned \nArchitectural Icon"
+        ]
+
+        levels_completed = 0
+        for level, sublevels in persistent.level_progress.items():
+            if all(sublevels):
+                levels_completed += 1
+
+        index = min(levels_completed, len(titles) - 1)
+        return f"{titles[index]}"

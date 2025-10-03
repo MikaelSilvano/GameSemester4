@@ -1,137 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/style.pyx", line 808, in renpy.style.rebuild
-  File "game/screens.rpy", line 319, in prepare_screen
-    screen CutsceneButton():
-  File "game/screens.rpy", line 319, in prepare
-    screen CutsceneButton():
-  File "game/screens.rpy", line 320, in prepare
+  File "game/script.rpy", line 529, in script
+    call screen level_complete_screen
+  File "game/screens.rpy", line 1839, in execute
+    screen level_complete_screen():
+  File "game/screens.rpy", line 1839, in execute
+    screen level_complete_screen():
+  File "game/screens.rpy", line 1844, in execute
     frame:
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 326
-    SetVariable("LevelCutsceneCalled", True)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/screens.rpy", line 319, in prepare_screen
-    screen CutsceneButton():
-  File "game/screens.rpy", line 319, in prepare
-    screen CutsceneButton():
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 326
-    SetVariable("LevelCutsceneCalled", True)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "game/screens.rpy", line 1851, in execute
+    if Sublevel412 == False:
+  File "game/screens.rpy", line 1851, in <module>
+    if Sublevel412 == False:
+       ^^^^^^^^^^^          
+NameError: name 'Sublevel412' is not defined. Did you mean: 'SubLevel412'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00start.rpy", line 202, in <module>
-    _init_language()
-    ~~~~~~~~~~~~~~^^
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language, force=True)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 805, in change_language
-    i()
-    ~^^
-  File "renpy/common/00stylepreferences.rpy", line 127, in _m1_00stylepreferences__change_language
-    __update()
-    ~~~~~~~~^^
-  File "renpy/common/00stylepreferences.rpy", line 99, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/style.pyx", line 808, in renpy.style.rebuild
-  File "renpy/display/screen.py", line 1035, in prepare_screens
-    s.ast.prepare_screen()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/screens.rpy", line 319, in prepare_screen
-    screen CutsceneButton():
-  File "game/screens.rpy", line 319, in prepare
-    screen CutsceneButton():
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "renpy/pyanalysis.py", line 913, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^   
-  File "renpy/pyanalysis.py", line 895, in ast_eval_literal
-    expr = py_compile(expr, "eval", ast_node=True)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 326
-    SetVariable("LevelCutsceneCalled", True)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/bootstrap.py", line 376, in bootstrap
-    renpy.main.main()
-    ~~~~~~~~~~~~~~~^^
-  File "renpy/main.py", line 614, in main
-    run(restart)
-    ~~~^^^^^^^^^
-  File "renpy/main.py", line 137, in run
-    renpy.execution.run_context(True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "renpy/execution.py", line 1022, in run_context
-    context.run()
-    ~~~~~~~~~~~^^
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/display/error.py", line 135, in report_exception
-    renpy.game.invoke_in_new_context(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        call_exception_screen,
-        ^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        ignore_action=ignore_action,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/game.py", line 301, in invoke_in_new_context
-    return callable(*args, **kwargs)
-           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/display/error.py", line 44, in call_exception_screen
-    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 529, in script
+    call screen level_complete_screen
+  File "renpy/ast.py", line 2231, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 379, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 689, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/ui.py", line 304, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,41 +49,50 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )  # type: ignore
     ^                
-  File "renpy/display/core.py", line 2447, in interact_core
-    renpy.display.screen.prepare_screens()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 1035, in prepare_screens
-    s.ast.prepare_screen()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/screens.rpy", line 319, in prepare_screen
-    screen CutsceneButton():
-  File "game/screens.rpy", line 319, in prepare
-    screen CutsceneButton():
-  File "game/screens.rpy", line 320, in prepare
+  File "renpy/display/core.py", line 2754, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2754, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 1839, in execute
+    screen level_complete_screen():
+  File "game/screens.rpy", line 1839, in execute
+    screen level_complete_screen():
+  File "game/screens.rpy", line 1844, in execute
     frame:
-  File "game/screens.rpy", line 320, in prepare
-    frame:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "game/screens.rpy", line 322, in prepare
-    imagebutton:
-  File "renpy/pyanalysis.py", line 913, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^   
-  File "renpy/pyanalysis.py", line 895, in ast_eval_literal
-    expr = py_compile(expr, "eval", ast_node=True)
-           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 326
-    SetVariable("LevelCutsceneCalled", True)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "game/screens.rpy", line 1851, in execute
+    if Sublevel412 == False:
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 1851, in <module>
+    if Sublevel412 == False:
+       ^^^^^^^^^^^          
+NameError: name 'Sublevel412' is not defined. Did you mean: 'SubLevel412'?
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Thu Oct  2 19:05:37 2025
+Fri Oct  3 20:25:12 2025

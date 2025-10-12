@@ -1,38 +1,202 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 691, in script
-    hide screen Match_Three onlayer screen
-Exception: Unknown layer 'screen'.
+  File "game/script.rpy", line 560, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 191, in script
+    python:
+  File "game/script.rpy", line 193, in <module>
+    result = renpy.ui.interact()
+             ~~~~~~~~~~~~~~~~~^^
+  File "game/classScripts/GridManager.rpy", line 186, in handle_event
+    if (skill.masterpiece_build(store.icon_skill_collected[0])):
+        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
+  File "game/classScripts/Skill.rpy", line 115, in masterpiece_build
+    masterpiece_build_skill_used = True
+AttributeError: 'NoneType' object has no attribute 'grid_size'
+
+During handling of the above exception, another exception occurred:
+
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 691, in script
-    hide screen Match_Three onlayer screen
-  File "renpy/ast.py", line 2231, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 379, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 700, in execute_hide_screen
-    renpy.hide_screen(name, layer=layer)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 1478, in hide_screen
-    screen = get_screen(tag, layer)
-             ~~~~~~~~~~^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 1180, in get_screen
-    sd = sl.get_displayable_by_tag(layer, tag)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
-  File "renpy/display/scenelists.py", line 871, in get_displayable_by_tag
-    raise Exception("Unknown layer %r." % layer)
-Exception: Unknown layer 'screen'.
+  File "game/script.rpy", line 560, in script call
+    call setup_icons() from _call_setup_icons
+  File "game/script.rpy", line 191, in script
+    python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 193, in <module>
+    result = renpy.ui.interact()
+             ~~~~~~~~~~~~~~~~~^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2216, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )  # type: ignore
+    ^                
+  File "renpy/display/core.py", line 3299, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 805, in event
+    rv = self.child.event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1508, in event
+    rv = super(Window, self).event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 273, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1284, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/transform.py", line 1115, in event
+    rv = d.event(ev, cx, cy, st)
+         ~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/particle.py", line 375, in event
+    return self.event_function(ev, x, y, st)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/classScripts/GridManager.rpy", line 186, in handle_event
+    if (skill.masterpiece_build(store.icon_skill_collected[0])):
+        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
+  File "game/classScripts/Skill.rpy", line 115, in masterpiece_build
+    masterpiece_build_skill_used = True
+AttributeError: 'NoneType' object has no attribute 'grid_size'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/loadsave.py", line 184, in save
+    dump((roots, renpy.game.log), logf)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/compat/pickle.py", line 308, in dump
+    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/loadsave.py", line 184, in save
+    dump((roots, renpy.game.log), logf)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/compat/pickle.py", line 308, in dump
+    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/loadsave.py", line 184, in save
+    dump((roots, renpy.game.log), logf)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/compat/pickle.py", line 308, in dump
+    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/loadsave.py", line 184, in save
+    dump((roots, renpy.game.log), logf)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/compat/pickle.py", line 308, in dump
+    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: Can't get local object 'move_sprite.<locals>.update'
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Sun Oct 12 14:53:49 2025
+Sun Oct 12 19:14:14 2025

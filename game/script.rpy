@@ -7,6 +7,7 @@ default Reset_Grid = False
 default Reset_Usage = 0
 default lv_FT = False
 default idle_player = False
+default mouse_inputted = False
 
 label before_main_menu:
     $ renpy.music.play("audio/menu.ogg", loop=True, if_changed=True, fadein=2.0)
@@ -187,6 +188,9 @@ label setup_icons:
         $ idle_player = False
         $ Reset_Usage += 1
         $ Reset_Grid = False
+    python:
+        renpy.show_screen("Match_Three", _layer="match3")
+        result = renpy.ui.interact()
     call screen Match_Three 
 
 transform rotation(angle):
@@ -649,7 +653,7 @@ label lose_screen:
     hide screen timer_screen
     hide screen countdown
     hide layer match3
-    $ renpy.hide_layer("match3")
+    hide layers
     with Dissolve(0.3) 
     call screen level_lose_screen
     return

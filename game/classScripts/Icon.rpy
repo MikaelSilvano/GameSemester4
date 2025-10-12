@@ -219,5 +219,4 @@ init python:
             if self.chain_overlay:
                 self.chain_overlay.destroy()
                 self.chain_overlay = None
-            renpy.transition(vpunch, layer="match3")
-            time.sleep(0.02)
+            time.sleep(0.01)

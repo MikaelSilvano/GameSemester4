@@ -1,11 +1,13 @@
 init python:
     import random
     from typing import List
+    import pygame
+    import math
 
     class GridManager:
         def __init__(self, icons_per_row, grid_size):
             self.icons = []
-            self.sprite_manager = None
+            self.sprite_manager = SpriteManager(layer = "match3")
             self.icon_size = 100
             self.icon_padding = 10
             self.icons_per_row = icons_per_row
@@ -200,66 +202,55 @@ init python:
                         break
 
         def shift_icons(self, mouse_event):
-            for i in range(self.grid_size - self.icons_per_row):
-                if self.icons[i] and self.icons[i].chain_locked:
-                    continue
+            moved = False
+            icons_per_col = self.grid_size // self.icons_per_row
 
-                if self.icons[i]:
-                    col = i % self.icons_per_row
-                    row = i // self.icons_per_row
-                    bottom_left = i + self.icons_per_row - 1 if col > 0 else None
-                    bottom_right = i + self.icons_per_row + 1 if col < self.icons_per_row - 1 else None
+            # Go column by column, bottom to top
+            for col in range(self.icons_per_row):
+                for row in reversed(range(icons_per_col)):
+                    index = row * self.icons_per_row + col
+                    icon = self.icons[index]
 
-                    def can_shift(target_index):
-                        if target_index is None or target_index < 0 or target_index >= self.grid_size:
-                            return False
-                        if self.icons[target_index] is not None:
-                            return False
-                        if self.fixed_positions and ((target_index % self.icons_per_row),
-                                                    (target_index // self.icons_per_row)) in self.fixed_positions:
-                            return False
-                        return True
-
-                    shift_left = can_shift(bottom_left)
-                    shift_right = can_shift(bottom_right)
-
-                    if shift_left or shift_right:
-                        direction = renpy.random.randint(0, 1) if (shift_left and shift_right) else (0 if shift_left else 1)
-                        if direction == 0 and bottom_left is not None:
-                            self.icons[bottom_left] = self.icons[i]
-                            self.icons[i] = None
-                            self.icons[bottom_left].x -= (self.icon_size + self.icon_padding)
-                            self.icons[bottom_left].y += (self.icon_size + self.icon_padding)
-                            self.icons[bottom_left].index = bottom_left
-                        elif direction == 1 and bottom_right is not None:
-                            self.icons[bottom_right] = self.icons[i]
-                            self.icons[i] = None
-                            self.icons[bottom_right].x += (self.icon_size + self.icon_padding)
-                            self.icons[bottom_right].y += (self.icon_size + self.icon_padding)
-                            self.icons[bottom_right].index = bottom_right
-
-            for i in range(self.grid_size - 1, self.icons_per_row - 1, -1):
-                if not self.icons[i]:
-                    col = i % self.icons_per_row
-                    row = i // self.icons_per_row
-                    if self.fixed_positions and (col, row) in self.fixed_positions:
+                    # skip empty or locked icons
+                    if icon is None or icon.chain_locked:
                         continue
 
-                    row_mult = 1
-                    source_index = i - (self.icons_per_row * row_mult)
-                    while source_index >= 0 and not self.icons[source_index]:
-                        row_mult += 1
-                        source_index = i - (self.icons_per_row * row_mult)
-                    if source_index >= 0 and self.icons[source_index]:
-                        if self.icons[source_index].chain_locked:
-                            continue
-                        self.icons[i] = self.icons[source_index]
-                        self.icons[source_index] = None
-                        self.icons[i].y += (self.icon_size + self.icon_padding) * row_mult
-                        self.icons[i].index = i
+                    # find the lowest available empty cell below this icon
+                    target_row = row
+                    while (
+                        target_row + 1 < icons_per_col and
+                        self.icons[(target_row + 1) * self.icons_per_row + col] is None
+                    ):
+                        target_row += 1
 
-            if mouse_event:
-                pass
+                    # only move if there's an empty space below
+                    if target_row != row:
+                        new_index = target_row * self.icons_per_row + col
+                        self.icons[new_index] = icon
+                        self.icons[index] = None
+
+                        new_y = target_row * (self.icon_size + self.icon_padding)
+                        move_sprite(icon.sprite, icon.x, new_y, duration=0.4)
+                        icon.y = new_y
+                        icon.index = new_index
+                        moved = True
+
+            # after all icons fall, check for new matches
+            matches = []
+            for i, icon in enumerate(self.icons):
+                if icon is not None:
+                    cluster = self.get_cluster(i)
+                    if len(cluster) >= 3:
+                        for idx in cluster:
+                            if self.icons[idx] not in matches:
+                                matches.append(self.icons[idx])
+
+            # if matches are found, delete them and update objectives
+            if matches:
+                game.delete_matches(matches, True)
+
+            # return whether any movement occurred
+            return moved
 
         def refill_grid(self):
         

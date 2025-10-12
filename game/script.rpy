@@ -17,6 +17,9 @@ label before_main_menu:
     return
 
 init python:
+    import time
+    import random
+
     current_objectives = None
     temp_objectives = None
     skill_active = False
@@ -24,39 +27,123 @@ init python:
     required_targets = None
     config.rollback_enabled = False
 
+    config.layers.insert(1, "match3")
+
     def clear_icon_selection():
         store.icon_skill_collected.clear()
         renpy.restart_interaction()
     
-    # class Delayer:
-    #     def __init__(self):
-    #         self.Dragged_icon = False
-    #         self.AM_icon = False
+    def move_sprite(sprite, target_x, target_y, duration=1.2, fps=30):
+        """
+        Moves a sprite to (target_x, target_y) gradually, visible to the human eye.
+        Works like a Pygame loop — frame-based animation using renpy.redraw().
+        """
 
-    #     def reinit():
-    #         self.Dragged_icon = False
-    #         self.AM_icon = False
-            
-    #     def Set_Dragged_Icon():
-    #         self.Dragged_icon = True
-            
-    #     def Set_AM_Icon():
-    #         self.AM_icon = True
+        start_x, start_y = sprite.x, sprite.y
+        total_frames = int(duration * fps)
+        frame = 0
+        delay = 1.0 / fps  # frame delay in seconds
+
+        def update(st, at):
+            nonlocal frame
+
+            # Calculate progress based on frame count (like in pygame loop)
+            progress = frame / total_frames
+            if progress >= 1.0:
+                sprite.x = target_x
+                sprite.y = target_y
+                return None  # stop when done
+
+            # Lerp (linear interpolate) between start and target
+            sprite.x = start_x + (target_x - start_x) * progress
+            sprite.y = start_y + (target_y - start_y) * progress
+
+            # Increment frame counter
+            frame += 1
+
+            # Request another redraw at fixed FPS (like clock.tick(FPS))
+            renpy.redraw(sprite, delay)
+            return 0  # continue updating next frame
+
+        sprite.update = update
+        # Start the animation loop right away
+        renpy.redraw(sprite, 0)
         
-    #     def CheckBoth():
-    #         if self.Dragged_icon == True:
-    #             if self.AM_icon == True:
-    #                 return True
-    #             else: 
-    #                 return False
-    #         else:
-    #             return False
+    def update_two_sprites(sprite_a, sprite_b, duration=0.3):
+        """
+        Smoothly updates two sprites by swapping their positions over time.
+        Works exactly like move_sprite(), but for both simultaneously.
+        """
+
+        # Record start and target positions
+        start_ax, start_ay = sprite_a.x, sprite_a.y
+        start_bx, start_by = sprite_b.x, sprite_b.y
+
+        target_ax, target_ay = start_bx, start_by
+        target_bx, target_by = start_ax, start_ay
+
+        start_time = time.perf_counter()
+
+        def update(st, at):
+            elapsed = time.perf_counter() - start_time
+            t = min(elapsed / duration, 1.0)
+
+            # Linear interpolation for both sprites
+            sprite_a.x = start_ax + (target_ax - start_ax) * t
+            sprite_a.y = start_ay + (target_ay - start_ay) * t
+
+            sprite_b.x = start_bx + (target_bx - start_bx) * t
+            sprite_b.y = start_by + (target_by - start_by) * t
+
+            # Continue until done
+            if t >= 1.0:
+                return None
+
+            # Schedule next frame
+            renpy.redraw(sprite_a, 0)
+            renpy.redraw(sprite_b, 0)
+            return 0
+
+        # Assign the update callback to both sprites
+        sprite_a.update = update
+        sprite_b.update = update
+
+        # Trigger the redraw loop
+        renpy.redraw(sprite_a, 0)
+        renpy.redraw(sprite_b, 0)
+
+    class Delayer:
+        def __init__(self):
+            self.Dragged_icon = False
+            self.AM_icon = False
+
+        def reinit():
+            self.Dragged_icon = False
+            self.AM_icon = False
+            
+        def Set_Dragged_Icon(Input):
+            self.Dragged_icon = Input
+            
+        def Set_AM_Icon(Input):
+            self.AM_icon = Input
+        
+        def CheckBoth():
+            if self.Dragged_icon == True:
+                if self.AM_icon == True:
+                    return True
+                else: 
+                    return False
+            
+            return False
 
 transform crush_anim:
-    linear 0.3 zoom 0.0 alpha 0.0
+    linear 10 zoom 0.0 alpha 0.0
+
+transform slow_fall:
+    linear 0.6 yoffset 0  # 0.6 seconds fall duration
 
 transform move_anim(new_x, new_y):
-    linear 0.3 xpos new_x ypos new_y
+    linear 10 xpos new_x ypos new_y
 
 transform skill_button_transform:
     zoom 0.2
@@ -100,7 +187,7 @@ label setup_icons:
         $ idle_player = False
         $ Reset_Usage += 1
         $ Reset_Grid = False
-    call screen Match_Three
+    call screen Match_Three 
 
 transform rotation(angle):
     rotate angle
@@ -422,7 +509,7 @@ label start_game:
     $ grid = GridManager(icpr, grid_size)
     $ skill = Skills_list()
     $ idle_player = False
-    # $ Delayed = Delayer()
+    $ Delayed = Delayer()
 
     #debugging purposes
     # $ current_objectives = Objectives({
@@ -459,7 +546,7 @@ label start_game:
     hide screen menu_screen
     scene backgroundpuzzle
     
-    show screen Match_Three
+    show screen Match_Three onlayer match3
     show screen timer_screen
     show screen Building
     show screen SkillOverlay
@@ -512,7 +599,6 @@ label delete_matches_callback(game_manager, matches, check):
 
 label win_level_screen:
     show screen timer_screen
-    show screen Match_Three
     show screen Building
     show screen smokes
     play sound "audio/building_start.ogg"
@@ -520,18 +606,20 @@ label win_level_screen:
     hide screen smokes
     play sound "audio/building_finish.ogg"  
     $ renpy.pause(1.5, hard=True)
+    hide layer match3
     hide screen Building
     hide screen Score_UI
     hide screen SkillOverlay
     hide screen time_freeze
-    hide screen Match_Three
+    hide layers
+    hide screen Match_Three onlayer match3
     hide screen timer_screen
+    $ persistent.StoryAuto = True
     call screen level_complete_screen
     return
 
 label win_sublevel_screen:
     show screen timer_screen
-    show screen Match_Three
     show screen Building
     show screen smokes
     play sound "audio/building_start.ogg"
@@ -539,11 +627,13 @@ label win_sublevel_screen:
     hide screen smokes
     play sound "audio/building_finish.ogg"  
     $ renpy.pause(1.5, hard=True)
+    hide layer match3
     hide screen Building
     hide screen Score_UI
     hide screen SkillOverlay
     hide screen time_freeze
-    hide screen Match_Three
+    hide layers
+    hide screen Match_Three onlayer match3
     hide screen timer_screen
     hide screen countdown
     call screen sublevel_complete_screen
@@ -554,9 +644,12 @@ label lose_screen:
     hide screen Score_UI
     hide screen SkillOverlay
     hide screen time_freeze
-    hide screen Match_Three
+    hide layers
+    hide screen Match_Three onlayer match3
     hide screen timer_screen
     hide screen countdown
+    hide layer match3
+    $ renpy.hide_layer("match3")
     with Dissolve(0.3) 
     call screen level_lose_screen
     return
@@ -595,6 +688,9 @@ define side_char = Character("Jordan", color="#ffc8c8")
 define background_chat = Image("gui/button/Backgroundtxt_idle.png")
 
 label level1_intro:
+    hide layer match3
+    hide layers
+    hide screen Match_Three onlayer match3
     if persistent.level_progress[1][1] == False or LevelCutsceneCalled == True:
         scene hutbg with fade
 
@@ -660,7 +756,10 @@ define main_char = Character("Ko Khrisna",color="#c8f2ff")
 define side_char = Character("Jordan", color="#ffc8c8")
 
 label level2_intro:
-    if persistent.level_progress[2][2] == False or LevelCutsceneCalled == True:
+    hide layer match3
+    hide layers
+    hide screen Match_Three onlayer match3
+    if persistent.StoryAuto == True or LevelCutsceneCalled == True:
         scene housebg with fade
 
         show side_characterLevel2 at right_side:
@@ -726,6 +825,7 @@ label level2_intro:
 
         $ renpy.pause(0.2, hard=True)
         scene black with None
+        $ persistent.StoryAuto = False
         $ LevelCutsceneCalled = False
     jump sublevel_level2
 
@@ -755,7 +855,10 @@ style side_char_text is default:
     outlines [ (10, "#000000", 0, 0) ]  # thickness, color, xoffset, yoffset
 
 label level3_intro:
-    if persistent.level_progress[3][2] == False or LevelCutsceneCalled == True:
+    hide layer match3
+    hide layers
+    hide screen Match_Three onlayer match3
+    if persistent.StoryAuto == True or LevelCutsceneCalled == True:
         scene mansionbg with fade
 
         show side_characterLevel3 at right_side:
@@ -798,6 +901,7 @@ label level3_intro:
 
         $ renpy.pause(0.2, hard=True)
         scene black with None
+        $ persistent.StoryAuto = False
         $ LevelCutsceneCalled = False
     jump sublevel_level3
 
@@ -823,7 +927,10 @@ define main_char = Character("Ko Khrisna",color="#c8f2ff")
 define side_char = Character("Jordan", color="#ffc8c8")
 
 label level4_intro:
-    if persistent.level_progress[4][2] == False or LevelCutsceneCalled == True:
+    hide layer match3
+    hide layers
+    hide screen Match_Three
+    if persistent.StoryAuto == True or LevelCutsceneCalled == True:
         scene apartmentbg with fade
 
         show side_characterLevel4 at right_side:
@@ -864,12 +971,15 @@ label level4_intro:
 
         $ renpy.pause(0.2, hard=True)
         scene black with None
+        $ persistent.StoryAuto = False
         $ LevelCutsceneCalled = False
     jump sublevel_level4
 
 default SubLevel412 = False
 
 label level4_end:
+    hide layer match3
+    hide screen Match_Three
     scene apartmentbg with fade
 
     show side_characterLevel4 at right_side:

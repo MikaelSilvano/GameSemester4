@@ -1,26 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 529, in script
-    call screen level_complete_screen
-  File "game/screens.rpy", line 1839, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1839, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1844, in execute
-    frame:
-  File "game/screens.rpy", line 1851, in execute
-    if Sublevel412 == False:
-  File "game/screens.rpy", line 1851, in <module>
-    if Sublevel412 == False:
-       ^^^^^^^^^^^          
-NameError: name 'Sublevel412' is not defined. Did you mean: 'SubLevel412'?
+  File "game/script.rpy", line 691, in script
+    hide screen Match_Three onlayer screen
+Exception: Unknown layer 'screen'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 529, in script
-    call screen level_complete_screen
+  File "game/script.rpy", line 691, in script
+    hide screen Match_Three onlayer screen
   File "renpy/ast.py", line 2231, in execute
     self.call("execute")
     ~~~~~~~~~^^^^^^^^^^^
@@ -30,69 +19,20 @@ Traceback (most recent call last):
   File "renpy/statements.py", line 379, in call
     return method(parsed, *args, **kwargs)
            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 689, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2216, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2754, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2754, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 1839, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1839, in execute
-    screen level_complete_screen():
-  File "game/screens.rpy", line 1844, in execute
-    frame:
-  File "game/screens.rpy", line 1851, in execute
-    if Sublevel412 == False:
-  File "renpy/python.py", line 1292, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 1851, in <module>
-    if Sublevel412 == False:
-       ^^^^^^^^^^^          
-NameError: name 'Sublevel412' is not defined. Did you mean: 'SubLevel412'?
+  File "renpy/common/000statements.rpy", line 700, in execute_hide_screen
+    renpy.hide_screen(name, layer=layer)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1478, in hide_screen
+    screen = get_screen(tag, layer)
+             ~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1180, in get_screen
+    sd = sl.get_displayable_by_tag(layer, tag)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/display/scenelists.py", line 871, in get_displayable_by_tag
+    raise Exception("Unknown layer %r." % layer)
+Exception: Unknown layer 'screen'.
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Fri Oct  3 20:25:12 2025
+Sun Oct 12 14:53:49 2025

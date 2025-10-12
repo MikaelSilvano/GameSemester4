@@ -190,22 +190,34 @@ init python:
                     self.y <= center_y <= self.y + grid.icon_size)
 
         def swap_with_neighbor(self, neighbor_index, animate=False):
+            """
+            Swaps this icon with the icon at neighbor_index.
+            If animate=True, uses move_sprite() for visible movement.
+            """
             neighbor = grid.icons[neighbor_index]
+
+            # Swap icon references in the grid
             grid.icons[self.index], grid.icons[neighbor_index] = neighbor, self
+
+            # Swap their stored coordinates and indices
             self.x, neighbor.x = neighbor.x, self.x
             self.y, neighbor.y = neighbor.y, self.y
             self.index, neighbor.index = neighbor.index, self.index
+
+            # Animate movement visually
             if animate:
-                if self.sprite:
-                    self.sprite.child = move_anim(self.x, self.y)
-                if neighbor.sprite:
-                    neighbor.sprite.child = move_anim(neighbor.x, neighbor.y)
+                # swapped1 = move_sprite_check(self.sprite, self.x, self.y, duration=0.3)
+                # swapped2 = move_sprite_check(neighbor.sprite, neighbor.x, neighbor.y, duration=0.3)
+                update_two_sprites(self.sprite, neighbor.sprite)
+                
 
         def destroy(self):
             if self.chain_locked:
-                return 
+                return
             if self.sprite:
                 self.sprite.destroy()
             if self.chain_overlay:
                 self.chain_overlay.destroy()
                 self.chain_overlay = None
+            renpy.transition(vpunch, layer="match3")
+            time.sleep(0.02)

@@ -46,6 +46,9 @@ init python:
 
     if not hasattr(persistent, "current_skill") or persistent.current_skill is None:
         persistent.current_skill = 0
+    
+    if not hasattr(persistent, "StoryAuto") or persistent.StoryAuto is None:
+        persistent.StoryAuto = False
 
     def update_leaderboard():
         persistent.leaderboard = [

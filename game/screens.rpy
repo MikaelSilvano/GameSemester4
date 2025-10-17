@@ -331,6 +331,7 @@ screen SkillChooser():
     if SkillListed == False:
         imagebutton:
             idle "gui/button/Skill_List.png"
+            hover "gui/button/Skill_List_Hover.png"
             action play_and(SetVariable("SkillListed", True))
             xpos 0.05
             at skill_list_transform

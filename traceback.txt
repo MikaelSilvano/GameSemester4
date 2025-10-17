@@ -8,28 +8,16 @@ While running game code:
   File "game/script.rpy", line 193, in <module>
     result = renpy.ui.interact()
              ~~~~~~~~~~~~~~~~~^^
-  File "game/classScripts/GridManager.rpy", line 186, in handle_event
-    if (skill.masterpiece_build(store.icon_skill_collected[0])):
-        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-  File "game/classScripts/Skill.rpy", line 115, in masterpiece_build
-    masterpiece_build_skill_used = True
-AttributeError: 'NoneType' object has no attribute 'grid_size'
-
-During handling of the above exception, another exception occurred:
-
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
+  File "game/classScripts/GridManager.rpy", line 149, in handle_event
+    game.find_match(mouse_event=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 110, in find_match
+    grid.refill_grid()
+    ~~~~~~~~~~~~~~~~^^
+  File "game/classScripts/GridManager.rpy", line 303, in refill_grid
+    candidate = renpy.random.choice(allowed)
+                ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: object of type 'bool' has no len()
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -93,110 +81,19 @@ Traceback (most recent call last):
   File "renpy/display/particle.py", line 375, in event
     return self.event_function(ev, x, y, st)
            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/classScripts/GridManager.rpy", line 186, in handle_event
-    if (skill.masterpiece_build(store.icon_skill_collected[0])):
-        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-  File "game/classScripts/Skill.rpy", line 115, in masterpiece_build
-    masterpiece_build_skill_used = True
-AttributeError: 'NoneType' object has no attribute 'grid_size'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/common/00keymap.rpy", line 504, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 504, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 184, in save
-    dump((roots, renpy.game.log), logf)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 308, in dump
-    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/common/00keymap.rpy", line 504, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 504, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 184, in save
-    dump((roots, renpy.game.log), logf)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 308, in dump
-    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/common/00keymap.rpy", line 504, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 504, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 184, in save
-    dump((roots, renpy.game.log), logf)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 308, in dump
-    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/common/00keymap.rpy", line 504, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 504, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 531, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 184, in save
-    dump((roots, renpy.game.log), logf)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 308, in dump
-    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: Can't get local object 'move_sprite.<locals>.update'
+  File "game/classScripts/GridManager.rpy", line 149, in handle_event
+    game.find_match(mouse_event=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "game/classScripts/GameManager.rpy", line 110, in find_match
+    grid.refill_grid()
+    ~~~~~~~~~~~~~~~~^^
+  File "game/classScripts/GridManager.rpy", line 303, in refill_grid
+    candidate = renpy.random.choice(allowed)
+                ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "lib/python3.12/random.py", line 346, in choice
+TypeError: object of type 'bool' has no len()
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.0.25071206
 EcoCityMatch 1.1
-Sun Oct 12 19:14:14 2025
+Thu Oct 16 11:43:37 2025

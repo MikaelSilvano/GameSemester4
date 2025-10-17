@@ -1,34 +1,34 @@
-2025-10-12 12:25:34 UTC
+2025-10-17 01:55:37 UTC
 Windows-11-10.0.26100-SP0
 Ren'Py 8.4.0.25071206
 
 Early init took 36 ms
-Loading error handling took 16 ms
-Loading script took 118 ms
+Loading error handling took 19 ms
+Loading script took 369 ms
 Loading save slot metadata took 16 ms
 Loading persistent took 0 ms
-Running init code took 36 ms
-Loading analysis data took 4 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 6 ms
+Running init code took 33 ms
+Loading analysis data took 0 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 3 ms
 Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 30 ms
+Dump and make backups took 32 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 38 ms
+Initial gc took 41 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 267 ms
+Creating interface object took 259 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
 Analyze screens took 9 ms
-Save screen analysis took 14 ms
+Save screen analysis took 16 ms
 Save pyanalysis took 0 ms
-Save bytecode took 20 ms
-Running _start took 0 ms
-Interface start took 638 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 420 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -41,217 +41,16 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
 Guest
-{'Guest': {'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 1335, 1701, 1914], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 4950, 'time_played': 170.825692653656, 'current_skill': 1}}
-1. Guest - 4950 points
-1. Guest - 4950 points
-1. Guest - 4950 points
-1. Guest - 4950 points
-1. Guest - 4950 points
-valid grid: False
-reset grid: False
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Dirt x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Dirt x1
-AimsMet: Steel x1
-AimsMet: Dirt x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Dirt x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Dirt x1
-AimsMet: Steel x1
-AimsMet: Dirt x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Dirt x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Rocks x2
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Dirt x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Dirt x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-Score: 1866
-Current Sublevel: 4, Max Sublevel: 4
-Level Unlocked: 1
-{'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 1335, 1701, 1866], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 4902, 'time_played': 170.825692653656, 'current_skill': 1}
-Sublevel 4 of Level 1 completed with score: 1866
-AimsMet: Plant x1
-AimsMet: Dirt x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Steel x2
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Dirt x1
-AimsMet: Wood x2
-AimsMet: Dirt x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Dirt x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-1. Guest - 4902 points
-valid grid: False
-reset grid: False
-AimsMet: Glass x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Steel x1
-AimsMet: Plant x2
-AimsMet: Brick x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Brick x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Brick x1
-AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Brick x1
-AimsMet: Glass x1
-AimsMet: Brick x1
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Brick x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Brick x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Brick x1
-AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Brick x1
-AimsMet: Brick x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Plant x1
-AimsMet: Brick x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Brick x1
-AimsMet: Brick x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-Score: 3023
-Current Sublevel: 5, Max Sublevel: 5
-Level Unlocked: 2
-{'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [True, True, True, True, True], 3: [True, True, True, True, True, True, True, True], 4: [True, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [0, 1335, 1701, 1866], 2: [0, 0, 0, 0, 3023], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 7925, 'time_played': 200.78289222717285, 'current_skill': 1}
-Sublevel 5 of Level 2 completed with score: 3023
-AimsMet: Wood x1
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Brick x1
-1. Guest - 7925 points
-1. Guest - 7925 points
+{'Guest': {'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [1073, 1475, 1731, 2007], 2: [2461, 2348, 1715, 2375, 3045], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 18230, 'time_played': 3852.6034722328186, 'current_skill': 1}}
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points
+1. Guest - 18230 points

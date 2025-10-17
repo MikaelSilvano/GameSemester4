@@ -102,6 +102,7 @@ init python:
                     self.delete_matches(all_matches, True)
                     grid.shift_icons(mouse_event=True)
                     renpy.restart_interaction()
+                    all_matches.clear()
                 else:
                     # print("No Matches")
                     break

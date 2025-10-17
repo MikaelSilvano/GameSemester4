@@ -294,6 +294,7 @@ init python:
                         forbidden = above1.icon_type
                         if forbidden in allowed:
                             allowed.remove(forbidden)
+                
 
                 if not allowed:
                     candidate = renpy.random.choice(self.icon_images)

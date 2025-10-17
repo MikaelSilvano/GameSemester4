@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/classScripts/Icon.rpy", line 164: invalid syntax
-    renpy.transition(vpunch, layer="match3")
-        ^^^^^
+File "game/script.rpy", line 858: end of line expected.
+    hide layer match3"
+                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Sun Oct 12 16:17:35 2025
+Fri Oct 17 08:40:05 2025

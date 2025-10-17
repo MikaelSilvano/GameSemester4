@@ -687,8 +687,8 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define main_char = Character("Ko Khrisna", color="#c8f2ff")
-define side_char = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna", color="#2a5246")
+define side_char = Character("Jordan", color="#c25656")
 define background_chat = Image("gui/button/Backgroundtxt_idle.png")
 
 label level1_intro:
@@ -756,8 +756,8 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define main_char = Character("Ko Khrisna",color="#c8f2ff")
-define side_char = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna",color="#2a5246")
+define side_char = Character("Jordan", color="#c25656")
 
 label level2_intro:
     hide layer match3
@@ -851,12 +851,8 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define main_char = Character("Ko Khrisna",color="#c8f2ff")
-define side_char = Character("Jordan", what_style="side_char_text" )
-
-style side_char_text is default:
-    color "#ff8282"
-    outlines [ (10, "#000000", 0, 0) ]  # thickness, color, xoffset, yoffset
+define main_char = Character("Ko Khrisna",color="#2a5246")
+define side_char = Character("Jordan", color="#c7167z" )
 
 label level3_intro:
     hide layer match3
@@ -927,8 +923,8 @@ transform right_side:
     ypos 1.0
     anchor (0.5, 1.0)
 
-define main_char = Character("Ko Khrisna",color="#c8f2ff")
-define side_char = Character("Jordan", color="#ffc8c8")
+define main_char = Character("Ko Khrisna",color="#2a5246")
+define side_char = Character("Jordan", color="#c25656")
 
 label level4_intro:
     hide layer match3

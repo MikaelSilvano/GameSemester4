@@ -253,8 +253,8 @@ default choice_btn_hover = "gui/button/Backgroundtxt_idle.png"
 screen choice(items):
     style_prefix "choice"
 
-    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.44 zoom 0.6
-    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.33 zoom 0.6
+    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.19 zoom 0.6
+    add "gui/button/Backgroundtxt_idle.png" xpos 0.35 ypos 0.08 zoom 0.6
     
     vbox:
         spacing 53

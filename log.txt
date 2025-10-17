@@ -1,56 +1,383 @@
-2025-10-17 01:55:37 UTC
-Windows-11-10.0.26100-SP0
-Ren'Py 8.4.0.25071206
+2025-10-17 17:37:57 UTC
+macOS-26.0-arm64-arm-64bit
+Ren'Py 8.3.4.24120703
 
-Early init took 36 ms
-Loading error handling took 19 ms
-Loading script took 369 ms
-Loading save slot metadata took 16 ms
-Loading persistent took 0 ms
-Running init code took 33 ms
-Loading analysis data took 0 ms
-Analyze and compile ATL took 4 ms
-Reloading save slot metadata took 3 ms
-Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
-Dump and make backups took 32 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 41 ms
+Early init took 0.03s
+Loading error handling took 0.03s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/vano/Library/RenPy/backups/GameSemester4':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
 DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 259 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 9 ms
-Save screen analysis took 16 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 420 ms
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.27s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 1512, 982)
 swap interval: 1 frames
 Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 566.07'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Vendor: "b'Apple'"
+Renderer: b'Apple M1 Pro'
+Version: b'2.1 Metal - 90.5'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1291, 839) drawable=(2582, 1678)
 Maximum texture size: 4096x4096
-Guest
-{'Guest': {'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [1073, 1475, 1731, 2007], 2: [2461, 2348, 1715, 2375, 3045], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 18230, 'time_played': 3852.6034722328186, 'current_skill': 1}}
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
-1. Guest - 18230 points
+Screen sizes: virtual=(1920, 1080) physical=(1291, 839) drawable=(3024, 1898)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1512, 949) drawable=(3024, 1898)
+Maximum texture size: 4096x4096
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+valid grid: False
+reset grid: False
+AimsMet: SolarPanel x2
+AimsMet: Glass x1
+AimsMet: Plant x1
+AimsMet: Glass x1
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+1. vano - 69594 points
+2. Guest - 0 points
+valid grid: False
+reset grid: False
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Plant x1
+Reset Usage: 0
+valid grid: False
+reset grid: True
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: SolarPanel x1
+AimsMet: Cement x1
+AimsMet: Wood x1
+AimsMet: SolarPanel x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: Glass x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: Glass x1
+AimsMet: Rocks x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: SolarPanel x1
+Reset Usage: 1
+valid grid: False
+reset grid: True
+AimsMet: Cement x2
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: Rocks x1
+AimsMet: Cement x1
+AimsMet: Plant x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: Wood x1
+AimsMet: Rocks x1
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: SolarPanel x1
+AimsMet: Plant x1
+AimsMet: Glass x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Wood x1
+AimsMet: Rocks x1
+AimsMet: Steel x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: SolarPanel x1
+AimsMet: Glass x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Wood x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Rocks x1
+AimsMet: Glass x1
+AimsMet: Cement x1
+AimsMet: Glass x1
+AimsMet: Glass x2
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: Rocks x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Plant x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Cement x3
+AimsMet: Wood x1
+AimsMet: Glass x1
+AimsMet: SolarPanel x1
+AimsMet: Wood x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: SolarPanel x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: Glass x1
+AimsMet: Wood x1
+AimsMet: Rocks x1
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Glass x1
+AimsMet: SolarPanel x1
+AimsMet: SolarPanel x1
+AimsMet: Cement x1
+AimsMet: Cement x1
+AimsMet: SolarPanel x1
+AimsMet: Rocks x1
+AimsMet: SolarPanel x1
+AimsMet: Steel x1
+AimsMet: Cement x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: SolarPanel x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Glass x1
+AimsMet: Rocks x1
+AimsMet: SolarPanel x1
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Glass x1
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Rocks x1
+AimsMet: Wood x1
+AimsMet: SolarPanel x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Steel x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: SolarPanel x1
+AimsMet: Wood x1
+AimsMet: Glass x1
+Score: 4024
+Current Sublevel: 12, Max Sublevel: 12
+Level Unlocked: 4
+{'password': '12345', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [1414, 1793, 1895, 2122], 2: [2916, 3230, 1640, 2556, 2845], 3: [1633, 1484, 2137, 1906, 2197, 2407, 2921, 2639], 4: [2669, 2451, 2699, 1662, 2204, 2704, 2557, 2924, 2595, 2683, 3243, 4024]}, 'tot_score': 70150, 'time_played': 67554.28096580505}
+Sublevel 12 of Level 4 completed with score: 4024
+AimsMet: Wood x1
+AimsMet: Glass x1
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points
+1. vano - 70150 points
+2. Guest - 0 points

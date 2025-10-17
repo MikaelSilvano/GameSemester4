@@ -715,9 +715,9 @@ label level1_intro:
                 side_char "Right here—with your hands, your heart, and a whole lot of sustainable thinking."
                 side_char "Let’s build your first hut using natural materials by entering the sublevels and prove your skills. Are you up to it?"
             "Aren't these all just rocks...":
-                main_char "Aren't these all just rocks and dirt,? I don't even have the right tools"
-                side_char "What do you mean by right tools? Those two hands of yours are enough, your hands, your heart, and a whole lot of sustainable thinking"
-                side_char "you'll get there in no time"
+                main_char "Aren't these all just rocks and dirt,? I don't even have the right tools."
+                side_char "What do you mean by right tools? Those two hands of yours are enough, your hands, your heart, and a whole lot of sustainable thinking."
+                side_char "you'll get there in no time."
                 side_char "Using simple materials here, lets build your first hut, prove your skills by entering the sublevels. So? You up for it?"
         menu:
             "I was born ready!":
@@ -794,24 +794,24 @@ label level2_intro:
 
         side_char "Great job Ko Khrisna. You did well, look where you are now!"
         menu:
-            "All they want is a safe home":
+            "All they want is a safe home.":
                 main_char "They all want homes. Safe ones. Beautiful ones. And… green ones."
                 side_char "That’s why you’re here, Architect Ko Khrisna. These aren’t just houses—they’re a chance to build resilience and community."
             "Well of course!":
-                main_char "Well of course! After all its my job to provide safe, beautiful and eco-friendly homes for them"
+                main_char "Well of course! After all its my job to provide safe, beautiful and eco-friendly homes for them."
                 side_char "Well said! However this aren't exactly houses yet..."
-                side_char "They're just a chance to build resillience and community"
+                side_char "They're just a chance to build resillience and community."
                 menu:
                     "Hm? Not yet a house?":
                         main_char "Hm? Not yet a house?"
-                        side_char "Yes, exactly not yet a house"
+                        side_char "Yes, exactly not yet a house."
                     "What do you mean by that?":
-                        main_char "I'm not sure by what you meant by a hut being simply a resillience and community for people"
-                        side_char "Exactly by what I meant, lets' step up our game and buid a house"
+                        main_char "I'm not sure by what you meant by a hut being simply a resillience and community for people."
+                        side_char "Exactly by what I meant, lets' step up our game and buid a house."
         menu:
             "But.. I've only built huts before...":
                 main_char "I’ve only built huts before… I'm not really..."
-                side_char "But remember no shortcuts and no wastes"
+                side_char "But, remember no shortcuts and no wastes."
                 main_char "Okay Miss Jordan!"
                 side_char "Reuse materials. Let nature into the design. Show them that sustainability isn’t a style—it’s a responsibility!"
                 main_char "I won't let you down Miss Jordan!"
@@ -872,18 +872,18 @@ label level3_intro:
 
         side_char "You are making a very good progress, Ko Khrisna, you are now an Architectural Businessman! Let's step up our game and build a mansion!"
         menu:
-            "I'm not too sure in building a mansion":
+            "I'm not too sure in building a mansion.":
                 main_char "A mansion? Isn’t that… the opposite of sustainability?"
                 side_char "Not if you do it using our way. Think of it as an opportunity to prove that eco-luxury is possible. Make it solar-powered, self-sufficient, and filled with light."
-            "A mansion? Isn't that... non-sustanable":
-                main_char "Architectural Businessman? I'm not too sure in building a mansion"
+            "A mansion? Isn't that... non-sustanable?":
+                main_char "Architectural Businessman? I'm not too sure in building a mansion."
                 side_char "Don't you worry follow my guide and think of it as an opportunity to develop eco-luxury mansion."
                 menu:
                     "How do you exactly plan on implementing it?":
                         main_char "How do you exactly plan on implementing the developing an eco-luxury mansion?"
-                    "I'm not sure a mansion can be eco-friendly":
-                        main_char "I'm not sure that a mansion can be developed into an eco-luxury mansion"
-                side_char "Don't worry you'll be fine, you just need to make it solar-powered, self-sufficient, and filled with light"
+                    "I'm not sure a mansion can be eco-friendly.":
+                        main_char "I'm not sure that a mansion can be developed into an eco-luxury mansion."
+                side_char "Don't worry you'll be fine, you just need to make it solar-powered, self-sufficient, and filled with light."
         menu:
             "Alright!":
                 pass
@@ -944,23 +944,23 @@ label level4_intro:
 
         side_char "Amazing! Now look, world leaders are watching you, Ko Khrisna. You are now a world known icon for your sustainable traits. Cities across the globe are asking for your designs."
         menu:
-            "It's overwhelming":
-                main_char "It’s overwhelming. But I can’t stop now. The planet doesn’t have time."
+            "It's overwhelming.":
+                main_char "It’s overwhelming. But, I can’t stop now. The planet doesn’t have time."
                 side_char "I am excited to see this sustainable live in the future. Thank you for saving us Ko Khrisna!"
             "Of course! Who do you think I am!":
                 main_char "Of course! Who do you take me for?"
-                side_char "As expected of Ko Khrisna! But don't stop now! We got to keep moving forward!"
+                side_char "As expected of Ko Khrisna! But, don't stop now! We got to keep moving forward!"
                 menu:
-                    "Let's keep moving forward":
+                    "Let's keep moving forward!":
                         main_char "Let's keep moving forward! Time doesn't wait for us!"
                     "There's no stopping now!":
                         main_char "There's no stopping now! The future doesn't wait for us!"
                 side_char "Thank you for saving us Ko Khrisna! Keep moving forward, I'll always be here cheering you on!"
         menu:
-            "You are most welcomed":
+            "You are most welcomed!":
                 main_char "You are most welcome Jordan, I focus on the 11th Sustainable Development Goal."
-            "Thanks to you too":
-                main_char "Thanks to you too! I'll keep on focusing on the 11th Sustainable Development Goal"
+            "Thanks to you too!":
+                main_char "Thanks to you too! I'll keep on focusing on the 11th Sustainable Development Goal."
 
         window hide
 
@@ -992,20 +992,20 @@ label level4_end:
         linear 0.1 zoom 0.93
 
     side_char "Congratulations Ko Khrisna, you have finally reached the end of our plan for building sustainable buildings."
-    side_char "Even words itself can't express my appreciation for your hardwork, if it wasn't for you who was willing to build these buildings nothing would have been a reality"
+    side_char "Even words itself can't express my appreciation for your hardwork, if it wasn't for you who was willing to build these buildings nothing would have been a reality."
     menu:
-        "It was also thanks to your help":
+        "It was also thanks to your help.":
             main_char "It was also thanks to your help that I was able to make it this far."
-        "Thanks to you too":
-            main_char "It was also thanks to you too that I was able to make it this far"
-    side_char "Well you might be correct but your role is indispensible in building these sustainable buildings"
+        "Thanks to you too.":
+            main_char "It was also thanks to you too that I was able to make it this far."
+    side_char "Well you might be correct, but your role is indispensible in building these sustainable buildings."
     side_char "So don't put yourself down too much after all there is still a long way to go!"
     menu:
         "Right! This is just the beginning!":
             main_char "You are right Miss Jordan! This ain't the end its the beginning of a future with tall and majestic buildings!"
-        "An ending, yet another beginning":
+        "An ending, yet another beginning.":
             main_char "There was never only an ending. An ending marks a new beginning, the beginning of a future with tall and majestic buildings!"
-    side_char "Now that's the spirit Ko Khrisna! But remember, buildings maybe tall and majestic, but you must never forget that it must always be sustainable and eco-friendly"
+    side_char "Now that's the spirit Ko Khrisna! But remember, buildings maybe tall and majestic and you must never forget that it must always be sustainable and eco-friendly."
     main_char "You got it Miss Jordan, I will make sure to never forget about sustainability and ecofriendly factors in my buildings! Thanks for everything Miss Jordan!"
 
     window hide

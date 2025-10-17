@@ -1,99 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 560, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 191, in script
-    python:
-  File "game/script.rpy", line 193, in <module>
-    result = renpy.ui.interact()
-             ~~~~~~~~~~~~~~~~~^^
-  File "game/classScripts/GridManager.rpy", line 149, in handle_event
-    game.find_match(mouse_event=False)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "game/classScripts/GameManager.rpy", line 110, in find_match
-    grid.refill_grid()
-    ~~~~~~~~~~~~~~~~^^
-  File "game/classScripts/GridManager.rpy", line 303, in refill_grid
-    candidate = renpy.random.choice(allowed)
-                ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-TypeError: object of type 'bool' has no len()
+  File "game/script.rpy", line 602, in script
+    return
+Exception: Possible infinite loop.
 
 -- Full Traceback ------------------------------------------------------------
 
-Traceback (most recent call last):
-  File "game/script.rpy", line 560, in script call
-    call setup_icons() from _call_setup_icons
-  File "game/script.rpy", line 191, in script
-    python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 193, in <module>
-    result = renpy.ui.interact()
-             ~~~~~~~~~~~~~~~~~^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2216, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 3299, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1284, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1284, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1284, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 805, in event
-    rv = self.child.event(ev, x, y, st)
-         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1284, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1508, in event
-    rv = super(Window, self).event(ev, x, y, st)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 273, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1284, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/transform.py", line 1115, in event
-    rv = d.event(ev, cx, cy, st)
-         ~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/particle.py", line 375, in event
-    return self.event_function(ev, x, y, st)
-           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/classScripts/GridManager.rpy", line 149, in handle_event
-    game.find_match(mouse_event=False)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "game/classScripts/GameManager.rpy", line 110, in find_match
-    grid.refill_grid()
-    ~~~~~~~~~~~~~~~~^^
-  File "game/classScripts/GridManager.rpy", line 303, in refill_grid
-    candidate = renpy.random.choice(allowed)
-                ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "lib/python3.12/random.py", line 346, in choice
-TypeError: object of type 'bool' has no len()
+Full traceback:
+  File "game/script.rpy", line 602, in script
+    return
+  File "/Users/vano/Downloads/renpy-8.3.4-sdk/renpy/execution.py", line 61, in check_infinite_loop
+    raise Exception("Possible infinite loop.")
+Exception: Possible infinite loop.
 
-Windows-11-10.0.26100-SP0 AMD64
-Ren'Py 8.4.0.25071206
+macOS-26.0-arm64-arm-64bit arm64
+Ren'Py 8.3.4.24120703
 EcoCityMatch 1.1
-Thu Oct 16 11:43:37 2025
+Fri Oct 17 23:58:28 2025

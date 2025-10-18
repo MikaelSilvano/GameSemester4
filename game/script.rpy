@@ -1056,10 +1056,14 @@ init python:
             "World-Renowned \nArchitectural Icon"
         ]
 
-        levels_completed = 0
-        for level, sublevels in persistent.level_progress.items():
-            if all(sublevels):
-                levels_completed += 1
+        # levels_completed = 0
+        # for level, sublevels in persistent.level_progress.items():
+        #     if all(sublevels):
+        #         levels_completed += 1
 
-        index = min(levels_completed, len(titles) - 1)
-        return f"{titles[index]}"
+        # index = min(levels_completed, len(titles) - 1)
+        # return f"{titles[index]}"
+
+        for i in range(len(persistent.levels_unlocked) - 1, -1, -1):
+            if persistent.levels_unlocked[i]:
+                return titles[i]

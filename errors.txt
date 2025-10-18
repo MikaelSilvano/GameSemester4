@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 858: end of line expected.
-    hide layer match3"
-                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+File "game/script.rpy", line 1068: expected an indented block after 'for' statement on line 18
+    if persistent.levels_unlocked[i]:
+        ^^
 
 Ren'Py Version: Ren'Py 8.4.0.25071206
-Fri Oct 17 08:40:05 2025
+Sat Oct 18 09:20:54 2025

@@ -1,383 +1,539 @@
-2025-10-17 17:37:57 UTC
-macOS-26.0-arm64-arm-64bit
-Ren'Py 8.3.4.24120703
+2025-10-18 02:21:50 UTC
+Windows-11-10.0.26100-SP0
+Ren'Py 8.4.0.25071206
 
-Early init took 0.03s
-Loading error handling took 0.03s
-Loading script took 0.16s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/vano/Library/RenPy/backups/GameSemester4':
-Dump and make backups took 0.03s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
+Early init took 35 ms
+Loading error handling took 16 ms
+Loading script took 203 ms
+Loading save slot metadata took 18 ms
+Loading persistent took 0 ms
+Running init code took 33 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Asus\\AppData\\Roaming/RenPy/backups\\GameSemester4':
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 38 ms
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.27s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 246 ms
+Init translation took 0 ms
+Cleaning stores took 1 ms
+Load screen analysis took 0 ms
+Analyze screens took 9 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 0 ms
+Save bytecode took 19 ms
+Running _start took 1 ms
+Interface start took 351 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1 Pro'
-Version: b'2.1 Metal - 90.5'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1291, 839) drawable=(2582, 1678)
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 566.07'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 360, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1291, 839) drawable=(3024, 1898)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 949) drawable=(3024, 1898)
-Maximum texture size: 4096x4096
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [1185, 1411, 1740, 1875], 2: [2699, 2253, 1716, 2396, 2748], 3: [2043, 1775, 281, 200, 200, 200, 382, 206], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 23310, 'time_played': 2765.1877295970917, 'current_skill': 1}}
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+1. Guest - 23310 points
+After reset: 1 1
+1. Guest - 0 points
+Cleaning stores took 0 ms
+Load screen analysis took 17 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0, 'current_skill': 1}}
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
 valid grid: False
 reset grid: False
-AimsMet: SolarPanel x2
-AimsMet: Glass x1
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 1, Max Sublevel: 4
+Curent Level: 1
+Sublevel Unlocked: 1
+{'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, True, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 200, 'time_played': 0.0, 'current_skill': 1}
+Sublevel 1 of Level 1 completed with score: 200
+AimsMet: Steel x1
+1. Guest - 200 points
+Score: 225
+valid grid: False
+reset grid: False
+AimsMet: Dirt x1
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 2, Max Sublevel: 4
+Curent Level: 1
+Sublevel Unlocked: 2
+{'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, True, True, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 400, 'time_played': 11.330074310302734, 'current_skill': 1}
+Sublevel 2 of Level 1 completed with score: 200
+AimsMet: Dirt x1
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Dirt x1
+AimsMet: Wood x1
+AimsMet: Dirt x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Plant x1
+AimsMet: Dirt x2
+AimsMet: Wood x1
+1. Guest - 400 points
+Score: 547
+valid grid: False
+reset grid: False
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 3, Max Sublevel: 4
+Curent Level: 1
+Sublevel Unlocked: 3
+{'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 600, 'time_played': 31.756231546401978, 'current_skill': 1}
+Sublevel 3 of Level 1 completed with score: 200
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Rocks x1
+AimsMet: Plant x1
+AimsMet: Dirt x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+1. Guest - 600 points
+Score: 332
+valid grid: False
+reset grid: False
+AimsMet: Plant x1
+AimsMet: Wood x1
+AimsMet: Dirt x1
+AimsMet: Steel x1
+Score: 263
+Current Sublevel: 4, Max Sublevel: 4
+Level Unlocked: 1
+{'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 863, 'time_played': 58.338310956954956, 'current_skill': 1}
+Sublevel 4 of Level 1 completed with score: 263
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Dirt x1
+AimsMet: Plant x1
+AimsMet: Wood x1
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+1. Guest - 863 points
+valid grid: False
+reset grid: False
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 1, Max Sublevel: 5
+Curent Level: 2
+Sublevel Unlocked: 1
+{'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 1063, 'time_played': 93.68675327301025, 'current_skill': 1}
+Sublevel 1 of Level 2 completed with score: 200
+AimsMet: Steel x1
+AimsMet: Wood x1
 AimsMet: Plant x1
 AimsMet: Glass x1
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
-1. vano - 69594 points
-2. Guest - 0 points
+1. Guest - 1063 points
+Score: 276
+valid grid: False
+reset grid: False
+AimsMet: Brick x1
+AimsMet: Plant x1
+AimsMet: Steel x1
+Score: 238
+Current Sublevel: 2, Max Sublevel: 5
+Curent Level: 2
+Sublevel Unlocked: 2
+{'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 1301, 'time_played': 153.21501636505127, 'current_skill': 1}
+Sublevel 2 of Level 2 completed with score: 238
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Brick x1
+AimsMet: Steel x1
+1. Guest - 1301 points
+Score: 320
+valid grid: False
+reset grid: False
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 3, Max Sublevel: 5
+Curent Level: 2
+Sublevel Unlocked: 3
+{'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 1501, 'time_played': 219.34058690071106, 'current_skill': 1}
+Sublevel 3 of Level 2 completed with score: 200
+AimsMet: Steel x1
+AimsMet: Cement x1
+1. Guest - 1501 points
+Score: 238
+valid grid: False
+reset grid: False
+Reset Usage: 0
+valid grid: False
+reset grid: True
+AimsMet: Cement x1
+AimsMet: Plant x2
+AimsMet: Wood x1
+AimsMet: Glass x1
+AimsMet: Brick x1
+AimsMet: Cement x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Plant x1
+AimsMet: Cement x1
+AimsMet: Cement x1
+AimsMet: Glass x1
+AimsMet: Brick x1
+AimsMet: Steel x1
+Score: 509
+Current Sublevel: 4, Max Sublevel: 5
+Curent Level: 2
+Sublevel Unlocked: 4
+{'password': '', 'levels_unlocked': [True, True, False, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 2010, 'time_played': 291.471088886261, 'current_skill': 1}
+Sublevel 4 of Level 2 completed with score: 509
+AimsMet: Steel x1
+AimsMet: Plant x1
+AimsMet: Glass x1
+AimsMet: Steel x1
+AimsMet: Cement x1
+AimsMet: Wood x1
+AimsMet: Steel x1
+AimsMet: Wood x1
+AimsMet: Cement x1
+AimsMet: Brick x1
+AimsMet: Plant x1
+1. Guest - 2010 points
+Score: 724
 valid grid: False
 reset grid: False
 AimsMet: Cement x1
+AimsMet: Wood x1
 AimsMet: Steel x1
-AimsMet: Plant x1
+Score: 238
+Current Sublevel: 5, Max Sublevel: 5
+Level Unlocked: 2
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 2248, 'time_played': 385.3563120365143, 'current_skill': 1}
+Sublevel 5 of Level 2 completed with score: 238
+AimsMet: Steel x1
+AimsMet: Glass x1
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+1. Guest - 2248 points
+valid grid: False
+reset grid: False
 Reset Usage: 0
 valid grid: False
 reset grid: True
 AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Steel x1
 AimsMet: Glass x1
-AimsMet: SolarPanel x1
+AimsMet: Glass x1
+AimsMet: Steel x1
+Score: 231
+Current Sublevel: 1, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 1
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 2479, 'time_played': 488.24731826782227, 'current_skill': 1}
+Sublevel 1 of Level 3 completed with score: 231
+AimsMet: Glass x1
+AimsMet: Steel x1
+1. Guest - 2479 points
+Score: 262
+valid grid: False
+reset grid: False
+Reset Usage: 0
+valid grid: False
+reset grid: True
+AimsMet: Plant x1
 AimsMet: Cement x1
-AimsMet: Wood x1
+AimsMet: Brick x1
+AimsMet: Steel x1
+Score: 263
+Current Sublevel: 2, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 2
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 2742, 'time_played': 621.6303148269653, 'current_skill': 1}
+Sublevel 2 of Level 3 completed with score: 263
+AimsMet: Steel x1
+AimsMet: Brick x1
+1. Guest - 2742 points
+Score: 307
+valid grid: False
+reset grid: False
 AimsMet: SolarPanel x1
+Reset Usage: 0
+valid grid: False
+reset grid: True
 AimsMet: Plant x1
 AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Glass x1
-AimsMet: Rocks x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
 Reset Usage: 1
 valid grid: False
 reset grid: True
-AimsMet: Cement x2
 AimsMet: Steel x1
-AimsMet: SolarPanel x1
+Score: 244
+Current Sublevel: 3, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 3
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 2986, 'time_played': 766.0919210910797, 'current_skill': 1}
+Sublevel 3 of Level 3 completed with score: 244
+AimsMet: Steel x1
 AimsMet: Rocks x1
 AimsMet: Cement x1
+AimsMet: SolarPanel x1
+1. Guest - 2986 points
+Score: 320
+valid grid: False
+reset grid: False
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 4, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 4
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 3186, 'time_played': 926.4755413532257, 'current_skill': 1}
+Sublevel 4 of Level 3 completed with score: 200
+AimsMet: Steel x1
+1. Guest - 3186 points
+Score: 206
+valid grid: False
+reset grid: False
+Reset Usage: 0
+valid grid: False
+reset grid: True
 AimsMet: Plant x1
 AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
+Score: 219
+Current Sublevel: 5, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 5
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 219, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 3405, 'time_played': 1094.5232253074646, 'current_skill': 1}
+Sublevel 5 of Level 3 completed with score: 219
 AimsMet: Steel x1
 AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
-AimsMet: Plant x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
 AimsMet: Steel x1
 AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: Plant x1
 AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
+1. Guest - 3405 points
+Score: 313
+valid grid: False
+reset grid: False
+AimsMet: Steel x1
+Score: 200
+Current Sublevel: 6, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 6
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 219, 200, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 3605, 'time_played': 1276.3939170837402, 'current_skill': 1}
+Sublevel 6 of Level 3 completed with score: 200
+AimsMet: Steel x1
+1. Guest - 3605 points
+Score: 219
+valid grid: False
+reset grid: False
+Reset Usage: 0
+valid grid: False
+reset grid: True
+Reset Usage: 1
+valid grid: False
+reset grid: True
 AimsMet: Glass x1
 AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Wood x1
-AimsMet: Wood x1
+Score: 219
+Current Sublevel: 7, Max Sublevel: 8
+Curent Level: 3
+Sublevel Unlocked: 7
+{'password': '', 'levels_unlocked': [True, True, True, False], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 219, 200, 219, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 3824, 'time_played': 1464.6893093585968, 'current_skill': 1}
+Sublevel 7 of Level 3 completed with score: 219
 AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Rocks x1
-AimsMet: Glass x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Glass x2
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
+AimsMet: Brick x1
 AimsMet: Wood x1
 AimsMet: Plant x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Plant x1
+1. Guest - 3824 points
+Score: 281
+valid grid: False
+reset grid: False
 AimsMet: Rocks x1
-AimsMet: Cement x3
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: SolarPanel x1
-AimsMet: Plant x1
-AimsMet: Cement x1
-AimsMet: Glass x1
-AimsMet: Wood x1
-AimsMet: Rocks x1
-AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Glass x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
-AimsMet: Cement x1
-AimsMet: Cement x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Cement x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: SolarPanel x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Steel x1
-AimsMet: Wood x1
-AimsMet: Glass x1
-AimsMet: Rocks x1
-AimsMet: SolarPanel x1
-AimsMet: Steel x1
-AimsMet: Plant x1
 AimsMet: Glass x1
 AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
-AimsMet: Cement x1
-AimsMet: Steel x1
-AimsMet: Rocks x1
-AimsMet: Plant x1
-AimsMet: Rocks x1
-AimsMet: Wood x1
-AimsMet: Steel x1
-AimsMet: SolarPanel x1
-AimsMet: Wood x1
+Reset Usage: 0
+valid grid: False
+reset grid: True
+Reset Usage: 1
+valid grid: False
+reset grid: True
 AimsMet: Glass x1
-Score: 4024
-Current Sublevel: 12, Max Sublevel: 12
-Level Unlocked: 4
-{'password': '12345', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, True, True, True, True, True, True, True, True, True, True, True]}, 'level_score': {1: [1414, 1793, 1895, 2122], 2: [2916, 3230, 1640, 2556, 2845], 3: [1633, 1484, 2137, 1906, 2197, 2407, 2921, 2639], 4: [2669, 2451, 2699, 1662, 2204, 2704, 2557, 2924, 2595, 2683, 3243, 4024]}, 'tot_score': 70150, 'time_played': 67554.28096580505}
-Sublevel 12 of Level 4 completed with score: 4024
-AimsMet: Wood x1
 AimsMet: Glass x1
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
-1. vano - 70150 points
-2. Guest - 0 points
+Reset Usage: 2
+valid grid: False
+reset grid: True
+AimsMet: Steel x1
+Score: 281
+Current Sublevel: 8, Max Sublevel: 8
+Level Unlocked: 3
+{'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 219, 200, 219, 281], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 4105, 'time_played': 1668.202980518341, 'current_skill': 1}
+Sublevel 8 of Level 3 completed with score: 281
+AimsMet: Steel x1
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+1. Guest - 4105 points
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Running _start took 2 ms
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, True, True, True], 'level_progress': {1: [True, True, True, True], 2: [False, True, True, True, True], 3: [False, True, True, True, True, True, True, True], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [200, 200, 200, 263], 2: [200, 238, 200, 509, 238], 3: [231, 263, 244, 200, 219, 200, 219, 281], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 4105, 'time_played': 1915.3712246418, 'current_skill': 1}}
+1. Guest - 4105 points
+After reset: 1 1
+1. Guest - 0 points
+Cleaning stores took 0 ms
+Load screen analysis took 16 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
+Guest
+{'Guest': {'password': '', 'levels_unlocked': [True, False, False, False], 'level_progress': {1: [True, False, False, False], 2: [False, False, False, False, False], 3: [False, False, False, False, False, False, False, False], 4: [False, False, False, False, False, False, False, False, False, False, False, False]}, 'level_score': {1: [0, 0, 0, 0], 2: [0, 0, 0, 0, 0], 3: [0, 0, 0, 0, 0, 0, 0, 0], 4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, 'tot_score': 0, 'time_played': 0.0, 'current_skill': 1}}
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points
+1. Guest - 0 points

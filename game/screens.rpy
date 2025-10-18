@@ -1793,6 +1793,7 @@ screen countdown():
 
 default timer_freeze_start = 0
 default timer_freeze_left = 10
+default non_violatable_freeze_time = 10
 default timer_freeze_used = False
 default time_freeze_running = False
 
@@ -1828,6 +1829,7 @@ screen time_freeze():
             SetVariable("freeze_active", False),
             SetVariable("time_freeze_start", 0),
             SetVariable("time_freeze_left", 10),
+            SetVariable("timer_start", timer_start + non_violatable_freeze_time),
             SetVariable("timer_freeze_used", False),
             SetVariable("timer_freeze_running", False)
         ]

@@ -1794,6 +1794,7 @@ default timer_freeze_start = 0
 default timer_freeze_left = 10
 default timer_freeze_used = False
 default time_freeze_running = False
+default pause_duration_freeze = 10
 
 screen time_freeze():
     on "show" action [
@@ -1828,7 +1829,8 @@ screen time_freeze():
             SetVariable("time_freeze_start", 0),
             SetVariable("time_freeze_left", 10),
             SetVariable("timer_freeze_used", False),
-            SetVariable("timer_freeze_running", False)
+            SetVariable("timer_freeze_running", False),
+            SetVariable("timer_start",   timer_start + pause_duration_freeze)
         ]
 
     text "[timer_freeze_left]s" size 80 xpos 0.825 ypos 0.235 anchor (0.5, 0.5) color "#0099ff"

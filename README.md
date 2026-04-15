@@ -1,5 +1,6 @@
 # EcoCity Match
-  In recent years, urbanization has emerged as a significant global challenge. It often leads to issues such as inadequate housing and inefficient infrastructure. The United Nations’ Sustainable Development Goal (SDG) 11 focuses on making cities inclusive, safe, resilient, and sustainable. However, raising awareness and educating individuals about sustainable urban development remains a persistent challenge.
+
+In recent years, urbanization has emerged as a significant global challenge. It often leads to issues such as inadequate housing and inefficient infrastructure. The United Nations’ Sustainable Development Goal (SDG) 11 focuses on making cities inclusive, safe, resilient, and sustainable. However, raising awareness and educating individuals about sustainable urban development remains a persistent challenge.
 
 EcoCity Match is designed to address this issue by providing an educational experience that promotes sustainable housing development. This puzzle-simulation game introduces players to eco-friendly construction principles and urban planning strategies. By solving matching puzzles, players unlock essential building materials and gradually construct homes that align with the principles of SDG 11. Through interactive gameplay, EcoCity Match fosters awareness and engagement in sustainable development practices.
 
